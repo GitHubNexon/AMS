@@ -1,0 +1,2548 @@
+[
+  {
+    "code": "101",
+    "name": "CASH AND CASH EQUIVALENTS",
+    "category": "ASSETS"
+  },
+  {
+    "parentAccount": "101",
+    "code": "10101",
+    "name": "CASH ON HAND",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10101",
+    "code": "10101010",
+    "name": "CASH-COLLECTING OFFICERS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF COLLECTIONS WITH THE COLLECTING OFFICERS, CASHIERS, & POSTMASTERS FOR REMITTANCE TO THE TREASURER OF THE PHILIPPINES (TOP)/DEPOSIT TO AUTHORIZED GOVERNMENT DEPOSITORY BANKS (AGDBs). CREDIT THIS ACCOUNT FOR REMITTANCE TO THE TOP/DEPOSIT TO AGDBS &/OR NOT INCURRENCE OF CASH SHORTAGE BY THE COLLECTING OFFICER.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10101",
+    "code": "10101020",
+    "name": "PETTY CASH",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE  AMOUNT GRANTED TO DULY DESIGNATED PETTY CASH CUSTODIAN FOR PAYMENT OF AUTHORIZED PETTY OF MISCELLANEOUS EXPENSES WHICH CANNOT BE CONVENIENTLY PAID THROUGH CHECKS. CREDIT THIS ACCOUNT EVERY TIME THERE IS A CHANGE OF PETTY CASH CUSTODIAN FOR REFUND & LIQUIDATION OF CASH ADVANCE.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "101",
+    "code": "10102",
+    "name": "CASH IN BANK- LOCAL CURRENCY",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10102",
+    "code": "10102020",
+    "name": "CASH IN BANK- LOCAL CURRENCY, CURRENT ACCOUNT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "101",
+    "code": "10103",
+    "name": "CASH IN BANK- FOREIGN CURRENCY",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10103",
+    "code": "10103030",
+    "name": "CASH IN BANK- FOREIGN CURRENCY, SAVINGS ACCOUNT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "101",
+    "code": "10105",
+    "name": "CASH EQUIVALENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10105",
+    "code": "10105010",
+    "name": "TREASURY BILLS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF TREASURY BILLS ISSUED BY THE NATIONAL GOVERNMENT THROUGH  THE BUREAU OF THE TREASURY (BTr) PURCHASED WITH MATURITY OF 90 DAYS OR LESS FROM THE DATE OF ACQUISITION. CREDIT THIS ACCOUNT WHEN THE RIGHTS TO THE CASH FLOWS HAVE EXPIRED OR TRANSFERRED TO ANOTHER PARTY THROUGH RESALE OR OTHER DISPOSITION.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10105",
+    "code": "10105020",
+    "name": "TIME DEPOSITS- LOCAL CURRENCY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE AUTHORIZED PLACEMENTS OF CASH IN LOCAL CURRENCY WITH AGDBS FOR A PERIOD OF 90 DAYS OR LESS. CREDIT THIS ACCOUNT FOR WIDRAWAL OF PLACEMENTS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10105",
+    "code": "10105030",
+    "name": "TIME DEPOSITS- FOREIGN CURRENCY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE PLACEMENTS OF CASH IN FOREIGN CURRENCY WITH AGDBS FOR A PERIOD OF 90 DAYS OR LESS. CREDIT THIS ACCOUNT FOR WIDRAWAL OF PLACEMENTS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10105",
+    "code": "10105040",
+    "name": "TREASURY BONDS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF TREASURY BONDS PURCHASED WITH MATURITY OF 90 DAYS OR LESS FROM THE DATE OF ACQUISITION. CREDIT THIS ACCOUNT UPON DERECOGNITION OF THE TREASURY BOND",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "code": "102",
+    "name": "INVESTMENTS",
+    "category": "ASSETS"
+  },
+  {
+    "parentAccount": "102",
+    "code": "10206",
+    "name": "INVESTMENTS IN ASSOCIATES/ AFFILIATES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206",
+    "code": "10206010",
+    "name": "INVESTMENTS IN ASSOCIATES/ AFFILIATES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE MONEY OR OTHER ASSET INVESTED IN ENTITIES THAT ARE NEITHER A SUBSIDIARY NOR JOINT VENTURE, WHERE THE GOV'T. CORPORATION HAS SIGNIFICANT INFLUENCE.  IT IS ALSO DEBITED TO RECOGNIZE THE SHARE OF THE INVESTOR IN THE PROFIT OF THE ASSOCIATES/AFFILIATES. CREDIT THIS ACCOUNT UPON RECEIPT OF THE RETURN OF THE INVESTMENT, FOR THE SHARE IN THE LOSS OF THE ASSOCIATES /AFFILIATES, AND SALE, TRANSFERS & WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206010",
+    "code": "10206010A",
+    "name": "CONTROLLED PRIVATE - COST",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206010",
+    "code": "10206010B",
+    "name": "CONTROLLED PRIVATE - COST",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206010",
+    "code": "10206010C",
+    "name": "GOVERNMENT OWNED/CONTROLLED CORPORATION - EQUITY",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206010",
+    "code": "10206010D",
+    "name": "GOVERNMENT OWNED/CONTROLLED CORPORATION - COST",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206",
+    "code": "10206011",
+    "name": "ALOWANCE FOR IMPAIRMENT- INVESTMENTS IN ASSOCIATES/ AFFILIATES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206",
+    "code": "10206012",
+    "name": "ALLOWANCE FOR IMPAIRMENT - INVESTMENT IN SUBSIDIARIES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206",
+    "code": "10206013",
+    "name": "ALLOWANCE FOR IMPAIRMENT - INVESTMENT IN ASSOCIATES/AFFILIATES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10206",
+    "code": "10206014",
+    "name": "ALLOWANCE FOR IMPAIRMENT -AVAILABLE FOR SALE SECURITIES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "102",
+    "code": "10210",
+    "name": "INVESTMENTS IN SUBSIDIARIES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10210",
+    "code": "10210010",
+    "name": "INVESTMENTS IN SUBSIDIARIES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE MONEY INVESTED IN ENTITIES, THAT ARE NEITHER ASSOCIATES/AFFILIATES OR JOINT VENTURE, WHERE THE GOVERNMENT CORPORATION HAS COMPLETE CONTROL OR OWNERSHIP. CREDIT THIS ACCOUNT UPON RECEIPT OF THE RETURN OF THE INVESTMENT, SALE, TRANSFERS & WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10210",
+    "code": "10210011",
+    "name": "ALLOWANCE FOR IMPAIRMENT- INVESTMENTS IN SUBSIDIARIES",
+    "description": "THIS ACCOUNT IS CREDITED TO REDUCE THE COST/AMORTIZED COST/FAIR VALUE OF INVESTMENTS IN SUBSIDIARIES DUE TO IMPAIRMENT. DEBIT THIS ACCOUNT UPON RECEIPT OF THE RETURN ON THE INVESTMENT , SALE, TRANSFERS, REVERSAL OF IMPAIRMENT LOSS, AND WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10210",
+    "code": "10210111",
+    "name": "INVESTMENT IN ASSOCIATES / AFFILIATES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10210111",
+    "code": "10210111A",
+    "name": "AVAILABLE FOR SALE SECURITIES (AFS)",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10210111",
+    "code": "10210111B",
+    "name": "INVESTMENT IN TIME DEPOSIT - LC",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10210111",
+    "code": "10210111C",
+    "name": "INVESTMENT IN ASSOCIATES - AFFILIATES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10210111",
+    "code": "10210111D",
+    "name": "INVESTMENT-FVOCI",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "102",
+    "code": "10299",
+    "name": "OTHER INVESTMENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10299",
+    "code": "10299010",
+    "name": "INVESTMENTS IN STOCKS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE MONEY INVESTED IN THE STOCKS OF GOVERNMENT CORPORATIONS AND PUBLIC UTILITIES MEASURED AT COST OTHER THAN THOSE INVESTED TO JOINT VENTURE , ASSOCIATES/AFFILIATES & GOV'T. CORPORATE SUBSIDIARIES. CREDIT THIS ACCOUNT UPON SALE, TRANSFERS & WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10299",
+    "code": "10299011",
+    "name": "ALLOWANCE FOR IMPAIRMENT- INVESTMENTS IN STOCKS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZED THE AMOUNT OF IMPAIRMENT LOSS THAT HAS BEEN INCURRED ON INVESTMENTS IN STOCKS. DEBIT THIS ACCOUNT UPON DERECOGNITION OF THE INVESTMENTS IN STOCKS, AND REVERSAL OF IMPAIRMENT LOSS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10299",
+    "code": "10299990",
+    "name": "OTHER INVESTMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF OTHER INVESTMENTS WHICH CANNOT BE CLASSIFIED UNDER ANY OF THE SPECIFIC INVESTMENT ACCOUNTS. CREDIT THIS ACCOUNT UPON DERECOGNITION, TRANSFER AND WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10299990",
+    "code": "10299990A",
+    "name": "OTHER INVESTMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10299",
+    "code": "10299991",
+    "name": "ALLOWANCE FOR IMPAIRMENT- OTHER INVESTMENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "code": "103",
+    "name": "RECEIVABLES",
+    "category": "ASSETS"
+  },
+  {
+    "parentAccount": "103",
+    "code": "10301",
+    "name": "LOANS AND RECEIVABLE ACCOUNTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301",
+    "code": "10301010",
+    "name": "ACCOUNTS RECEIVABLE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT DUE FROM CUSTOMERS ARISING FROM REGULAR TRADE AND BUSINESS TRANSACTIONS. CREDIT THIS ACCOUNT UPON COLLECTION OF RECEIVABLES, TRANSFERS OR WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301010",
+    "code": "10301010A",
+    "name": "ACCOUNTS RECEIVABLE - CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301010",
+    "code": "10301010B",
+    "name": "RENTAL RECEIVABLE",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301010",
+    "code": "10301010C",
+    "name": "MANAGEMENT FEE RECEIVABLE",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301010",
+    "code": "10301010D",
+    "name": "OTHER INCOME RECEIVABLE",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301010",
+    "code": "10301010E",
+    "name": "OTHER NON-INCOME REC.-CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301",
+    "code": "10301011",
+    "name": "ALLOWANCE FOR IMPAIRMENT-ACCOUNT RECEIVABLE",
+    "description": "THIS ACCOUNT IS CREDITED UPON RECOGNITION OF IMPAIRMENT WHICH MAY ARISE FROM NON- COLLECTION. DEBIT THIS ACCOUNT UPON COLLECTION OF RECEIVABLES, TRANSFERS, REVERSAL OF IMPAIRMENT, OR WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301011",
+    "code": "10301011A",
+    "name": "ALLOWANCE FOR DOUBTFUL ACCOUNTS - OTHER NON-INCOME",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301011",
+    "code": "10301011B",
+    "name": "ALLOWANCE FOR DOUBTFUL LONG TERM RECEIVABLES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301011",
+    "code": "10301011C",
+    "name": "ALLOWANCE FOR IMPAIRMENT- ACCOUNTS RECEIVABLE - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301011",
+    "code": "10301011D",
+    "name": "ALLOWANCE FOR IMPAIRMENT- RENTAL RECEIVABLE",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301",
+    "code": "10301050",
+    "name": "INTERESTS RECEIVABLE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE AMOUNTS OF ACCRUED INTERESTS ON ADVANCES, INVESTMENTS, AND LOANS AND RECEIVABLES. CREDIT THIS ACCOUNT UPON RECEIPT OF INTERESTS, TRANSFERS, OR WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301050",
+    "code": "10301050A",
+    "name": "ACCRUED INTEREST-MONEY MARKET PLACEMENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301050",
+    "code": "10301050B",
+    "name": "ACCRUED INTEREST-LOANS/NOTES RECEIVABLE",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301050",
+    "code": "10301050C",
+    "name": "INTEREST RECEIVABLE - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301",
+    "code": "10301051",
+    "name": "ALLOWANCE FOR IMPAIRMENT- INTERESTS RECEIVABLE",
+    "description": "THIS ACCOUNT IS CREDITED UPON SET-UP OF PROVISION FOR LOSSES WHICH MAY ARISE FROM THE NON- COLLECTION OF INTERESTS RECEIVABLE. DEBIT THIS ACCOUNT UPON RECEIPT OF INTERESTS, TRANSFERS, REVERSAL OF IMPAIRMENT, OR WRITE-OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301",
+    "code": "10301070",
+    "name": "LOANS RECEIVABLE-OTHER GOVERNMENT CORPORATIONS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE CREDITS/LOANS IN FOREIGN OR LOCAL CURRENCY EXTENDED BY A GOVERNMENT CORPORATION TO OTHER GOVERNMENT CORPORATIONS COVERED BY LOAN AGREEMENTS.  CREDIT THIS ACCOUNT FOR RECEIPT OF LOAN REPAYMENTS, TRANSFERS OR WRITE-OFF LOANS TO OTHER GOVERNMENT CORPORATIONS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301070",
+    "code": "10301070A",
+    "name": "LOANS RECEIVABLE- OTHER GOVERNMENT CORPORATIONS - CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301070",
+    "code": "10301070B",
+    "name": "LOANS RECEIVABLE- OTHER GOVERNMENT CORPORATIONS - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301070",
+    "code": "10301070C",
+    "name": "LONG-TERM RECEIVABLES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301070",
+    "code": "10301070D",
+    "name": "LOANS RECEIVABLE- OTHER GOVERNMENT CORPORATIONS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301",
+    "code": "10301071",
+    "name": "ALLOWANCE FOR IMPAIRMENT-LOANS RECEIVABLE-OTHER GOVERNMENT CORPORATIONS",
+    "description": "THIS ACCOUNT IS CREDITED UPON SET-UP OF PROVISION FOR LOSSES WHICH MAY ARISE FROM THE NON-COLLECTION OF LOANS RECEIVABLE FROM OTHER GOV'T. CORPORATIONS. DEBIT THIS ACCOUNT UPON RECEIPT OF LOAN REPAYMENTS, TRANSFERS, REVERSAL OF IMPAIRMENT, OR WRITE OFF.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301071",
+    "code": "10301071A",
+    "name": "ALLOWANCE IMPAIRMENT- LOANS RECEIVABLE- OTHER GOVERNMENT CORPORATIONS - CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301071",
+    "code": "10301071B",
+    "name": "ALLOWANCE IMPAIRMENT- LOANS RECEIVABLE- OTHER GOVERNMENT CORPORATIONS - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301",
+    "code": "10301990",
+    "name": "LOANS RECEIVABLE-OTHERS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301990",
+    "code": "10301990A",
+    "name": "LOANS RECEIVABLE- OTHERS - CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301990",
+    "code": "10301990B",
+    "name": "CAR LOANS RECEIVABLE - CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301990",
+    "code": "10301990C",
+    "name": "HOUSING LOANS RECEIVABLE - CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301990",
+    "code": "10301990D",
+    "name": "LOANS RECEIVABLE- OTHERS - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301990",
+    "code": "10301990E",
+    "name": "HOUSING LOAN RECEIVABLE - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10301990",
+    "code": "10301990F",
+    "name": "CAR LOANS RECEIVABLE - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "103",
+    "code": "10303",
+    "name": "INTER- AGENCY RECEIVABLE",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303",
+    "code": "10303010",
+    "name": "DUE FROM NATIONAL GOVERNMENT AGENCIES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303010",
+    "code": "10303010A",
+    "name": "DUE FROM NATIONAL GOVERNMENT AGENCIES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303010",
+    "code": "10303010B",
+    "name": "ALLOWANCE FOR DOUBTFUL ACCOUNTS - NATIONAL GOV'T AGENCIES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303",
+    "code": "10303060",
+    "name": "DUE FROM SUBSIDIARIES/ JOINT VENTURES/ ASSOCIATES/ AFFILIATES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303060",
+    "code": "10303060A",
+    "name": "DUE FROM SUBSIDIARIES/ JOINT VENTURES/ ASSOCIATES/ AFFILIATES - CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303060",
+    "code": "10303060B",
+    "name": "DUE FROM SUBSIDIARIES/ JOINT VENTURES/ ASSOCIATES/ AFFILIATES - LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303060",
+    "code": "10303060C",
+    "name": "ALLOWANCE FOR DOUBTFUL ACCOUNTS-CURRENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10303060",
+    "code": "10303060D",
+    "name": "ALLOWANCE FOR DOUBTFUL ADVANCES-LONG TERM",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "code": "104",
+    "name": "INVENTORIES",
+    "category": "ASSETS"
+  },
+  {
+    "parentAccount": "104",
+    "code": "10404",
+    "name": "INVENTORY HELD FOR CONSUMPTION",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10404",
+    "code": "10404010",
+    "name": "OFFICE SUPPLIES INVENTORY",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10404",
+    "code": "10404020",
+    "name": "ACCOUNTABLE FORMS, PLATES AND STICKERS INVENTORY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE COST OF ACCOUNTABLE FORMS, WITH OR WITHOUT MONEY VALUE, ACQUIRED FOR GOVERNMENT OPERATIONS. CREDIT THIS ACCOUNT FOR ISSUANCE TO END- USERS, TRANSFERS, LOSS OR OTHER DISPOSAL.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "code": "105",
+    "name": "INVESTMENT PROPERTY",
+    "category": "ASSETS"
+  },
+  {
+    "parentAccount": "105",
+    "code": "10501",
+    "name": "LAND AND BUILDINGS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10501",
+    "code": "10501010",
+    "name": "INVESTMENT PROPERTY, LAND",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10501",
+    "code": "10501020",
+    "name": "INVESTMENT PROPERTY,BUILDINGS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF BUILDING OR PART OF A BUILDING  HELD BY THE OWNER (OR BY THE LESSEE UNDER A FINANCE LEASE) TO EARN RENTALS OR FOR CAPITAL APPRECIATION OR BOTH. CREDIT THIS ACCOUNT FOR DISPOSAL OR RECLASSIFICATION TO PROPERTY , PLANT, & EQUIPMENT ACCOUNT. FOR ENTITIES ADOPTING THE FAIR VALUE MODEL, THIS ACCOUNT SHALL BE DEBITED/CREDITED FOR THE INCREASE/DECREASE IN FAIR VALUE OF INVESTMENT PROPERTY.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "105",
+    "code": "10599",
+    "name": "CONSTRUCTION IN PROGRESS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10599",
+    "code": "10599010",
+    "name": "CONSTRUCTION IN PROGRESS - INVESTMENT PROPERTY, BUILDINGS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "code": "106",
+    "name": "PROPERTY, PLANT AND EQUIPMENT",
+    "category": "ASSETS"
+  },
+  {
+    "parentAccount": "106",
+    "code": "10602",
+    "name": "LAND IMPROVEMENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10602",
+    "code": "10602990",
+    "name": "OTHER LAND IMPROVEMENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10602",
+    "code": "10602991",
+    "name": "ACCUMULATED DEPRECIATION- OTHER LAND IMPROVEMENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "106",
+    "code": "10604",
+    "name": "BUILDINGS AND OTHER STURCTURES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10604",
+    "code": "10604010",
+    "name": "BUILDINGS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZED THE COST INCURRED IN THE PURCHASE OF CONSTRUCTION OR FAIR VALUE.IF ACQUIRED THROUGH DONATION OR TRANSFERS WITHOUT COST, OF BLDGS. SUCH AS: OFFICE BLDGS, RESEARCH/CONVENTION/TRAINING CENTERS, AGRICULTURAL LABORATORIES,WAREHOUSES, COLD STORAGE'S & THE LIKE , FOR USE IN THE GOVERNMENT OPERATIONS.  CREDIT THIS ACCOUNT FOR DISPOSAL , DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PORTION IN MAJOR REPAIR. OR RECLASSIFICATION TO THE INVESTMENT PROPERTY ACCOUNT.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10604",
+    "code": "10604011",
+    "name": "ACCUMULATED DEPRECIATION- BUILDINGS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10604",
+    "code": "10604990",
+    "name": "OTHER STRUCTURES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE PURCHASE OR CONSTRUCTION OR FAIR VALUE, IF ACQUIRED THROUGH DONATION OR TRANSFERS WITHOUT COST , OF OTHER STRUCTURES FOR USE IN GOV'T. OPERATIONS OR FOR INCOME GENERATING PURPOSES. CREDIT THIS ACCOUNT FOR DISPOSAL OR DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PORTION IN MAJOR REPAIRS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10604",
+    "code": "10604991",
+    "name": "ACCUMULATED DEPRECIATION- OTHER STRUCTURES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "106",
+    "code": "10605",
+    "name": "MACHINERY AND EQUIPMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605020",
+    "name": "OFFICE EQUIPMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605021",
+    "name": "ACCUMULATED DEPRECIATION- OFFICE EQUIPMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605030",
+    "name": "INFORMATION AND COMMUNICATION TECHNOLOGY EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE PURCHASE OF INFORMATION AND COMMUNICATION TECHNOLOGY EQUIPMENT, WHICH INCLUDES HARDWARE ( COMPUTERS, PRINTERS, SCANNERS, AND THING SYSTEM LIKE) AND PRE-LOADED SOFTWARE SUCH AS BUT NOT LIMITED TO OPERATING SYSTEMS WHICH ARE INCLUDED IN THE COST OF THE COMPUTER HARDWARE. THIS ALSO INCLUDES DATA COMMUNICATIONS EQUIPMENT AND SUCH OTHER PERIPHERALS AND AUXILIARY EQUIPMENT NECESSARY TO PUT THE SYSTEM INTO OPERATIONAL MODE. CREDIT THIS ACCOUNT FOR DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PARTS IN MAJOR REPAIRS OR DISPOSAL.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605031",
+    "name": "ACCUMULATED DEPRECIATION- INFORMATION AND COMMUNICATION TECHNOLOGY EQUIPMENT",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE ALLOCATION OF COST OF INFORMATION AND COMMUNICATION TECHNOLOGY EQUIPMENT IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION.DEBIT THIS ACCOUNT UPON DISPOSAL OR DERECOGNITION OF THE ASSET.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605120",
+    "name": "PRINTING EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE PURCHASE OR FAIR VALUE, IF ACQUIRED THROUGH DONATION OR TRANSFERS WITHOUT COST , OF LARGE PRINTING EQUIPMENT SUCH AS OFFSET PRESS, LETTER PRESS, BINDERY EQUIPMENT, PREPRESS MACHINES, AND THE LIKE , FOR USE IN THE GOVERNMENT PRINTING NEEDS. CREDIT THIS ACCOUNT FOR DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PARTS IN MAJOR REPAIRS, OR DISPOSAL.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605121",
+    "name": "ACCUMULATED DEPRECIATION- PRINTING EQUIPMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605130",
+    "name": "SPORTS EQUIPMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605131",
+    "name": "ACCUMULATED DEPRECIATION- SPORTS EQUIPMENT",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE ALLOCATON OF COST OF SPORTS EQUIPMENT IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. DEBIT THIS ACCOUNT UPON DISPOSAL OR DERECOGNITION OF THE ASSET.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605160",
+    "name": "KITCHEN EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE PURCHASE OR FAIR VALUE, IF ACQUIRED THROUGH DONATION OR TRANSFERS WITHOUT COST, OF KITCHEN EQUIPMENT , FOR USE IN THE OPERATION OF CANTEENS , HOTELS, RESTAURANTS, HOSPITALS, SCHOOLS AND OTHER ENTITIES . CREDIT THIS ACCOUNT FOR DERECOGNITION  OF THE CARRYING AMOUNT OF THE REPLACED PARTS IN MAJOR REPAIRS, OR DISPOSAL.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605161",
+    "name": "ACCUMULATED DEPRECIATION- KITCHEN EQUIPMENT",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE ALLOCATION  OF COST OF KITCHEN EQUIPMENT IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. DEBIT THIS ACCOUNT UPON DISPOSAL OR DERECOGNITION OF THE ASSET",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10605",
+    "code": "10605162",
+    "name": "ACCUMULATED IMPAIRMENT LOSSES- KITCHEN EQUIPMENT",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE AMOUNT RECOGNIZED TO REDUCE KITCHEN EQUIPMENT TO ITS RECOVERABLE AMOUNT DUE TO IMPAIRMENT. DEBIT THIS ACCOUNT UPON DISPOSAL , DERECOGNITION OF THE ASSET , OR REVERSAL OF IMPAIRMENT. ",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "106",
+    "code": "10606",
+    "name": "TRANSPORTATION EQUIPMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10606",
+    "code": "10606010",
+    "name": "MOTOR VEHICLES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE PURCHASE OR ASSEMBLY OR FAIR VALUE,IF ACQUIRED THROUGH DONATION OR TRANSFERS WITHOUT COST, OF MOTOR VEHICLES FOR OFFICIAL USE SUCH AS SERVICE VEHICLE (ARMORED VEHICLES, CARS,BUSES,VANS, & THE LIKE. CREDIT THIS ACCOUNT FOR DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PARTS IN MAJOR REPAIRS, OR DISPOSAL.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10606",
+    "code": "10606011",
+    "name": "ACCUMULATED DEPRECIATION-MOTOR VEHICLES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "106",
+    "code": "10607",
+    "name": "FURNITURE, FIXTURES AND BOOKS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10607",
+    "code": "10607010",
+    "name": "FURNITURE AND FIXTURES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF ACQUISITION OR ASSEMBLY , OR FAIR VALUE , IF ACQUIRED THROUGH DONATION OR TRANSFERS WITHOUT COST, OF FURNITURE AND FIXTURES FOR USE IN GOVERNMENT OPERATIONS. CREDIT THIS ACCOUNT FOR DISPOSAL ( SALE, TRANSFERS, DESTRUCTION) AND ADJUSTMENTS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10607",
+    "code": "10607011",
+    "name": "ACCUMULATED DPRECIATION- FURNITURE AND FIXTURES",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE ALLOCATION OF COST OF FURNITURE AND FIXTURES IN ACCORDANCE WITH THE PRESCRIBED POLICY OF DEPRECIATION. DEBIT THIS ACCOUNT UPON DISPOSAL OR DERECOGNITION OF THE ASSET.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "106",
+    "code": "10609",
+    "name": "LEASED ASSETS IMPROVEMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE CONSTRUCTION OF IMPROVEMENTS ON BLDGS UNDER AN OPERATING LEASE FOR USE IN GOVT. OPERATIONS OR FOR COMMERCIAL AND/OR INCOME GENERATING PURPOSES. CREDIT THIS ACCOUNT FOR DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PORTION IN MAJOR REPAIRS, DISPOSAL OR TERMINATION OF LEASE CONTRACT.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10609",
+    "code": "10609020",
+    "name": "LEASED ASSETS IMPROVEMENTS, BUILDINGS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10609",
+    "code": "10609021",
+    "name": "ACCUMULATED DEPRECIATION- LEASED ASSETS IMPROVEMENTS, BUILDINGS",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE ALLOCATION OF COST OF IMPROVEMENTS ON BUILDINGS UNDER AN OPERATING LEASE ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. DEBIT THIS ACCOUNT UPON DISPOSAL OR DERECOGNITION OF THE ASSET.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10609",
+    "code": "10609990",
+    "name": "OTHER LEASED ASSETS IMPROVEMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE CONSTRUCTION OF IMPROVEMENTS ON OTHER ASSETS/STRUCTURES UNDER OPERATING LEASE FOR USE IN GOVERNMENT OPERATIONS OR FOR COMMERCIAL AND/OR INCOME GENERATING PURPOSES. CREDIT THIS ACCOUNT FOR DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PORTION IN MAJOR REPAIRS, DISPOSAL OR TERMINATION OF LEASE CONTRACT.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10609",
+    "code": "10609991",
+    "name": "ACCUMULATED DEPRECIATION- OTHER LEASED ASSETS IMPROVEMENTS",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE ALLOCATION OF COST OF OTHER IMPROVEMENTS ON OTHER ASSETS/STRUCTURES UNDER OPERATING LEASE IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. DEBIT THIS ACCOUNT UPON DISPOSAL OR DERECOGNITION OF THE ASSET.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "106",
+    "code": "10698",
+    "name": "OTHER PROPERTY, PLANT AND EQUIPMENT",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10698",
+    "code": "10698990",
+    "name": "OTHER PROPERTY, PLANT AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZED THE COST OF ACQUISITION OF FAIR VALUE , IF ACQUIRED THROUGH DONATION OR TRANSFERS WITHOUT COST, OF OTHER PROPERTY, PLANT AND EQUIPMENT NOT FALLING UNDER ANY OF THE SPECIFIC PROPERTY, PLANT AND EQUIPMENT ACCOUNT. CREDIT THIS ACCOUNT FOR DERECOGNITION OF THE CARRYING AMOUNT OF THE REPLACED PARTS IN MAJOR REPAIRS OR DISPOSAL.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "10698",
+    "code": "10698991",
+    "name": "ACCUMULATED DEPRECIATION- OTHER PROPERTY, PLANT AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE ALLOCATION OF COST OF OTHER PROPERTY , PLANT AND EQUIPMENT IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. DEBIT THIS ACCOUNT UPON DISPOSAL OR DERECOGNITION OF THE ASSET.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "code": "199",
+    "name": "OTHER ASSETS",
+    "category": "ASSETS"
+  },
+  {
+    "parentAccount": "199",
+    "code": "19901",
+    "name": "ADVANCES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19901",
+    "code": "19901040",
+    "name": "ADVANCES TO OFFICERS AND EMPLOYEES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE AMOUNT ADVANCED TO OFFICERS AND EMPLOYEES FOR OFFICIAL TRAVEL. CREDIT THIS ACCOUNT FOR LIQUIDATION OF ADVANCES.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19901040",
+    "code": "19901040A",
+    "name": "CASH ADVANCE RECEIVABLES - EMPLOYEES AND OFFICERS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19901040",
+    "code": "19901040B",
+    "name": "CASH ADVANCE RECEIVABLES - OTHERS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "199",
+    "code": "19902",
+    "name": "PREPAYMENTS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19902",
+    "code": "19902010",
+    "name": "ADVANCES TO CONTRACTORS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE AMOUNT ADVANCED TO CONTRACTORS AS AUTHORIZED BY LAW. CREDIT THIS ACCOUNT FOR RECOUPMENT OF ADVANCES.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19902",
+    "code": "19902040",
+    "name": "PREPAID INTEREST",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT ADVANCED FOR INTEREST OF LOANS CONTRACTED BY THE GOV'T. CREDIT THIS ACCOUNT FOR THE EXPENDED AMOUNT.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19902",
+    "code": "19902050",
+    "name": "PREPAID INSURANCE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT ADVANCED FOR THE INSURANCE OF GOVT. PROPERTY. CREDIT THIS ACCOUNT FOR THE EXPENDED AMOUNT.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19902",
+    "code": "19902060",
+    "name": "Input Tax",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT CREDITABLE AGAINST THE OUTPUT TAX: A) THE PURCHASE OR IMPORTATION OF GOODS FOR SALE; OR FOR CONVERSION INTO OR INTENDED TO FORM PART OF A FINISHED PRODUCT FOR SALE INCLUDING PACKAGING MATERIALS OR FOR USE AS SUPPLIES IN THE COURSE OF BUSINESS; OR FOR USE AS MATERIALS SUPPLIED IN THE SALE OF SERVICE; OR FOR USE IN THE TRADE OR BUSINESS FOR WHICH DEDUCTION FOR DEPRECIATION OR AMORTIZATION IS ALLOWED UNDER THE NATIONAL INTERNAL REVENUE CODE, EXCEPT AUTOMOBILES, AIRCRAFTS, & YACHTS, AND THE PURCHASE OF SERVICES ON WHICH A VALUE-ADDED TAX HAS BEEN ACTUALLY PAID.CREDIT THIS ACCOUNT UPON OFFSETTING AGAINST THE OUTPUT TAX AND/OR SET UP OF CREDITABLE INPUT TAX.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19902",
+    "code": "19902070",
+    "name": "Creditable Input Tax",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZED THE EXCESS INPUT TAX PAID ON PURCHASES OVER OUTPUT TAX. CREDIT THIS ACCOUNT UPON OFFSETTING AGAINST OUTPUT TAX AND/OR SET UP OF VAT PAYABLE.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19902",
+    "code": "19902080",
+    "name": "Withholding Tax at Source",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF CREDITABLE W/HOLDING TAX DEDUCTED BY AN ENTITY,WHICH IS DESIGNATED BY THE BIR AS AUTHORIZED AGENT, FROM RENTAL OR OTHER SERVICES TO BE CREDITED BY BIR UPON RECEIPT FROM THE ENTITY OF PROOF OF REMITTANCE TO THE BIR TOGETHER WITH BIR FORM NO. 2307.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19902",
+    "code": "19902990",
+    "name": "OTHER PREPAYMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF PREPAYMENTS NOT FALLING UNDER ANY OF THE SPECIFIC PREPAYMENT ACCOUNTS. CREDIT THIS ACCOUNT FOR THE EXPENDED AMOUNT.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "199",
+    "code": "19999",
+    "name": "OTHER ASSETS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19999",
+    "code": "19999020",
+    "name": "FORECLOSED PROPERTY/ASSETS",
+    "description": "THIS ACCOUNT  IS USED TO RECOGNIZE THE FAIR VALUE OF FORCLOSED REAL AND OTHER PROPERTY/ASSETS ACQUIRED (ROPA) BY GOVT. CORPORATIONS. CREDIT THIS ACCOUNT FOR DISPOSAL OR RECLASSIFICATION TO OTHER PPE/ASSET ACCOUNTS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19999",
+    "code": "19999990",
+    "name": "OTHER ASSETS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE ASSETS NOT FALLING UNDER ANY OF THE SPECIFIC ASSET ACCOUNTS. CREDIT THIS ACCOUNT FOR DISPOSAL OF RECLASSIFICATION TO SPECIFIC ASSET ACCOUNTS.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19999990",
+    "code": "19999990A",
+    "name": "SHORT TERM INVESTMENTS HELD IN TRUST",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19999990",
+    "code": "19999990B",
+    "name": "ACCRUED INTEREST - SHORT TERM INVESTMENTS HELD IN TRUST",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19999990",
+    "code": "19999990C",
+    "name": "DEFERRED CHARGES",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19999990",
+    "code": "19999990D",
+    "name": "OTHER ASSETS",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "19999",
+    "code": "19999991",
+    "name": "ACCUMULATED IMPAIRMENT LOSSES- OTHER ASSETS",
+    "description": "THIS ACCOUNT IS CREDITED FOR THE AMOUNT RECOGNIZED TO REDUCE ASSET NOT FALLING UNDER ANY OF THE SPECIFIC ASSET REDUCE ASSET NOT FALLING UNDER ANY OF THE SPECIFIC ASSET ACCOUNTS TO ITS RECOVERABLE AMOUNT DUE TO IMPAIRMENT.  DEBIT THIS ACCOUNT UPON DISPOSAL, DERECOGNITION OF THE ASSET OR REVERSAL OF IMPAIRMENT.",
+    "category": "ASSETS",
+    "isSubAccount": true
+  },
+  {
+    "code": "201",
+    "name": "PAYABLES",
+    "category": "LIABILITIES"
+  },
+  {
+    "parentAccount": "201",
+    "code": "20101",
+    "name": "ACCOUNTS PAYABLES",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20101020",
+    "name": "DUE TO OFFICERS AND EMPLOYEES",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20101050",
+    "name": "INTEREST PAYABLE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE ACCRUAL OF INTEREST ON LOANS/BONDS OR OTHER INDEBTEDNESS, WHETHER SHORT-TERM OR LONG-TERM. DEBIT THIS ACCOUNT FOR PAYMENT OF THE INTEREST.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "code": "202",
+    "name": "INTER- AGENCY PAYABLES",
+    "category": "LIABILITIES"
+  },
+  {
+    "parentAccount": "202",
+    "code": "20201",
+    "name": "INTER- AGENCY PAYABLES",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20201010",
+    "name": "DUE TO BIR",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE TAXES WITHHELD FROM OFFICERS/EMPLOYEES & OTHER ENTITIES OTHER THAN VALUE ADDED TAX PAYABLE AND INCOME TAX PAYABLE. DEBIT THIS ACCOUNT FOR REMITTANCE OF THE TAXES WITHHELD TO THE BIR.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20201010",
+    "code": "5053",
+    "name": "BUREAU OF INTERNAL REVENUE",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20201020",
+    "name": "DUE TO GSIS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE WITHHOLDING OF EMPLOYEES PREMIUM PAYMENTS AND OTHER PAYABLES FOR REMITTANCE TO THE GOVERNMENT SERVICE INSURANCE SYSTEM &#40;GSIS&#41;. DEBIT THIS ACCOUNT FOR THE REMITTANCE OF WITHHELD AMOUNT.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20201030",
+    "name": "DUE TO PAG-IBIG",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE WITHHOLDING OF EMPLOYEES PREMIUM PAYMENTS AND OTHER PAYABLES FOR REMITTANCE TO THE HOME DEVELOPMENT MUTUAL FUND(HDMF). DEBIT THIS ACCOUNT FOR THE REMITTANCE OF WITHHELD AMOUNT.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20201040",
+    "name": "DUE TO PHILHEALTH",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZED THE WITHHOLDING OF EMPLOYEES PREMIUM PAYMENTS FOR REMITTANCE TO THE PHILIPPINE HEALTH INSURANCE CORPORATION (PHIC). DEBIT THIS ACCOUNT FOR THE REMITTANCE OF WITHHELD AMOUNT.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20201120",
+    "name": "VALUE ADDED TAX PAYABLE",
+    "description": "THIS ACCOUNT USED TO RECOGNIZE THE AMOUNT OF THE TAX LIABILITY  OF THE VAT REGISTERED SELLER OR SERVICE PROVIDER TO BE REMITTED TO THE BIR REDUCED BY CREDITABLE INPUT TAX. DEBIT THIS ACCOUNT UPON MONTHLY OR QUARTERLY FILING/PAYMENT TO THE BIR",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20101",
+    "code": "20201130",
+    "name": "INCOME TAX PAYABLE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF INCOME TAX DUE TO THE BIR REDUCED BY CREDITABLE WITHHOLDING TAXES.DEBIT THIS ACCOUNT UPON PAYMENT TO THE BIR AND FOR ANY ADJUSTMENTS MADE TO THE ACCOUNT.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "code": "204",
+    "name": "TRUST LIABILITIES",
+    "category": "LIABILITIES"
+  },
+  {
+    "parentAccount": "204",
+    "code": "20401",
+    "name": "TRUST LIABILITIES",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20401",
+    "code": "20401010",
+    "name": "TRUST LIABILITIES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE RECEIPT OF AMOUNT HELD IN TRUST FOR THE SPECIFIC PURPOSE. DEBIT THIS ACCOUNT FOR PAYMENT OR SETTLEMENT OF THE LIABILITY.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20401010",
+    "code": "20401010A",
+    "name": "TRUST LIABILITIES - CURRENT",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20401010",
+    "code": "20401010B",
+    "name": "TRUST LIABILITIES - LONG TERM",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20401",
+    "code": "20401040",
+    "name": "GUARANTY/SECURITY DEPOSITS PAYABLE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE INCURRENCE OF LIABILITY ARISING FROM THE RECEIPT OF CASH OR CASH EQUIVALENTS TO GUARANTY: (A) THAT THE WINNING BIDDER SHALL ENTER INTO THE CONTRACT WITH THE PROCURING ENTITY; AND (B) PERFORMANCE BY THE CONTRACTOR OF THE TERMS OF THE CONTRACT. DEBIT THIS ACCOUNT FOR REFUND AFTER THE FULFILLMENT OF THE PURPOSE OF THE BOND OR FORFEITURE UPON FAILURE TO COMPLY WITH THE PURPOSE OF THE BOND.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20401040",
+    "code": "20401040A",
+    "name": "DEPOSITS FROM SUPPLIERS, BIDDERS, ETC.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20401040",
+    "code": "20401040B",
+    "name": "MISCELLANEOUS LONG TERM LIABILITIES",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "code": "205",
+    "name": "DEFERRED CREDITS/UNEARNED INCOME",
+    "category": "LIABILITIES"
+  },
+  {
+    "parentAccount": "205",
+    "code": "20501",
+    "name": "DEFERRED CREDITS",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20501",
+    "code": "20501030",
+    "name": "Output Tax",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE VALUE ADDED TAX ON THE SALE OF GOODS/PROPERTY AND SERVICES. DEBIT THIS ACCOUNT UPON OFFSETTING AGAINST INPUT TAX/CREDITABLE INPUT TAX AND/OR SET UP OF VAT PAYABLE AND FOR ANY ADJUSTMENTS MADE TO THE ACCOUNT.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20501",
+    "code": "20501990",
+    "name": "OTHER DEFERRED CREDITS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE OTHER TRANSACTIONS NOT FALLING UNDER ANY OF THE SPECIFIC DEFERRED CREDITS ACCOUNTS. DEBIT THIS ACCOUNT WHEN RELATED INCOME IS EARNED.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "205",
+    "code": "20502",
+    "name": "UNEARNED REVENUE/INCOME",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20502",
+    "code": "20502010",
+    "name": "UNEARNED REVENUE/INCOME- INVESTMENT PROPERTY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE RECEIPT OF ADVANCE RENT/LEASE INCOME FROM THE INVESTMENT PROPERTY. DEBIT THIS ACCOUNT WHEN RENT/LEASE INCOME IS EARNED.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "code": "209",
+    "name": "DEFERRED TAX LIABILITIES",
+    "category": "LIABILITIES"
+  },
+  {
+    "parentAccount": "209",
+    "code": "20901",
+    "name": "DEFERRED TAX LIABILITIES",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20901",
+    "code": "20901010",
+    "name": "DEFERRED TAX LIABILITIES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE FUTURE TAX LIABILITY ARISING FROM AN INCOME, WHICH IS TEMPORARY & NOT TAXABLE, AND EXCESS OF NET INCOME PER FINANCIAL STATEMENTS OVER TAXABLE INCOME MULTIPLIED BY THE TAX RATE.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20901010",
+    "code": "20901010A",
+    "name": "DEFERRED TAX LIABILITIES - CURRENT",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "20901010",
+    "code": "20901010B",
+    "name": "DEFERRED TAX LIABILITIES - LONG TERM",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "code": "299",
+    "name": "OTHER PAYABLES",
+    "category": "LIABILITIES"
+  },
+  {
+    "parentAccount": "299",
+    "code": "29999",
+    "name": "OTHER PAYABLES",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "29999",
+    "code": "29999090",
+    "name": "DIVIDENDS PAYABLE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF UNPAID CASH DIVIDENDS DECLARED BY THE BOARD OF DIRECTORS TO STOCKHOLDERS OF RECORD. DEBIT THIS ACCOUNT UPON PAYMENT/SETTLEMENT OF THE LIABILITY.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "29999",
+    "code": "29999990",
+    "name": "OTHER PAYABLES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE OTHER LIABILITIES NOT FALLING UNDER ANY OF THE SPECIFIC PAYABLE ACCOUNTS. DEBIT THIS ACCOUNT FOR SETTLEMENT OF LIABILITIES.",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "29999990",
+    "code": "29999990A",
+    "name": "MISCELLANEOUS PAYABLE - DEDUCTIBLE",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "29999990",
+    "code": "29999990B",
+    "name": "MISCELLANEOUS PAYABLE - NON-DEDUCTIBLE",
+    "category": "LIABILITIES",
+    "isSubAccount": true
+  },
+  {
+    "code": "301",
+    "name": "GOVERNMENT EQUITY",
+    "category": "CAPITAL"
+  },
+  {
+    "parentAccount": "301",
+    "code": "30101",
+    "name": "GOVERNMENT EQUITY",
+    "category": "CAPITAL",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "30101",
+    "code": "30101020",
+    "name": "GOVERNMENT EQUITY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT PAID BY THE NG WHETHER IN CASH OR IN KIND AS APPROVED UNDER THE GC'S CHARTER FOR NON-STOCK CORPORATIONS.",
+    "category": "CAPITAL",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "30101",
+    "code": "30101030",
+    "name": "CONTRIBUTED CAPITAL",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE CAPITAL CONTRIBUTED BY THE GOVERNMENT TO THE ENTITY. IT INCLUDES SHARE CAPITAL AS WELL AS SHARE PREMIUM. ",
+    "category": "CAPITAL",
+    "isSubAccount": true
+  },
+  {
+    "code": "307",
+    "name": "RETAINED EARNINGS/(DEFICIT)",
+    "category": "CAPITAL"
+  },
+  {
+    "parentAccount": "307",
+    "code": "30701",
+    "name": "RETAINED EARNINGS/(DEFICIT)",
+    "category": "CAPITAL",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "30701",
+    "code": "30701010",
+    "name": "RETAINED EARNINGS/(DEFICIT)",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE CUMULATIVE RESULTS OF NORMAL AND CONTINUOUS OPERATIONS OF A GBE INCLUDING PRIOR PERIOD ADJUSTMENTS, EFFECT OF CHANGES IN ACCOUNTING POLICY AND OTHER CAPITAL ADJUSTMENTS.  THIS MAY ALSO INCLUDE FUNDS SET ASIDE FOR VARIOUS PURPOSES IN ACCORDANCE WITH EXISTING LAWS, RULES  & REGULATIONS. THIS ACCOUNT USED TO CLOSE THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "CAPITAL",
+    "isSubAccount": true
+  },
+  {
+    "code": "310",
+    "name": "CUMULATIVE CHANGES IN FAIR VALUE",
+    "category": "CAPITAL"
+  },
+  {
+    "parentAccount": "310",
+    "code": "31001",
+    "name": "CUMULATIVE CHANGES IN FAIR VALUE",
+    "category": "CAPITAL",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "31001",
+    "code": "31001010",
+    "name": "CUMULATIVE CHANGES IN FAIR VALUE OF INVESTMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE ACCUMULATED GAIN OR LOSS ON CHANGES IN FAIR VALUE OF INVESTMENTS. DEBIT/CREDIT THIS ACCOUNT UPON SALE OR DISPOSAL OF THE INVESTMENT.",
+    "category": "CAPITAL",
+    "isSubAccount": true
+  },
+  {
+    "code": "402",
+    "name": "SERVICE AND BUSINESS INCOME",
+    "category": "REVENUES/INCOME"
+  },
+  {
+    "parentAccount": "402",
+    "code": "40202",
+    "name": "BUSINESS INCOME",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202",
+    "code": "40202050",
+    "name": "RENT/LEASE INCOME",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE INCOME FROM USE OF GOVT. PROPERTY/FACILITIES, SUCH US RENT/LEASE OF FUNCTION ROOMS/BUILDINGS, FEES ON STORAGE ,WAREHOUSING, USE OF HEAVY EQUIPMENT OF OTHER GOVT. ENTITIES, RENTAL FEES OF DRILLING EQUIPMENT AND ACCESSORIES, LEASE LINES/CHANNELS, SAFE DEPOSIT BOX, BANK PREMISES & EQUIPMENT, REAL & OTHER PROPERTY ACQUIRED & THE LIKE. THIS ALSO INCLUDES INCOME FROM FINANCE LEASE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202",
+    "code": "40202200",
+    "name": "DIVIDEND INCOME",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE CASH DIVIDENDS EARNED &/OR ACTUALLY COLLECTED ON EQUITY SECURITIES HELD AS HELD FOR TRADING , DESIGNATED AT FAIR VALUE THROUGH SURPLUS/PROFIT OR DEFICIT/LOSS,AVAILABLE FOR SALE AND INVESTMENTS IN NON MARKETABLE EQUITY SECURITIES BY THE GOVT. CORPORATIONS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202200",
+    "code": "40202200A",
+    "name": "DIVIDEND INCOME SUBJECT TO CORPORATE TAX",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202200",
+    "code": "40202200B",
+    "name": "DIVIDEND INCOME NOT SUBJECT TO TAX",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202",
+    "code": "40202210",
+    "name": "INTEREST INCOME",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE INTEREST EARNED AND/OR ACTUALLY COLLECTED ON LOANS AND RECEIVABLES, INVESTMENTS AND BANK DEPOSITS/FINANCIAL ASSETS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202210",
+    "code": "40202210A",
+    "name": "INTEREST INCOME FROM SAVINGS ACCOUNT",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202210",
+    "code": "40202210B",
+    "name": "INTEREST INCOME ON LOANS (TAXABLE)",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202210",
+    "code": "40202210C",
+    "name": "INTEREST INCOME ON MONEY MARKET PLACEMENTS (STFT)",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202210",
+    "code": "40202210D",
+    "name": "INTEREST INCOME ON RECEIVABLES",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202",
+    "code": "40202220",
+    "name": "SHARE IN PROFIT/REVENUE OF JOINT VENTURE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE SHARE OF GOVERNMENT ENTITIES FROM THE PROFIT OF JOINT VENTURE OPERATIONS UNDER THE EQUITY METHOD OF ACCOUNTING OR SHARE IN THE REVENUE OF JOINT VENTURE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202",
+    "code": "40202280",
+    "name": "SHARE IN THE PROFIT/REVENUE OF ASSOCIATES/AFFILIATES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE SHARE IN THE PROFIT OF AN ASSOCIATE/AFFILIATE UNDER THE EQUITY METHOD OF ACCOUNTING. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40202",
+    "code": "40202340",
+    "name": "MANAGEMENT FEES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE MANAGEMENT FEES RECEIVED/IMPOSED BY THE GOVT. CORPORATIONS  FOR THE IMPLEMENTATION OF PROJECTS OF OTHER ENTITIES & OTHER MANAGEMENT SERVICE FEES. THIS IS ALSO USED BY PHILIPPINES RETIREMENT AUTHORITY TO RECOGNIZE THE AMOUNT ACCRUED FROM PHILIPPINE RETIREMENT AUTHORITY'S ACCREDITED BANKS EQUIVALENT TO THE AUTHORIZED PERCENTAGE PER ANNUM OF THE OUTSTANDING DAILY BALANCE OF THE RETIREE'S ACCOUNT DEPOSITED OR MAINTAINED IN THE ACCREDITED BANKS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "code": "405",
+    "name": "GAINS",
+    "category": "REVENUES/INCOME"
+  },
+  {
+    "parentAccount": "405",
+    "code": "40501",
+    "name": "GAINS",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40501",
+    "code": "40501010",
+    "name": "GAIN ON FOREIGN EXCHANGE (FOREX)",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE GAIN IN THE REVALUATION OF FOREIGN DENOMINATED ASSETS AND LIABILITIES INCLUDING ACTUAL GAIN INCURRED IN THE CONVERSION OF THE FOREIGN CURRENCY TO THE LOCAL CURRENCY AT BALANCE SHEET DATE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40501",
+    "code": "40501020",
+    "name": "GAIN ON SALE/REDEMPTION/TRANSFER OF INVESTMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE REALIZED GAINS ON SALE/REDEMPTION/TRANSFER OF INVESTMENTS SUCH AS FINANCIAL ASSETS HELD FOR TRADING,FINANCIAL ASSETS DESIGNATED AT FAIR VALUE THROUGH SURPLUS/PROFIT OR DEFICIT/LOSS AND NON TRADING FINANCIAL ASSETS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40501",
+    "code": "40501030",
+    "name": "GAIN ON SALE OF INVESTMENT PROPERTY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE GAINS ON SALE OF CAPITAL ASSETS HELD TO EARN RENTALS AND/OR HELD FOR CAPITAL APPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40501",
+    "code": "40501040",
+    "name": "GAIN ON SALE OF PROPERTY, PLANT AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE GAINS ON SALE OF GOVERNMENT PPE'S INCLUDING BANK PREMISES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40501",
+    "code": "40501050",
+    "name": "UNREALIZED GAIN- OCI",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40501",
+    "code": "40501160",
+    "name": "GAIN FROM CHANGES IN FAIR VALUE OF INVESTMENT PROPERTY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE GAIN FROM CHANGES IN FAIR VALUE OF INVESTMENT PROPERTY. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/ INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "code": "406",
+    "name": "OTHER NON-OPERATING INOME",
+    "category": "REVENUES/INCOME"
+  },
+  {
+    "parentAccount": "406",
+    "code": "40603",
+    "name": "MISCELLANEOUS INCOME",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "40603",
+    "code": "40603990",
+    "name": "MISCELLANEOUS INCOME",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE INCOME EARNED WHICH IS NOT CLASSIFIED UNDER THE SPECIFIC INCOME ACCOUNTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "REVENUES/INCOME",
+    "isSubAccount": true
+  },
+  {
+    "code": "501",
+    "name": "PERSONNEL SERVICES",
+    "category": "EXPENSES"
+  },
+  {
+    "parentAccount": "501",
+    "code": "50101",
+    "name": "SALARIES AND WAGES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50101",
+    "code": "50101010",
+    "name": "SALARIES AND WAGES-REGULAR",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PAY PROPER FOR SERVICES RENDERED OF GOVERNMENT EMPLOYEES OCCUPYING REGULAR PLANTILLA POSITIONS.  THIS ACCOUNT SHALL BE CLOSED TO REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50101",
+    "code": "50101020",
+    "name": "SALARIES AND WAGES-CASUAL/CONTRACTUAL",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PAY PROPER FOR SERVICES RENDERED BY EMPLOYEES CONTRACTED/HIRED TO PERFORM REGULAR ENTITY FUNCTIONS AND SPECIFIC VITAL ACTIVITIES OR SERVICES WHICH CANNOT BE PROVIDED  BY THE REGULAR  OR PERMANENT STAFF OF THE ENTITY. THEY ARE CONSIDERED EMPLOYEES OF THE HIRING ENTITY LIMITED TO THE YEAR WHEN THEIR SERVICES ARE REASONABLY REQUIRED . THIS INCLUDES PAYMENT FOR SERVICES RENDERED BY SUBSTITUTE & PART TIME TEACHERS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "501",
+    "code": "50102",
+    "name": "OTHER COMPENSATION",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102010",
+    "name": "PERSONNEL ECONOMIC RELIEF ALLOWANCE (PERA)",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE ALLOWANCE GRANTED TO GOVT. PERSONNEL OCCUPYING REGULAR, CONTRACTUAL OR CASUAL POSITIONS; APPOINTIVE OR ELECTIVE; RENDERING SERVICES ON FULL TIME OR PART TIME BASIS; & WHOSE POSITIONS ARE COVERED BY REPUBLIC ACT NO. 6758, AS AMENDED. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102020",
+    "name": "REPRESENTATION ALLOWANCE (RA)",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE MONTHLY REPRESENTATION ALLOWANCE GRANTED TO AUTHORIZED OFFICIALS AND EMPLOYEES IN THE ACTUAL PERFORMANCE OF THEIR RESPECTIVE FUNCTIONS, BOTH COMMUTABLE AND REIMBURSABLE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102030",
+    "name": "TRANSPORTATION ALLOWANCE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE MONTHLY TRANSPORTATION ALLOWANCE GRANTED TO AUTHORIZED OFFICIALS AND EMPLOYEES IN THE ACTUAL PERFORMANCE OF THEIR RESPECTIVE FUNCTIONS, BOTH COMMUTABLE AND REIMBURSABLE.  THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102040",
+    "name": "CLOTHING/UNIFORM ALLOWANCE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE FIXED AMOUNT GRANTED TO AUTHORIZED GOVT. OFFICIALS, EMPLOYEES FOR THE UPKEEP/REPLACEMENT OF CLOTHING/UNIFORM PAID IN CASH OR IN KIND. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102050",
+    "name": "SUBSISTENCE ALLOWANCE",
+    "description": " THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT GRANTED TO AUTHORIZED GOVT. OFFICIALS/EMPLOYEES TO COVER COST OF ACCOMMODATIONS, MEALS, AND INCIDENTAL EXPENSES INCURRED BY EMPLOYEES WHO ARE ON OFFICIALS BUSINESS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102060",
+    "name": "LAUNDRY ALLOWANCE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT GRANTED TO AUTHORIZE GOVT. OFFICIALS/EMPLOYEES TO COVER THE COST OF LAUNDRY OF UNIFORM OF EMPLOYEES WHO ARE ON OFFICIALS BUSINESS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102070",
+    "name": "QUARTERS ALLOWANCE",
+    "description": "THIS ACCOUNT IS USE TO RECOGNIZE THE AMOUNT GRANTED TO AUTHORIZE GOVT.OFFICIALS/EMPLOYEES TO COVER COST OF ACCOMMODATION OR SUITABLE & ADEQUATE LIVING QUARTERS INCURRED BY EMPLOYEES WHO ARE ON OFFICIALS BUSINESS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102080",
+    "name": "PRODUCTIVITY INCENTIVE ALLOWANCE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE FIXED AMOUNT GRANTED TO AUTHORIZED GOVT. OFFICIALS/EMPLOYEES FOR AT LEAST SATISFACTORY PERFORMANCE IN THE DISCHARGE OF THEIR OFFICIAL DUTIES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102090",
+    "name": "OVERSEAS ALLOWANCE",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE ALLOWANCES GRANTED TO AUTHORIZED GOVT. OFFICIALS/EMPLOYEES ON FOREIGN ASSIGNMENTS/MISSIONS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102100",
+    "name": "HONORARIA",
+    "description": "THIS ACCOUNT IS USE TO RECOGNIZE THE PAYMENT GIVEN TO PROFESSIONALS FOR SERVICES IN RECOGNITION OF THEIR EXPERTISE, BROAD & SUPERIOR KNOWLEDGE IN SPECIFIC FIELDS AND SPECIAL PROJECTS. THIS ALSO INCLUDE PAYMENTS TO LECTURERS, RESOURCE PERSONS, COORDINATORS & FACILITATORS IN SEMINARS, TRAINING PROGRAMS & OTHER SIMILAR  ACTIVITIES IN TRAINING INSTITUTIONS INCLUDING THOSE WHO RENDER SERVICES BEYOND THEIR REGULAR WORKLOAD . THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102110",
+    "name": "HAZARD PAY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PAYMENT TO GOVT. OFFICIALS/EMPLOYEES ASSIGNED IN DIFFICULT /DANGEROUS /STRIFE-TORN/EMBATTLED AREAS AS CERTIFIED BY APPROPRIATE GOVT. BODY TO THOSE WHOSE LIVES  DIRECTLY EXPOSED TO WORK CONDITIONS WHICH MAY CAUSE THEM INJURY,SICKNESS/DEATH/HARMFUL CHANGE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102120",
+    "name": "LONGEVITY PAY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE ADDITIONAL COMPENSATION TO GOVT. OFFICIALS & EMPLOYEES BASED ON YEARS OF SERVICE RENDERED TO THE GOVERNMENT. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102130",
+    "name": "OVERTIME AND NIGHT PAY",
+    "description": "TO RECOGNIZE THE EXTRA COMPENSATION PAID TO GOVT. EMPLOYEES WHO ARE AUTHORIZED TO WORK FOR MORE THAN THE NORMAL 40 HOURS IN WORKWEEK OR ON DAYS OF REST.THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102140",
+    "name": "YEAR END BONUS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT GRANTED ANNUALLY TO GOVT. OFFICIALS AND EMPLOYEES AS AUTHORIZE BY LAW. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102150",
+    "name": "CASH GIFT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT GRANTED ANNUALLY IN ADDITION TO THE YEAR-END BONUS TO GOVERNMENT OFFICIALS AND EMPLOYEES AS AUTHORIZED BY LAW. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT..",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50102",
+    "code": "50102990",
+    "name": "OTHER BONUSES AND ALLOWANCES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE OTHER AUTHORIZED BONUSES & ALLOWANCES GRANTED TO GOVERNMENT OFFICIALS /EMPLOYEES NOT FALLING UNDER ANY OF THE SPECIFIC OTHER COMPENSATION ACCOUNTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "501",
+    "code": "50103",
+    "name": "PERSONNEL BENEFIT CONTRIBUTIONS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50103",
+    "code": "50103010",
+    "name": "RETIREMENT AND LIFE INSURANCE PREMIUMS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE GOVERNMENTS SHARE IN PREMIUM CONTRIBUTIONS TO THE GOVT. SERVICE INSURANCE SYSTEM AND OTHER RETIREMENT AND LIFE BENEFIT SYSTEMS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE-SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50103",
+    "code": "50103020",
+    "name": "PAG-IBIG CONTRIBUTIONS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE GOVERNMENTS SHARE IN PREMIUM CONTRIBUTIONS TO THE HDMF .THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50103",
+    "code": "50103030",
+    "name": "PHILHEALTH CONTRIBUTIONS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE GOVERNMENTS SHARE IN PREMIUM CONTRIBUTIONS TO THE PHILIPPINE HEALTH INSURANCE CORPORATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50103",
+    "code": "50103040",
+    "name": "EMPLOYEES COMPENSATION INSURANCE PREMIUMS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE GOVERNMENTS SHARE IN PREMIUM CONTRIBUTIONS TO THE EMPLOYEES COMPENSATION COMMISSION (ECC). THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "501",
+    "code": "50104",
+    "name": "OTHER PERSONNEL BENEFITS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50104",
+    "code": "50104030",
+    "name": "TERMINAL LEAVE BENEFITS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE MONEY VALUE OF THE ACCUMULATED LEAVE CREDITS OF GOVERNMENT OFFICIALS AND EMPLOYEES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50104",
+    "code": "50104990",
+    "name": "OTHER PERSONNEL BENEFITS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT CONTRIBUTED BY THE GOVT. FOR THE EMPLOYEES BENEFITS NOT FALLING UNDER ANY OF THE SPECIFIC OTHER PERSONNEL ACCOUNTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "code": "502",
+    "name": "MAINTENANCE AND OTHER OPERATING EXPENSES",
+    "category": "EXPENSES"
+  },
+  {
+    "parentAccount": "502",
+    "code": "50201",
+    "name": "TRAVELING EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50201",
+    "code": "50201010",
+    "name": "TRAVELING EXPENSES-LOCAL",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED IN THE MOVEMENT/TRANSPORT OF GOVT. DIRECTORS, OFFICERS, & EMPLOYEES WITHIN THE COUNTRY . THIS INCLUDES TRANSPORTATION, TRAVEL PER DIEMS, FERRIAGE, AND ALL OTHER RELATED EXPENSES . THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50201",
+    "code": "50201020",
+    "name": "TRAVELING EXPENSES-FOREIGN",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COSTS INCURRED IN THE MOVEMENT/TRANSPORT OF GOVT. DIRECTORS, OFFICERS, & EMPLOYEES OUTSIDE THE COUNTRY .THIS INCLUDES TRANSPORTATION, TRAVEL PER DIEMS, PASSPORT AND VISA PROCESSING AND ALL OTHER RELATED EXPENSES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50202",
+    "name": "TRAINING AND SCHOLARSHIP EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50202",
+    "code": "50202010",
+    "name": "TRAINING EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED FOR THE PARTICIPATION/ATTENDANCE IN AND CONDUCT OF TRAINING'S, CONVENTIONS AND SEMINARS/WORKSHOPS. IT INCLUDES TRAINING FEES, HONORARIA OF LECTURERS, COST OF HANDOUTS, SUPPLIES, MATERIALS, MEALS,SNACKS & ALL OTHER TRAINING RELATED EXPENSES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50202",
+    "code": "50202020",
+    "name": "SCHOLARSHIP GRANTS/EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COSTS OF SCHOLARSHIPS GRANTED BY THE GOVERNMENT TO INDIVIDUALS IN THE PURSUIT OF FURTHER LEARNING, STUDY OR RESEARCH. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50203",
+    "name": "SUPPLIES AND MATERIALS EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50203",
+    "code": "50203010",
+    "name": "OFFICE SUPPLIES EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OR VALUE OF OFFICE SUCH AS BOND PAPER, INK , AND SMALL TANGIBLE ITEMS LIKE STAPLE WIRE REMOVER , PUNCHER , STAPLER & OTHER SIMILAR ITEMS ISSUED TO END-USERS FOR GOVT. OPERATIONS. THIS ALSO INCLUDES STATIONERIES & OTHER OFFICE SUPPLIES- USED BY THE BANKS OR ISSUED FROM THE STOCKROOM TO THE DIFFERENT DEPARTMENTS AND BRANCHES OF THE BANKS, EXCLUDING THOSE CHARGEABLE TO CUSTOMERS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50203",
+    "code": "50203020",
+    "name": "ACCOUNTABLE FORMS EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50203",
+    "code": "50203090",
+    "name": "FUEL , OIL & LUBRICANTS EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COSTS OF FUEL , OIL, LUBRICANTS, COALS AND THE LIKE ISSUED FOR USE OF GOVERNMENT VEHICLES, RUNNING POWER PLANTS AND OTHER EQUIPMENT IN CONNECTION WITH GOVERNMENT OPERATIONS/PROJECTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50203",
+    "code": "50203210",
+    "name": "SEMI-EXPENDABLE MACHINERY AND EQUIPMENT EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF SEMI-EXPENDABLE MACHINERY & EQUIPMENT USED IN OPERATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50203",
+    "code": "50203990",
+    "name": "OTHER SUPPLIES AND MATERIALS EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF INVENTORIES ISSUED TO END-USERS NOT OTHERWISE CLASSIFIED UNDER THE SPECIFIC INVENTORY EXPENSE ACCOUNTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50204",
+    "name": "UTILITY EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50204",
+    "code": "50204010",
+    "name": "WATER EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF WATER CONSUMED IN GOVT. OPERATIONS/PROJECTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50204",
+    "code": "50204020",
+    "name": "ELECTRICITY EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF ELECTRICITY CONSUMED IN GOVT. OPERATIONS/PROJECTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50205",
+    "name": "COMMUNICATION EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50205",
+    "code": "50205010",
+    "name": "POSTAGE AND COURIER SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF DELIVERY/TRANSMISSION OF OFFICIAL MESSAGES, MAILS, DOCUMENTS, RECORDS AND THE LIKE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50205",
+    "code": "50205020",
+    "name": "TELEPHONE EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF TRANSMITTING MESSAGES THROUGH TELEPHONE LINES ( MOBILE OR LANDLINES), FAXES, TELEX, AND THE LIKE WHETHER PREPAID OR POSTPAID. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50205",
+    "code": "50205030",
+    "name": "INTERNET SUBSCRIPTION EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF USING INTERNET SERVICES IN GOVT. OPERATIONS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50205",
+    "code": "50205040",
+    "name": "CABLE, SATELLITE, TELEGRAPH AND RADIO EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF USING CABLE/SATELLITE/TELEGRAPH/RADIO SERVICES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50210",
+    "name": "CONFIDENTIAL, INTELLIGENCE AND EXTRAORDINARY EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50210",
+    "code": "50210030",
+    "name": "EXTRAORDINARY AND MISCELLANEOUS EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT PAID FOR EXPENSES INCIDENTAL TO THE PERFORMANCE OF OFFICIAL FUNCTIONS, SUCH AS; MEETINGS AND CONFERENCES, PUBLIC RELATIONS, EDUCATIONAL , CULTURAL AND ATHLETIC ACTIVITIES, MEMBERSHIP FEES IN GOVT. ORGANIZATIONS, ETC. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50210030",
+    "code": "50210030A",
+    "name": "BOARD MEETING EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50210030",
+    "code": "50210030B",
+    "name": "MEETING/PLANNING & CONFERENCE",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50210030",
+    "code": "50210030C",
+    "name": "OTHER MISCELLANEOUS EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50210030",
+    "code": "50210030D",
+    "name": "DISCRETIONARY EXPENSE",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50211",
+    "name": "PROFESSIONAL SERVICES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50211",
+    "code": "50211010",
+    "name": "LEGAL SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST INCURRED FOR AUTHORIZED LEGAL SERVICES RENDERED BY PRIVATE LAWYERS. THIS INCLUDES SPECIAL COUNSEL ALLOWANCE GRANTED TO GOVT. LAWYERS DEPUTIZED TO REPRESENT THE GOVT. IN COURT AS SPECIAL COUNSEL. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50211",
+    "code": "50211020",
+    "name": "AUDITING SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF OPERATING EXPENSES PROVIDED BY THE AUDITIEES FOR AUDITING SERVICES RENDERED BY THE COMMISSION ON AUDIT. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/ INCOME AND EXPENSES SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50211",
+    "code": "50211030",
+    "name": "CONSULTANCY SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF SERVICES RENDERED BY CONSULTANTS CONTRACTED TO PERFORM PARTICULAR OUTPUTS OR SERVICES PRIMARILY ADVISORY IN NATURE AND REQUIRING HIGHLY SPECIALIZED OR TECHNICAL EXPERTISE WHICH CANNOT BE PROVIDED BY THE REGULAR STAFF OF THE ENTITY. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50211",
+    "code": "50211990",
+    "name": "OTHER PROFESSIONAL SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF OTHER PROFESSIONAL SERVICES CONTRACTED BY THE ENTITY NOT OTHERWISE CLASSIFIED UNDER ANY OF THE SPECIFIC PROFESSIONAL SERVICES ACCOUNTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50212",
+    "name": "GENERAL SERVICES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50212",
+    "code": "50212010",
+    "name": "ENVIRONMENT/SANITARY SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF SERVICES CONTRACTED FOR THE UPKEEP AND SANITATION OF THE PUBLIC PLACES. THIS INCLUDES THE COST OF GARBAGE AND HOSPITAL WASTE COLLECTION AND DISPOSAL. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50212",
+    "code": "50212020",
+    "name": "JANITORIAL SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF JANITORIAL SERVICES CONTRACTED BY THE GOVT. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50212",
+    "code": "50212030",
+    "name": "SECURITY SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF SECURITY SERVICES CONTRACTED BY THE GOVT. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50212",
+    "code": "50212990",
+    "name": "OTHER GENERAL SERVICES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF OTHER GENERAL SERVICES CONTRACTED BY THE ENTITY NOT OTHERWISE CLASSIFIED UNDER ANY OF THE SPECIFIC GENERAL SERVICES ACCOUNTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50212990",
+    "code": "50212990A",
+    "name": "MESSENGERIAL SERVICES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50212990",
+    "code": "50212990B",
+    "name": "MISCELLANEOUS OTHER SERVICES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50213",
+    "name": "REPAIRS AND MAINTENANCE",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213",
+    "code": "50213010",
+    "name": "REPAIRS AND MAINTENANCE - INVESTMENT PROPERTY",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213",
+    "code": "50213040",
+    "name": "REPAIRS AND MAINTENANCE-BUILDINGS AND OTHER STRUCTURES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF REPAIRS & MAINTENANCE ON OFFICE BUILDINGS; SCHOOL BLDGS, HOSPITALS, & HEALTH CENTERS; MARKETS;SLAUGHTERHOUSE;HOSTELS & DORMITORIES;WATER PLANT, STRUCTURES & IMPROVEMENTS & OTHER STRUCTURES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213",
+    "code": "50213050",
+    "name": "REPAIRS AND MAINTENANCE - MACHINERY AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF REPAIRS AND MAINTENANCE ON OFFICE EQUIPMENT; INFORMATION AND COMMUNICATION TECHNOLOGY (ICT) EQUIPMENT; AGRICULTURAL AND FORESTRY EQUIPMENT; MARINE AND FISHERY EQUIPMENT; AIRPORT EQUIPMENT ; COMMUNICATION EQUIPMENT; CONSTRUCTION AND HEAVY EQUIPMENT; DISASTER RESPONSE AND RESCUE EQUIPMENT; MILITARY , POLICE AND SECURITY EQUIPMENT; MEDICAL EQUIPMENT; PRINTING EQUIPMENT ; SPORTS EQUIPMENT; TECHNICAL AND SCIENTIFIC EQUIPMENT; GAMING EQUIPMENT AND OTHER MACHINERY AND EQUIPMENT. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213",
+    "code": "50213060",
+    "name": "REPAIRS AND MAINTENANCE-TRANSPORTATION EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST REPAIRS & MAINTENANCE ON MOTOR VEHICLES; TRAINS;AIRCRAFT'S;WATERCRAFT'S; & OTHER TRANSPORTATION EQUIPMENT. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213060",
+    "code": "50213060A",
+    "name": "R & M - MOTOR VEHICLES - REPAIR AND SERVICE",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213060",
+    "code": "50213060B",
+    "name": "R & M - MOTOR VEHICLES - SPARE PARTS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213060",
+    "code": "50213060C",
+    "name": "R & M - MOTOR VEHICLES - GASOLINE AND OIL",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213",
+    "code": "50213070",
+    "name": "REPAIRS AND MAINTENANCE-FURNITURE AND FIXTURES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF REPAIRS & MAINTENANCE ON FURNITURE & FIXTURES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50213",
+    "code": "50213990",
+    "name": "REPAIRS AND MAINTENANCE-OTHER PROPERTY, PLANT AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF REPAIRS & MAINTENANCE OF OTHER PROPERTY, PLANT & EQUIPMENT NOT FALLING UNDER ANY OF THE SPECIFIC PROPERTY, PLANT & EQUIPMENT ACCOUNT. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50215",
+    "name": "TAXES, INSURANCE PREMIUMS AND OTHER FEES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215",
+    "code": "50215010",
+    "name": "TAXES, DUTIES AND LICENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF TAXES, DUTIES ,LICENSES, & OTHER FEES EXCEPT INCOME TAX DUE TO REGULATORY ENTITIES. THIS ALSO INCLUDES TAXES ON INTEREST INCOME ON SAVINGS DEPOSITS, TIME DEPOSITS, & GOVERNMENT SECURITIES OF THE BOND SINKING FUND/OTHER FUNDS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215010",
+    "code": "50215010A",
+    "name": "REAL ESTATE TAX",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215010",
+    "code": "50215010B",
+    "name": "MOTOR VEHICLE REGISTRATION",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215010",
+    "code": "50215010C",
+    "name": "MISCELLANEOUS TAXES AND LICENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215010",
+    "code": "50215010D",
+    "name": "FRINGE BENEFIT TAX",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215010",
+    "code": "50215010E",
+    "name": "TAX ON SAVINGS DEPOSITS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215010",
+    "code": "50215010F",
+    "name": "TAX ON MONEY MARKET PLACEMENTS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215",
+    "code": "50215020",
+    "name": "FIDELITY BOND PREMIUMS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF PREMIUMS PAID BY THE ENTITY FOR THE FIDELITY BONDS OF ACCOUNTABLE OFFICERS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215",
+    "code": "50215030",
+    "name": "INSURANCE EXPENSES",
+    "description": "TO RECOGNIZE THE AMOUNT OF PREMIUMS PAID BY  THE ENTITY FOR THE INSURABLE RISKS OF GOVERNMENT PROPERTY. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215030",
+    "code": "50215030A",
+    "name": "INSURANCE OF PROPERTIES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215030",
+    "code": "50215030B",
+    "name": "INSURANCE OF EMPLOYEE BENEFITS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50215",
+    "code": "50215040",
+    "name": "INCOME TAX EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF INCOME TAX PAYABLE FOR A PARTICULAR PERIOD, COMPUTED BASED ON TAXABLE INCOME MULTIPLIED BY APPLICABLE CORPORATE INCOME TAX RATE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "502",
+    "code": "50299",
+    "name": "OTHER MAINTENANCE AND OPERATING EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299010",
+    "name": "ADVERTISING, PROMOTIONAL AND MARKETING EXPENSES",
+    "description": "TO RECOGNIZE THE COSTS INCURRED FOR ADVERTISEMENT IN NEWSPAPERS, MAGAZINES, TELEVISIONS, RADIO  OTHER FORMS OF MEDIA.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299020",
+    "name": "PRINTING AND PUBLICATION EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COSTS OF PRINTING AND BINDING OF MANUSCRIPTS/DOCUMENTS, FORMS, MANUALS, BROCHURES, PAMPHLETS, AND THE LIKE . THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299030",
+    "name": "REPRESENTATION EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE EXPENSES INCURRED FOR OFFICIAL MEETINGS/CONFERENCES & OTHER OFFICIAL FUNCTIONS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299040",
+    "name": "TRANSPORTATION AND DELIVERY EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF TRANSPORTING GOODS/MERCHANDISE SOLD IN THE COURSE OF BUSINESS OPERATIONS. THIS INCLUDES THE COST OF MOVING ENTITY'S OWN PEOPLE & PROPERTY FROM ONE STATION TO ANOTHER. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME & EXPENSE SUMMARY ACCOUNT",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299050",
+    "name": "RENT/LEASE EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE RENTAL/LEASE OF LAND, BUILDINGS, FACILITIES, EQUIPMENT, VEHICLES, MACHINERIES, AND THE LIKE. THIS ALSO INCLUDES RENTAL OF LIVING QUARTERS FOR ENTITIES WITHOUT AVAILABLE QUARTERS TO HOUSE THEIR OFFICIALS ENTITLED TO THE SAME. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE /INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299050",
+    "code": "50299050A",
+    "name": "RENTALS - WAREHOUSE",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299050",
+    "code": "50299050B",
+    "name": "RENTALS - OTHERS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299060",
+    "name": "MEMBERSHIP DUES AND CONTRIBUTIONS TO ORGANIZATIONS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE MEMBERSHIP FEES /DUES/ CONTRIBUTIONS BY THE ENTITY AND /OR ITS OFFICIALS & EMPLOYEES TO RECOGNIZED/AUTHORIZED/ACCREDITED PROFESSIONAL ORGANIZATIONS AS AUTHORIZED IN ITS APPROVED ANNUAL BUDGET. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME  EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299070",
+    "name": "SUBSCRIPTION EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE COST OF SUBSCRIPTIONS TO NEWSPAPERS, LIBRARIES AND OTHER READING MATERIALS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299090",
+    "name": "LITIGATION/ACQUIRED ASSETS EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE EXPENSES INCURRED IN CONNECTION WITH LITIGATION PROCEEDINGS AND REGISTRATION/CONSOLIDATION OF OWNERSHIP OF ACQUIRED ASSETS, AS WELL AS THOSE INCURRED IN THEIR PRESERVATION /MAINTENANCE . THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSES SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299140",
+    "name": "DOCUMENTARY STAMPS EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE AMOUNT OF EXPENSES INCURRED FOR DOCUMENTARY STAMPS USED BY BANKS AND GOVERNMENT ENTITIES , EXCLUDING THOSE CHARGEABLE TO CUSTOMERS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299180",
+    "name": "MAJOR EVENTS AND CONVENTIONS EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE EXPENSES INCURRED RELATED TO THE HOLDING OF MAJOR ACTIVITIES &/OR EVENTS & CONVENTIONS NOT RELATED TO TRAININGS  BEING UNDERTAKEN BY GOVERNMENT CORPORATIONS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME  & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50299",
+    "code": "50299990",
+    "name": "OTHER MAINTENANCE & OPERATING EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE OTHER OPERATING EXPENSES NOT FALLING UNDER ANY OF THE SPECIFIC MAINTENANCE AND OTHER OPERATING EXPENSE ACCOUNTS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "code": "503",
+    "name": "FINANCIAL EXPENSES",
+    "category": "EXPENSES"
+  },
+  {
+    "parentAccount": "503",
+    "code": "50301",
+    "name": "FINANCIAL EXPENSES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50301",
+    "code": "50301020",
+    "name": "INTEREST EXPENSES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE INTEREST CHARGES PAID FOR THE USE OF BORROWED MONEY. THIS ALSO INCLUDES DISCOUNTS ON TREASURY BILLS AND TREASURY BONDS; PREMIUMS ON BOND INVESTMENTS; COUPON PAYMENTS/INTERESTS ON DOMESTIC AND FOREIGN BONDS ISSUED BY THE GOVERNMENT ENTITIES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50301",
+    "code": "50301030",
+    "name": "GUARANTEE FEES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE GUARANTEE FEE PAID BY A DEBTOR GOVERNMENT ENTITY TO THE GUARANTOR FOR THE ASSURANCE TO PAY THE ENTITY'S OBLIGATION TO THE CREDITOR AS STIPULATED IN THE GUARANTEE CLAUSE.THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50301",
+    "code": "50301040",
+    "name": "BANK CHARGES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE CHARGES IMPOSED BY THE BANK FOR VARIOUS SERVICES RENDERED EXCLUDING INTEREST CHARGES. THIS ALSO INCLUDES COST OF CHECKBOOKS, TELEGRAPHIC TRANSFERS & THE LIKE. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "code": "505",
+    "name": "NON-CASH EXPENSES",
+    "category": "EXPENSES"
+  },
+  {
+    "parentAccount": "505",
+    "code": "50501",
+    "name": "DEPRECIATION",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501010",
+    "name": "DEPRECIATION-INVESTMENT PROPERTY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR AND TEAR OF BUILDINGS/WAREHOUSES AND OTHER STRUCTURES HELD FOR RENT/LEASE OR HELD FOR CAPITAL APPRECIATION OR BOTH IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/ INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501020",
+    "name": "DEPRECIATION-LAND IMPROVEMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR AND TEAR OF AQUACULTURE STRUCTURES AND OTHER LAND IMPROVEMENTS CONSTRUCTED/ACQUIRED/DEVELOPED FOR PUBLIC USE IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501040",
+    "name": "DEPRECIATION-BUILDINGS AND OTHER STRUCTURES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR AND TEAR OF OFFICE BUILDINGS; SCHOOLS BUILDINGS; HOSPITALS AND HEALTH CENTERS; MARKETS; SLAUGHTERHOUSES; HOSTELS AND DORMITORIES ; WATER PLANT STRUCTURES AND IMPROVEMENTS AND OTHER STRUCTURES IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501050",
+    "name": "DEPRECIATION-MACHINERY AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR & TEAR OF OFFICE EQUIPMENT; ICT EQUIPMENT; AGRICULTURAL & FORESTRY EQUIPMENT; MARINE AND FISHERY EQUIPMENT; AIRPORT EQUIPMENT; COMMUNICATION EQUIPMENT; CONSTRUCTION AND HEAVY EQUIPMENT ; DISASTER RESPONSE & RESCUE EQUIPMENT; MILITARY; POLICE & SECURITY EQUIPMENT; MEDICAL EQUIPMENT ;PRINTING EQUIPMENT ;SPORTS EQUIPMENT, TECHNICAL & SCIENTIFIC EQUIPMENT; GAMING EQUIPMENT AND OTHER MACHINERY & EQUIPMENT IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501060",
+    "name": "DEPRECIATION-TRANSPORTATION EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR AND TEAR OF MOTOR VEHICLES;TRAINS;AIRCRAFTS;WATERCRAFTS; & OTHER TRANSPORTATION EQUIPMENT IN  ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501070",
+    "name": "DEPRECIATION-FURNITURES, FIXTURES AND BOOKS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR & TEAR OF FURNITURE & FIXTURES,AND BOOKS IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501090",
+    "name": "DEPRECIATION-LEASED ASSETS IMPROVEMENTS",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR AND TEAR OF HISTORICAL BUILDINGS, WORKS OF ARTS AND ARCEHOLOGICAL SPECIMENS AND OTHER HERITAGE ASSETS IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50501",
+    "code": "50501990",
+    "name": "DEPRECIATION-OTHER PROPERTY, PLANT AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE PERIODIC ALLOCATION OF COST FOR THE WEAR AND TEAR OF OTHER PROPERTY, PLANT AND EQUIPMENT NOT FALLING UNDER ANY OF THE SPECIFIC PROPERTY, PLANT AND EQUIPMENT ACCOUNT IN ACCORDANCE WITH THE PRESCRIBED POLICY ON DEPRECIATION. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "505",
+    "code": "50503",
+    "name": "IMPAIRMENT LOSS",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50503",
+    "code": "50503020",
+    "name": "IMPAIRMENT LOSS-LOANS AND RECEIVABLES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE LOSS INCURRED DUE TO IMPAIRMENT OF LOANS & RECEIVABLES & OTHER FINANCIAL ASSETS WHERE AMORTIZED COST IS GREATER THAN THE VALUE OF ESTIMATED FUTURE CASH FLOWS DISCOUNTED AT ORIGINAL EFFECTIVE INTEREST RATE. THIS INCLUDES LOANS, ADVANCES, AND OTHER ACCOUNTS WHICH MANAGEMENT HAS FINALLY DETERMINED TO BE WORTHLESS/UNCOLLECTIBLE & WRITTEN -OFF FROM THE BOOKS IN ACCORDANCE WITH GENERALLY ACCEPTED PROCEDURES & EXISTING RULES & REGULATIONS. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50503",
+    "code": "50503060",
+    "name": "IMPAIRMENT LOSS-OTHER RECEIVABLES",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50503",
+    "code": "50503150",
+    "name": "IMPAIRMENT LOSS-INVESTMENTS IN SUBSIDIARIES",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE LOSS INCURRED IN WRITING DOWN INVESTMENTS SUBSIDIARIES BELOW COST TO FAIR VALUE LESS COSTS TO SELL. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "505",
+    "code": "50504",
+    "name": "LOSS ON FOREIGN EXCHANGE (FOREX)",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50504",
+    "code": "50504010",
+    "name": "LOSS ON FOREIGN EXCHANGE (FOREX)",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE LOSSES ARISING FROM REVALUATION OF ASSETS & LIABILITIES DENOMINATED IN FOREIGN CURRENCIES. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME & EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50504",
+    "code": "50504030",
+    "name": "LOSS ON SALE OF PROPERTY, PLANT AND EQUIPMENT",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE AMOUNT OF LOSS ON SALE OF INVESTMENT PROPERTY. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  },
+  {
+    "parentAccount": "50504",
+    "code": "50504180",
+    "name": "LOSS FROM CHANGES IN FAIR VALUE OF INVESTMENT PROPERTY",
+    "description": "THIS ACCOUNT IS USED TO RECOGNIZE THE LOSS FROM CHANGES IN FAIR VALUE OF INVESTMENT PROPERTY. THIS ACCOUNT SHALL BE CLOSED TO THE REVENUE/INCOME AND EXPENSE SUMMARY ACCOUNT.",
+    "category": "EXPENSES",
+    "isSubAccount": true
+  }
+]

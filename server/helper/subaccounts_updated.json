@@ -1,0 +1,8717 @@
+[
+  {
+    "parent": 10101010,
+    "slCode": 377,
+    "name": "MERCADO, JOSEPHINE B.",
+    "associatedAccounts": [
+      "10101010",
+      "10101020",
+      "10102020",
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "19999990A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": 10101010,
+    "slCode": 457,
+    "name": "JULIAN, PERA LIZA",
+    "associatedAccounts": [
+      "10101010",
+      "19901040A"
+    ]
+  },
+  {
+    "parent": 10101010,
+    "slCode": 8941,
+    "name": "CASH IN BANK - LBP COMBO",
+    "associatedAccounts": [
+      "10101010",
+      "10102020",
+      "10103030",
+      "10105020",
+      "10210111B",
+      "10301050A",
+      "19999990A",
+      "19999990B",
+      "20201130",
+      "30701010",
+      "40202210A",
+      "40202210C",
+      "40501010",
+      "50215010C",
+      "50215010E",
+      "50215010F",
+      "50301040",
+      "50504010"
+    ]
+  },
+  {
+    "parent": 10101010,
+    "slCode": 9247,
+    "name": "16/35 MM PRODUCTION SUPPLY",
+    "associatedAccounts": [
+      "10101010"
+    ]
+  },
+  {
+    "parent": 10101010,
+    "slCode": 9410,
+    "name": "PERA LIZA P. JULIAN",
+    "associatedAccounts": [
+      "10101010",
+      "10101020",
+      "19901040A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": 10101010,
+    "slCode": 9488,
+    "name": "LBP TORDESILLAS",
+    "associatedAccounts": [
+      "10101010",
+      "10102020",
+      "10301050A",
+      "19902060",
+      "40202210A",
+      "50215010E",
+      "50301040"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 406,
+    "name": "GUEVARA, SOL M.",
+    "associatedAccounts": [
+      "10101020",
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 409,
+    "name": "ROSEOS, ROWENA R.",
+    "associatedAccounts": [
+      "10101020",
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "19901040B",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 413,
+    "name": "BANAL, SARAH GRACE C.",
+    "associatedAccounts": [
+      "10101020",
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "19902990",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 420,
+    "name": "BUENAVENTURA, VELAYDA M.",
+    "associatedAccounts": [
+      "10101020",
+      "10301010E",
+      "10301990A",
+      "10301990C",
+      "10301990D",
+      "10301990E",
+      "19901040A",
+      "29999990A",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 557,
+    "name": "PEREZ, RUTH A.",
+    "associatedAccounts": [
+      "10101020",
+      "10301010E",
+      "19901040A",
+      "20401040A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 589,
+    "name": "ANN, CHERYL P.",
+    "associatedAccounts": [
+      "10101020",
+      "10301010E",
+      "19901040A",
+      "29999990A",
+      "50215010C"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 597,
+    "name": "JAVA, NIKKI MARIE M.",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A",
+      "29999990B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 604,
+    "name": "LAMORIN, MARIANNE S.",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A",
+      "29999990B",
+      "40603990"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9239,
+    "name": " YNA FIDES ISABEL S. PEREA",
+    "associatedAccounts": [
+      "10101020",
+      "10301010E",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9273,
+    "name": " MARJORIE JANE L. LODO",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9296,
+    "name": " SARAH GRACE B. MACAILING",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9403,
+    "name": " VELAYDA M. BUENAVENTURA",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9470,
+    "name": " MARKLEY GIL A. VILLARIN",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9497,
+    "name": " JOYCE ANN S. AZURIN",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9503,
+    "name": " ALEWIJN AIDAN K. ONG",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A",
+      "29999990B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9516,
+    "name": " KATES JASTIN E. AGUILAR",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9529,
+    "name": " LEOPOLDO JOHN F. ACOT",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": 10101020,
+    "slCode": 9566,
+    "name": " ALEXANDRIA Z. MENDOZA",
+    "associatedAccounts": [
+      "10101020",
+      "19901040A"
+    ]
+  },
+  {
+    "parent": 10102020,
+    "slCode": 5203,
+    "name": " LAND BANK OF THE PHILIPPINES",
+    "associatedAccounts": [
+      "10102020",
+      "10105020",
+      "10301050A",
+      "19999990A",
+      "19999990B",
+      "20201020",
+      "30701010",
+      "40202210A",
+      "40202210C",
+      "40501010",
+      "50215010E",
+      "50215010F",
+      "50301040",
+      "50504010"
+    ]
+  },
+  {
+    "parent": 10102020,
+    "slCode": 8942,
+    "name": " CASH IN BANK - NDC \"AA\" BONDS",
+    "associatedAccounts": [
+      "10102020",
+      "10105020",
+      "10301050A",
+      "40202210A",
+      "50215010E",
+      "50301040"
+    ]
+  },
+  {
+    "parent": 10102020,
+    "slCode": 8943,
+    "name": " CASH IN BANK - DBP COMBO",
+    "associatedAccounts": [
+      "10102020",
+      "10105020",
+      "10301050A",
+      "40202210A",
+      "40202210C",
+      "40202210D",
+      "50215010E",
+      "50215010F",
+      "50301040"
+    ]
+  },
+  {
+    "parent": 10102020,
+    "slCode": 9194,
+    "name": " CASH IN BANK - UCPB C/A",
+    "associatedAccounts": [
+      "10102020",
+      "10105020",
+      "40202210A",
+      "40202210D",
+      "50215010E",
+      "50301040"
+    ]
+  },
+  {
+    "parent": 10102020,
+    "slCode": 9378,
+    "name": " START-UP VENTURE FUND",
+    "associatedAccounts": [
+      "10102020",
+      "10105020",
+      "10301050A",
+      "10301050B",
+      "10301050C",
+      "19999990A",
+      "29999990A",
+      "40202210A",
+      "40202210C",
+      "50210030B",
+      "50210030C",
+      "50215010E",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10103030,
+    "slCode": 8944,
+    "name": " CASH IN BANK - LBP SAVINGS  DOLLAR",
+    "associatedAccounts": [
+      "10103030",
+      "10105030",
+      "10301050A",
+      "40202210A",
+      "40501010",
+      "50215010E",
+      "50301040",
+      "50504010"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 234,
+    "name": "PROVIDENT FUND",
+    "associatedAccounts": [
+      "10105020",
+      "10301050A",
+      "40202210C",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 5117,
+    "name": " DEVELOPMENT BANK OF THE PHILIPPINES",
+    "associatedAccounts": [
+      "10105020",
+      "10105030",
+      "40202210A",
+      "40202210C",
+      "40501010",
+      "50215010E",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 5657,
+    "name": " CAR FUND",
+    "associatedAccounts": [
+      "10105020",
+      "10301050A",
+      "19999990A",
+      "19999990B",
+      "40202210C",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 5664,
+    "name": " HOUSING FUND",
+    "associatedAccounts": [
+      "10105020",
+      "10301050A",
+      "19999990A",
+      "19999990B",
+      "40202210C",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 8902,
+    "name": " LONG TERM INVESTMENT A",
+    "associatedAccounts": [
+      "10105020",
+      "10210111B",
+      "10301010C",
+      "10301050A",
+      "40202210C",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 8903,
+    "name": " LONG TERM INVESTMENT B",
+    "associatedAccounts": [
+      "10105020",
+      "10210111B",
+      "10301050A",
+      "40202210A",
+      "40202210C",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 8904,
+    "name": " LONG TERM INVESMENT C",
+    "associatedAccounts": [
+      "10105020",
+      "10210111B",
+      "10301050A",
+      "40202210C",
+      "50215010F"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 8991,
+    "name": " LBP - PERFORMANCE BOND",
+    "associatedAccounts": [
+      "10105020",
+      "10210111B",
+      "10301050A"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 9592,
+    "name": " LBP FUNDS",
+    "associatedAccounts": [
+      "10105020",
+      "10210111B",
+      "10301050A"
+    ]
+  },
+  {
+    "parent": 10105020,
+    "slCode": 9712,
+    "name": " PHIL. IHUB - MESH",
+    "associatedAccounts": [
+      "10105020",
+      "20401010A"
+    ]
+  },
+  {
+    "parent": 10105030,
+    "slCode": 5446,
+    "name": " LBP - DOLLAR TIME DEPOSIT",
+    "associatedAccounts": [
+      "10105030",
+      "10301050A",
+      "30701010",
+      "40202210C",
+      "40501010",
+      "50215010F",
+      "50504010"
+    ]
+  },
+  {
+    "parent": 10105030,
+    "slCode": 9557,
+    "name": " LBP - DOLLAR BOND",
+    "associatedAccounts": [
+      "10105030",
+      "40501010",
+      "50504010"
+    ]
+  },
+  {
+    "parent": 10105030,
+    "slCode": 9657,
+    "name": " DBP DOLLAR TIME DEPOSIT",
+    "associatedAccounts": [
+      "10105030",
+      "10301050A",
+      "40501010",
+      "50504010"
+    ]
+  },
+  {
+    "parent": "10206010A",
+    "slCode": 5138,
+    "name": "FIRST CENTENNIAL CLARK CORPORATION",
+    "associatedAccounts": [
+      "10206010A",
+      "10206010B",
+      "10206011",
+      "10206012",
+      "10210010",
+      "10301011C",
+      "10301070A",
+      "10301070B",
+      "10301070C",
+      "10301071A",
+      "10301071B",
+      "10303060A",
+      "10303060B",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10206010A",
+    "slCode": 5179,
+    "name": "INTERBANK VENTURE CAPITAL CORPORATION",
+    "associatedAccounts": [
+      "10206010A",
+      "10206011",
+      "10206013",
+      "10210111C",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10206010A",
+    "slCode": 5288,
+    "name": "NATIONAL STEEL CORPORATION",
+    "associatedAccounts": [
+      "10206010A",
+      "10206010B",
+      "10206011",
+      "10206014",
+      "10210111A",
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10206010A",
+    "slCode": 5323,
+    "name": "PHILBANCOR VENTURE CAPITAL CORPORATION",
+    "associatedAccounts": [
+      "10206010A",
+      "10210111C"
+    ]
+  },
+  {
+    "parent": "10206010A",
+    "slCode": 5333,
+    "name": "PHILIPPINE DOCKYARD CORPORATION",
+    "associatedAccounts": [
+      "10206010A",
+      "10206011",
+      "10206013",
+      "10210111C",
+      "10301011C",
+      "10301070A",
+      "10301070B",
+      "10301070C",
+      "10301071A",
+      "10301071B",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10206010A",
+    "slCode": 5461,
+    "name": "VETERANS VENTURE CAPITAL CORPORATION",
+    "associatedAccounts": [
+      "10206010A",
+      "10206011",
+      "10206013",
+      "10210111C"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5045,
+    "name": "BATANGAS LAND COMPANY, INC",
+    "associatedAccounts": [
+      "10206010B",
+      "10210010",
+      "10301010B",
+      "10301010C",
+      "10301010E",
+      "10301011A",
+      "40202200B",
+      "40202340"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5161,
+    "name": "G.Y. REAL ESTATE, INC.",
+    "associatedAccounts": [
+      "10206010B",
+      "10210010",
+      "10301010C",
+      "10301010D",
+      "10301010E",
+      "10301011A",
+      "10301050B",
+      "10301070A",
+      "40202200B",
+      "40202210B",
+      "40202340"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5193,
+    "name": "KAMAYAN REALTY CORPORATION",
+    "associatedAccounts": [
+      "10206010B",
+      "10210010",
+      "10301010C",
+      "10301010E",
+      "10301011A",
+      "30701010",
+      "40202200B",
+      "40202340"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5215,
+    "name": "LUZON STEVEDORING CORPORATION",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206012",
+      "10210010",
+      "10301011C",
+      "10301070A",
+      "10301070B",
+      "10301070C",
+      "10301071A",
+      "10301071B",
+      "10303060A",
+      "10303060B",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5228,
+    "name": "MANILA GAS CORPORATION",
+    "associatedAccounts": [
+      "10206010B",
+      "10210010",
+      "10301010B",
+      "10301010E",
+      "20502010",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5249,
+    "name": "MENZI DEVELOPMENT CORPORATION",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206014",
+      "10210111A"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5250,
+    "name": "METRO HOSPITAL WASTE CONVERSION",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206013",
+      "10210111C",
+      "10301011C",
+      "10301050B",
+      "10301070A",
+      "10301070B",
+      "10301071A",
+      "10301071B",
+      "10301990D"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5315,
+    "name": "PAPER INDUSTRIES CORP. OF THE PHILS.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206014",
+      "10210111A"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5357,
+    "name": "PHIL. INTERNATIONAL TRADING CORPORATION",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10210010",
+      "10301010B",
+      "10301010E",
+      "10301011A",
+      "19999990C",
+      "20401040B",
+      "29999990A",
+      "30701010",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5363,
+    "name": "PINAGKAISA REALTY CORPORATION",
+    "associatedAccounts": [
+      "10206010B",
+      "10210010",
+      "10301010B",
+      "10301010C",
+      "10301010E",
+      "40202050",
+      "40202200B",
+      "40202340"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5370,
+    "name": "PITC PHARMA, INC.(formerly PRODUCERS VCC",
+    "associatedAccounts": [
+      "10206010B",
+      "10206010C",
+      "10206013",
+      "10210010",
+      "10210111C",
+      "10301010E",
+      "10301011A",
+      "10301011C",
+      "10301070A",
+      "10301070B",
+      "10301071A",
+      "10301071B",
+      "30701010",
+      "50503020",
+      "50503060"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5386,
+    "name": "REFRACTORIES CORPORATION OF THE PHILS.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206010C",
+      "10206013",
+      "10210010",
+      "10210111C",
+      "10301050B",
+      "10301070A",
+      "10301070B",
+      "10301071A",
+      "10301071B",
+      "10301990D"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5389,
+    "name": "RESORT HOTELS",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206014",
+      "10210111A"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5452,
+    "name": "TRIAD ASIA, LTD.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206013",
+      "10210111C"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5456,
+    "name": "UP-NDC BASILAN PLANTATIONS, INC.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206010C",
+      "10206011",
+      "10206013",
+      "10210010",
+      "10210111C"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5628,
+    "name": "SCIENCE PARK OF THE PHIL., INC",
+    "associatedAccounts": [
+      "10206010B",
+      "10210111A",
+      "40202200B"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5632,
+    "name": "FIRST CAVITE INDUSTRIAL ESTATE",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206012",
+      "10210010",
+      "10301010B",
+      "10301010E",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5732,
+    "name": "PHIL. INFRASTRACTURE CORP.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206012",
+      "10210010",
+      "10301010E",
+      "10301011D"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5733,
+    "name": "ALABANG-STO. TOMAS DEVT. INC.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206010C",
+      "10210010",
+      "10210111C",
+      "10301010E",
+      "30701010",
+      "40202200B",
+      "40202280"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5735,
+    "name": "FIRST INT'L. DOCUMENT MASTERS, INC.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206011",
+      "10206013",
+      "10210111C",
+      "10301011C",
+      "10301050B",
+      "10301070A",
+      "10301070B",
+      "10301071A",
+      "10301071B",
+      "10301990D"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5737,
+    "name": "PHILIPPINE MINING DEVELOPMENT CORP.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206010C",
+      "10210010",
+      "10210111C",
+      "10301010B",
+      "10301050B",
+      "10301070A",
+      "10301070B",
+      "30701010",
+      "40202210B",
+      "40202210D",
+      "40202280"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 5741,
+    "name": "SAN CARLOS BIO-ENERGY, INC.",
+    "associatedAccounts": [
+      "10206010B",
+      "10206010C",
+      "10206013",
+      "10210010",
+      "10210111C",
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10206010B",
+    "slCode": 8701,
+    "name": "MW RIZAL HYDROPOWER PROJECT",
+    "associatedAccounts": [
+      "10206010B",
+      "10210111C",
+      "10301010D",
+      "10698990",
+      "19902990",
+      "19999990A",
+      "19999990D",
+      "29999990A",
+      "40202210D",
+      "40202220"
+    ]
+  },
+  {
+    "parent": "10206010C",
+    "slCode": 5360,
+    "name": "PHIVIDEC INDUSTRIAL ESTATE",
+    "associatedAccounts": [
+      "10206010C",
+      "10206011",
+      "10206013",
+      "10210111C"
+    ]
+  },
+  {
+    "parent": "10206010C",
+    "slCode": 5465,
+    "name": "MANILA EXPOSITION COMPLEX, INC.",
+    "associatedAccounts": [
+      "10206010C",
+      "10210010",
+      "10210111C",
+      "10299010",
+      "30701010",
+      "40202200B",
+      "40202280"
+    ]
+  },
+  {
+    "parent": "10206010C",
+    "slCode": 5514,
+    "name": "LIDE MANAGEMENT CORPORATION",
+    "associatedAccounts": [
+      "10206010C",
+      "10210010",
+      "10210111C",
+      "10299010",
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "10301011D",
+      "10606010",
+      "10606011",
+      "29999990A",
+      "30701010",
+      "40202050",
+      "40202200B",
+      "40202210D",
+      "40202280"
+    ]
+  },
+  {
+    "parent": 10206011,
+    "slCode": 5375,
+    "name": "P.T. ASEAN ACEH FERTILIZER",
+    "associatedAccounts": [
+      "10206011",
+      "10206014",
+      "10210111A",
+      "10299010"
+    ]
+  },
+  {
+    "parent": 10206011,
+    "slCode": 5405,
+    "name": "SAN JOSE OIL COMPANY",
+    "associatedAccounts": [
+      "10206011",
+      "10210111C",
+      "10299010"
+    ]
+  },
+  {
+    "parent": 10206011,
+    "slCode": 5637,
+    "name": "LSCO - PDCP",
+    "associatedAccounts": [
+      "10206011",
+      "10206014",
+      "10210111A",
+      "10299010"
+    ]
+  },
+  {
+    "parent": 10206011,
+    "slCode": 5638,
+    "name": "LSCO - PLDT",
+    "associatedAccounts": [
+      "10206011",
+      "10206014",
+      "10210111A",
+      "10299010"
+    ]
+  },
+  {
+    "parent": 10206011,
+    "slCode": 5639,
+    "name": "LSCO - REPUBLIC PLANTERS BANK",
+    "associatedAccounts": [
+      "10206011",
+      "10206014",
+      "10210111A",
+      "10299010"
+    ]
+  },
+  {
+    "parent": "10210111A",
+    "slCode": 5021,
+    "name": "ASEAN-BINTULU FERTILIZER SDN. BHD.",
+    "associatedAccounts": [
+      "10210111A",
+      "10299010",
+      "10301010B",
+      "10301010E",
+      "40202200A"
+    ]
+  },
+  {
+    "parent": "10210111A",
+    "slCode": 5670,
+    "name": "ASEAN POTASH MINING, INC.",
+    "associatedAccounts": [
+      "10210111A",
+      "10299010",
+      "10301010E",
+      "10301011A",
+      "50301040"
+    ]
+  },
+  {
+    "parent": "10210111D",
+    "slCode": 5340,
+    "name": "PHILIPPINE LONG DISTANCE TELEPHONE CO.",
+    "associatedAccounts": [
+      "10210111D",
+      "10299990A",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10210111D",
+    "slCode": 5545,
+    "name": "MANILA GOLF COUNTRY CLUB",
+    "associatedAccounts": [
+      "10210111D",
+      "10299990A",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10210111D",
+    "slCode": 5683,
+    "name": "MAKATI SPORTS CLUB",
+    "associatedAccounts": [
+      "10210111D",
+      "10299990A",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10210111D",
+    "slCode": 8312,
+    "name": "PHIL.COLUMBIAN ASSOC.-NTFC",
+    "associatedAccounts": [
+      "10210111D",
+      "10299990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10210111D",
+    "slCode": 9604,
+    "name": "DAVAO THERMO BIOTECH CORPORATION",
+    "associatedAccounts": [
+      "10210111D"
+    ]
+  },
+  {
+    "parent": "10210111D",
+    "slCode": 9638,
+    "name": "MANILA HEALTHTEK INC.",
+    "associatedAccounts": [
+      "10210111D"
+    ]
+  },
+  {
+    "parent": "10210111D",
+    "slCode": 9722,
+    "name": "HUMBLE SUSTAINABILITY INC.",
+    "associatedAccounts": [
+      "10210111D"
+    ]
+  },
+  {
+    "parent": "10301010A",
+    "slCode": 5023,
+    "name": "ASIA INDUSTRIES, INC.",
+    "associatedAccounts": [
+      "10301010A",
+      "10303010A",
+      "10303010B"
+    ]
+  },
+  {
+    "parent": "10301010A",
+    "slCode": 5268,
+    "name": "MUN. TREASURER, DON CARLOS, BUKIDNON",
+    "associatedAccounts": [
+      "10301010A"
+    ]
+  },
+  {
+    "parent": "10301010A",
+    "slCode": 5300,
+    "name": "NEGROS OCCIDENTAL COPPERFIELD MINES,INC.",
+    "associatedAccounts": [
+      "10301010A",
+      "10303010A",
+      "10303010B"
+    ]
+  },
+  {
+    "parent": "10301010A",
+    "slCode": 5388,
+    "name": "REPUBLIC OF THE PHILIPPINES",
+    "associatedAccounts": [
+      "10301010A",
+      "10303010A",
+      "10303010B",
+      "30101030"
+    ]
+  },
+  {
+    "parent": "10301010A",
+    "slCode": 8887,
+    "name": "BNC CONSTRUCTION AND REPAIR SERVICES",
+    "associatedAccounts": [
+      "10301010A",
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "19999990C",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 429,
+    "name": "TIMBOL, AURORA",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "19999990C",
+      "29999990A",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5042,
+    "name": "PHILPHOS - WHARF",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5049,
+    "name": "BOARD OF INVESTMENT",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011D",
+      "19999990C",
+      "20401040B",
+      "20502010",
+      "29999990A",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5050,
+    "name": "BOARD OF LIQUIDATORS",
+    "associatedAccounts": [
+      "10301010B",
+      "10301011D",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5063,
+    "name": "CAYETANO LAW OFFICE",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011A",
+      "19999990C",
+      "20401010B",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5110,
+    "name": "DEL MONTE PHILIPPINES, INC",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "20502010",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5114,
+    "name": "DEPARTMENT OF TRADE & INDUSTRY",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011A",
+      "10301011D",
+      "19999990C",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5124,
+    "name": "BAYANTEL",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "10301011A",
+      "10301011D",
+      "19999990C",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5149,
+    "name": "GLOBE TELECOM",
+    "associatedAccounts": [
+      "10301010B",
+      "10301011D",
+      "20401040B",
+      "29999990A",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5176,
+    "name": "INNOVE COMMUNICATIONS",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "10301011A",
+      "19999990C",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5207,
+    "name": "LEPANTO MINING CORPORATION",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "10301011D",
+      "19999990C",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5322,
+    "name": "PETRON",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "20401010B",
+      "20401040B",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5353,
+    "name": "PHIL. ASSD. SMELTING & REFINING CORP.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "10301011A",
+      "10301011D",
+      "19999990C",
+      "20401010B",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5358,
+    "name": "PHIL. PHOSPHATE FERTILIZER CORPORATION",
+    "associatedAccounts": [
+      "10301010B"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5425,
+    "name": "SMART COMMUNICATIONS, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "10301011D",
+      "19999990C",
+      "20401040B",
+      "29999990A",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5431,
+    "name": "SWEET LINES INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301011D",
+      "20401040B",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5451,
+    "name": "TRITAN MARKETING & DEVELOPMENT CORP.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5701,
+    "name": "SANKO SYSTEMS SERVICES, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011A",
+      "19999990C",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5740,
+    "name": "PANAY RAILWAYS, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011A",
+      "10301011D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 5755,
+    "name": "SCORPIO CABLE VISION",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "19999990C",
+      "20401010A",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8146,
+    "name": "PACITA U. JUAN",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011A",
+      "10301011D",
+      "19999990C",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40603990",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8147,
+    "name": "PHILIPPINE COFFEE BOARD",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011D",
+      "20401040B",
+      "40202050",
+      "40603990",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8175,
+    "name": "ORANGE FUEL",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8229,
+    "name": "CLEANAWAY PHILIPPINES INC.(CLEANWAY TECH",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "19999990C",
+      "20401040B",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8343,
+    "name": "SANTEC PLANT CONTROLS, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "19999990C",
+      "20401010B",
+      "20401040B",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8351,
+    "name": "ROMEO B. NAGUIT",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "20401010B",
+      "20401040B",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8358,
+    "name": "HERITAGE CONSERVATION SOCIETY",
+    "associatedAccounts": [
+      "10301010B"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8384,
+    "name": "F.A.G. MACHINE SHOP & SERVICES CO.",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8462,
+    "name": "MUNICIPALITY OF ISABEL LEYTE",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "10301011D",
+      "19999990C",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8484,
+    "name": "RENATO V. DIAZ",
+    "associatedAccounts": [
+      "10301010B",
+      "10301011A",
+      "10301011D",
+      "20401040B",
+      "40202210D",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8530,
+    "name": "VAAL FELIX, V.",
+    "associatedAccounts": [
+      "10301010B",
+      "20401010A",
+      "20401040B",
+      "40202050",
+      "50212990B"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8538,
+    "name": "PEPOT DISENYO FURNITURE SHOP & TRADING",
+    "associatedAccounts": [
+      "10301010B",
+      "10301011D",
+      "19999990C",
+      "40202050",
+      "40202210D",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8551,
+    "name": "BOUGUEL'S EATERY",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011D",
+      "20401040B",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8568,
+    "name": "HK IMPERIAL AWARD MININGS(PHILS)INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8581,
+    "name": "GOVERNANCE COMMISSION FOR GOCC",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401010B",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8631,
+    "name": "EARTH LIFE STORE SUPPLY,INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "10301011D",
+      "19999990C",
+      "20401010B",
+      "20401040B",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40603990",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8643,
+    "name": "BANK OF THE PHILIPPINE ISLANDS (BPI)",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "19999990C",
+      "20401040B",
+      "20502010",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8677,
+    "name": "SAN MIGUEL YAMAMURA PACKAGING CORP.",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "20401040B",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8716,
+    "name": "CONTAINER BRIDGE PHILIPPINES, INC",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8740,
+    "name": "PAJ RESTAURANT GROUP CORPORATION",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "20401040B",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8741,
+    "name": "RP MAPALLA INC",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "20401010B",
+      "20401040B",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8788,
+    "name": "NEW UNITED PLUMBING",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8824,
+    "name": "DYNAMIC LADIES TOWARDS PROGRESS INC",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "19999990C",
+      "30701010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8825,
+    "name": "FASTFORWARD MR CORPORATION",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "19999990C",
+      "20401040B",
+      "20502010",
+      "40202050",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8830,
+    "name": "BLACK PEARL MEDIA INC",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401010A",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8846,
+    "name": "CHU, RAFAEL",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "20502010",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8849,
+    "name": "SOUTHERN CROSS DISTRIBUTION INC",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "20502010",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8850,
+    "name": "SAN MIGUEL MILLS INC",
+    "associatedAccounts": [
+      "10301010B",
+      "19999990C",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8851,
+    "name": "RAGS ENTERPRISES",
+    "associatedAccounts": [
+      "10301010B",
+      "20401010A",
+      "20401040B",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8957,
+    "name": "PRIOR PERIOD ADJUSTMENTS",
+    "associatedAccounts": [
+      "10301010B",
+      "30701010",
+      "50103010"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 8964,
+    "name": "FELMAR JUNIFER T. PICAR",
+    "associatedAccounts": [
+      "10301010B",
+      "10301011D",
+      "20401010B",
+      "20401040B",
+      "40202050",
+      "50503020"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9043,
+    "name": "ECHOSI FOUNDATION, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401040B",
+      "20502010",
+      "30701010",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9076,
+    "name": "VALLEY SOUTH MOTOR WORKS",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "20502010",
+      "29999990A",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9083,
+    "name": "MATIERE SAS",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "20502010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9095,
+    "name": "ISABEL ANCILLARY SERVICES CO LTD",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "20502010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9129,
+    "name": "GOBOCREATIVE INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401040B",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9279,
+    "name": "D.M. CONSUNJI INC",
+    "associatedAccounts": [
+      "10301010B",
+      "20401010B",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9346,
+    "name": "EAC.NET INTERNET SHOP",
+    "associatedAccounts": [
+      "10301010B",
+      "20401010B",
+      "20401040B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9347,
+    "name": "PASAR EMPLOYEES MULTI- PURPOSE COOPERATIVE",
+    "associatedAccounts": [
+      "10301010B",
+      "20401010B",
+      "20401040B",
+      "20502010",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9379,
+    "name": "ANG TUPA EQUIPMENT RENTAL",
+    "associatedAccounts": [
+      "10301010B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9404,
+    "name": "PHILIPPINE PHARMA PROCUREMENT, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9413,
+    "name": "CONCRETE RESTORATION AND REPAIR TECHNOLOGY, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "20401010A",
+      "20401040B",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9417,
+    "name": "PASAR 2",
+    "associatedAccounts": [
+      "10301010B",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9426,
+    "name": "GOODTHINKING RESEARCH, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401040B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9439,
+    "name": "R and I Enterprises",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010D",
+      "10301010E",
+      "19901040B",
+      "20401040B",
+      "20502010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9462,
+    "name": "ESGUERRA, MAPPALA AND ASSOCIATES, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9477,
+    "name": "MILLENIUM ERECTORS CORPORATION",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9490,
+    "name": "DESCORP INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401040B",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9491,
+    "name": "LE CAFE FILIPINA ENTERPRISES, INC. (LCFEI)",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401040B",
+      "30701010",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9507,
+    "name": "GARCIA QUIJANO & ASSOCIATES LAW OFFICE",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401040B",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9510,
+    "name": "GOBOCREATIVE 2",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9523,
+    "name": "URIT LTD. CORP.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "20401040B",
+      "40202050",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9555,
+    "name": "ALTA PRODUCTIONS GROUP, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "10301010E",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9560,
+    "name": "ISABEL ANCILLARY 2",
+    "associatedAccounts": [
+      "10301010B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9567,
+    "name": "TEAMO RESTO BAR",
+    "associatedAccounts": [
+      "10301010B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9627,
+    "name": "TBG SHARED SERVICES, INC.",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "20502010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9633,
+    "name": "ESGUERRA, MAPPALA AND ASSOCIATES, INC.,",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9658,
+    "name": "SUPC CONSTRUCTION CORPORATION",
+    "associatedAccounts": [
+      "10301010B",
+      "20401040B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9692,
+    "name": "DUMDUMA CONSTRUCTION & TRADING CORPORATION",
+    "associatedAccounts": [
+      "10301010B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010B",
+    "slCode": 9693,
+    "name": "HK IMPERIAL AWARDS MININGS (PHILS) INC._NEW",
+    "associatedAccounts": [
+      "10301010B",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 471,
+    "name": "SPOUSES RAFAEL & ESTRELLITA BALLESCAS",
+    "associatedAccounts": [
+      "10301010D",
+      "20501990",
+      "40202210D",
+      "40501040"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 5043,
+    "name": "PHILPHOS - LIDE",
+    "associatedAccounts": [
+      "10301010D",
+      "10301010E",
+      "10301011A",
+      "5053",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 5113,
+    "name": "DEPARTMENT OF AGRARIAN REFORM",
+    "associatedAccounts": [
+      "10301010D",
+      "10301011A",
+      "30701010",
+      "40501040"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 5424,
+    "name": "SPITFIRE-DETECTIVE",
+    "associatedAccounts": [
+      "10301010D"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 8090,
+    "name": "NEW SAN JOSE BUILDERS",
+    "associatedAccounts": [
+      "10301010D",
+      "10301010E",
+      "10301011A",
+      "30701010",
+      "40202050",
+      "40603990",
+      "50503020",
+      "50503060"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 8702,
+    "name": "LIDE INDUSTRIAL DEV'T ESTATE LEARNING",
+    "associatedAccounts": [
+      "10301010D",
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 8811,
+    "name": "DEARBC",
+    "associatedAccounts": [
+      "10301010D",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010D",
+    "slCode": 9082,
+    "name": "RIZAL HYDRO JV",
+    "associatedAccounts": [
+      "10301010D",
+      "40202220"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 64,
+    "name": "PARACALE, ELENITA",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 67,
+    "name": "FAROL, MA. THERESA R.",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 78,
+    "name": "GRAJO, ROSARIO E.",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 91,
+    "name": "LADIA, RUFINO B.",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 94,
+    "name": "LIM, IRMA C.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 135,
+    "name": "REBUENO, MA. LOURDES F.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990B",
+      "10301990D",
+      "10301990F",
+      "19901040A",
+      "20401040A",
+      "29999990A",
+      "30701010",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 158,
+    "name": "TA-ALA, LETICIA CABANTOG",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 189,
+    "name": "ORDILLANO, IRISH G.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 202,
+    "name": "GENITO, NORMAN",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10303060C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 206,
+    "name": "PONCE, EVANGELINE R.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 231,
+    "name": "CORPORATE SERVICES GROUP",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A",
+      "50101010",
+      "50101020",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102080",
+      "50102110",
+      "50102120",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50205030",
+      "50210030A",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50211010",
+      "50211030",
+      "50211990",
+      "50212030",
+      "50212990A",
+      "50212990B",
+      "50213050",
+      "50213060A",
+      "50213060B",
+      "50213070",
+      "50215010C",
+      "50215020",
+      "50299030",
+      "50299040",
+      "50299050A",
+      "50299050B",
+      "50299070",
+      "50299140",
+      "50299180",
+      "50301040"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 249,
+    "name": "CAMPOS, MA. ANTONIA P.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 257,
+    "name": "REYES, MILA CAPAYCAPAY",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 259,
+    "name": "PEDROZA, LESLIE",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 267,
+    "name": "VILLAMOR, GINA",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 273,
+    "name": "JIMENEZ, FELIMON",
+    "associatedAccounts": [
+      "10301010E",
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 302,
+    "name": "VANTA, JULIET F.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 305,
+    "name": "DOMINGO, ELADIO",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 323,
+    "name": "MEJIA, SATURNINO A.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990B",
+      "10301990D",
+      "10301990F",
+      "19901040A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 342,
+    "name": "ENDAYA, ADALIA",
+    "associatedAccounts": [
+      "10301010E",
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 350,
+    "name": "BULAONG, OFELIA V.",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 365,
+    "name": "MABAZZA, RHOEL Z.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 370,
+    "name": "ARCE, LILIA L.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990B",
+      "10301990D",
+      "10301990F",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 378,
+    "name": "BALBIN, MARILYN",
+    "associatedAccounts": [
+      "10301010E",
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 381,
+    "name": "SERRANO, ROMMEL R.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 383,
+    "name": "DE CASTRO, MA. CHRISTINA",
+    "associatedAccounts": [
+      "10301010E",
+      "19901040A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 384,
+    "name": "CORDIAL, COLETTE H.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 386,
+    "name": "BAGSAO, LIZA LORENA C.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "29999990A",
+      "29999990B",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 390,
+    "name": "EUGENIO, JONATHAN",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "20401040A",
+      "29999990A",
+      "29999990B",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 394,
+    "name": "TAN, GAUDIOSA",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 407,
+    "name": "PELAEZ, IRENE D.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 408,
+    "name": "AQUITANIA, HEIDEE-MAY H.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990D",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 411,
+    "name": "DE QUIROZ, RODOLFO V.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990C",
+      "10301990E",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 412,
+    "name": "JULIAN, SAMUEL N.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990C",
+      "10301990D",
+      "10301990E",
+      "20401040A",
+      "29999990A",
+      "29999990B",
+      "40202210D",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 414,
+    "name": "RABUCO, BENJAMIN",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990B",
+      "10301990D",
+      "10301990F",
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 415,
+    "name": "CABILES, RIZA R.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 419,
+    "name": "CUETO, JOHNIEREY A.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 491,
+    "name": "LOPEZ, JOSEPHINE G.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990B",
+      "10301990F",
+      "30701010",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 499,
+    "name": "DENISE J. MANALANSAN",
+    "associatedAccounts": [
+      "10301010E",
+      "19901040A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 539,
+    "name": "REYES MARGARITA, G.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "29999990A",
+      "29999990B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 540,
+    "name": "COROZA, MARIANNE A.",
+    "associatedAccounts": [
+      "10301010E",
+      "10301990A",
+      "10301990D",
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 571,
+    "name": "MAYANG, JOHN A",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A",
+      "50212990B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 578,
+    "name": "ALIMON, JOYCE ANNE N.",
+    "associatedAccounts": [
+      "10301010E",
+      "19901040A",
+      "29999990A",
+      "29999990B",
+      "50299070"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 588,
+    "name": "WITTY, STEPHEN B.",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 5052,
+    "name": "BIR- INPUT VAT RECEIVABLE",
+    "associatedAccounts": [
+      "10301010E",
+      "19902060",
+      "5053",
+      "20201120",
+      "20501030",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 5053,
+    "name": "BUREAU OF INTERNAL REVENUE",
+    "associatedAccounts": [
+      "10301010E",
+      "19902060",
+      "5053",
+      "20201040",
+      "20201120",
+      "20201130",
+      "20501030",
+      "20901010A",
+      "20901010B",
+      "29999990A",
+      "30701010",
+      "50204020",
+      "50211020",
+      "50215040"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 5462,
+    "name": "VISCARA, PONCIANO ANDRES",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 5624,
+    "name": "BIR - CREDITABLE VAT WITHHELD",
+    "associatedAccounts": [
+      "10301010E",
+      "19902070",
+      "19902080"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 5627,
+    "name": "BIR - CREDITABLE TAX W/HELD",
+    "associatedAccounts": [
+      "10301010E",
+      "19902080",
+      "40202200B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 8215,
+    "name": "NDC-PHILIPPINE INFRASTRUCTURE CORP.",
+    "associatedAccounts": [
+      "10301010E",
+      "40202200B",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 8300,
+    "name": "INTERNATIONAL ADVOCATES",
+    "associatedAccounts": [
+      "10301010E",
+      "10301011A",
+      "20401040B"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 8439,
+    "name": "ACHIEVERS SECURITY AGENCY CORP.",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 8735,
+    "name": "TIERODMAN AUTO CENTER,INC.",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 8776,
+    "name": "LIDE LEARNING CENTER,INC.",
+    "associatedAccounts": [
+      "10301010E",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 8801,
+    "name": "ENERGY MANPOWER SERVICES INC",
+    "associatedAccounts": [
+      "10301010E",
+      "20401010A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 8996,
+    "name": "JT MAX POWER EQUIPMENT CORPORATION",
+    "associatedAccounts": [
+      "10301010E",
+      "20401010A",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9020,
+    "name": "RM MANGUBAT CONSTRUCTION AND REALTY DEV. CORP.",
+    "associatedAccounts": [
+      "10301010E",
+      "19902010",
+      "20401010A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9101,
+    "name": "AURORA MA. F. TIMBOL",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9111,
+    "name": "SATURNINO H. MEJIA",
+    "associatedAccounts": [
+      "10301010E",
+      "19901040A",
+      "29999990A",
+      "29999990B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9112,
+    "name": "THE METROPOLITAN CLUB, INC.",
+    "associatedAccounts": [
+      "10301010E",
+      "19902990",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9261,
+    "name": "ECHOSTORE SUSTAINABLE LIFESTYLE",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9356,
+    "name": "LUVIMINA G. LANUZA",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9390,
+    "name": "MGSJC PRINTING SERVICES",
+    "associatedAccounts": [
+      "10301010E",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301010E",
+    "slCode": 9667,
+    "name": "TOLL REGULATORY BOARD",
+    "associatedAccounts": [
+      "10301010E"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 18,
+    "name": "BALDADO, MOISES A.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 30,
+    "name": "CALLO, SANTIAGO",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 47,
+    "name": "DE LEON, FELY C.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 60,
+    "name": "OCANA, EVELYN  D.",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 75,
+    "name": "RAMBANO, FE G.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 99,
+    "name": "LOPEZ, CONSUELO R.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 122,
+    "name": "OMOLI, MANUELA",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 124,
+    "name": "ISNANI, ANGELICA ISABEL",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 164,
+    "name": "LOMOTAN, FELICITAS",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 170,
+    "name": "VILLENA, ANTHONY",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 173,
+    "name": "YAP, RAMON R.",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 175,
+    "name": "BILOLO, MELIZANDRA B.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 180,
+    "name": "CONCEPCION, VIRGINIA NADONGA",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 191,
+    "name": "ARMONIO, JAIME MANUEL",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 195,
+    "name": "DACANAY, EMMANUEL E.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 196,
+    "name": "PUNTERO, FERNANDO",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 204,
+    "name": "BEJER, JERRY",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 205,
+    "name": "TEH, RONILDA",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 210,
+    "name": "GURAY, ROSARIO",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 233,
+    "name": "CABACTULAN, WILDAN N.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 235,
+    "name": "TEOCO, BIENVENIDO",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990B",
+      "10301990F",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 256,
+    "name": "DOMINGO, ROMEO C.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990B",
+      "10301990F",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 272,
+    "name": "CORTEZ, CECILIA",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 292,
+    "name": "YNOT, ENRIQUETA M.",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 295,
+    "name": "LEONIDA, JOSE MARIA",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 297,
+    "name": "MACARAEG, CARMEN",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 304,
+    "name": "LIRO, ANGELITO",
+    "associatedAccounts": [
+      "10301011A",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 324,
+    "name": "PALABRICA, MIRIAM",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 339,
+    "name": "ROXAS, OFELIA",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 349,
+    "name": "ROXAS, MANUEL A. II",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 366,
+    "name": "NANAGAS II, VITALIANO",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 391,
+    "name": "MABAZZA, JEANNETTE",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 396,
+    "name": "PRIETO, SALVADOR JR.",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 397,
+    "name": "VILLANUEVA, TEODORO",
+    "associatedAccounts": [
+      "10301011A",
+      "10301990B",
+      "10301990F",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 402,
+    "name": "SANTOS, AILEEN MARIE",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 437,
+    "name": "DOCTOLERO,EDWIN T.",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 438,
+    "name": "LORENZO,MANNY O.",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 441,
+    "name": "MIRABUENO,JOPETTE L.",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 460,
+    "name": "CHUA, MANUEL",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 520,
+    "name": "MALOU ATENCIO",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 5060,
+    "name": "CALTEX PHILIPPINES, INC.",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 5528,
+    "name": "ESPERANZA, MARLON",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 5561,
+    "name": "DBP SERVICE CORPORATION",
+    "associatedAccounts": [
+      "10301011A",
+      "20401010A",
+      "29999990A",
+      "30701010",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 8247,
+    "name": "R.D. POLICARPIO",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011A",
+    "slCode": 8784,
+    "name": "RV DIAZ MANAGEMENT CONSULTANCY",
+    "associatedAccounts": [
+      "10301011A"
+    ]
+  },
+  {
+    "parent": "10301011B",
+    "slCode": 8945,
+    "name": "NONINTERESTING BEARING LOANS RECEIVABLE - CURRENT - NACIDA RAW MATERIALS",
+    "associatedAccounts": [
+      "10301011B",
+      "10301070A",
+      "10301070B",
+      "10301071A",
+      "10301071B",
+      "10301990A"
+    ]
+  },
+  {
+    "parent": "10301011C",
+    "slCode": 5342,
+    "name": "PHILIPPINE NATIONAL CONSTRUCTION CORP.",
+    "associatedAccounts": [
+      "10301011C",
+      "10301070A",
+      "10301070B",
+      "10301070C",
+      "10301071A",
+      "10301071B",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301011D",
+    "slCode": 8144,
+    "name": "TRAVELTIPID. COM",
+    "associatedAccounts": [
+      "10301011D"
+    ]
+  },
+  {
+    "parent": "10301050A",
+    "slCode": 5258,
+    "name": "MINTEX EX-STOCKHOLDERS",
+    "associatedAccounts": [
+      "10301050A",
+      "19999990A",
+      "19999990B",
+      "20401010A",
+      "30701010",
+      "40501020"
+    ]
+  },
+  {
+    "parent": "10301050A",
+    "slCode": 8901,
+    "name": "SHORT-TERM INVESMTENT A",
+    "associatedAccounts": [
+      "10301050A"
+    ]
+  },
+  {
+    "parent": "10301050A",
+    "slCode": 9200,
+    "name": "LBP-NDC FUNDS",
+    "associatedAccounts": [
+      "10301050A"
+    ]
+  },
+  {
+    "parent": "10301050C",
+    "slCode": 230,
+    "name": "SCHOOL BUILDING PROJ.",
+    "associatedAccounts": [
+      "10301050C",
+      "19999990A"
+    ]
+  },
+  {
+    "parent": "10301050C",
+    "slCode": 5754,
+    "name": "NATIONAL IRRIGATION ADMINISTRATION",
+    "associatedAccounts": [
+      "10301050C",
+      "10301070B",
+      "10301070C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10301070A",
+    "slCode": 5457,
+    "name": "USIPHIL, INC.",
+    "associatedAccounts": [
+      "10301070A",
+      "10301070B",
+      "10301071A",
+      "10301071B"
+    ]
+  },
+  {
+    "parent": "10301070C",
+    "slCode": 5185,
+    "name": "JAO AND COMPANY",
+    "associatedAccounts": [
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301070C",
+    "slCode": 5217,
+    "name": "PNCC - CB",
+    "associatedAccounts": [
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301070C",
+    "slCode": 5304,
+    "name": "BTR-NSC",
+    "associatedAccounts": [
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301070C",
+    "slCode": 5650,
+    "name": "LUSTEVECO - UNION BANK",
+    "associatedAccounts": [
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301070C",
+    "slCode": 5651,
+    "name": "LUSTEVECO - SOC. GEN. (REFINANCING)",
+    "associatedAccounts": [
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301070C",
+    "slCode": 5652,
+    "name": "LUSTEVECO - SOC.GEN. (WORKING CAPITAL)",
+    "associatedAccounts": [
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301070C",
+    "slCode": 5653,
+    "name": "LUSTEVECO - I C B  LINE",
+    "associatedAccounts": [
+      "10301070C",
+      "10303060A",
+      "10303060B"
+    ]
+  },
+  {
+    "parent": "10301990A",
+    "slCode": 8409,
+    "name": "COSMETECH PHILIPPINES, INC.",
+    "associatedAccounts": [
+      "10301990A"
+    ]
+  },
+  {
+    "parent": "10301990A",
+    "slCode": 9360,
+    "name": "EMILY T. CARIAGA",
+    "associatedAccounts": [
+      "10301990A",
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "10301990A",
+    "slCode": 9590,
+    "name": "SOLX TECHNOLOGIES INC.",
+    "associatedAccounts": [
+      "10301990A",
+      "50210030C"
+    ]
+  },
+  {
+    "parent": "10301990C",
+    "slCode": 107,
+    "name": "MANGALONZO, ALICE M.",
+    "associatedAccounts": [
+      "10301990C",
+      "10301990E",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10301990C",
+    "slCode": 8988,
+    "name": "ORDILLANO, MA. IRISSA G.",
+    "associatedAccounts": [
+      "10301990C",
+      "40202210D"
+    ]
+  },
+  {
+    "parent": "10303010A",
+    "slCode": 5286,
+    "name": "NATIONAL SHIPPING CORP. OF THE PHILS.",
+    "associatedAccounts": [
+      "10303010A",
+      "10303010B"
+    ]
+  },
+  {
+    "parent": "10303060A",
+    "slCode": 5471,
+    "name": "TRANSPORT CONTRACTORS, INC.",
+    "associatedAccounts": [
+      "10303060A",
+      "10303060B",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": "10303060A",
+    "slCode": 5682,
+    "name": "PICOP-RATTAN",
+    "associatedAccounts": [
+      "10303060A",
+      "10303060B",
+      "10303060C"
+    ]
+  },
+  {
+    "parent": 10404010,
+    "slCode": 232,
+    "name": "CORPORATE EXPENSE",
+    "associatedAccounts": [
+      "10404010",
+      "19902050",
+      "19902060",
+      "19902990",
+      "29999990A",
+      "30701010",
+      "40501040",
+      "40501160",
+      "50102080",
+      "50102120",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50201020",
+      "50202010",
+      "50203010",
+      "50203020",
+      "50203090",
+      "50203990",
+      "50204010",
+      "50204020",
+      "50205010",
+      "50205020",
+      "50205030",
+      "50205040",
+      "50210030A",
+      "50210030B",
+      "50210030C",
+      "50211020",
+      "50211030",
+      "50211990",
+      "50212010",
+      "50212020",
+      "50212030",
+      "50212990A",
+      "50212990B",
+      "50213010",
+      "50213040",
+      "50213050",
+      "50213060A",
+      "50213060B",
+      "50213060C",
+      "50213070",
+      "50213990",
+      "50215010A",
+      "50215010B",
+      "50215010C",
+      "50215020",
+      "50215030A",
+      "50215030B",
+      "50215040",
+      "50299010",
+      "50299020",
+      "50299030",
+      "50299040",
+      "50299050A",
+      "50299050B",
+      "50299060",
+      "50299070",
+      "50299090",
+      "50299140",
+      "50299180",
+      "50301040",
+      "50501010",
+      "50501020",
+      "50501040",
+      "50501050",
+      "50501060",
+      "50501070",
+      "50501990",
+      "50503020",
+      "50503060",
+      "50503150",
+      "50504030",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10404010,
+    "slCode": 9999,
+    "name": "MISCELLANEOUS",
+    "associatedAccounts": [
+      "10404010",
+      "10404020",
+      "10599010",
+      "10602990",
+      "10602991",
+      "10604010",
+      "10604011",
+      "10604991",
+      "10605020",
+      "10605021",
+      "10605030",
+      "10605031",
+      "10605120",
+      "10605121",
+      "10605130",
+      "10605131",
+      "10606010",
+      "10606011",
+      "10607010",
+      "10607011",
+      "10609020",
+      "10609021",
+      "10609990",
+      "10609991",
+      "10698990",
+      "10698991",
+      "19902990",
+      "19999990D",
+      "20401010A",
+      "20401040A",
+      "29999990A",
+      "29999990B",
+      "30101030",
+      "30701010",
+      "40501040",
+      "40501050",
+      "40501160",
+      "40603990",
+      "50203010",
+      "50210030C",
+      "50501050",
+      "50501990",
+      "50504030"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 5346,
+    "name": "PHILPHOS ASSETS-LIDE",
+    "associatedAccounts": [
+      "10501010",
+      "10602990",
+      "10602991",
+      "10604010",
+      "10604011",
+      "10605020",
+      "10605021",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 5478,
+    "name": "INTL. CORPORATE BANK (ASSETS)",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7034,
+    "name": "M.FORTICH/LIBONA, BUKIDNON",
+    "associatedAccounts": [
+      "10501010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7035,
+    "name": "BUGO DISTRICT, CAGAYAN DE ORO",
+    "associatedAccounts": [
+      "10501010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7036,
+    "name": "DASMARINAS, CAVITE- DEDC",
+    "associatedAccounts": [
+      "10501010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7037,
+    "name": "TORIL, DALIAO, DAVAO CITY",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7039,
+    "name": "LOS BANOS, LAGUNA",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7040,
+    "name": "ISABEL, LEYTE",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7041,
+    "name": "SEN.G.PUYAT AVE., MAKATI CITY",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7042,
+    "name": "TORDESILLAS, SALCEDO VILL., MAKATI CITY",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7043,
+    "name": "STA. MESA, MANILA (PUREZA)",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D",
+      "30701010",
+      "40501030",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7046,
+    "name": "SUCAT, MUNTINLUPA",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7049,
+    "name": "LACSON AND RIZAL STS.",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7051,
+    "name": "STO.NINO, BOULEVARD",
+    "associatedAccounts": [
+      "10501010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7052,
+    "name": "BO.LANGIHAN, BUTUAN CITY",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7053,
+    "name": "STA. FE, BANTAYAN, CEBU",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7055,
+    "name": "OPON, CEBU",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7057,
+    "name": "POBLACIO, PARANG, COTABATO",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7059,
+    "name": "AGUINALDO & LUNA STS., ILIGAN CITY",
+    "associatedAccounts": [
+      "10501010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7061,
+    "name": "SUYONG, ECHAGUE, ISABELA",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7063,
+    "name": "STA. ROSA, LAGUNA",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7064,
+    "name": "KAMAGONG & SAMPALOC STS., MAKATI CITY",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7065,
+    "name": "P.TAMO & DELA ROSA STS., MAKATI CITY",
+    "associatedAccounts": [
+      "10501010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7066,
+    "name": "BO.BARRANCA, MANDALUYONG",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7067,
+    "name": "PANDACAN, MANILA",
+    "associatedAccounts": [
+      "10501010",
+      "30701010",
+      "40501030",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7068,
+    "name": "SAN ANDRES & E.QUIRINO AVE., MANILA",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7070,
+    "name": "BO.SAN JUAN & STO.NINO, PAMPANGA",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7071,
+    "name": "BO.BAGONG ILOG, PASIG",
+    "associatedAccounts": [
+      "10501010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7072,
+    "name": "DILIMAN, QUEZON CITY",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7074,
+    "name": "BOS.SNS.ROQUE & RAFAEL, TARLAC",
+    "associatedAccounts": [
+      "10501010",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7075,
+    "name": "BALIWASAN, ZAMBOANGA CITY",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7076,
+    "name": "SAN FERNANDO, PAMPANGA",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7077,
+    "name": "NASUGBU, BATANGAS",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7078,
+    "name": "MARIVELES, BATAAN",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7079,
+    "name": "HERMOSA, BATAAN",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7081,
+    "name": "TANAY, RIZAL",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7083,
+    "name": "BONGABON, NUEVA ECIJA",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7085,
+    "name": "GUADALUPE, CEBU CITY",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7087,
+    "name": "SAN JOSE, ANTIPOLO CITY",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 7088,
+    "name": "ONE DTI BUILDING - MACAPAGAL AVENUE",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D",
+      "19999991",
+      "40501160"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 8457,
+    "name": "MEYCAUAYAN, BULACAN",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 8881,
+    "name": "DAO TAGBILARAN BOHOL",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9146,
+    "name": "SAN DIONISIO PARAÃ‘AQUE",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9147,
+    "name": "MACASANDIG, CDO, CAGAYAN DE ORO CITY",
+    "associatedAccounts": [
+      "10501010",
+      "40501030"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9148,
+    "name": "SAN FRANCISCO DEL MONTE QC",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9149,
+    "name": "SAN ISIDRO ANTIPOLO",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9150,
+    "name": "SAMBAG CEBU",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9151,
+    "name": "BONOT LEGASPI CITY",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9152,
+    "name": "BO BIA- AN MARIVELES BATAAN",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9153,
+    "name": "SAN JOSE DEL MONTE BULACAN",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9154,
+    "name": "PORAC PAMPANGA",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9155,
+    "name": "CALATAGAN BATANGAS",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9156,
+    "name": "TALAKAG BUKIDNON",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9157,
+    "name": "SAN ILDEFONSO BULACAN",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9158,
+    "name": "BALATAAN CAMARINES SUR",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9159,
+    "name": "LAGONOY CAMARINES SUR",
+    "associatedAccounts": [
+      "10501010",
+      "19999990D"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9285,
+    "name": "BRGY, PUERTO, CDO",
+    "associatedAccounts": [
+      "10501010"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9344,
+    "name": "PUEBLOCILLO VILLAGE",
+    "associatedAccounts": [
+      "10501010",
+      "10501020"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9487,
+    "name": "BARANGAY SAN ROQUE, ANTIPOLO CITY",
+    "associatedAccounts": [
+      "10501010",
+      "10501020"
+    ]
+  },
+  {
+    "parent": 10501010,
+    "slCode": 9521,
+    "name": "Pingag Property",
+    "associatedAccounts": [
+      "10501010",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 10501020,
+    "slCode": 8487,
+    "name": "INVESTMENT PROPERTY-IND.COMPLEX(BLDG)",
+    "associatedAccounts": [
+      "10501020",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501020,
+    "slCode": 8488,
+    "name": "INVESTMENT PROPERTY-NDC BUILDING",
+    "associatedAccounts": [
+      "10501020",
+      "10599010",
+      "50213010",
+      "50213040",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501020,
+    "slCode": 8489,
+    "name": "INVESTMENT PROPERTY-BOI BUILDING",
+    "associatedAccounts": [
+      "10501020",
+      "10599010",
+      "50213010",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501020,
+    "slCode": 8496,
+    "name": "INVESTMENT PROPERTY-IND.COMPLEX(WAREHSE)",
+    "associatedAccounts": [
+      "10501020",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10501020,
+    "slCode": 8834,
+    "name": "INVESTMENT PROPERTY-MANILA LUXURY CONDO",
+    "associatedAccounts": [
+      "10501020",
+      "50504180"
+    ]
+  },
+  {
+    "parent": 10599010,
+    "slCode": 8861,
+    "name": "WERR CORPORATION INTERNATIONAL",
+    "associatedAccounts": [
+      "10599010",
+      "20401010A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 10599010,
+    "slCode": 9371,
+    "name": "ES JOSEFA CONSTRUCTION",
+    "associatedAccounts": [
+      "10599010",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 10599010,
+    "slCode": 9460,
+    "name": "NDCIE PROJECT",
+    "associatedAccounts": [
+      "10599010",
+      "50210030B",
+      "50210030C",
+      "50212990B",
+      "50299040"
+    ]
+  },
+  {
+    "parent": 10599010,
+    "slCode": 9501,
+    "name": "E.S. JOSEFA CONSTRUCTION",
+    "associatedAccounts": [
+      "10599010"
+    ]
+  },
+  {
+    "parent": 10605020,
+    "slCode": 5087,
+    "name": "COMPUTER SOFTWARES",
+    "associatedAccounts": [
+      "10605020",
+      "19999991",
+      "50503060"
+    ]
+  },
+  {
+    "parent": 10605020,
+    "slCode": 5672,
+    "name": " NDC RATTAN PROJECT",
+    "associatedAccounts": [
+      "10605020",
+      "10605021"
+    ]
+  },
+  {
+    "parent": 10606011,
+    "slCode": 518,
+    "name": "DUGAYON ROMMEL",
+    "associatedAccounts": [
+      "10606011",
+      "20401010A",
+      "20401040A",
+      "40501040",
+      "40603990",
+      "50501060"
+    ]
+  },
+  {
+    "parent": 10607010,
+    "slCode": 8649,
+    "name": "GENDER AND DEVELOPMENT (GAD)",
+    "associatedAccounts": [
+      "10607010",
+      "50101010",
+      "50104990",
+      "50201010",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50210030B",
+      "50210030C",
+      "50211990",
+      "50212010",
+      "50212990B",
+      "50213010",
+      "50299040",
+      "50299180"
+    ]
+  },
+  {
+    "parent": 10698990,
+    "slCode": 9405,
+    "name": "AIR CONDITIONING UNIT",
+    "associatedAccounts": [
+      "10698990",
+      "10698991"
+    ]
+  },
+  {
+    "parent": 10698991,
+    "slCode": 5283,
+    "name": "NATIONAL MARINE CORPORATION",
+    "associatedAccounts": [
+      "10698991",
+      "50501990"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 8977,
+    "name": "JOHN ALBERT E. ENGANO",
+    "associatedAccounts": [
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 594,
+    "name": "ONG, JENE ISRAEL V.",
+    "associatedAccounts": [
+      "19901040A",
+      "20401010A",
+      "20401040A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 595,
+    "name": "GILHANG, CZANNIS D.",
+    "associatedAccounts": [
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9106,
+    "name": "BENJAMIN IRINEO JUDE F. RABUCO III",
+    "associatedAccounts": [
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 601,
+    "name": "AGUELO, MELANIE M.",
+    "associatedAccounts": [
+      "19901040A",
+      "19902990"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9418,
+    "name": "GENEFLOR L. SANTIAGO",
+    "associatedAccounts": [
+      "19901040A"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9461,
+    "name": "ANTONILO D. MAURICIO",
+    "associatedAccounts": [
+      "19901040A",
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9518,
+    "name": "GRANT PERIE T. TAN",
+    "associatedAccounts": [
+      "19901040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9519,
+    "name": "ANTONILO D C MAURICIO",
+    "associatedAccounts": [
+      "19901040A",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9565,
+    "name": "MARIE GENE CECILLE B. UMALI",
+    "associatedAccounts": [
+      "19901040A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9637,
+    "name": "JEMIMA M. TUBU",
+    "associatedAccounts": [
+      "19901040A"
+    ]
+  },
+  {
+    "parent": "19901040A",
+    "slCode": 9691,
+    "name": "AILYN P. FERRER",
+    "associatedAccounts": [
+      "19901040A"
+    ]
+  },
+  {
+    "parent": "19901040B",
+    "slCode": 436,
+    "name": "ISIDORO,DOMINADOR R. JR.",
+    "associatedAccounts": [
+      "19901040B",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "19901040B",
+    "slCode": 515,
+    "name": "ODILON A. DIAZ",
+    "associatedAccounts": [
+      "19901040B"
+    ]
+  },
+  {
+    "parent": "19901040B",
+    "slCode": 531,
+    "name": "CARAECLE ARIEL",
+    "associatedAccounts": [
+      "19901040B"
+    ]
+  },
+  {
+    "parent": "19901040B",
+    "slCode": 577,
+    "name": "DE VILLA, ZENAIDA V.",
+    "associatedAccounts": [
+      "19901040B"
+    ]
+  },
+  {
+    "parent": "19901040B",
+    "slCode": 8833,
+    "name": "MANZANO, BEVERLY",
+    "associatedAccounts": [
+      "19901040B",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "19901040B",
+    "slCode": 592,
+    "name": "HOWARD RANDY A. ARZADON",
+    "associatedAccounts": [
+      "19901040B"
+    ]
+  },
+  {
+    "parent": "19901040B",
+    "slCode": 9539,
+    "name": "SALVADOR I. APOSTOL JR.",
+    "associatedAccounts": [
+      "19901040B"
+    ]
+  },
+  {
+    "parent": 19902010,
+    "slCode": 8938,
+    "name": "PA VENUE FOOD VENTURES INC",
+    "associatedAccounts": [
+      "19902010"
+    ]
+  },
+  {
+    "parent": 19902010,
+    "slCode": 8970,
+    "name": "CIBI INFORMATION",
+    "associatedAccounts": [
+      "19902010"
+    ]
+  },
+  {
+    "parent": 19902010,
+    "slCode": 9021,
+    "name": "THAUMATURGY TRADE PHILS.",
+    "associatedAccounts": [
+      "19902010",
+      "20401010A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": 19902010,
+    "slCode": 9431,
+    "name": "PALMER-ASIA, INC.",
+    "associatedAccounts": [
+      "19902010"
+    ]
+  },
+  {
+    "parent": 19902050,
+    "slCode": 5153,
+    "name": "GOVERNMENT SERVICE INSURANCE SYSTEM",
+    "associatedAccounts": [
+      "19902050",
+      "19902990",
+      "20201020",
+      "20201040",
+      "20401040B",
+      "40603990"
+    ]
+  },
+  {
+    "parent": 19902050,
+    "slCode": 8221,
+    "name": "FORTUNE GENERAL INSURANCE CORP.",
+    "associatedAccounts": [
+      "19902050",
+      "50101010",
+      "50102990",
+      "50103030"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 228,
+    "name": "ASSET MANAGEMENT GROUP",
+    "associatedAccounts": [
+      "19902990",
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102080",
+      "50102110",
+      "50102120",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50205030",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50211030",
+      "50212990B",
+      "50213010",
+      "50213050",
+      "50213060A",
+      "50213060B",
+      "50215010A",
+      "50215010C",
+      "50299010",
+      "50299030",
+      "50299040",
+      "50299050A",
+      "50299050B",
+      "50299060",
+      "50299070",
+      "50299140",
+      "50299990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 583,
+    "name": "BASTIDA, GOLDAMAIR C.",
+    "associatedAccounts": [
+      "19902990",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 5252,
+    "name": "METROPOLITAN CLUB",
+    "associatedAccounts": [
+      "19902990",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 8173,
+    "name": "INFOCOM TECHNOLOGIES",
+    "associatedAccounts": [
+      "19902990",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 8203,
+    "name": "CITY TREASURER-PASAY",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 8237,
+    "name": "INFOBAHN COMMUNICATIONS,INC.",
+    "associatedAccounts": [
+      "19902990",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 8292,
+    "name": "CITY TREASURER-DASMARINAS,CAVITE",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 8747,
+    "name": "CITY TREASURER - TAGBILARAN",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 9132,
+    "name": "CITY OF DASMARIÃ‘AS",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 9391,
+    "name": "TECSON ORCHIDS CORPORATION",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 9395,
+    "name": "MAKATI CENTRAL ESTATE ASSOCIATION, INC.",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 9466,
+    "name": "CENTRAL LUZON STATE UNIVERSITY",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 9589,
+    "name": "CITY TREASURER - PASIG",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": 19902990,
+    "slCode": 9623,
+    "name": "DENESSE A. OLEGARIO",
+    "associatedAccounts": [
+      "19902990"
+    ]
+  },
+  {
+    "parent": "19999990A",
+    "slCode": 9077,
+    "name": "NEECO II AREA 2",
+    "associatedAccounts": [
+      "19999990A",
+      "40202220"
+    ]
+  },
+  {
+    "parent": "19999990A",
+    "slCode": 9662,
+    "name": "CYCLION FUNDS",
+    "associatedAccounts": [
+      "19999990A"
+    ]
+  },
+  {
+    "parent": "19999990A",
+    "slCode": 9709,
+    "name": "STARTUP VENTURE FUND - CASH IN BANK LOCAL CURRENCY",
+    "associatedAccounts": [
+      "19999990A",
+      "40202210A",
+      "50215010E"
+    ]
+  },
+  {
+    "parent": "19999990C",
+    "slCode": 8857,
+    "name": "CUZ VENTURE INC",
+    "associatedAccounts": [
+      "19999990C",
+      "20502010",
+      "30701010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "19999990D",
+    "slCode": 7029,
+    "name": "CUEVAS, TRENTO, AGUSAN DEL SUR",
+    "associatedAccounts": [
+      "19999990D"
+    ]
+  },
+  {
+    "parent": "19999990D",
+    "slCode": 7031,
+    "name": "DON CARLOS, BUKIDNON (CDCP)",
+    "associatedAccounts": [
+      "19999990D"
+    ]
+  },
+  {
+    "parent": "19999990D",
+    "slCode": 8580,
+    "name": "FCIE  EXPANSION PROJECT",
+    "associatedAccounts": [
+      "19999990D"
+    ]
+  },
+  {
+    "parent": "19999990D",
+    "slCode": 8680,
+    "name": "DAVAO FOOD EXCHANGE PROJECT",
+    "associatedAccounts": [
+      "19999990D",
+      "19999991",
+      "50201010",
+      "50210030B",
+      "50299010",
+      "50299020",
+      "50299030",
+      "50299040"
+    ]
+  },
+  {
+    "parent": "19999990D",
+    "slCode": 9042,
+    "name": "NDC ADMINISTRATIVE & COMMERCIAL COMPLEX PROJECT",
+    "associatedAccounts": [
+      "19999990D",
+      "19999991",
+      "50211030"
+    ]
+  },
+  {
+    "parent": 19999991,
+    "slCode": 8135,
+    "name": "INTEGRATIVE LEARNING INT'L. (PHILS), INC",
+    "associatedAccounts": [
+      "19999991"
+    ]
+  },
+  {
+    "parent": 19999991,
+    "slCode": 8779,
+    "name": "PINGAG PROJECT",
+    "associatedAccounts": [
+      "19999991",
+      "50210030C",
+      "50211030"
+    ]
+  },
+  {
+    "parent": 19999991,
+    "slCode": 8925,
+    "name": "P.J. CRUZ CONSTRUCTION AND TRADING",
+    "associatedAccounts": [
+      "19999991",
+      "20401010A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": 20101050,
+    "slCode": 5122,
+    "name": "DOLE PHILIPPINES, INC.",
+    "associatedAccounts": [
+      "20101050",
+      "20401010A",
+      "20401040B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 20101050,
+    "slCode": 5757,
+    "name": "BTR- AA BONDS 3RD TRANCHE",
+    "associatedAccounts": [
+      "20101050"
+    ]
+  },
+  {
+    "parent": 20101050,
+    "slCode": 5759,
+    "name": "BTR - AA BONDS 2ND TRANCHE",
+    "associatedAccounts": [
+      "20101050"
+    ]
+  },
+  {
+    "parent": 20101050,
+    "slCode": 5760,
+    "name": "BTR-AA BONDS 4TH TRANCHE",
+    "associatedAccounts": [
+      "20101050",
+      "50301020"
+    ]
+  },
+  {
+    "parent": 5053,
+    "slCode": 202010101,
+    "name": "Withholding Tax on Compensation",
+    "associatedAccounts": [
+      "5053"
+    ]
+  },
+  {
+    "parent": 5053,
+    "slCode": 202010102,
+    "name": "EXPANDED WITHHOLDING TAX",
+    "associatedAccounts": [
+      "5053"
+    ]
+  },
+  {
+    "parent": 5053,
+    "slCode": 202010103,
+    "name": "WITHHOLDING TAX ON GOVERNMENT MONEY PAYMENTS (GMP) - PERCENTAGE TAXES",
+    "associatedAccounts": [
+      "5053"
+    ]
+  },
+  {
+    "parent": 5053,
+    "slCode": 202010104,
+    "name": "WITHHOLDING TAX ON GMP - VALUE ADDED TAXES (GVAT)",
+    "associatedAccounts": [
+      "5053"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 5354,
+    "name": "PHIL. HEALTH INSURANCE CORP.",
+    "associatedAccounts": [
+      "20201020",
+      "20201040",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 8946,
+    "name": "GSIS - LIFE AND RETIREMENT PREMIUM",
+    "associatedAccounts": [
+      "20201020",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 8947,
+    "name": "GSIS - OPTIONAL INSURANCE PREMIUM",
+    "associatedAccounts": [
+      "20201020",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 8948,
+    "name": "GSIS - SALARY LOANS INSTALLMENT",
+    "associatedAccounts": [
+      "20201020",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 8949,
+    "name": "GSIS - POLICY LOAN INSTALLMENT",
+    "associatedAccounts": [
+      "20201020"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 8950,
+    "name": "GSIS - OTHERS",
+    "associatedAccounts": [
+      "20201020"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 8951,
+    "name": "GSIS - GENESIS PLANS",
+    "associatedAccounts": [
+      "20201020",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 20201020,
+    "slCode": 8952,
+    "name": "GSIS - COLLEGE EDUCATION ASSURANCE PLAN",
+    "associatedAccounts": [
+      "20201020",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 20201030,
+    "slCode": 5167,
+    "name": "HOME DEVELOPMENT MUTUAL FUND",
+    "associatedAccounts": [
+      "20201030"
+    ]
+  },
+  {
+    "parent": 20201030,
+    "slCode": 8953,
+    "name": "HDMF - PAG-IBIG PREMIUM",
+    "associatedAccounts": [
+      "20201030",
+      "30701010"
+    ]
+  },
+  {
+    "parent": 20201030,
+    "slCode": 8954,
+    "name": "HDMF - PAG-IBIG ALL PURPOSE LOAN",
+    "associatedAccounts": [
+      "20201030"
+    ]
+  },
+  {
+    "parent": 20201030,
+    "slCode": 9281,
+    "name": "HDMF - PAG-IBIG HOUSING LOAN",
+    "associatedAccounts": [
+      "20201030"
+    ]
+  },
+  {
+    "parent": 20201030,
+    "slCode": 9496,
+    "name": "HDMF - CALAMITY LOAN",
+    "associatedAccounts": [
+      "20201030"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 5756,
+    "name": "LIFEGUARD DETECTIVE AND SECURITY AGENCY",
+    "associatedAccounts": [
+      "20401010A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8249,
+    "name": "EX-BATAAN VETERANS SECURITY AGENCY",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8407,
+    "name": "COFFEL AIRE INDUSTRIES, INC.",
+    "associatedAccounts": [
+      "20401010A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8417,
+    "name": "YIC GROUP OF COMPANIES, INC.",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8485,
+    "name": "COFFEL AIRE INDUSTRIES INC",
+    "associatedAccounts": [
+      "20401010A",
+      "29999990A",
+      "29999990B",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8795,
+    "name": "A.C. ONG CONSULTING INC",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8797,
+    "name": "MEGA MAINTENANCE AND ALLIED SERVICES",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8868,
+    "name": "VERZONTAL BUILDERS INC",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8929,
+    "name": "INNOVALITE INC",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8961,
+    "name": "Jaric Clubshare",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8965,
+    "name": "ENERGYLINK COMMERCIAL",
+    "associatedAccounts": [
+      "20401010A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8976,
+    "name": "EAP ASSOCIATES",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8958,
+    "name": "TERAVERA CORPORATION",
+    "associatedAccounts": [
+      "20401010A",
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8992,
+    "name": "CERTEZA INFOSYS CORPORATION",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 8994,
+    "name": "GISELLE SORIANO",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9005,
+    "name": "HACKETT SECURITY AGENCY",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9009,
+    "name": "LEGAZPI GOLDEN WALL CORP.",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9010,
+    "name": "GOKIMPAI REALTY DEVELOPMENT CORP",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9011,
+    "name": "FATFREE, INC.",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9012,
+    "name": "ANCHOR HUMAN RESOURCES DEVELOPMENT CORP.",
+    "associatedAccounts": [
+      "20401010A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9013,
+    "name": "QUADSTRUCT INC.",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9015,
+    "name": "RUEL B. RAMIREZ AND ASSOCIATES",
+    "associatedAccounts": [
+      "20401010A",
+      "29999990A",
+      "30701010",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9016,
+    "name": "TERMS CONCRETE AND MATERIALS TESTING LABORATORY INC.",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9019,
+    "name": "DANISH KHONSTRUKT",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9024,
+    "name": "RAMROD D. JARINA",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9023,
+    "name": "JAMES GERALD O. DE JESUS",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9025,
+    "name": "INFINITE ENTERPRISES",
+    "associatedAccounts": [
+      "20401010A",
+      "20401040A",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9028,
+    "name": "SARAH JEANNE D. GRAFILO",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9032,
+    "name": "CHRISTOPER   LUNA",
+    "associatedAccounts": [
+      "20401010A",
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9035,
+    "name": "MAKATI DEVELOPMENT CORPORATION",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9039,
+    "name": "VICENTE T. LAO CONSTRUCTION CORP.",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9040,
+    "name": "DAVAO MARINATUNA CORP.",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9092,
+    "name": "RED EVENTS & COMMUNICATIONS",
+    "associatedAccounts": [
+      "20401010A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9116,
+    "name": "COFFEL AIRE INDUSTRIES INCORPORATED",
+    "associatedAccounts": [
+      "20401010A",
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9117,
+    "name": "LEGASPI GOLDEN WALL CORP.",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9127,
+    "name": "YASHANO CORP.",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9134,
+    "name": "DAVAO ROCK MIXER ENTERPRISES",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9136,
+    "name": "INTERNATIONAL ELEVATOR & EQUIPMENT, INC.",
+    "associatedAccounts": [
+      "20401010A",
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9141,
+    "name": "C.T. CONSIGNA CONSTRUCTION CORP.",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9143,
+    "name": "MONTEVISTA CONSTRUCTION CORPORATION",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9275,
+    "name": "BIDDING DOCUMENTS",
+    "associatedAccounts": [
+      "20401010A",
+      "50201010"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9282,
+    "name": "BAC-BIDS & AWARDS COMMITTEE",
+    "associatedAccounts": [
+      "20401010A",
+      "20401010B",
+      "20401040A",
+      "29999990A",
+      "40603990",
+      "50210030B",
+      "50210030C"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9298,
+    "name": "AUDIO 4 DESIGN N TECHNOLOGY CORP.",
+    "associatedAccounts": [
+      "20401010A",
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9381,
+    "name": "TECHSOLVE SYSTEM SOLUTIONS INC.",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9448,
+    "name": "DAYBEN REFRIGERATION & AIRCONDITIONING SERVICES",
+    "associatedAccounts": [
+      "20401010A",
+      "20401010B",
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9457,
+    "name": "FRANCISCA  A. PARUNGAO",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9492,
+    "name": "OEM IND'L PARTS & CONSTRUCTION SERVICES CORP.",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9571,
+    "name": "MALTG CONSTRUCTION",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010A",
+    "slCode": 9784,
+    "name": "INTEREST INCOME FROM PHIL. IHUB - MESH",
+    "associatedAccounts": [
+      "20401010A"
+    ]
+  },
+  {
+    "parent": "20401010B",
+    "slCode": 5435,
+    "name": "DJT MEGA INDUSTRIAL CORPORATION",
+    "associatedAccounts": [
+      "20401010B",
+      "20401040B",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 250,
+    "name": "REYES, MARITA R.",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 472,
+    "name": "LEONILO PALLAN",
+    "associatedAccounts": [
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 530,
+    "name": "BUSILAN,SHEILA",
+    "associatedAccounts": [
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 560,
+    "name": "PANGAN, VILMA",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 587,
+    "name": "MATA, ROLANDO",
+    "associatedAccounts": [
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 5379,
+    "name": "PATIENT FIRST MEDICAL CENTER",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8197,
+    "name": "INFINITE QUALITY DESIGNS CENTER, INC",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8222,
+    "name": "CAL-FIL APPRAISAL & MANAGEMENT, INC.",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8256,
+    "name": "REYGEM BUILDERS",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8348,
+    "name": "VALUE METRICS, INC.",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8386,
+    "name": "TOPCONSULT, INC.",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8450,
+    "name": "FJMDC GENERAL MERCHANDISE",
+    "associatedAccounts": [
+      "20401040A",
+      "30701010",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8509,
+    "name": "NAVA FORTUNE HOLDINGS INC",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8743,
+    "name": "TOYOTA PASONG TAMO, INC",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8820,
+    "name": "CONTACT-ASIA SERVICES INC",
+    "associatedAccounts": [
+      "20401040A",
+      "20401040B",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8993,
+    "name": "RWBD BUILDING REPAIR AND MAINTENANCE SERVICES",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 8997,
+    "name": "ETHANELI PRINTS - COATING AND WATERPROOFING SERVICES",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9003,
+    "name": "MERLINA F. MORTEL",
+    "associatedAccounts": [
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9004,
+    "name": "E.D.S. INNOVENTIONS, INC",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9008,
+    "name": "PERCIVAL HABLA",
+    "associatedAccounts": [
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9029,
+    "name": "GLOCKE SECURITY SYSTEMS INC.",
+    "associatedAccounts": [
+      "20401040A",
+      "40501030"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9226,
+    "name": "ROMEO R. GUE JR",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9233,
+    "name": "OLIVER C. CHAN",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9314,
+    "name": "AVISO VALUATION & ADVISORY CORP.",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9315,
+    "name": "KADENCE INTERNATIONAL BUSINESS RESEARCH, INC.",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9334,
+    "name": "R.D.E. JUNKSHOP",
+    "associatedAccounts": [
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9341,
+    "name": "MARIEL GALERO",
+    "associatedAccounts": [
+      "20401040A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9361,
+    "name": "GIBMA ENGINEERING SERVICES",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9372,
+    "name": "ALEGRIA A. OCHAVO",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9382,
+    "name": "JI JAVATE ENTERPRISE",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9383,
+    "name": "PSYCHOLOGICAL RESOURCES CENTER INC",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9424,
+    "name": "TOPPERS PERFORMER APPRAISAL, INC.",
+    "associatedAccounts": [
+      "20401040A",
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9432,
+    "name": "COMMONWEALTH INSURANCE COMPANY",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9472,
+    "name": "PSY SYSTEMS & INNOVATIONS, OPC",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9534,
+    "name": "UBUNTU PREMIUM STUDIOS, INC.",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9547,
+    "name": "MONEYTREE PUBLISHING CORP.",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9609,
+    "name": "NEXT GENERATION TECHNOLOGIES GLOBAL INC.",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9685,
+    "name": "NEW PERSPECTIVE MEDIA FZ LLC",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9689,
+    "name": "WATTSAVERS ENERGY SERVICES COMPANY",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9698,
+    "name": "ITRACK SOLUTIONS INC.",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9715,
+    "name": "EMC CREATIVE MEDIA SOLUTIONS CO.",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040A",
+    "slCode": 9721,
+    "name": "E- HOUSING CORPORATION",
+    "associatedAccounts": [
+      "20401040A"
+    ]
+  },
+  {
+    "parent": "20401040B",
+    "slCode": 5038,
+    "name": "BANK OF THE PHILIPPINE ISLANDS",
+    "associatedAccounts": [
+      "20401040B"
+    ]
+  },
+  {
+    "parent": "20401040B",
+    "slCode": 5429,
+    "name": "SUNRISE INDUSTRIES INC.",
+    "associatedAccounts": [
+      "20401040B",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "20401040B",
+    "slCode": 8632,
+    "name": "ENGAGE MEDIA MAVEN INC.",
+    "associatedAccounts": [
+      "20401040B"
+    ]
+  },
+  {
+    "parent": "20401040B",
+    "slCode": 8659,
+    "name": "REDAMA GIL, Q.",
+    "associatedAccounts": [
+      "20401040B"
+    ]
+  },
+  {
+    "parent": "20401040B",
+    "slCode": 8787,
+    "name": "ADVENTOR J. FERNANDEZ III",
+    "associatedAccounts": [
+      "20401040B"
+    ]
+  },
+  {
+    "parent": "20401040B",
+    "slCode": 9591,
+    "name": "ACCIONA- DMCI SCRP02 JV",
+    "associatedAccounts": [
+      "20401040B",
+      "20502010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": 20501030,
+    "slCode": 5086,
+    "name": "COMMISSION ON AUDIT",
+    "associatedAccounts": [
+      "20501030",
+      "29999990A",
+      "50203010",
+      "50211020",
+      "50212020"
+    ]
+  },
+  {
+    "parent": 20502010,
+    "slCode": 8416,
+    "name": "FIRST CAVITE INDUSTRIAL ESTATE ASSOC INC",
+    "associatedAccounts": [
+      "20502010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": 20502010,
+    "slCode": 9687,
+    "name": "RAFAEL L. CHU",
+    "associatedAccounts": [
+      "20502010",
+      "40202050"
+    ]
+  },
+  {
+    "parent": "20901010A",
+    "slCode": 8998,
+    "name": "DEFERRED TAX LIABILITY",
+    "associatedAccounts": [
+      "20901010A",
+      "30701010",
+      "50215040"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 22,
+    "name": "BATILLER, JOSEPHINE A.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 218,
+    "name": "OPERATIONS GROUP",
+    "associatedAccounts": [
+      "29999990A",
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102080",
+      "50102110",
+      "50102120",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50201020",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50205030",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50211030",
+      "50212990B",
+      "50213060A",
+      "50213060B",
+      "50213060C",
+      "50213990",
+      "50215010A",
+      "50215010B",
+      "50215010C",
+      "50215030A",
+      "50215030B",
+      "50299010",
+      "50299020",
+      "50299030",
+      "50299040",
+      "50299050A",
+      "50299050B",
+      "50299070",
+      "50299140",
+      "50299180",
+      "50299990",
+      "50301040"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 220,
+    "name": "OFFICE OF THE GENERAL MANAGER",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010",
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102080",
+      "50102110",
+      "50102120",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50201020",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50205030",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50211030",
+      "50212990B",
+      "50213040",
+      "50213060A",
+      "50213060B",
+      "50213060C",
+      "50213070",
+      "50215010C",
+      "50215030B",
+      "50299010",
+      "50299020",
+      "50299030",
+      "50299040",
+      "50299050A",
+      "50299050B",
+      "50299060",
+      "50299180"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 266,
+    "name": "TAGULINAO, FRUMENCIO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 340,
+    "name": "GARCIA, CIPRIANO H.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 364,
+    "name": "DOMINGO, GREGORY",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 374,
+    "name": "DUMLAO, CHRISTIAN",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 375,
+    "name": "ESTARIS, MARILYN G.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 395,
+    "name": "PALMA, GIOVANNI E.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 398,
+    "name": "LOPEZ, ISABELITA",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 410,
+    "name": "IMPERIAL, LEMUEL D.",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 422,
+    "name": "NICOLAS, MA. THERESA C.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 435,
+    "name": "MERCADO,CHRISTINE",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 488,
+    "name": "LIBIRAN, RAYMOND G.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 492,
+    "name": "PEREZ, MARITES",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 497,
+    "name": "GRECIA, RANDY R.",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 498,
+    "name": "MARIA EMMANUELLE S. BURGOS",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 511,
+    "name": "RODOLFO P. SORIANO JR.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 517,
+    "name": "RONNIE P.REZ",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 529,
+    "name": "TAGULINAO,FRUMENCIO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 537,
+    "name": "MONTECLAROS SONIA-SIAZON",
+    "associatedAccounts": [
+      "29999990A",
+      "40603990"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 538,
+    "name": "BUENAVENTURA GRACE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 545,
+    "name": "BERMIDO, ALDWIN Q.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 556,
+    "name": "LAQUI, CHRISTIAN PAUL F.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 563,
+    "name": "REA, ROWENA R.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 566,
+    "name": "DOMINGO, ROSELEE M.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 568,
+    "name": "ZARZUELA, ROSELITO",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 569,
+    "name": "MENDINA, ROMELIA CONSTANCIA",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 573,
+    "name": "ENRIQUEZ, SEAN MCHALLE B.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 586,
+    "name": "BELEN, JESUS L.",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5024,
+    "name": "ASIAN APPRAISAL CO., INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5101,
+    "name": "CUERVO APPRAISERS",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5118,
+    "name": "DHL PHILIPPINES, CORPORATION",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5143,
+    "name": "FUJITEC, INC",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5172,
+    "name": "INSTITUTE OF INTERNAL AUDITORS",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5241,
+    "name": "OFFICE OF THE GOVT. CORP. COUNSEL",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5246,
+    "name": "MANILA WATER COMPANY, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5329,
+    "name": "PHILIPPINE CELLOPHANE FILM CORPORATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5396,
+    "name": "ROYAL ASIA APPRAISAL CORPORATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5458,
+    "name": "U-BIX CORPORATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5496,
+    "name": "MANILA ELECTRIC COMPANY (MERALCO)",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5537,
+    "name": "LAO, PACHELO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 5742,
+    "name": "SOUND DEVELOPMENT CORPORATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8118,
+    "name": "MAKATI COMM'L ESTATE ASSO., INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8128,
+    "name": "AGNO, MYRNA",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8134,
+    "name": "INT'L. ELEVATOR & EQUIPMENT, INC.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8140,
+    "name": "STRAWBERRIES & CREAM, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8150,
+    "name": "HTSM ULTRA PI WATER REFILLING STATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8153,
+    "name": "PGM CONSTRUCTION AND PLUMBING SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8156,
+    "name": "RRN CONSTRUCTION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8157,
+    "name": "STA. INES MALALE",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010",
+      "50301020"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8160,
+    "name": "PHILIPP'S TECHNICAL CONSULTANTS CORP",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8165,
+    "name": "PILIPINAS SHELL PETROLIUM CORP.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8167,
+    "name": "ROMAGA'S AUTO CENTER",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8168,
+    "name": "BAN BEE COMMERCIAL CO., INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8170,
+    "name": "TECSON FLOWER SHOP",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8179,
+    "name": "LANE ARCHIVE TECHNOLOGIES CORP.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8182,
+    "name": "ACHIEVERS SALES CORPORATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8187,
+    "name": "TRONCALES,JERICHO JOSEPH R.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8198,
+    "name": "PRINTQUEST,INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8217,
+    "name": "NDC EMPLOYEES ASSOCIATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8220,
+    "name": "EUGENE A. PANAGUITON",
+    "associatedAccounts": [
+      "29999990A",
+      "50203010",
+      "50210030B",
+      "50299040"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8224,
+    "name": "BEL-AIR VILLAGE ASSOCIATION,INC.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8227,
+    "name": "LCH PHILIPPINES,INC.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8228,
+    "name": "CENTURY HUA GUANG SMELTING INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8283,
+    "name": "ULTIMATE CARE JANITORIAL SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8295,
+    "name": "F.L. SURVEYING",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8296,
+    "name": "AB SURVEYING AND DEVELOPMENT",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8297,
+    "name": "GREAT HAND ART GALLERY",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8307,
+    "name": "POWER HOUSE PEST CONTROL",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8311,
+    "name": "EDMAR PLUMBING SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8318,
+    "name": "PRUDENCE MERCHANDISING,INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8319,
+    "name": "SMART BROADBAND,INC",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8341,
+    "name": "POWER HOUSE PEST CONTROL SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8373,
+    "name": "NJR GENERAL MERCHANDISING, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8387,
+    "name": "INSTITUTE FOR SOLIDARITY IN ASIA, INC.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8414,
+    "name": "MACKAY GREEN ENERGY",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8434,
+    "name": "CARE BEST INTERNATIONAL,INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8438,
+    "name": "URDUJA SECURITY SERVICES, INC",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8471,
+    "name": "PRUDENCE MERCHANDISING,INC",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8559,
+    "name": "FIRE SOLUTIONS,INC",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8608,
+    "name": "JEMAR ARICONDITIONING & REF SERVICES",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8615,
+    "name": "EPARTNERS SOLUTIONS, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8618,
+    "name": "FRANKLIN M. CALE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8619,
+    "name": "PRINT AVENUE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8690,
+    "name": "TRIPLEX ENTERPRISES,INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8713,
+    "name": "VILLANUEVA JOHN V.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8737,
+    "name": "NEWTON",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8819,
+    "name": "ABIERA, LIZA H.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8823,
+    "name": "LIGHTFORCE CORPORATION MAKATI",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8848,
+    "name": "INTERIOR WEST GENERAL MERCHANDISING",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8888,
+    "name": "MISCELLANEOUS",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8910,
+    "name": "OPTIMAX SOLUTIONS SYSTEMS INC",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8911,
+    "name": "VIBAL GROUP INC",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8921,
+    "name": "TYREMART INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8926,
+    "name": "QUALIPRINT, INC.",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8959,
+    "name": "CLASSIC ENTERPRISES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 590,
+    "name": "ERNESTO O. SEVERINO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 593,
+    "name": "CASTILLO, MARWIN FRANCIS",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8966,
+    "name": "SANTIS DELICATESSEN",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8971,
+    "name": "PACIFIC OFFICE SOLUTIONS INC",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8972,
+    "name": "ECOSHIFT CORPORATION",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8974,
+    "name": "COOL ADS DESIGNS & PRINT INC,",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8973,
+    "name": "NDC EMPLOYEES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 8982,
+    "name": "JOSHUA N. RODERO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9000,
+    "name": "DACRISDEEK ENTERPRISES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9022,
+    "name": "T.A.M. PLANNERS CO.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9037,
+    "name": "DCEQ CONSTRUCTION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9046,
+    "name": "BAYAN PC TECHNOLOGIES , INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9093,
+    "name": "ANY NETWORK SYSTEM, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9096,
+    "name": "VABDI CORP.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9099,
+    "name": "FAT FREE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9108,
+    "name": "LIFEGUARD ARCHANGELS SECURITY AGENCY CORPORATION",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9109,
+    "name": "ASSOCIATION OF GOVERNMENT INTERNAL AUDITORS, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9110,
+    "name": "SONIA SIAZON-MONTESCLAROS",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9114,
+    "name": "WORLD SOLUTION TECHNOLOGY, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9115,
+    "name": "GLOBE TELECOM, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9123,
+    "name": "MANILA GOLF & COUNTRY CLUB INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9124,
+    "name": "MAKATI (SPORTS) CLUB, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9125,
+    "name": "MERALCO",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010",
+      "50204020"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9130,
+    "name": "PLDT, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9135,
+    "name": "PILIPINAS SHELL PETROLEUM CORP.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9140,
+    "name": "TECSON ORCHIDS CORP",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9165,
+    "name": "FRUMENCIO T. TAGULINAO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9178,
+    "name": "MACROLOGIC DIVERSIFIED TECHNOLOGIES INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9189,
+    "name": "RONNIE MHIL A. LABICANE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9192,
+    "name": "ACCESSORIES AND SUPPLIES DEPOT, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9197,
+    "name": "FRINGE BENEFIT TAX",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9198,
+    "name": "MIDYEAR AND YEAR END BONUS",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9201,
+    "name": "TOP CONSULT, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9222,
+    "name": "ASAHI DESIGN CENTRE, INC",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9238,
+    "name": "MACEA, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9256,
+    "name": "RLAINEBREEZEAIRE REF AND AIRCON SERVICE",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 2265,
+    "name": "JODANS ENGINEERING",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9272,
+    "name": "GREENHAVEN PROPERTY VENTURES INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9278,
+    "name": "MA. LEONILA SOCORRO A. JURADO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9280,
+    "name": "FTPC I.T. SOLUTION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9286,
+    "name": "PANTRONICS INTERNATIONAL CORP.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9290,
+    "name": "JAZ GRILLHOUSE & CATERING SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9297,
+    "name": "IDEAMAX DESIGN INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9316,
+    "name": "MPSP PLUMBING SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9319,
+    "name": "KAPE TI NORTE COFFEE TRADING",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9321,
+    "name": "PRO-VALUERS ALLIANCE CORPORATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9323,
+    "name": "EARL VIC B. HURNA",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9330,
+    "name": "LEW JORDEN R. JULVE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9333,
+    "name": "POL B. MIRAFUENTES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9337,
+    "name": "WILLIAM V. OLARTE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9339,
+    "name": "SELDA 13 NETWORKING SOLUTION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9357,
+    "name": "DCEQ HARDWARE TOOLS AND EQUIPMENT TRADING",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9364,
+    "name": "PHILIPPINE SURVEY AND RESEARCH CENTER, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 7376,
+    "name": "AGRO-DIGITAL TECHNOLOGIES PHILIPPINES, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9385,
+    "name": "GENEFLOR L. SANTIAGO-LUMBANG",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9392,
+    "name": "JEMAR AIRCONDITIONING & REFRIGERATION SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9402,
+    "name": "FELICISIMO M. NACINO JR.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9409,
+    "name": "ST. PIUS CONSTRUCTION AND SUPPLY",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9420,
+    "name": "INTEGRATED AUTOMOTIVE SERVICES, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9423,
+    "name": "JAMINA C. CALIGAN",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9434,
+    "name": "EZEKIEL L. CEFRE",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9446,
+    "name": "PHLIPPINE ASSOCIATION OF CORPORATE STATE AUDITORS, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9464,
+    "name": "RAMON MANUEL M. DUAYAN",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9465,
+    "name": "CHRISTINE JOY M. LLAGAS",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9473,
+    "name": "RAYMOND J. PERIABRAS",
+    "associatedAccounts": [
+      "29999990A",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9474,
+    "name": "PEOPLE DYNAMICS, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9475,
+    "name": "JUFEM TRADING CORPORATION",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9481,
+    "name": "NASSER USMAN",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9500,
+    "name": "CENTRAL BUSINESS PARK 1-ISLAND A ASSOCIATION, INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9515,
+    "name": "TECHSOLVE SYSTEMS SOLUTIONS INC.",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9520,
+    "name": "PSY SYSTEMS AND INNOVATIONS, OPC",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9522,
+    "name": "JUNREY S. ROYO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9536,
+    "name": "JERAHMEEL FANDRALL B. CHEN",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9543,
+    "name": "AUGUSTINE RAPHAEL U. ABRAGAN",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9568,
+    "name": "SHELL PILIPINAS PETROLEUM",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9573,
+    "name": "ARRA D. ALTAVANO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9575,
+    "name": "SZARINA LOUISE C. OSTREA",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9576,
+    "name": "MARIA APRIL LORELEI ANNA T. WYCOCO",
+    "associatedAccounts": [
+      "29999990A",
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9577,
+    "name": "MARTEE GABRIEL DC. CASTRO",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9600,
+    "name": "SHANGRILA C. QUEZON",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990A",
+    "slCode": 9625,
+    "name": "GENCOOL MECHANICAL SERVICES",
+    "associatedAccounts": [
+      "29999990A"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 7089,
+    "name": "PHILIPPINE RECLAMATION AUTHORITY",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 8465,
+    "name": "IEQUITY TECHNOLOGIES CORPORATION",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 8622,
+    "name": "SCHEMA KONSULT INC",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 8715,
+    "name": "KCN CONSTRUCTION",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 8909,
+    "name": "ACXESSPOINT I.T. SOLUTIONS INC",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 602,
+    "name": "IGTANLOC, MICHAEL JOHN C.",
+    "associatedAccounts": [
+      "29999990B",
+      "30701010"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 9324,
+    "name": "CAMILLE JOY G. JOVEN",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 9545,
+    "name": "PROVIDENT FUND - EMPLOYER SHARE",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": "29999990B",
+    "slCode": 9546,
+    "name": "PROVIDENT FUND - EMPLOYEE SHARE",
+    "associatedAccounts": [
+      "29999990B"
+    ]
+  },
+  {
+    "parent": 30701010,
+    "slCode": 5055,
+    "name": "BUREAU OF TREASURY",
+    "associatedAccounts": [
+      "30701010"
+    ]
+  },
+  {
+    "parent": 30701010,
+    "slCode": 5618,
+    "name": "NATIONAL DEVELOPMENT COMPANY",
+    "associatedAccounts": [
+      "30701010"
+    ]
+  },
+  {
+    "parent": 30701010,
+    "slCode": 8827,
+    "name": "CITY TREASURER OF LEGASPI",
+    "associatedAccounts": [
+      "30701010"
+    ]
+  },
+  {
+    "parent": 30701010,
+    "slCode": 8956,
+    "name": "RETAINED EARNINGS, BEGINNING",
+    "associatedAccounts": [
+      "30701010"
+    ]
+  },
+  {
+    "parent": 30701010,
+    "slCode": 8986,
+    "name": "SHARE IN PPA OF AFFILIATE",
+    "associatedAccounts": [
+      "30701010"
+    ]
+  },
+  {
+    "parent": 30701010,
+    "slCode": 9193,
+    "name": "BTR GUARANTEE FEE",
+    "associatedAccounts": [
+      "30701010"
+    ]
+  },
+  {
+    "parent": 30701010,
+    "slCode": 9206,
+    "name": "ASIAN APPRAISAL COMPANY INC.",
+    "associatedAccounts": [
+      "30701010"
+    ]
+  },
+  {
+    "parent": 40202050,
+    "slCode": 5214,
+    "name": "LUZON INTEGRATED SERVICES INC.",
+    "associatedAccounts": [
+      "40202050"
+    ]
+  },
+  {
+    "parent": 40202050,
+    "slCode": 5656,
+    "name": "GOODWILL TRADING COMPANY",
+    "associatedAccounts": [
+      "40202050"
+    ]
+  },
+  {
+    "parent": 40202050,
+    "slCode": 8642,
+    "name": "OCEAN DEEP ENTERPRISES",
+    "associatedAccounts": [
+      "40202050"
+    ]
+  },
+  {
+    "parent": 40202050,
+    "slCode": 9579,
+    "name": "INNOVATION HUB",
+    "associatedAccounts": [
+      "40202050",
+      "50210030B"
+    ]
+  },
+  {
+    "parent": 40202050,
+    "slCode": 9655,
+    "name": "LKY FOOD GROUP INC.",
+    "associatedAccounts": [
+      "40202050"
+    ]
+  },
+  {
+    "parent": "40202210D",
+    "slCode": 8176,
+    "name": "NDC \"AA\" BONDS (4TH TRANCHE)",
+    "associatedAccounts": [
+      "40202210D"
+    ]
+  },
+  {
+    "parent": 40501010,
+    "slCode": 8463,
+    "name": "DEVELOPMENT CENTER ASIA AFRICA PACIFIC",
+    "associatedAccounts": [
+      "40501010"
+    ]
+  },
+  {
+    "parent": 40501020,
+    "slCode": 5366,
+    "name": "PNB VENTURE CAPITAL CORPORATION",
+    "associatedAccounts": [
+      "40501020"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8293,
+    "name": "INSTITUTE OF CORPORATE DIRECTORS,INC",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8344,
+    "name": "MULTICOLOR COMPUTER HAUS",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8366,
+    "name": "MC JO TRADING",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8523,
+    "name": "AGIA",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8630,
+    "name": "CTL IMAGE ENTERPRISES",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8802,
+    "name": "RAYMON D JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8907,
+    "name": "JOAQUIN III, FRANCISCO",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8922,
+    "name": "G7 MULTICOLOR",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 8923,
+    "name": "CARPEL ENVIRONMENT CORP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9041,
+    "name": "G.P. JUNK SHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9044,
+    "name": "C.T. CAMACHO JUNK SHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9179,
+    "name": "NIKKO YSON",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9188,
+    "name": "CARPELL JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9236,
+    "name": "JESSIE BITANGCUR, JR.",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9253,
+    "name": "JUN YSON",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9274,
+    "name": "LITO ROMUALDO",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9306,
+    "name": "ROSHAR JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9329,
+    "name": "OCA & JOSIE JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9336,
+    "name": "ASH CODY TRADING",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9349,
+    "name": "RDE JUNK SHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9367,
+    "name": "ASCUDY JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9376,
+    "name": "KORL BARIBAR",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9399,
+    "name": "JUNIEL PADILLA",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9400,
+    "name": "JOSE TABON",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9401,
+    "name": "ROSITA TABON",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9425,
+    "name": "MIKKO JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9479,
+    "name": "AS CODY JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9533,
+    "name": "CARPEL ENVIRONMENT CORPORATION",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9537,
+    "name": "RDA JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9550,
+    "name": "LOUIE JUNK SHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9564,
+    "name": "EMARRY JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9582,
+    "name": "JUNO JUNK SHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9624,
+    "name": "ECO AIDE JUNKSHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9645,
+    "name": "Santiago Deang Jr.",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9666,
+    "name": "EMMARY JUNK SHOP",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 40603990,
+    "slCode": 9716,
+    "name": "D' LACOSTE ENTERPRISE",
+    "associatedAccounts": [
+      "40603990"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 219,
+    "name": "OFFICE OF THE CHAIRMAN",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102040",
+      "50102080",
+      "50102110",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50202010",
+      "50210030B",
+      "50210030C",
+      "50213050",
+      "50299030"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 221,
+    "name": "LEGAL DEPARTMENT",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102080",
+      "50102110",
+      "50102120",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50205030",
+      "50210030B",
+      "50210030C",
+      "50211010",
+      "50212990B",
+      "50215010C",
+      "50215030B",
+      "50299040",
+      "50299050A",
+      "50299050B",
+      "50299060"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 227,
+    "name": "CORPORATE PLANNING DEPARTMENT",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102080",
+      "50102120",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50201020",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205020",
+      "50205030",
+      "50210030B",
+      "50210030C",
+      "50211030",
+      "50212990B",
+      "50213990",
+      "50299040",
+      "50299070",
+      "50301040"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 8218,
+    "name": "BUREAU OF TREASURY-FAO COA",
+    "associatedAccounts": [
+      "50101010",
+      "50102150",
+      "50205030",
+      "50210030B"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 9131,
+    "name": "INTERNAL AUDIT DEPARTMENT",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102040",
+      "50102080",
+      "50102110",
+      "50102120",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50202010",
+      "50203010",
+      "50205020",
+      "50210030B",
+      "50211030",
+      "50212990B"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 9509,
+    "name": "INVESTMENTS GROUP",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50210030B",
+      "50210030D",
+      "50212990B"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 9527,
+    "name": "Corporate Communication Group",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102080",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50212990B",
+      "50215010C",
+      "50299010",
+      "50299040",
+      "50299050B"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 9551,
+    "name": "FUNDS MANAGEMENT GROUP",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102080",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104990",
+      "50203990",
+      "50205020",
+      "50210030D"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 9606,
+    "name": "FINANCE AND SUBSIDIARIES GROUP",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50212990B",
+      "50299040",
+      "50299050B",
+      "50299070",
+      "50301040"
+    ]
+  },
+  {
+    "parent": 50101010,
+    "slCode": 9620,
+    "name": "CORPORATE SUPPORT GROUP",
+    "associatedAccounts": [
+      "50101010",
+      "50102010",
+      "50102020",
+      "50102030",
+      "50102040",
+      "50102140",
+      "50102150",
+      "50102990",
+      "50103010",
+      "50103020",
+      "50103030",
+      "50103040",
+      "50104030",
+      "50104990",
+      "50201010",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50212990B",
+      "50213060A",
+      "50215010C",
+      "50299040",
+      "50299050B",
+      "50299070"
+    ]
+  },
+  {
+    "parent": 50102030,
+    "slCode": 5522,
+    "name": "CORSIGA, ERLINDA",
+    "associatedAccounts": [
+      "50102030"
+    ]
+  },
+  {
+    "parent": 50102040,
+    "slCode": 9530,
+    "name": "BUSINESS DEVELOPMENT GROUP",
+    "associatedAccounts": [
+      "50102040",
+      "50102080",
+      "50102990",
+      "50104990",
+      "50201010",
+      "50201020",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50203990",
+      "50205010",
+      "50205020",
+      "50210030B",
+      "50210030C",
+      "50210030D",
+      "50212990B",
+      "50299040",
+      "50299050B",
+      "50299070"
+    ]
+  },
+  {
+    "parent": 50102140,
+    "slCode": 8193,
+    "name": "NDC ISO CERT. PROJ.",
+    "associatedAccounts": [
+      "50102140",
+      "50202010",
+      "50203990",
+      "50210030B",
+      "50210030C",
+      "50211030"
+    ]
+  },
+  {
+    "parent": 50102990,
+    "slCode": 9531,
+    "name": "COMMUNICATIONS GROUP",
+    "associatedAccounts": [
+      "50102990",
+      "50202010",
+      "50203010",
+      "50203090",
+      "50210030B",
+      "50210030D"
+    ]
+  },
+  {
+    "parent": 50103010,
+    "slCode": 7008,
+    "name": "OPON, CEBU",
+    "associatedAccounts": [
+      "50103010"
+    ]
+  },
+  {
+    "parent": 50103020,
+    "slCode": 5219,
+    "name": "MAKATI INSTITUTE OF TAX RESEARCH",
+    "associatedAccounts": [
+      "50103020"
+    ]
+  },
+  {
+    "parent": 50104990,
+    "slCode": 9289,
+    "name": "FUND MANAGEMENT GROUP",
+    "associatedAccounts": [
+      "50104990",
+      "50203010",
+      "50210030D",
+      "50211030"
+    ]
+  },
+  {
+    "parent": 50201020,
+    "slCode": 9558,
+    "name": "GLOVAX BIOTECH CORP.",
+    "associatedAccounts": [
+      "50201020",
+      "50210030B",
+      "50210030C"
+    ]
+  },
+  {
+    "parent": 50201020,
+    "slCode": 9559,
+    "name": "KACIFIC",
+    "associatedAccounts": [
+      "50201020"
+    ]
+  },
+  {
+    "parent": "50210030B",
+    "slCode": 9561,
+    "name": "YACHIYO ENGINEERING CO., LTD.",
+    "associatedAccounts": [
+      "50210030B"
+    ]
+  },
+  {
+    "parent": "50210030B",
+    "slCode": 9610,
+    "name": "GLOBAL GREEN GROWTH INSTITUTE (GGGI)",
+    "associatedAccounts": [
+      "50210030B"
+    ]
+  },
+  {
+    "parent": "50210030B",
+    "slCode": 9611,
+    "name": "WORKHAVEN SPACE INC.",
+    "associatedAccounts": [
+      "50210030B"
+    ]
+  },
+  {
+    "parent": "50210030B",
+    "slCode": 9612,
+    "name": "AHGLAB CONSULTANCY SERVICES INC.",
+    "associatedAccounts": [
+      "50210030B"
+    ]
+  },
+  {
+    "parent": "50210030B",
+    "slCode": 9613,
+    "name": "BRINC LIMITED",
+    "associatedAccounts": [
+      "50210030B"
+    ]
+  },
+  {
+    "parent": "50210030C",
+    "slCode": 9454,
+    "name": "ATHLETIC EXPENSE",
+    "associatedAccounts": [
+      "50210030C"
+    ]
+  },
+  {
+    "parent": 50211030,
+    "slCode": 9183,
+    "name": "PBT TECHNOLOGY SOLUTIONS, INC.",
+    "associatedAccounts": [
+      "50211030"
+    ]
+  },
+  {
+    "parent": 50212010,
+    "slCode": 9232,
+    "name": "BENITO L. ONG",
+    "associatedAccounts": [
+      "50212010",
+      "50212990A",
+      "50215010C",
+      "50501050",
+      "50501990"
+    ]
+  },
+  {
+    "parent": 50215040,
+    "slCode": 8999,
+    "name": "TAX EXPENSE DEFERRED",
+    "associatedAccounts": [
+      "50215040"
+    ]
+  }
+]

@@ -1,0 +1,71 @@
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  #DvToPrint {
+    max-height: unset;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .no-border-print th,
+  .no-border-print td {
+    border: none !important;
+  }
+
+}
+
+.table-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal !important;
+  min-width: 150px;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* In your CSS file */
+.spin {
+  animation: spin 1s linear infinite; /* Spins the icon */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+.icon {
+  transition: transform 0.5s ease; /* Transition for smooth effect */
+}
+
+@keyframes bellMove {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.bell-animation {
+  animation: bellMove 0.6s ease-out;
+}

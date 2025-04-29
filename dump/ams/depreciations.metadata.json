@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"3d07ca08b36f4de7a93b5b15fbc4c40d","collectionName":"depreciations","type":"collection"}

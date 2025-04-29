@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"01c5f39514bb4ac5aba96c3be4643fce","collectionName":"reportequitychanges","type":"collection"}

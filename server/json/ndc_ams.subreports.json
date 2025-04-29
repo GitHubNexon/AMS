@@ -1,0 +1,1084 @@
+[{
+  "_id": {
+    "$oid": "67973391034149ae42d0a539"
+  },
+  "title": "ASSETS",
+  "rows": [
+    {
+      "description": " cash and cash equivalents ",
+      "value": [
+        {
+          "code": "10101010",
+          "name": "CASH-COLLECTING OFFICERS",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67988b31b83a37945e313f7f"
+          }
+        },
+        {
+          "code": "10101020",
+          "name": "PETTY CASH",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67988b31b83a37945e313f80"
+          }
+        },
+        {
+          "code": "10102",
+          "name": "CASH IN BANK- LOCAL CURRENCY",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67988b31b83a37945e313f81"
+          }
+        },
+        {
+          "code": "10102020",
+          "name": "CASH IN BANK- LOCAL CURRENCY, CURRENT ACCOUNT",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67988b31b83a37945e313f82"
+          }
+        },
+        {
+          "code": "10103030",
+          "name": "CASH IN BANK- FOREIGN CURRENCY, SAVINGS ACCOUNT",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67988b31b83a37945e313f83"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "67973158034149ae42d0897a"
+      }
+    },
+    {
+      "description": " other investment ",
+      "value": [
+        {
+          "code": "10105020",
+          "name": "TIME DEPOSITS- LOCAL CURRENCY",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67988b68b83a37945e3140ab"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "67973158034149ae42d0897b"
+      }
+    },
+    {
+      "description": " current receivables net ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d0897c"
+      }
+    },
+    {
+      "description": " inventories ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d0897d"
+      }
+    },
+    {
+      "description": " other current assets ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d0897e"
+      }
+    },
+    {
+      "description": " financial assets ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d0897f"
+      }
+    },
+    {
+      "description": "Investment in associates/affiliates",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d08980"
+      }
+    },
+    {
+      "description": "Investment in subsidiaries",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d08981"
+      }
+    },
+    {
+      "description": "Other investment",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d08982"
+      }
+    },
+    {
+      "description": " receivables-LT ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d08983"
+      }
+    },
+    {
+      "description": " investment property ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d08984"
+      }
+    },
+    {
+      "description": " property, plant and equipment ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d08985"
+      }
+    },
+    {
+      "description": " other non current ",
+      "value": [],
+      "_id": {
+        "$oid": "67973158034149ae42d08986"
+      }
+    },
+    {
+      "description": "TOTAL ASSETS",
+      "value": [],
+      "_id": {
+        "$oid": "67988341b83a37945e311087"
+      }
+    }
+  ],
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "67974a4aaf68d58d718ea6b6"
+  },
+  "title": "STATEMENTS OF FINANCIAL POSITION",
+  "rows": [
+    {
+      "description": "ASSETS\t\t",
+      "value": [],
+      "_id": {
+        "$oid": "67974a4aaf68d58d718ea6b7"
+      }
+    },
+    {
+      "description": "Current Assets",
+      "value": [],
+      "_id": {
+        "$oid": "67974a4aaf68d58d718ea6b8"
+      }
+    },
+    {
+      "description": "Cash and cash equivalents ",
+      "value": [
+        {
+          "code": "10101020",
+          "name": "PETTY CASH",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67974606af68d58d718e8bd2"
+          }
+        },
+        {
+          "code": "10102",
+          "name": "CASH IN BANK- LOCAL CURRENCY",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67974606af68d58d718e8bd3"
+          }
+        },
+        {
+          "code": "10102020",
+          "name": "CASH IN BANK- LOCAL CURRENCY, CURRENT ACCOUNT",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67974606af68d58d718e8bd4"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "67974a4aaf68d58d718ea6b9"
+      }
+    },
+    {
+      "description": "Other investments",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31180d"
+      }
+    },
+    {
+      "description": "Receivables, net",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31180e"
+      }
+    },
+    {
+      "description": "Inventories",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31180f"
+      }
+    },
+    {
+      "description": "Other current assets",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311810"
+      }
+    },
+    {
+      "description": "Total Current Assets",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311811"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311812"
+      }
+    },
+    {
+      "description": "Non-Current Assets",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311813"
+      }
+    },
+    {
+      "description": "Financial assets",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311814"
+      }
+    },
+    {
+      "description": "Investment in associates/affiliates",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311815"
+      }
+    },
+    {
+      "description": "Investment in subsidiaries",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311816"
+      }
+    },
+    {
+      "description": "Other investments",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311817"
+      }
+    },
+    {
+      "description": "Receivables, net",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311818"
+      }
+    },
+    {
+      "description": "Investment property",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311819"
+      }
+    },
+    {
+      "description": "Property and equipment, net",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31181a"
+      }
+    },
+    {
+      "description": "Other non-current assets ",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31181b"
+      }
+    },
+    {
+      "description": "Total Non-Current Assets",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31181c"
+      }
+    },
+    {
+      "description": "TOTAL ASSETS",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31181d"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31181e"
+      }
+    },
+    {
+      "description": "LIABILITIES AND EQUITY\t\t",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31181f"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311820"
+      }
+    },
+    {
+      "description": "Current Liabilities",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311821"
+      }
+    },
+    {
+      "description": "Financial Liabilities",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311822"
+      }
+    },
+    {
+      "description": "Inter-agency payables",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311823"
+      }
+    },
+    {
+      "description": "Trust liabilities",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311824"
+      }
+    },
+    {
+      "description": "Deferred credits/unearned income",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311825"
+      }
+    },
+    {
+      "description": "Provisions",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311826"
+      }
+    },
+    {
+      "description": "Total Current  Liabilities",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311827"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311828"
+      }
+    },
+    {
+      "description": "Non-Current Liabilities",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e311829"
+      }
+    },
+    {
+      "description": "Deferred tax liability",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31182a"
+      }
+    },
+    {
+      "description": "Trust liabilities",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31182b"
+      }
+    },
+    {
+      "description": "Total Non-Current Liabilities",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31182c"
+      }
+    },
+    {
+      "description": "Equity",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31182d"
+      }
+    },
+    {
+      "description": "TOTAL LIABILITIES AND EQUITY",
+      "value": [],
+      "_id": {
+        "$oid": "67988744b83a37945e31182e"
+      }
+    }
+  ],
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67974b37af68d58d718eb570"
+  },
+  "title": "Breakdown of receivables",
+  "rows": [
+    {
+      "description": "loans receivable",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb571"
+      }
+    },
+    {
+      "description": "interest receivable",
+      "value": [
+        {
+          "code": "10301050B",
+          "name": "ACCRUED INTEREST-LOANS/NOTES RECEIVABLE",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67974b72af68d58d718eb616"
+          }
+        },
+        {
+          "code": "10301050A",
+          "name": "ACCRUED INTEREST-MONEY MARKET PLACEMENTS",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "67974ba3af68d58d718eb8b8"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb572"
+      }
+    },
+    {
+      "description": "rental",
+      "value": [
+        {
+          "code": "10301010B",
+          "name": "RENTAL RECEIVABLE",
+          "operateNext": "add",
+          "_id": {
+            "$oid": "6798831fb83a37945e310fcc"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb573"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb574"
+      }
+    },
+    {
+      "description": "due from officers and employees",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb575"
+      }
+    },
+    {
+      "description": "other receivables",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb576"
+      }
+    },
+    {
+      "description": "TOTAL",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb577"
+      }
+    },
+    {
+      "description": "allowance for impairment",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb578"
+      }
+    },
+    {
+      "description": "due from national government",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb579"
+      }
+    },
+    {
+      "description": "TOTAL CURRENT",
+      "value": [],
+      "_id": {
+        "$oid": "67974b37af68d58d718eb57a"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e311136"
+      }
+    },
+    {
+      "description": "loans receivable",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e311137"
+      }
+    },
+    {
+      "description": "interest receivable",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e311138"
+      }
+    },
+    {
+      "description": "due from subsidiaries/associates/affiliates",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e311139"
+      }
+    },
+    {
+      "description": "due from officers and employees",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e31113a"
+      }
+    },
+    {
+      "description": "due from national government",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e31113b"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e31113c"
+      }
+    },
+    {
+      "description": "allowance for impairment",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e31113d"
+      }
+    },
+    {
+      "description": " TOTAL NON CURRENT ",
+      "value": [],
+      "_id": {
+        "$oid": "6798839eb83a37945e31113e"
+      }
+    }
+  ],
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "67987f9fb83a37945e30bf63"
+  },
+  "title": "STATEMENTS OF COMPREHENSIVE INCOME",
+  "rows": [
+    {
+      "description": " INCOME",
+      "value": [],
+      "_id": {
+        "$oid": "67987f9fb83a37945e30bf64"
+      }
+    },
+    {
+      "description": "Business Income",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31191d"
+      }
+    },
+    {
+      "description": "Gains ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31191e"
+      }
+    },
+    {
+      "description": "Other non-operating income",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31191f"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311920"
+      }
+    },
+    {
+      "description": " EXPENSES ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311921"
+      }
+    },
+    {
+      "description": " Personnel services \t\t",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311922"
+      }
+    },
+    {
+      "description": " Maintenance and other operating expenses \t\t",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311923"
+      }
+    },
+    {
+      "description": " Financial Expenses \t\t",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311924"
+      }
+    },
+    {
+      "description": " Non-cash expenses \t\t",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311925"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311926"
+      }
+    },
+    {
+      "description": " INCOME BEFORE INCOME TAX ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311927"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311928"
+      }
+    },
+    {
+      "description": " INCOME TAX EXPENSE ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e311929"
+      }
+    },
+    {
+      "description": " Current tax ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31192a"
+      }
+    },
+    {
+      "description": " Deferred tax  ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31192b"
+      }
+    },
+    {
+      "description": " NET INCOME ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31192c"
+      }
+    },
+    {
+      "description": " Other comprehensive income ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31192d"
+      }
+    },
+    {
+      "description": " TOTAL COMPREHENSIVE INCOME ",
+      "value": [],
+      "_id": {
+        "$oid": "6798879cb83a37945e31192e"
+      }
+    }
+  ],
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67988408b83a37945e3111db"
+  },
+  "title": "LIABILITIES AND EQUITY",
+  "rows": [
+    {
+      "description": "Financial liabilities ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111dc"
+      }
+    },
+    {
+      "description": "interagency payables ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111dd"
+      }
+    },
+    {
+      "description": " trust liabilities ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111de"
+      }
+    },
+    {
+      "description": " deferred credits/unearned income ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111df"
+      }
+    },
+    {
+      "description": " provisions ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e0"
+      }
+    },
+    {
+      "description": " Total current liabilities ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e1"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e2"
+      }
+    },
+    {
+      "description": " deferred tax liability ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e3"
+      }
+    },
+    {
+      "description": " trust liabilities - non current ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e4"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e5"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e6"
+      }
+    },
+    {
+      "description": " total liabilities ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e7"
+      }
+    },
+    {
+      "description": " Equity ",
+      "value": [],
+      "_id": {
+        "$oid": "67988408b83a37945e3111e8"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112ad"
+      }
+    },
+    {
+      "description": "BUSINESSINCOME",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112ae"
+      }
+    },
+    {
+      "description": "GAINS",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112af"
+      }
+    },
+    {
+      "description": "OTHER NON-OPERATING INCOME",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b0"
+      }
+    },
+    {
+      "description": " TOTAL INCOME ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b1"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b2"
+      }
+    },
+    {
+      "description": " Personnel Services ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b3"
+      }
+    },
+    {
+      "description": " professional services ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b4"
+      }
+    },
+    {
+      "description": " utility expense ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b5"
+      }
+    },
+    {
+      "description": " repairs and maintenance ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b6"
+      }
+    },
+    {
+      "description": " Training  expense ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b7"
+      }
+    },
+    {
+      "description": "General services",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b8"
+      }
+    },
+    {
+      "description": " taxes, insurance premiums ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112b9"
+      }
+    },
+    {
+      "description": "Communication expense",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112ba"
+      }
+    },
+    {
+      "description": " supplies and materials ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112bb"
+      }
+    },
+    {
+      "description": "traveling expense",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112bc"
+      }
+    },
+    {
+      "description": "other MOE",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112bd"
+      }
+    },
+    {
+      "description": "confidential, intelligence and extraodinary expenses",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112be"
+      }
+    },
+    {
+      "description": " FINANCIAL EXPENSES ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112bf"
+      }
+    },
+    {
+      "description": " depreciation ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c0"
+      }
+    },
+    {
+      "description": " impairment loss ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c1"
+      }
+    },
+    {
+      "description": "forex loss",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c2"
+      }
+    },
+    {
+      "description": "SHARE IN LOSS OF JOINT VENTURE ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c3"
+      }
+    },
+    {
+      "description": "Income tax -Current",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c4"
+      }
+    },
+    {
+      "description": "Deferred income tax",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c5"
+      }
+    },
+    {
+      "description": " TOTAL EXPENSES ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c6"
+      }
+    },
+    {
+      "description": " NET INCOME ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c7"
+      }
+    },
+    {
+      "description": " other comprehensive income ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c8"
+      }
+    },
+    {
+      "description": " COMPREHENSIVE INCOME ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112c9"
+      }
+    },
+    {
+      "description": "",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112ca"
+      }
+    },
+    {
+      "description": " TOTAL EQUITY ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112cb"
+      }
+    },
+    {
+      "description": " TOTAL LIABILITIES AND EQUITY ",
+      "value": [],
+      "_id": {
+        "$oid": "679884a5b83a37945e3112cc"
+      }
+    }
+  ],
+  "__v": 1
+}]

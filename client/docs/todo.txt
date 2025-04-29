@@ -1,0 +1,41 @@
+PENDING
+    bug:
+        - account picker on entry bug not selecting on some accounts
+        - 2 approvers not showing in voucher
+
+    new feature:
+        - DV number on input tax alphalist report
+        - payment entry reviewed by remove
+        - cancel entries
+        - revert deleted entries
+        - entries update history
+        - bir for 2307
+        - billing SOA
+        - PPE monitoring
+        - payroll
+
+    adjustment:
+        - witholding tax buttons name 20201010 5053 - fvat
+        - dv date default on voucher
+        - default income and expenses accounts
+
+IN PROGRESS:
+    bug:
+        - cash receipt cheque not showing
+
+    new feature:
+        - bank recon
+        - year end closing
+
+    adjustment:
+        - financial statement total if negative = net loss <value> on NET INCOME TOTAL COMPREHENSIVE INCOME/loss
+
+DONE:
+    bug:
+
+    new feature:
+        - signatories check box
+
+    adjustment:
+        - Payor title on receipt entry
+        - hide action column in order of payment for no update gl roles

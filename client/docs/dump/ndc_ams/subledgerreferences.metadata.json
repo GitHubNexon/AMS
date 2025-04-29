@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"slCode":{"$numberInt":"1"}},"name":"slCode_1","background":true,"unique":true}],"uuid":"534b8dcf39f64afc829a64ba0e288f4a","collectionName":"subledgerreferences","type":"collection"}

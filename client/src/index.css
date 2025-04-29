@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital@0;1&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", "Roboto", sans-serif;
+  background-size: cover;
+  background-repeat: none;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100vw;
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+h2 {
+  @apply text-xl md:text-4xl;
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  @apply text-xl tracking-tight leading-relaxed;
+  font-family: "Roboto", sans-serif;
+}
+
+.fade {
+  transition: opacity 0.5s, visibility 0.5s !important;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+.animated-border {
+  transition: border-color 1s !important;
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
+.loader {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(192, 192, 192, 0.538) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+.modal {
+  background-color: rgba(192, 192, 192, 0.538);
+  backdrop-filter: blur(5px);
+}
+
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+  height: 6px; /* Height of the horizontal scrollbar */
+}
+
+/* Style the scrollbar track (the part the thumb slides along) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: rgb(61, 149, 61); /* Background color of the thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Style the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(62, 221, 62); /* Darker background color when hovered */
+}
+
+/* Hide the up and down arrows in number input */
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Add transition to the height property for smooth expansion/collapse */
+.animated-list {
+  overflow: hidden; /* Hide content that overflows */
+  transition: height 0.3s ease; /* Adjust duration and timing */
+}
+
+.animated-list-enter {
+  height: 0;
+}
+
+.animated-list-enter-active {
+  height: auto;
+}
+
+.animated-list-exit {
+  height: auto;
+}
+
+.animated-list-exit-active {
+  height: 0;
+}
+.scrollable-table-container {
+  height: 400px; /* Adjust as needed */
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.sidebar-float {
+  background-color: #84848444;
+  backdrop-filter: blur(5px);
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+}
+
+.shadow-bottom {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.noclear::-webkit-clear-button {
+  display: none !important; /* Hides the clear button in WebKit browsers */
+}
+.noclear::-ms-clear {
+  display: none !important; /* Hides the clear button in Internet Explorer */
+}
+
+.data-grid tr td span {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.data-grid tr:nth-child(1) {
+  position: sticky;
+  top: -1.5px;
+  /* z-index: 50; */
+}
+
+.blocker{
+  background-color: rgba(192, 192, 192, 0.538);
+  backdrop-filter: blur(1px);
+  color: #1e1e1e;
+  cursor: pointer;
+}
+
+.data-grid tr:nth-child(1) td{
+  background-color: #008000 !important;
+  color: #FFF !important;
+  /* z-index: 50; */
+}
+
+.data-grid tr:nth-child(1) td span{
+  /* z-index: 50; */
+  color: #FFF !important;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+.data-grid tr:nth-child(1) td span {
+  z-index: 50;
+  color: #fff !important;
+} /* <-- Add this closing brace */
+
+
+.data-grid tr:nth-child(1) td:nth-child(1){
+  /* background-color: red !important; */
+  /* transform: translateX(-25px); */
+}
+
+.data-grid tr:nth-child(1) td{
+
+  color: black !important;
+  text-align: center !important;
+}
+
+.data-grid tr td {
+  text-align: start !important;
+}
+
+.data-grid tr td input {
+  padding: 10px !important;
+  width: 100% !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
+
+.no-sticky {
+  position: static !important;
+}
+
+.bottomstick tbody tr:last-child {
+  position: sticky;
+  bottom: 0;
+  background-color: rgb(205, 205, 205);
+}
+
+.bottomstick tbody tr:last-child td:nth-child(1) {
+  text-align: end;
+  font-weight: bold;
+}
+
+.bbb > div > div > div:nth-child(1) > div{
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  color: #000 !important;
+  text-align: end !important;
+}
+
+.bbb > div > div > div:nth-child(2) > div{
+  padding: 0px;
+}
+
+.btn-primary{
+  background-color: #008000;
+  color: #FFF;
+  padding: 2px 5px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.btn-primary:hover{
+  background-color: #0d9c0d;
+}
+.btn-secondary{
+  background-color: #2c2c2c;
+  color: #FFF;
+  padding: 2px 5px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.btn-secondary:hover{
+  background-color: rgb(150, 150, 150);
+}

@@ -1,0 +1,6 @@
+delete:
+    LedgersEditor.jsx -> replaced with LedgerSheet
+
+
+3.8.2025
+- added PrintJV component to print all journal voucher: no longer seperated rental accrual to regular vouchers

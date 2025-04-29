@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ba03db5d1b2049a5a91cc932f4d3442f","collectionName":"reccuringbills","type":"collection"}

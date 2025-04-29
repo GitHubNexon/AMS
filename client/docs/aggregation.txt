@@ -1,0 +1,42 @@
+// destructure documents per ledgers entry
+[
+  {
+    $addFields: {
+      date: {
+        $ifNull: ["$JVDate", {
+          $ifNull: ["$DVDate", "$CRDate"]
+        }]
+      },
+      no: {
+        $ifNull: ["$JVNo", {
+          $ifNull: ["$DVNo", "$CRNo"]
+        }]
+      }
+    }
+  },
+  {
+    $project: {
+      date: 1,
+      no: 1,
+      ledgers: 1
+    }
+  },
+  {
+    $unwind: {
+      path: "$ledgers"
+    }
+  },
+  {
+    $project: {
+      date: 1,
+      no: 1,
+      type: "$ledgers.type",
+      dr: "$ledgers.dr",
+      cr: "$ledgers.cr",
+      code: "$ledgers.ledger.code",
+      ledger: "$ledgers.ledger.name",
+      slCode: "$ledgers.subledger.slCode",
+      subledger: "$ledgers.subledger.name"
+    }
+  }
+]

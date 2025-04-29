@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"orderOfPaymentNo":{"$numberInt":"1"}},"name":"orderOfPaymentNo_1","background":true,"unique":true}],"uuid":"4dba0d2f7a2c43a8b5a97ddf604f3031","collectionName":"orderofpaymentdeleteds","type":"collection"}

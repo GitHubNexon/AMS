@@ -1,0 +1,8 @@
+to restore
+
+mongorestore --uri="mongodb://localhost:27017/ams" "C:\ITrack-Solutions_Projects\AMS\dump\ndc_ams"
+
+to dump
+
+mongodump --uri="mongodb://localhost:27017/ndc_ams" --out=/path/to/dump
+

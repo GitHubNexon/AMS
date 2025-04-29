@@ -1,0 +1,1388 @@
+[
+  {
+    "Code": "WI 010",
+    "Category": "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.)",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 011",
+    "Category": "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.)",
+    "Coverage": "If the current year's gross income exceed P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 020",
+    "Category": "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 021",
+    "Category": "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES",
+    "Coverage": "If the current year's gross income exceed P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 030",
+    "Category": "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 031",
+    "Category": "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 040",
+    "Category": "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 041",
+    "Category": "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 050",
+    "Category": "MANAGEMENT AND TECHNICAL CONSULTANTS",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 051",
+    "Category": "MANAGEMENT AND TECHNICAL CONSULTANTS",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 060",
+    "Category": "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 061",
+    "Category": "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 070",
+    "Category": "INSURANCE AGENTS AND INSURANCE ADJUSTERS",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 071",
+    "Category": "INSURANCE AGENTS AND INSURANCE ADJUSTERS",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 080",
+    "Category": "OTHER RECIPIENTS OF TALENT FEES",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 081",
+    "Category": "OTHER RECIPIENTS OF TALENT FEES",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 090",
+    "Category": "FEES OF DIRECTORS WHO ARE NOT EMPLOYEES OF THE COMPANY",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 091",
+    "Category": "FEES OF DIRECTORS WHO ARE NOT EMPLOYEES OF THE COMPANY",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 100",
+    "Category": "RENTALS : real/personal properties, poles,satellites and transmission facilities, billboards",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 110",
+    "Category": "CINEMATOGRAPHIC FILM RENTALS",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 120",
+    "Category": "INCOME PAYMENTS TO CERTAIN CONTRACTORS",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 2
+  },
+  {
+    "Code": "WI 130",
+    "Category": "INCOME DISTRIBUTION TO THE BENEFICIARIES OF ESTATES AND TRUSTS",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": "WI 139",
+    "Category": "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE CONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS)",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 140",
+    "Category": "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE CONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS)",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 150",
+    "Category": "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE AND DENTISTS) BY HOSPITALS AND CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 151",
+    "Category": "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE AND DENTISTS) BY HOSPITALS AND CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 152",
+    "Category": "PAYMENT BY THE GENERAL PROFESSIONAL PARTNERSHIPS (GPPS) TO ITS PARTNERS",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 153",
+    "Category": "PAYMENT BY THE GENERAL PROFESSIONAL PARTNERSHIPS (GPPS) TO ITS PARTNERS",
+    "Coverage": "If the current year's gross income exceeds P720,000.00",
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": "WI 156",
+    "Category": "INCOME PAYMENTS MADE BY CREDIT CARD COMPANIES",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 0.5
+  },
+  {
+    "Code": "WI 640",
+    "Category": "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1
+  },
+  {
+    "Code": "WI 157",
+    "Category": "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 2
+  },
+  {
+    "Code": "WI 159",
+    "Category": "ADDITIONAL INCOME PAYMENTS TO GOVERNMENT PERSONNEL FROM IMPORTERS, SHIPPING AND AIRLINE COMPANIES OR THEIR AGENTS FOR OVERTIME SERVICES",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": "WI 158",
+    "Category": "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1
+  },
+  {
+    "Code": "WI 160",
+    "Category": "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 2
+  },
+  {
+    "Code": "WI 515",
+    "Category": "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES",
+    "Coverage": "If the current year's gross income does not exceed P3,000,000.00",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 516",
+    "Category": "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES",
+    "Coverage": "If the current year's gross income exceeds P3,000,000.00 or vat registered regardless of amount",
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 530",
+    "Category": "GROSS PAYMENTS TO EMBALMERS BY FUNERAL PARLORS",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1
+  },
+  {
+    "Code": "WI 535",
+    "Category": "PAYMENTS MADE BY PRE-NEED COMPANIES TO FUNERAL PARLORS",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1
+  },
+  {
+    "Code": "WI 540",
+    "Category": "TOLLING FEES PAID TO REFINERIES",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 610",
+    "Category": "INCOME PAYMENTS MADE TO SUPPLIERS OF AGRICULTURAL PRODUCTS",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1
+  },
+  {
+    "Code": "WI 630",
+    "Category": "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 632",
+    "Category": "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES BY BANGKO SENTRAL NG PILIPINAS (BSP) FROM GOLD MINERS/SUPPLIERS UNDER PD 1899, AS AMENDED BY RA NO. 7076",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1
+  },
+  {
+    "Code": "WI 650",
+    "Category": "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH ACTIVE CONTRACTS AS CLASSIFIED BY MERALCO",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": "WI 651",
+    "Category": "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH TERMINATED CONTRACTS AS CLASSIFIED BY MERALCO",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": "WI 660",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT RESID ELECT>200KW MER IND",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 661",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT NONRS ELECT>200KW MER IND",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 662",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT RESID ELECT>200KW DU IND",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 663",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT NONRS ELECT>200KW DU IND",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": "WI 680",
+    "Category": "INCOME PAYMENTS MADE BY POLITICAL PARTIES AND CANDIDATES OF LOCAL AND NATIONAL ELECTIONS, INDIVIDUAL",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 710",
+    "Category": "INTEREST INCOME DERIVED FROM ANY OTHER DEBT INSTRUMENTS NOT WITHIN THE COVERAGE OF DEPOSIT SUBSTITUTES AND REVENUE REGULATIONS NO. 14-2012",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": "WI 720",
+    "Category": "INCOME PAYMENTS ON LOCALLY PRODUCED RAW SUGAR",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1
+  },
+  {
+    "Code": "WC 010",
+    "Category": "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 011",
+    "Category": "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 020",
+    "Category": "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 021",
+    "Category": "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES",
+    "Coverage": "If the current year's gross income exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 030",
+    "Category": "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 031",
+    "Category": "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS",
+    "Coverage": "If the current year's gross income exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 040",
+    "Category": "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 041",
+    "Category": "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS",
+    "Coverage": "If the current year's gross income exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 050",
+    "Category": "MANAGEMENT AND TECHNICAL CONSULTANTS",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 051",
+    "Category": "MANAGEMENT AND TECHNICAL CONSULTANTS",
+    "Coverage": "If the current year's gross income exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 060",
+    "Category": "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 061",
+    "Category": "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES",
+    "Coverage": "If the current year's gross income exceeds P720,000",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 070",
+    "Category": "INSURANCE AGENTS AND INSURANCE ADJUSTERS",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 071",
+    "Category": "INSURANCE AGENTS AND INSURANCE ADJUSTERS",
+    "Coverage": "If the current year's gross income exceeds P720,000",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 080",
+    "Category": "OTHER RECIPIENTS OF TALENT FEES",
+    "Coverage": "If the current year's gross income does not exceed P720,000.00",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 081",
+    "Category": "OTHER RECIPIENTS OF TALENT FEES",
+    "Coverage": "If the current year's gross income exceeds P720,000",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 100",
+    "Category": "Rentals : real/personal properties, poles,satellites and transmission facilities, billboards",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WC 110",
+    "Category": "CINEMATOGRAPHIC FILM RENTALS",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WC 120",
+    "Category": "INCOME PAYMENTS TO CERTAIN CONTRACTORS",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 2
+  },
+  {
+    "Code": "WC 139",
+    "Category": "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE CONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS)",
+    "Coverage": "If the current year's gross income does not exceed P720,000",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 140",
+    "Category": "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE ONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS)",
+    "Coverage": "If the current year's gross income exceeds P720,000",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 150",
+    "Category": "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE AND DENTISTS) BY HOSPITALS AND CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS",
+    "Coverage": "If the current year's gross income exceeds P720,000",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 151",
+    "Category": "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE AND DENTISTS) BY HOSPITALS AND CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS",
+    "Coverage": "If the current year's gross income does not exceed P720,000",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 156",
+    "Category": "INCOME PAYMENTS MADE BY CREDIT CARD COMPANIES",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 0.5
+  },
+  {
+    "Code": "WC 640",
+    "Category": "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WC 157",
+    "Category": "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 2
+  },
+  {
+    "Code": "WC 158",
+    "Category": "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WC 160",
+    "Category": "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 2
+  },
+  {
+    "Code": "WC 515",
+    "Category": "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/ GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES",
+    "Coverage": "If the current year's gross income does not exceed P720,000",
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 516",
+    "Category": "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/ GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES",
+    "Coverage": "If the current year's gross income exceeds P720,000",
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 535",
+    "Category": "PAYMENTS MADE BY PRE-NEED COMPANIES TO FUNERAL PARLORS",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WC 540",
+    "Category": "TOLLING FEES PAID TO REFINERIES",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WC 610",
+    "Category": "INCOME PAYMENTS MADE TO SUPPLIERS OF AGRICULTURAL PRODUCTS IN EXCESS OF CUMULATIVE AMOUNT OF P 300,000 WITHIN THE SAME TAXABLE YEAR",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WC 630",
+    "Category": "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES, SUCH AS BUT NOT LIMITED TO SILVER, GOLD, MARBLE, GRANITE, GRAVEL, SAND, BOULDERS AND OTHER MINERAL PRODUCTS EXCEPT PURCHASES BY BANGKO SENTRAL NG PILIPINAS",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WC 632",
+    "Category": "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES BY BANGKO SENTRAL NG PILIPINAS (BSP) FROM GOLD MINERS/SUPPLIERS UNDER PD 1899, AS AMENDED BY RA NO. 7076",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WC 650",
+    "Category": "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH ACTIVE CONTRACTS AS CLASSIFIED BY MERALCO",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 651",
+    "Category": "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH TERMINATED CONTRACTS AS CLASSIFIED BY MERALCO",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 660",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT RESID ELECT>200KW MER IND",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 661",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT NONRS ELECT>200KW MER IND",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 662",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT RESID ELECT>200KW DU IND",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 663",
+    "Category": "GROS OF INT RFUND OF MTER DPOSIT NONRS ELECT>200KW DU IND",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 680",
+    "Category": "INCOME PAYMENTS MADE BY POLITICAL PARTIES AND CANDIDATES OF LOCAL AND NATIONAL ELECTIONS, CORPORATE",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WC 690",
+    "Category": "INCOME PAYMENTS SUBJECT TO WITHHOLDING TAX RECEIVED BY REAL ESTATE INVESTMENT TRUST (REIT)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WC 710",
+    "Category": "EXPANDED WITHHOLDING TAX PURSUANT TO RR NO. 14-2012 (CORPORATE)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 720",
+    "Category": "INCOME PAYMENTS ON LOCALLY PRODUCED RAW SUGAR",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WI 555",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 1.5
+  },
+  {
+    "Code": "WC 555",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1.5
+  },
+  {
+    "Code": "WI 556",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 3
+  },
+  {
+    "Code": "WC 556",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 3
+  },
+  {
+    "Code": "WI 557",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WC 557",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 558",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 6
+  },
+  {
+    "Code": "WC 558",
+    "Category": "SALE OF REAL PROPERTY (ORDINARY ASSETS)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 6
+  },
+  {
+    "Code": "WB 030",
+    "Category": "Tax on carriers and keepers of garages",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 3
+  },
+  {
+    "Code": "WB 040",
+    "Category": "Franchise Tax on Gas and Water Utilities",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 2
+  },
+  {
+    "Code": "WB 050",
+    "Category": "Franchise Tax on radio & TV broadcasting companies whose annual gross receipts does not exceed P10M and who are not Value-Added Tax registered taxpayers",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 3
+  },
+  {
+    "Code": "WB 070",
+    "Category": "Tax on life insurance premiums",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WB 090",
+    "Category": "Tax on Overseas Dispatch, Message or Conversation originating from the Phils",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WB 301",
+    "Category": "Tax on Banks and Non-Bank Financial Intermediaries Performing Quasi-Banking Functions. On interest, commissions and discounts from lending activities well as income from financial leasing, on the basis of the remaining maturities of instrument from which such receipts are derived",
+    "Coverage": "Maturity period is five years or less",
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WB 303",
+    "Category": "Tax on Banks and Non-Bank Financial Intermediaries Performing Quasi-Banking Functions. On interest, commissions and discounts from lending activities well as income from financial leasing, on the basis of the remaining maturities of instrument from which such receipts are derived",
+    "Coverage": "Maturity period is more than five years",
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WB 103",
+    "Category": "Tax on Banks and Non-Bank Financial Intermediaries Performing Quasi-Banking Functions",
+    "Coverage": "Tax on royalties, rentals of property, real or personal, profits from exchange & all other items treated as gross income under Section 32 of the Code",
+    "Type": "Corporation",
+    "taxRate": 7
+  },
+  {
+    "Code": "WB 104",
+    "Category": "On net trading gains within the taxable year on foreign currency,debt securities, derivatives, and other financial instruments",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 7
+  },
+  {
+    "Code": "WB 108",
+    "Category": "Tax on Other Non-Banks Financial Intermediaries Not Performing Quasi-Banking Functions. On interest, commissions and discounts from lending activities as well as income from financial leasing, on the basis of the remaining maturities of instrument from which such receipts are derived",
+    "Coverage": "Maturity period is five years or less",
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WB 109",
+    "Category": "Tax on Other Non-Banks Financial Intermediaries Not Performing Quasi-Banking Functions. On interest, commissions and discounts from lending activities as well as income from financial leasing, on the basis of the remaining maturities of instrument from which such receipts are derived",
+    "Coverage": "Maturity period is more than five years",
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WB 110",
+    "Category": "Tax on Other Non-Banks Financial Intermediaries Not Performing Quasi-Banking Functions. On all other items treated as gross income under the code",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WB 120",
+    "Category": "Business Tax on Agents of foreign insurance co.- insurance agents",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WB 121",
+    "Category": "Business Tax on Agents of foreign insurance co.-owner of the property",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WB 130",
+    "Category": "Tax on International Carriers",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 3
+  },
+  {
+    "Code": "WB 140",
+    "Category": "Tax on Cockpits",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 18
+  },
+  {
+    "Code": "WB 150",
+    "Category": "Tax on Cabaret, night and day club",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 18
+  },
+  {
+    "Code": "WB 160",
+    "Category": "Tax on Boxing exhibitions",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WB 170",
+    "Category": "Tax on Professional basketball games",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WB 180",
+    "Category": "Tax on jai-alai and race tracks",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 30
+  },
+  {
+    "Code": "WB 200",
+    "Category": "Tax on sale, barter or exchange of stocks listed & traded through Local Stock Exchange",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 0.5
+  },
+  {
+    "Code": "WB 201",
+    "Category": "Tax on shares of stock sold or exchanged through initial and secondary public offering - Not over 25%",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 4
+  },
+  {
+    "Code": "WB 202",
+    "Category": "Tax on shares of stock sold or exchanged through initial and secondary public offering - Over 25% but not exceeding 33 1/3 %",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 2
+  },
+  {
+    "Code": "WB 203",
+    "Category": "Tax on shares of stock sold or exchanged through initial and secondary public offering - Over 33 1/3%",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 1
+  },
+  {
+    "Code": "WB 080",
+    "Category": "Person exempt from VAT under Sec. 109 (v) (Government withholding agent)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 3
+  },
+  {
+    "Code": "WB 082",
+    "Category": "Person exempt from VAT under Sec. 109 (v) (Private withholding agent)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 3
+  },
+  {
+    "Code": "WV 012",
+    "Category": "Vat Withholding on Purchase of Goods (with waiver of privilege to claim input tax credits)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WV 022",
+    "Category": "Vat Withholding on Purchase of Services (with waiver of privilege to claim input tax credits)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 161",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Saving Deposit",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": "WC 161",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Saving Deposit",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 20
+  },
+  {
+    "Code": "WI 162",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Government Securities",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": "WC 162",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Government Securities",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 20
+  },
+  {
+    "Code": "WI 163",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Deposits Substitutes/Others",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": "WC 163",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Deposits Substitutes/Others",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 20
+  },
+  {
+    "Code": "WI 170",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Foreign Currency Deposits",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 7.5
+  },
+  {
+    "Code": "WC 170",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Foreign Currency Deposits",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 7.5
+  },
+  {
+    "Code": "WC 440",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Preterminated Long Term Deposit",
+    "Coverage": "Less than three (3) years",
+    "Type": "Corporation",
+    "taxRate": 20
+  },
+  {
+    "Code": "WI 440",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Preterminated Long Term Deposit",
+    "Coverage": "Less than three (3) years",
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": "WI 441",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Preterminated Long Term Deposit",
+    "Coverage": "Three (3) years to less than four (4) years",
+    "Type": "Individual",
+    "taxRate": 12
+  },
+  {
+    "Code": "WI 442",
+    "Category": "Interest/Yield from Bank Deposits/Deposit Substitutes/Government Securities- Preterminated Long Term Deposit",
+    "Coverage": "Four (4) years to less than five (5) years",
+    "Type": "Individual",
+    "taxRate": 5
+  },
+  {
+    "Code": "WC 180",
+    "Category": "All Others - Interest on foreign loans payable to NRFCs",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 20
+  },
+  {
+    "Code": "WC 190",
+    "Category": "All Others - Interest and other income payments on foreign currency transaction /loans payable to OBUs",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 191",
+    "Category": "All Others - Interest and other income payments on foreign currency transaction /loans payable to FCDUs",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WI 202",
+    "Category": "All Others - Cash dividend payment by domestic corporation to citizen & resident aliens/NRFC's",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 212",
+    "Category": "All Others - Cash dividend payment by domestic corporation to citizen & resident aliens/NRFC's",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 30
+  },
+  {
+    "Code": "WI 203",
+    "Category": "All Others - Property dividend payment by domestic corporation to citizens & resident aliens/NRFC's",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 213",
+    "Category": "All Others - Property dividend payment by domestic corporation to citizens & resident aliens/NRFC's",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 30
+  },
+  {
+    "Code": "WC 222",
+    "Category": "All Others - Cash dividend payment by domestic corp. to NRFCs whose countries allowed tax deemed paid credit",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 223",
+    "Category": "All Others - Property dividend payment by domestic corp. to NRFCs whose countries allowed tax deemed paid credit",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 230",
+    "Category": "All Others - On other payments to NRFC",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 30
+  },
+  {
+    "Code": "WI 224",
+    "Category": "All Others - Cash dividend payment by domestic corporation to NRAETB",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": "WI 225",
+    "Category": "All Others - Property dividend payment by domestic corporation to NRAETB",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": "WI 226",
+    "Category": "All Others - Share of a NRAETB in the distributable net income after tax of a partnership (except General Professional",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": null,
+    "Category": "Partnership) of which he is a partner, or share in the net income after tax of an association,",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": null,
+    "Category": "a joint account or a joint venture taxable as a corp., of which he is a member or a co-venturer",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WI 240",
+    "Category": "All Others - Distributive share of individual partners in a taxable partnership, association,",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": null,
+    "Category": "a joint account or a joint venture or consortium",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WI 250",
+    "Category": "All Others - Other royalty payments to citizens, resident aliens and NRAETB",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": null,
+    "Category": "(other than WI380 and WI 341) /domestic and resident foreign corporation",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WC 250",
+    "Category": "All Others - Other royalty payments to citizens, resident aliens and NRAETB",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 20
+  },
+  {
+    "Code": null,
+    "Category": "(other than WI380 and WI 341) /domestic and resident foreign corporation",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WI 260",
+    "Category": "All Others - On prizes exceeding P10,000 & other winnings paid to individuals",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 20
+  },
+  {
+    "Code": "WC 280",
+    "Category": "All Others - Branch profit remittances by all corporations except PEZA/SBMA/CDA registered",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 15
+  },
+  {
+    "Code": "WC 290",
+    "Category": "All Others - On the gross rentals, lease and charter fees derived by non-resident owner or lessor of foreign vessels",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 4.5
+  },
+  {
+    "Code": "WC 300",
+    "Category": "All Others - On the gross rentals, lease and charter fees derived by non-resident lessor of aircraft,",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 7.5
+  },
+  {
+    "Code": null,
+    "Category": "machineries and other equipment",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WI 310",
+    "Category": "All Others - Payment to Oil Exploration Service Contractors/Sub-Contractors",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 8
+  },
+  {
+    "Code": "WC 310",
+    "Category": "All Others - Payment to Oil Exploration Service Contractors/Sub-Contractors",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 8
+  },
+  {
+    "Code": "WI 320",
+    "Category": "All Others - Payment to Filipinos or Alien individuals employed by Foreign Petroleum Service Contractors/",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 15
+  },
+  {
+    "Code": null,
+    "Category": "Subcontractors, Offshore Banking Units and Regional or Area Headquarters and Regional Operating",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": null,
+    "Category": "Headquarters of Multinational Companies occupying executive/managerial and technical positions",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WI 330",
+    "Category": "All Others - Payments to Non-Resident Alien Not Engaged in Trade or Business (NRAETB) except on sale of shares",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 25
+  },
+  {
+    "Code": null,
+    "Category": "in domestic corporation and real property",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WI 340",
+    "Category": "All Others - Payments to non-resident individual/foreign corporate cinematographic film owners, lessors or distributors",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 25
+  },
+  {
+    "Code": "WC 340",
+    "Category": "All Others - Payments to non-resident individual/foreign corporate cinematographic film owners, lessors or distributors",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 25
+  },
+  {
+    "Code": "WI 341",
+    "Category": "All Others - Royalties paid to NRAETB on cinematographic films and similar works",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 25
+  },
+  {
+    "Code": "WI 350",
+    "Category": "All Others - Final Tax on interest or other payments upon tax-free covenant bonds, mortgages, deeds of trust or",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 30
+  },
+  {
+    "Code": null,
+    "Category": "other obligations under Sec. 57C of the National Internal Revenue Code of 1997",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WI 380",
+    "Category": "All Others - Royalties paid to citizens, resident aliens & non-resident alien engaged in trade or business (NRAETB)",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": null,
+    "Category": "on books, other literary works & musical compositions",
+    "Coverage": null,
+    "Type": null,
+    "taxRate": null
+  },
+  {
+    "Code": "WC 390",
+    "Category": "All Others - Payments to taxpayer enjoying Preferential Tax Rates/Tax Treaty Rates",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WI 410",
+    "Category": "All Others - Informer's cash reward to individuals/juridical person",
+    "Coverage": null,
+    "Type": "Individual",
+    "taxRate": 10
+  },
+  {
+    "Code": "WC 410",
+    "Category": "All Others - Informer's cash reward to individuals/juridical person",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WV 010",
+    "Category": "VAT Withholding on Purchases of Goods - Gov.t Withholding Agent",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WV 020",
+    "Category": "VAT Withholding on Purchases of Services - Gov.t Withholding Agent",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WV 030",
+    "Category": "VAT Withholding on Purchases of Government Public Work Contracts",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 5
+  },
+  {
+    "Code": "WV 014",
+    "Category": "VAT Withholding on Purchase of Goods (with waiver of privilege to claim input tax credits)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 12
+  },
+  {
+    "Code": "WV 024",
+    "Category": "VAT Withholding on Purchase of Services (with waiver of privilege to claim input tax credits)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 12
+  },
+  {
+    "Code": "WB 084",
+    "Category": "Person exempt from VAT under Sec. 109 (v)",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 3
+  },
+  {
+    "Code": "WB 191",
+    "Category": "Tax on Winnings and Prizes (Sec. 126) - Gov.t withholding agent",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 4
+  },
+  {
+    "Code": "WB 192",
+    "Category": "Tax on Winnings and Prizes on horse races/owners of winning horses (Sec. 126) - Gov.t withholding agent",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WB 193",
+    "Category": "Tax on Winnings and Prizes (Sec. 126) - Private withholding agent",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 4
+  },
+  {
+    "Code": "WB 194",
+    "Category": "Tax on Winnings and Prizes on horse races/owners of winning horses (Sec. 126) - Private withholding agent",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 10
+  },
+  {
+    "Code": "WV 040",
+    "Category": "VAT Withholding on Non-residents - Gov.t withholding agent",
+    "Coverage": null,
+    "Type": "Corporation",
+    "taxRate": 12
+  }
+]
