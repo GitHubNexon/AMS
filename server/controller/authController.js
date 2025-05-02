@@ -58,7 +58,7 @@ async function authenticate(req, res) {
     const access = getaccess.userTypes.filter(a=>a.user === userInfo.userType)[0].access;
 
     const token = generateToken({ ...userInfo, profileImage: "", access: access});
-    res.cookie("token", token, {
+    res.cookie("ams_token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "Strict",
@@ -84,7 +84,7 @@ async function authenticate(req, res) {
  * will terminate and return the request with status code 401 on unsuccessful verification
  */
 async function authenticateToken(req, res, next) {
-  const token = req.cookies.token; // Get token from cookies
+  const token = req.cookies.ams_token; // Get token from cookies
   const base = await baseModel.findOne();
   if (!token) return res.status(401).json({ error: "Access token required" });
   jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
@@ -114,7 +114,7 @@ function generateToken(payload) {
 
 function logoutToken(req, res) {
   //+
-  res.clearCookie("token");
+  res.clearCookie("ams_token");
   res.status(200).json({ message: "Logout successful" });
 }
 

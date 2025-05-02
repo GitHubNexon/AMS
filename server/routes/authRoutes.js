@@ -27,7 +27,7 @@ router.post(
   "/logout",
   asyncHandler(async (req, res) => {
     // Clear the authentication token or cookie
-    res.clearCookie("token"); // Adjust this if you're using a different cookie name
+    res.clearCookie("ams_token"); // Adjust this if you're using a different cookie name
     res.status(200).json({ message: "Logged out successfully" });
   })
 );
