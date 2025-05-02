@@ -405,6 +405,7 @@ async function insertDefaultValues() {
       { code: "fs", access: "Financial Statements" },
       { code: "br", access: "Bank Reconciliation"},
       { code: "dp", access: "Depreciation"},
+      { code: "asm", access: "Asset Management"},
 
     ],
     // paymentMethods: ["Cash", "Cheque", "Bank Transfer"],

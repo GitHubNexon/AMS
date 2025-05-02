@@ -316,6 +316,20 @@ const Sidebar = () => {
             </Link>
           </li>
         )}
+         {user && user.access.includes('dp') && (
+          <li>
+            <Link to="/AssetManagement" className={`flex items-center my-1 py-1 p-2 hover:bg-green-700 hover:text-white rounded-lg ${location.pathname === '/AssetManagement' ? 'text-white bg-green-700' : ''}`}>
+              <FaBookSkull  className="mr-2" /> Asset Management
+            </Link>
+          </li>
+        )}
+        {user && user.access.includes('asm') && (
+          <li>
+            <Link to="/Depreciation" className={`flex items-center my-1 py-1 p-2 hover:bg-green-700 hover:text-white rounded-lg ${location.pathname === '/Depreciation' ? 'text-white bg-green-700' : ''}`}>
+              <FaBookSkull  className="mr-2" /> Depreciation Monitoring
+            </Link>
+          </li>
+        )}
         {user && user.access.includes('adv') && (
           <li>
             <Link to="/CashAdvance" className={`flex items-center my-1 py-1 p-2 hover:bg-green-700 hover:text-white rounded-lg ${location.pathname === '/CashAdvance' ? 'text-white bg-green-700' : ''}`}>

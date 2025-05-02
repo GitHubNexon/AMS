@@ -73,7 +73,9 @@ const Header = ({ ww }) => {
     fetchProfile();
   }, []);
 
-  const fullName = `${firstName} ${middleName ? middleName + " " : ""}${lastName}`;
+  const fullName = `${firstName} ${
+    middleName ? middleName + " " : ""
+  }${lastName}`;
 
   useEffect(() => {
     setAccountingSystemDrowdown(false);
@@ -121,7 +123,7 @@ const Header = ({ ww }) => {
               <span className="font-bold text-[0.9em] underline">
                 {/* {name ? `Hello, ${name}` : "Welcome"}
                  */}
-                 {fullName ? `Hello, ${fullName.trim()}` : "Welcome"}
+                {fullName ? `Hello, ${fullName.trim()}` : "Welcome"}
               </span>
 
               <span className="text-gray-50 text-[0.8em] font-medium">
@@ -269,13 +271,18 @@ const Header = ({ ww }) => {
                 `}
                 onClick={() => setEntriesDropdown(!entriesDropdown)}
               >
-                Entries
-                <FaChevronDown
-                  className={`ml-[5px] transition duration-500 ${
-                    entriesDropdown ? "rotate-180" : ""
-                  }`}
-                />
+                {user && ["en"].some((v) => user.access.includes(v)) && (
+                  <>
+                    Entries
+                    <FaChevronDown
+                      className={`ml-[5px] transition duration-500 ${
+                        entriesDropdown ? "rotate-180" : ""
+                      }`}
+                    />
+                  </>
+                )}
               </button>
+
               <div
                 className={`absolute left-0 w-[100%] bg-white text-gray-700 z-10 shadow-bottom fade ${
                   entriesDropdown ? "fade-in" : "fade-out"
@@ -549,6 +556,22 @@ const Header = ({ ww }) => {
                   }`}
                 >
                   Depreciation Monitoring
+                </Link>
+              </li>
+            )}
+            {user && user.access.includes("asm") && (
+              <li className="">
+                <Link
+                  to={"/AssetManagement"}
+                  className={`
+                  px-[15px] flex items-center border-b-[5px] 
+                  ${
+                    ["/AssetManagement"].includes(location.pathname)
+                      ? "border-green-800"
+                      : "border-green-600"
+                  }`}
+                >
+                  Asset Management
                 </Link>
               </li>
             )}

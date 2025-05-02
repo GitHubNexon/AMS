@@ -56,6 +56,7 @@ import BankRecon from "./Pages/BankRecon";
 import Depreciation from "./Pages/Depreciation";
 import CashAdvance from "./Pages/CashAdvance";
 import Payroll from "./Pages/Payroll";
+import AssetManagement from "./Pages/AssetManagement";
 
 function App() {
   useEffect(() => {
@@ -404,6 +405,16 @@ function App() {
                   <ProtectedRoute requiredRole="dp">
                     <Layout>
                       <Depreciation />
+                    </Layout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/AssetManagement"
+                element={
+                  <ProtectedRoute requiredRole="asm">
+                    <Layout>
+                      <AssetManagement />
                     </Layout>
                   </ProtectedRoute>
                 }
