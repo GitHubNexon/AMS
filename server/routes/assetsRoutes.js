@@ -8,6 +8,9 @@ router.use(authenticateToken);
 // create a new asset record
 router.post("/create", AssetsController.createAssetsRecord);
 
+// create a new asset assignment record
+router.post("/create-assign/:assetsId", AssetsController.createAssetsAssignmentRecord);
+
 // update an existing asset record
 router.patch("/update/:id", AssetsController.updateAssetsRecord);
 

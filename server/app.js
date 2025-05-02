@@ -78,6 +78,7 @@ const StatementOfAccountRoutes = require("./routes/statementOfAccountRoutes");
 const CashAdvanceRoutes = require("./routes/CashAdvance");
 const PayroullRoutes = require("./routes/PayrollRoutes");
 const assetsRoutes = require("./routes/assetsRoutes");
+const employeeAssetsRoutes = require("./routes/employeeAssetsRoutes");
 const cron = require("node-cron");
 
 app.use(express.json());
@@ -144,6 +145,7 @@ app.use("/ams/api/statementOfAccount", StatementOfAccountRoutes);
 app.use("/ams/api/ca", CashAdvanceRoutes);
 app.use("/ams/api/payroll", PayroullRoutes);
 app.use("/ams/api/assets", assetsRoutes);
+app.use("/ams/api/employee-assets", employeeAssetsRoutes);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's(frontend) index.html file.

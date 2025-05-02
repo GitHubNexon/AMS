@@ -16,8 +16,9 @@ const AssetsAssignmentSchema = new mongoose.Schema({
   entityName: { type: String, required: false },
   employeeName: { type: mongoose.Schema.Types.Mixed },
   position: { type: String, required: false },
-  dateAcquired: { type: Date, required: false },
-  dateReleased: { type: Date, required: false },
+  approvedBy: { type: mongoose.Schema.Types.Mixed },
+  issuedBy: { type: mongoose.Schema.Types.Mixed },
+  assetRecords: { type: mongoose.Schema.Types.Mixed },
 });
 
 const assetsSchema = new mongoose.Schema({
@@ -29,10 +30,12 @@ const assetsSchema = new mongoose.Schema({
   useFullLife: { type: Number, required: false },
   assetImage: { type: String, required: false },
   quantity: { type: Number, required: false },
+  acquisitionCost: { type: Number, required: false },
   reference: { type: String, required: false },
   category: { type: mongoose.Schema.Types.Mixed },
   accumulatedAccount: { type: mongoose.Schema.Types.Mixed },
   depreciationAccount: { type: mongoose.Schema.Types.Mixed },
+  inventory: { type: mongoose.Schema.Types.Mixed },
   attachments: { type: [String], required: false },
   Status: { type: StatusSchema, required: false },
 });
