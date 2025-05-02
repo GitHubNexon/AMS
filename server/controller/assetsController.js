@@ -1,7 +1,6 @@
 const AssetsModel = require("../models/AssetsModel");
 const employeeAssetsModel = require("../models/employeeAssetsModel");
 
-
 const createAssetsRecord = async (req, res) => {
   try {
     const AssetsData = req.body;
@@ -87,59 +86,6 @@ const updateAssetsRecord = async (req, res) => {
   }
 };
 
-// const getAllAssetsRecords = async (req, res) => {
-//   try {
-//     const page = parseInt(req.query.page, 10) || 1;
-//     const limit = parseInt(req.query.limit, 10) || 10;
-//     const keyword = req.query.keyword || "";
-//     const sortBy = req.query.sortBy || "createdAt";
-//     const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
-//     const status = req.query.status;
-
-//     const query = {
-//       ...(keyword && {
-//         $or: [
-//           { propNo: { $regex: keyword, $options: "i" } },
-//           { propName: { $regex: keyword, $options: "i" } },
-//           { propDescription: { $regex: keyword, $options: "i" } },
-//         ],
-//       }),
-//       ...(status &&
-//         status === "isDeleted" && {
-//           "Status.isDeleted": true,
-//         }),
-//       ...(status &&
-//         status === "isArchived" && {
-//           "Status.isArchived": true,
-//         }),
-//     };
-
-//     const sortCriteria = {
-//       "Status.isDeleted": 1,
-//       "Status.isArchived": 1,
-//       [sortBy]: sortOrder,
-//     };
-//     const totalItems = await AssetsModel.countDocuments(query);
-//     const assets = await AssetsModel.find(query)
-//       .sort(sortCriteria)
-//       .skip((page - 1) * limit)
-//       .limit(limit);
-
-//     res.json({
-//       totalItems,
-//       totalPages: Math.ceil(totalItems / limit),
-//       currentPage: page,
-//       assets: assets,
-//     });
-//   } catch (error) {
-//     console.error("Error in get All Assets Records:", error);
-//     return res
-//       .status(500)
-//       .json({ message: "An error occurred", error: error.message });
-//   }
-// };
-
-
 const getAllAssetsRecords = async (req, res) => {
   try {
     const page = parseInt(req.query.page, 10) || 1;
@@ -175,7 +121,6 @@ const getAllAssetsRecords = async (req, res) => {
 
     const totalItems = await AssetsModel.countDocuments(query);
 
-    // Using aggregation pipeline to get assets with inventory information
     const assets = await AssetsModel.aggregate([
       { $match: query },
       { $sort: sortCriteria },
@@ -183,15 +128,15 @@ const getAllAssetsRecords = async (req, res) => {
       { $limit: limit },
       {
         $lookup: {
-          from: "employeeassets", // Collection name (usually lowercase and plural)
+          from: "employeeassets",
           let: { assetId: "$_id" },
           pipeline: [
             {
               $match: {
                 $expr: {
-                  $in: ["$$assetId", "$assetRecords.assetId"]
-                }
-              }
+                  $in: ["$$assetId", "$assetRecords.assetId"],
+                },
+              },
             },
             {
               $project: {
@@ -202,15 +147,15 @@ const getAllAssetsRecords = async (req, res) => {
                   $filter: {
                     input: "$assetRecords",
                     as: "record",
-                    cond: { $eq: ["$$record.assetId", "$$assetId"] }
-                  }
-                }
-              }
-            }
+                    cond: { $eq: ["$$record.assetId", "$$assetId"] },
+                  },
+                },
+              },
+            },
           ],
-          as: "Inventory"
-        }
-      }
+          as: "assetsAssigned",
+        },
+      },
     ]);
 
     res.json({
@@ -226,7 +171,6 @@ const getAllAssetsRecords = async (req, res) => {
       .json({ message: "An error occurred", error: error.message });
   }
 };
-
 
 const deleteAssetsRecord = async (req, res) => {
   try {

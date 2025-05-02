@@ -28,7 +28,7 @@ import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsModal from "../Pop-Up-Pages/AssetsModal";
 const ExpandedRowComponent = ({ data }) => {
   return (
-    <div className="p-6 bg-white rounded-lg shadow-lg max-w-4xl mx-auto my-4 border border-gray-200 transition-all hover:shadow-xl">
+    <div className="p-6 bg-white rounded-lg shadow-lg max-w-full mx-auto my-4 border border-gray-200 transition-all hover:shadow-xl">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
           <FaBox className="text-blue-500" />
@@ -115,61 +115,127 @@ const ExpandedRowComponent = ({ data }) => {
             ? `${data.attachments.length} files`
             : "None"}
         </p>
-        {/* Inventory Section */}
-        {data.Inventory && data.Inventory.length > 0 && (
-          <div className="mt-6 pt-4 border-t border-gray-200">
-            <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-              <FaBox className="text-blue-500" /> Inventory Details
-            </h4>
+      </div>
 
-            <div className="overflow-auto">
-              <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
-                <thead className="bg-gray-100">
-                  <tr>
-                    <th className="px-3 py-2 border-b border-gray-300">
-                      Employee Name
-                    </th>
-                    <th className="px-3 py-2 border-b border-gray-300">
-                      Description
-                    </th>
-                    <th className="px-3 py-2 border-b border-gray-300">
-                      Quantity
-                    </th>
-                    <th className="px-3 py-2 border-b border-gray-300">
-                      Amount
-                    </th>
-                    <th className="px-3 py-2 border-b border-gray-300">
-                      Date Acquired
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.Inventory.map((inv) =>
-                    inv.assetRecords.map((record) => (
-                      <tr key={record._id} className="hover:bg-gray-50">
+      <div className="mt-6 pt-4 border-t border-gray-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Assets Assigned Table (Left) */}
+          {data.assetsAssigned && data.assetsAssigned.length > 0 && (
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <FaBox className="text-blue-500" /> Assets Assigned Details
+              </h4>
+              <div className="overflow-auto">
+                <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Employee Name
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Description
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Quantity
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Amount
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Date Acquired
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.assetsAssigned.map((ass) =>
+                      ass.assetRecords.map((record) => (
+                        <tr key={record._id} className="hover:bg-gray-50">
+                          <td className="px-3 py-2 border-b">
+                            {ass.employeeName || "N/A"}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {record.description}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {record.quantity}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {numberToCurrencyString(record.amount)}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {formatReadableDate(record.dateAcquired)}
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {data.inventory && data.inventory.length > 0 && (
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <FaBox className="text-blue-500" /> Inventory Details
+              </h4>
+              <div className="overflow-auto">
+                <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Inventory No
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Name
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Assigned
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Condition
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.inventory.map((inv) => (
+                      <tr key={inv._id} className="hover:bg-gray-50">
                         <td className="px-3 py-2 border-b">
-                          {inv.employeeName || "N/A"}
+                          {inv.invNo || "N/A"}
                         </td>
                         <td className="px-3 py-2 border-b">
-                          {record.description}
+                          {inv.invName || "N/A"}
                         </td>
                         <td className="px-3 py-2 border-b">
-                          {record.quantity}
+                          {inv.isAssigned ? "Yes" : "No"}
                         </td>
                         <td className="px-3 py-2 border-b">
-                          {numberToCurrencyString(record.amount)}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {formatReadableDate(record.dateAcquired)}
+                          {inv.condition && inv.condition.length > 0
+                            ? inv.condition.map((cond, index) => (
+                                <span key={index}>
+                                  {cond.isGood
+                                    ? "Good"
+                                    : cond.forSale
+                                    ? "For Sale"
+                                    : cond.forDisposal
+                                    ? "For Disposal"
+                                    : cond.forRepair
+                                    ? "For Repair"
+                                    : cond.lost
+                                    ? "Lost"
+                                    : "Unknown"}
+                                </span>
+                              ))
+                            : "N/A"}
                         </td>
                       </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

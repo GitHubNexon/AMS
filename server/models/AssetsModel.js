@@ -10,6 +10,25 @@ const StatusSchema = new mongoose.Schema({
   isArchived: { type: Boolean, default: false },
 });
 
+const ConditionSchema = new mongoose.Schema(
+  {
+    isGood: Boolean,
+    forSale: Boolean,
+    forDisposal: Boolean,
+    forRepair: Boolean,
+    lost: Boolean,
+  },
+  { _id: false }
+);
+
+const InventoryItemSchema = new mongoose.Schema({
+  invNo: String,
+  invImage: String,
+  invName: String,
+  isAssigned: Boolean,
+  condition: [ConditionSchema],
+});
+
 const assetsSchema = new mongoose.Schema({
   propNo: { type: String, required: false },
   propName: { type: String, required: false },
@@ -24,7 +43,8 @@ const assetsSchema = new mongoose.Schema({
   category: { type: mongoose.Schema.Types.Mixed },
   accumulatedAccount: { type: mongoose.Schema.Types.Mixed },
   depreciationAccount: { type: mongoose.Schema.Types.Mixed },
-  inventory: { type: mongoose.Schema.Types.Mixed },
+  assetsAssigned: { type: mongoose.Schema.Types.Mixed },
+  inventory: { type: [InventoryItemSchema], required: false },
   attachments: { type: [String], required: false },
   Status: { type: StatusSchema, required: false },
   recordedBy: { type: SignatoriesSchema, required: false },

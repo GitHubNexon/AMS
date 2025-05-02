@@ -1,4 +1,6 @@
 const employeeAssetsModel = require("../models/employeeAssetsModel");
+const AssetsModel = require("../models/AssetsModel");
+
 const mongoose = require("mongoose");
 
 const createEmployeeAssetsRecord = async (req, res) => {
@@ -26,6 +28,24 @@ const createEmployeeAssetsRecord = async (req, res) => {
     });
 
     const savedEmployeeAssets = await newEmployeeAssets.save();
+
+    for (const record of assetRecords) {
+      const assetObjectId = new mongoose.Types.ObjectId(record.assetId);
+      const inventoryObjectId = new mongoose.Types.ObjectId(record.inventoryId);
+
+      await AssetsModel.updateOne(
+        {
+          _id: assetObjectId,
+          "inventory._id": inventoryObjectId,
+        },
+        {
+          $set: {
+            "inventory.$.isAssigned": true,
+          },
+        }
+      );
+    }
+
     res.status(201).json(savedEmployeeAssets);
   } catch (error) {
     console.error(
@@ -36,6 +56,8 @@ const createEmployeeAssetsRecord = async (req, res) => {
     res.status(500).json({ message: "Error processing request" });
   }
 };
+
+
 
 module.exports = {
   createEmployeeAssetsRecord,

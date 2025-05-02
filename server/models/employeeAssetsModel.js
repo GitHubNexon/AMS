@@ -12,6 +12,7 @@ const StatusSchema = new mongoose.Schema({
 
 const EmployeeAssetsRecordSchema = new mongoose.Schema({
   assetId: { type: mongoose.Schema.Types.ObjectId, ref: "assets" },
+  inventoryId: { type: mongoose.Schema.Types.ObjectId, ref: "assets" },
   quantity: { type: Number, required: false },
   category: { type: String, required: false },
   description: { type: String, required: false },
