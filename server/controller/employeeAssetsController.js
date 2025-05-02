@@ -29,23 +29,6 @@ const createEmployeeAssetsRecord = async (req, res) => {
 
     const savedEmployeeAssets = await newEmployeeAssets.save();
 
-    for (const record of assetRecords) {
-      const assetObjectId = new mongoose.Types.ObjectId(record.assetId);
-      const inventoryObjectId = new mongoose.Types.ObjectId(record.inventoryId);
-
-      await AssetsModel.updateOne(
-        {
-          _id: assetObjectId,
-          "inventory._id": inventoryObjectId,
-        },
-        {
-          $set: {
-            "inventory.$.isAssigned": true,
-          },
-        }
-      );
-    }
-
     res.status(201).json(savedEmployeeAssets);
   } catch (error) {
     console.error(

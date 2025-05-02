@@ -86,6 +86,43 @@ const updateAssetsRecord = async (req, res) => {
   }
 };
 
+
+const updateInventoryAssignmentStatus = async () => {
+  try {
+    await AssetsModel.updateMany(
+      { "inventory.isAssigned": true },
+      { $set: { "inventory.$[elem].isAssigned": false } },
+      { arrayFilters: [{ "elem.isAssigned": true }] }
+    );
+
+    const employeeAssets = await employeeAssetsModel.find({
+      "assetRecords.inventoryId": { $exists: true, $ne: null }
+    });
+
+    const assignedInventoryIds = [];
+    employeeAssets.forEach(employee => {
+      employee.assetRecords.forEach(record => {
+        if (record.inventoryId) {
+          assignedInventoryIds.push(record.inventoryId);
+        }
+      });
+    });
+
+    if (assignedInventoryIds.length > 0) {
+      await AssetsModel.updateMany(
+        { "inventory._id": { $in: assignedInventoryIds } },
+        { $set: { "inventory.$[elem].isAssigned": true } },
+        { arrayFilters: [{ "elem._id": { $in: assignedInventoryIds } }] }
+      );
+    }
+
+    console.log(`Updated assignment status for ${assignedInventoryIds.length} inventory items`);
+  } catch (error) {
+    console.error("Error updating inventory assignment status:", error);
+    throw error;
+  }
+};
+
 const getAllAssetsRecords = async (req, res) => {
   try {
     const page = parseInt(req.query.page, 10) || 1;
@@ -94,6 +131,9 @@ const getAllAssetsRecords = async (req, res) => {
     const sortBy = req.query.sortBy || "createdAt";
     const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
     const status = req.query.status;
+
+    // Update inventory assignment status
+    await updateInventoryAssignmentStatus();
 
     const query = {
       ...(keyword && {

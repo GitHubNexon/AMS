@@ -135,9 +135,9 @@ const ExpandedRowComponent = ({ data }) => {
                       <th className="px-3 py-2 border-b border-gray-300">
                         Description
                       </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
+                      {/* <th className="px-3 py-2 border-b border-gray-300">
                         Quantity
-                      </th>
+                      </th> */}
                       <th className="px-3 py-2 border-b border-gray-300">
                         Amount
                       </th>
@@ -156,9 +156,9 @@ const ExpandedRowComponent = ({ data }) => {
                           <td className="px-3 py-2 border-b">
                             {record.description}
                           </td>
-                          <td className="px-3 py-2 border-b">
+                          {/* <td className="px-3 py-2 border-b">
                             {record.quantity}
-                          </td>
+                          </td> */}
                           <td className="px-3 py-2 border-b">
                             {numberToCurrencyString(record.amount)}
                           </td>
