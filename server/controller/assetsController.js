@@ -80,7 +80,7 @@ const getAllAssetsRecords = async (req, res) => {
       totalItems,
       totalPages: Math.ceil(totalItems / limit),
       currentPage: page,
-      data: assets,
+      assets: assets,
     });
   } catch (error) {
     console.error("Error in get All Assets Records:", error);

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_BASE_URL } from "./config.js";
 
-const AssetsApi = {
+const assetsApi = {
   createAssetsRecord: async (data) => {
     try {
       const response = await axios.post(`${API_BASE_URL}/assets/create`, data);
@@ -85,4 +85,4 @@ const AssetsApi = {
   },
 };
 
-export default AssetsApi;
+export default assetsApi;

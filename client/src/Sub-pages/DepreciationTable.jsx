@@ -595,97 +595,67 @@ const DepreciationTable = () => {
     setSelectedDepreciation(null);
   };
 
-  const handleDeleteEntry = async (id) => {
-    const confirm = await showDialog.confirm(
-      "Are you sure you want to delete this depreciation?"
-    );
+  const handleDepreciationAction = async ({
+    id,
+    confirmMessage,
+    successMessage,
+    errorMessage,
+    apiMethod,
+  }) => {
+    const confirm = await showDialog.confirm(confirmMessage);
 
-    if (confirm) {
-      try {
-        const result = await DepreciationApi.deleteDepreciation(id);
+    if (!confirm) return;
 
-        if (result) {
-          showDialog.showMessage(
-            "Depreciation deleted successfully",
-            "success"
-          );
-          fetchDepreciation();
-        }
-      } catch (error) {
-        console.error("Failed to delete depreciation:", error);
-        showDialog.showMessage("Failed to delete depreciation", "error");
+    try {
+      const result = await apiMethod(id);
+
+      if (result) {
+        showDialog.showMessage(successMessage, "success");
+        fetchDepreciation();
       }
+    } catch (error) {
+      console.error(errorMessage, error);
+      showDialog.showMessage(errorMessage, "error");
     }
   };
 
-  const handleUndoDeleteEntry = async (id) => {
-    const confirm = await showDialog.confirm(
-      "Are you sure you want to undo the deletion of this depreciation?"
-    );
+  const handleDeleteEntry = (id) =>
+    handleDepreciationAction({
+      id,
+      confirmMessage: "Are you sure you want to delete this depreciation?",
+      successMessage: "Depreciation deleted successfully",
+      errorMessage: "Failed to delete depreciation",
+      apiMethod: DepreciationApi.deleteDepreciation,
+    });
 
-    if (confirm) {
-      try {
-        const result = await DepreciationApi.undoDeleteDepreciation(id);
+  const handleUndoDeleteEntry = (id) =>
+    handleDepreciationAction({
+      id,
+      confirmMessage:
+        "Are you sure you want to undo the deletion of this depreciation?",
+      successMessage: "Depreciation restoration successful",
+      errorMessage: "Failed to undo deletion",
+      apiMethod: DepreciationApi.undoDeleteDepreciation,
+    });
 
-        if (result) {
-          showDialog.showMessage(
-            "Depreciation restoration successful",
-            "success"
-          );
-          fetchDepreciation();
-        }
-      } catch (error) {
-        console.error("Failed to undo deletion:", error);
-        showDialog.showMessage("Failed to undo deletion", "error");
-      }
-    }
-  };
+  const handleArchiveEntry = (id) =>
+    handleDepreciationAction({
+      id,
+      confirmMessage: "Are you sure you want to archive this depreciation?",
+      successMessage: "Depreciation archive successful",
+      errorMessage: "Failed to archive depreciation",
+      apiMethod: DepreciationApi.archiveDepreciation,
+    });
 
-  const handleArchiveEntry = async (id) => {
-    const confirm = await showDialog.confirm(
-      "Are you sure you want to archive this depreciation?"
-    );
-
-    if (confirm) {
-      try {
-        const result = await DepreciationApi.archiveDepreciation(id);
-
-        if (result) {
-          showDialog.showMessage(
-            "Depreciation archive successfully",
-            "success"
-          );
-          fetchDepreciation();
-        }
-      } catch (error) {
-        console.error("Failed to archive depreciation:", error);
-        showDialog.showMessage("Failed to archive depreciation", "error");
-      }
-    }
-  };
-
-  const handleUndoArchiveEntry = async (id) => {
-    const confirm = await showDialog.confirm(
-      "Are you sure you want to undo the archive of this depreciation?"
-    );
-
-    if (confirm) {
-      try {
-        const result = await DepreciationApi.undoArchiveDepreciation(id);
-
-        if (result) {
-          showDialog.showMessage(
-            "Depreciation restoration successful",
-            "success"
-          );
-          fetchDepreciation();
-        }
-      } catch (error) {
-        console.error("Failed to undo archive:", error);
-        showDialog.showMessage("Failed to undo archive", "error");
-      }
-    }
-  };
+  const handleUndoArchiveEntry = (id) =>
+    handleDepreciationAction({
+      id,
+      confirmMessage:
+        "Are you sure you want to undo the archive of this depreciation?",
+      successMessage: "Depreciation restoration successful",
+      errorMessage: "Failed to undo archive",
+      apiMethod: DepreciationApi.undoArchiveDepreciation,
+    });
 
   const handleMonitor = async (id) => {
     try {

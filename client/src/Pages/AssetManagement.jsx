@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import AssetsTable from "../Sub-pages/AssetsTable";
 
 const AssetManagement = () => {
   return (
-    <div>AssetManagement</div>
-  )
-}
+    <div>
+      <AssetsTable />
+    </div>
+  );
+};
 
-export default AssetManagement
+export default AssetManagement;
