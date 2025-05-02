@@ -10,17 +10,6 @@ const StatusSchema = new mongoose.Schema({
   isArchived: { type: Boolean, default: false },
 });
 
-const AssetsAssignmentSchema = new mongoose.Schema({
-  parNo: { type: String, required: false },
-  fundCluster: { type: String, required: false },
-  entityName: { type: String, required: false },
-  employeeName: { type: mongoose.Schema.Types.Mixed },
-  position: { type: String, required: false },
-  approvedBy: { type: mongoose.Schema.Types.Mixed },
-  issuedBy: { type: mongoose.Schema.Types.Mixed },
-  assetRecords: { type: mongoose.Schema.Types.Mixed },
-});
-
 const assetsSchema = new mongoose.Schema({
   propNo: { type: String, required: false },
   propName: { type: String, required: false },
@@ -38,6 +27,7 @@ const assetsSchema = new mongoose.Schema({
   inventory: { type: mongoose.Schema.Types.Mixed },
   attachments: { type: [String], required: false },
   Status: { type: StatusSchema, required: false },
+  recordedBy: { type: SignatoriesSchema, required: false },
 });
 
 const AssetsModel = mongoose.model("Assets", assetsSchema);

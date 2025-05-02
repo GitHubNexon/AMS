@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 
+const SignatoriesSchema = new mongoose.Schema({
+  name: { type: String, required: false },
+  position: { type: String, required: false },
+});
+
 const StatusSchema = new mongoose.Schema({
   isDeleted: { type: Boolean, default: false },
   isArchived: { type: Boolean, default: false },
@@ -13,7 +18,7 @@ const EmployeeAssetsRecordSchema = new mongoose.Schema({
   propNo: { type: String, required: false },
   dateAcquired: { type: Date, required: false },
   amount: { type: Number, required: false },
-})
+});
 
 const EmployeeAssetsSchema = new mongoose.Schema({
   parNo: { type: String, required: false },
@@ -21,13 +26,15 @@ const EmployeeAssetsSchema = new mongoose.Schema({
   entityName: { type: String, required: false },
   employeeName: { type: mongoose.Schema.Types.Mixed },
   position: { type: String, required: false },
-  approvedBy: { type: mongoose.Schema.Types.Mixed },
-  issuedBy: { type: mongoose.Schema.Types.Mixed },
+  approvedBy: { type: SignatoriesSchema, required: false },
+  issuedBy: { type: SignatoriesSchema, required: false },
   assetRecords: [EmployeeAssetsRecordSchema],
   Status: { type: StatusSchema, required: false },
 });
 
-
-const EmployeeAssetsModel = mongoose.model("EmployeeAssets", EmployeeAssetsSchema);
+const EmployeeAssetsModel = mongoose.model(
+  "EmployeeAssets",
+  EmployeeAssetsSchema
+);
 
 module.exports = EmployeeAssetsModel;
