@@ -135,14 +135,17 @@ const ExpandedRowComponent = ({ data }) => {
                       <th className="px-3 py-2 border-b border-gray-300">
                         Description
                       </th>
-                      {/* <th className="px-3 py-2 border-b border-gray-300">
-                        Quantity
-                      </th> */}
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Inventory No
+                      </th>
                       <th className="px-3 py-2 border-b border-gray-300">
                         Amount
                       </th>
                       <th className="px-3 py-2 border-b border-gray-300">
                         Date Acquired
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300">
+                        Condition
                       </th>
                     </tr>
                   </thead>
@@ -156,14 +159,17 @@ const ExpandedRowComponent = ({ data }) => {
                           <td className="px-3 py-2 border-b">
                             {record.description}
                           </td>
-                          {/* <td className="px-3 py-2 border-b">
-                            {record.quantity}
-                          </td> */}
+                          <td className="px-3 py-2 border-b">
+                            {record.inventoryNo}
+                          </td>
                           <td className="px-3 py-2 border-b">
                             {numberToCurrencyString(record.amount)}
                           </td>
                           <td className="px-3 py-2 border-b">
                             {formatReadableDate(record.dateAcquired)}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                          {record.condition || "N/A"}
                           </td>
                         </tr>
                       ))
@@ -210,23 +216,7 @@ const ExpandedRowComponent = ({ data }) => {
                           {inv.isAssigned ? "Yes" : "No"}
                         </td>
                         <td className="px-3 py-2 border-b">
-                          {inv.condition && inv.condition.length > 0
-                            ? inv.condition.map((cond, index) => (
-                                <span key={index}>
-                                  {cond.isGood
-                                    ? "Good"
-                                    : cond.forSale
-                                    ? "For Sale"
-                                    : cond.forDisposal
-                                    ? "For Disposal"
-                                    : cond.forRepair
-                                    ? "For Repair"
-                                    : cond.lost
-                                    ? "Lost"
-                                    : "Unknown"}
-                                </span>
-                              ))
-                            : "N/A"}
+                          {inv.condition || "N/A"}
                         </td>
                       </tr>
                     ))}
