@@ -118,8 +118,154 @@ const getEmployeeAssetsRecord = async (req, res) => {
   }
 };
 
+const deleteEmployeeAsset = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await employeeAssetsModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (asset.Status.isArchived) {
+      return res
+        .status(400)
+        .json({ message: "Cannot delete an archived asset." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res.status(400).json({ message: "Asset is already deleted." });
+    }
+
+    const updatedAsset = await employeeAssetsModel.findByIdAndUpdate(
+      id,
+      { "Status.isDeleted": true },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error deleting asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const archiveEmployeeAsset = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await employeeAssetsModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (asset.Status.isArchived) {
+      return res.status(400).json({ message: "Asset is already archived." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res
+        .status(400)
+        .json({ message: "Cannot archive a deleted asset." });
+    }
+
+    const updatedAsset = await employeeAssetsModel.findByIdAndUpdate(
+      id,
+      { "Status.isArchived": true },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error archiving asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const undoDeleteEmployeeAsset = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await employeeAssetsModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (!asset.Status.isDeleted) {
+      return res.status(400).json({ message: "Asset is not deleted." });
+    }
+
+    const updatedAsset = await employeeAssetsModel.findByIdAndUpdate(
+      id,
+      { "Status.isDeleted": false },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error undoing delete of asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const undoArchiveEmployeeAsset = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await employeeAssetsModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (!asset.Status.isArchived) {
+      return res.status(400).json({ message: "Asset is not archived." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res
+        .status(400)
+        .json({ message: "Cannot undo archive for a deleted asset." });
+    }
+
+    const updatedAsset = await employeeAssetsModel.findByIdAndUpdate(
+      id,
+      { "Status.isArchived": false },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error(
+      "Error undoing archive of asset:",
+      error.message,
+      error.stack
+    );
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
 module.exports = {
   createEmployeeAssetsRecord,
   updateEmployeeAssetsRecord,
   getEmployeeAssetsRecord,
+  deleteEmployeeAsset,
+  archiveEmployeeAsset,
+  undoDeleteEmployeeAsset,
+  undoArchiveEmployeeAsset,
 };
