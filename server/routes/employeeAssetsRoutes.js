@@ -17,4 +17,18 @@ router.patch(
 // Get all employee assets records
 router.get("/get-all", EmployeeAssetsController.getEmployeeAssetsRecord);
 
+
+//delete an asset record
+router.post("/delete/:id", EmployeeAssetsController.deleteEmployeeAsset);
+
+//archive an asset record
+router.post("/archive/:id", EmployeeAssetsController.archiveEmployeeAsset);
+
+//undo delete an asset record
+router.post("/undo-delete/:id", EmployeeAssetsController.undoDeleteEmployeeAsset);
+
+//undo archive an asset record
+router.post("/undo-archive/:id", EmployeeAssetsController.undoArchiveEmployeeAsset);
+
 module.exports = router;
+

@@ -109,7 +109,7 @@ const assetsApi = {
     }
   },
 
-  getEmployeeAssetsRecord: async (
+  getAllEmployeeAssetsRecord: async (
     page = 1,
     limit = 10,
     keyword = "",
@@ -124,6 +124,54 @@ const assetsApi = {
       }
     );
     return response.data;
+  },
+
+  deleteEmployeeAssetsRecord: async (id) => {
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/employee-assets/delete/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error deleting assets:", error.message);
+      throw error;
+    }
+  },
+
+  archiveEmployeeAssetsRecord: async (id) => {
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/employee-assets/archive/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error archiving assets:", error.message);
+      throw error;
+    }
+  },
+
+  undoDeleteEmployeeAssetRecord: async (id) => {
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/employee-assets/undo-delete/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error undoing delete assets:", error.message);
+      throw error;
+    }
+  },
+
+  undoArchiveEmployeeAssetRecord: async (id) => {
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/employee-assets/undo-archive/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error undoing archive assets:", error.message);
+      throw error;
+    }
   },
 };
 

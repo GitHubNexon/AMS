@@ -18,28 +18,30 @@ import {
   FaFileAlt,
   FaFolder,
   FaTrash,
+  FaUserTie,
+  FaUserCheck,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import assetsApi from "../api/assetsApi";
-import AssetsLogic from "../hooks/AssetsLogic";
+import EmployeeAssetsLogic from "../hooks/employeeAssetsLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import AssetsModal from "../Pop-Up-Pages/AssetsModal";
+
 const ExpandedRowComponent = ({ data }) => {
   return (
     <div className="p-6 bg-white rounded-lg shadow-lg max-w-full mx-auto my-4 border border-gray-200 transition-all hover:shadow-xl">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
           <FaBox className="text-blue-500" />
-          {data.propName || "Unnamed Asset"}
+          {data.parNo || "Unnamed PAR"}
         </h3>
         <div className="flex gap-2">
-          {data.Status.isArchived ? (
+          {data.Status?.isArchived ? (
             <span className="text-yellow-600 flex items-center gap-1 text-sm">
               <FaArchive /> Archived
             </span>
-          ) : data.Status.isDeleted ? (
+          ) : data.Status?.isDeleted ? (
             <span className="text-red-600 flex items-center gap-1 text-sm">
               <FaTrash /> Deleted
             </span>
@@ -50,193 +52,109 @@ const ExpandedRowComponent = ({ data }) => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Left Column */}
         <div className="space-y-3">
           <p className="flex items-center gap-2 text-gray-600">
             <FaTag className="text-gray-400" />
-            <span className="font-semibold">Property No:</span> {data.propNo}
+            <span className="font-semibold">PAR No:</span> {data.parNo}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
             <FaFileAlt className="text-gray-400" />
-            <span className="font-semibold">Description:</span>{" "}
-            {data.propDescription || "N/A"}
+            <span className="font-semibold">Fund Cluster:</span>{" "}
+            {data.fundCluster || "N/A"}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
-            <FaDollarSign className="text-gray-400" />
-            <span className="font-semibold">Unit Cost:</span>{" "}
-            {numberToCurrencyString(data.unitCost)}
+            <FaUserTie className="text-gray-400" />
+            <span className="font-semibold">Employee Name:</span>{" "}
+            {data.employeeName || "N/A"}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
-            <FaCalendarAlt className="text-gray-400" />
-            <span className="font-semibold">Acquisition Date:</span>{" "}
-            {formatReadableDate(data.acquisitionDate)}
+            <FaUserCheck className="text-gray-400" />
+            <span className="font-semibold">Entity Name:</span>{" "}
+            {data.entityName || "N/A"}
           </p>
         </div>
 
-        {/* Right Column */}
         <div className="space-y-3">
           <p className="flex items-center gap-2 text-gray-600">
-            <FaBox className="text-gray-400" />
-            <span className="font-semibold">Quantity:</span> {data.quantity}
+            <FaUserTie className="text-gray-400" />
+            <span className="font-semibold">Approved By:</span>{" "}
+            {data.approvedBy?.name || "N/A"} (
+            {data.approvedBy?.position || "N/A"})
           </p>
           <p className="flex items-center gap-2 text-gray-600">
-            <FaFolder className="text-gray-400" />
-            <span className="font-semibold">Category:</span>{" "}
-            {data.category || "N/A"}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaFileAlt className="text-gray-400" />
-            <span className="font-semibold">Reference:</span>{" "}
-            {data.reference || "N/A"}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaCalendarAlt className="text-gray-400" />
-            <span className="font-semibold">Useful Life:</span>{" "}
-            {data.useFullLife} months
+            <FaUserTie className="text-gray-400" />
+            <span className="font-semibold">Issued By:</span>{" "}
+            {data.issuedBy?.name || "N/A"} ({data.issuedBy?.position || "N/A"})
           </p>
         </div>
-      </div>
-
-      <div className="mt-4 pt-4 border-t border-gray-200">
-        <p className="flex items-center gap-2 text-gray-600">
-          <FaFileAlt className="text-gray-400" />
-          <span className="font-semibold">Accumulated Account:</span>{" "}
-          {data.accumulatedAccount || "N/A"}
-        </p>
-        <p className="flex items-center gap-2 text-gray-600 mt-2">
-          <FaFileAlt className="text-gray-400" />
-          <span className="font-semibold">Depreciation Account:</span>{" "}
-          {data.depreciationAccount || "N/A"}
-        </p>
-        <p className="flex items-center gap-2 text-gray-600 mt-2">
-          <FaFileAlt className="text-gray-400" />
-          <span className="font-semibold">Attachments:</span>
-          {data.attachments.length > 0
-            ? `${data.attachments.length} files`
-            : "None"}
-        </p>
       </div>
 
       <div className="mt-6 pt-4 border-t border-gray-200">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Assets Assigned Table (Left) */}
-          {data.assetsAssigned && data.assetsAssigned.length > 0 && (
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <FaBox className="text-blue-500" /> Assets Assigned Details
-              </h4>
-              <div className="overflow-auto">
-                <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
-                  <thead className="bg-gray-100">
-                    <tr>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Employee Name
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Description
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Inventory No
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Amount
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Date Acquired
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Condition
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.assetsAssigned.map((ass) =>
-                      ass.assetRecords.map((record) => (
-                        <tr key={record._id} className="hover:bg-gray-50">
-                          <td className="px-3 py-2 border-b">
-                            {ass.employeeName || "N/A"}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {record.description}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {record.inventoryNo}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {numberToCurrencyString(record.amount)}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {formatReadableDate(record.dateAcquired)}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {record.condition || "N/A"}
-                          </td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
-
-          {data.inventory && data.inventory.length > 0 && (
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <FaBox className="text-blue-500" /> Inventory Details
-              </h4>
-              <div className="overflow-auto">
-                <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
-                  <thead className="bg-gray-100">
-                    <tr>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Inventory No
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Name
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Assigned
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Condition
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.inventory.map((inv) => (
-                      <tr key={inv._id} className="hover:bg-gray-50">
-                        <td className="px-3 py-2 border-b">
-                          {inv.invNo || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.invName || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.isAssigned ? "Yes" : "No"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.condition || "N/A"}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
+        <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <FaBox className="text-blue-500" /> Asset Records
+        </h4>
+        <div className="overflow-auto">
+          <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-3 py-2 border-b border-gray-300">
+                  Inventory No
+                </th>
+                <th className="px-3 py-2 border-b border-gray-300">
+                  Description
+                </th>
+                <th className="px-3 py-2 border-b border-gray-300">Category</th>
+                <th className="px-3 py-2 border-b border-gray-300">Amount</th>
+                <th className="px-3 py-2 border-b border-gray-300">
+                  Date Acquired
+                </th>
+                <th className="px-3 py-2 border-b border-gray-300">
+                  Condition
+                </th>
+                <th className="px-3 py-2 border-b border-gray-300">Assigned</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.assetRecords?.map((record) => (
+                <tr key={record._id} className="hover:bg-gray-50">
+                  <td className="px-3 py-2 border-b">
+                    {record.inventoryNo || "N/A"}
+                  </td>
+                  <td className="px-3 py-2 border-b">
+                    {record.description || "N/A"}
+                  </td>
+                  <td className="px-3 py-2 border-b">
+                    {record.category || "N/A"}
+                  </td>
+                  <td className="px-3 py-2 border-b">
+                    {numberToCurrencyString(record.amount)}
+                  </td>
+                  <td className="px-3 py-2 border-b">
+                    {formatReadableDate(record.dateAcquired)}
+                  </td>
+                  <td className="px-3 py-2 border-b">
+                    {record.condition || "N/A"}
+                  </td>
+                  <td className="px-3 py-2 border-b">
+                    {record.isAssigned ? "Yes" : "No"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   );
 };
 
-const AssetsTable = () => {
+const EmployeeAssetsTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssets, setSelectedAssets] = useState([]);
-  const [isAssetsModalOpen, setIsAssetsModalOpen] = useState(false);
+  const [selectedEmployeeAssets, setSelectedEmployeeAssets] = useState([]);
+  const [isEmployeeAssetsModalOpen, setIsEmployeeAssetsModalOpen] =
+    useState(false);
   const [modalMode, setModalMode] = useState("add");
 
   const [query, setQuery] = useState("");
@@ -245,31 +163,28 @@ const AssetsTable = () => {
   };
 
   const {
-    fetchAssets,
-    assets,
+    fetchEmployeeAssets,
+    EmployeeAssets,
     totalItems,
     totalPages,
-    setAssets,
+    setEmployeeAssets,
     loading,
     setLoading,
     setTotalItems,
-    setTotalPages,
     searchQuery,
     setSearchQuery,
     sortBy,
-    setSortBy,
     sortOrder,
-    setSortOrder,
     toggleSortOrder,
-  } = AssetsLogic(page, limit, status);
+  } = EmployeeAssetsLogic(page, limit, status);
 
   function refreshTable() {
-    fetchAssets();
+    fetchEmployeeAssets();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchAssets();
+    fetchEmployeeAssets();
   };
 
   // Debounce the search input
@@ -282,12 +197,12 @@ const AssetsTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsModalOpen(true);
+    setIsEmployeeAssetsModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsModalOpen(false);
-    setSelectedAssets(null);
+    setIsEmployeeAssetsModalOpen(false);
+    setSelectedEmployeeAssets(null);
   };
 
   const handleActionButtons = async ({
@@ -305,7 +220,7 @@ const AssetsTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchAssets?.();
+        fetchEmployeeAssets?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -316,49 +231,49 @@ const AssetsTable = () => {
   const handleDeleteEntry = (id) =>
     handleActionButtons({
       id,
-      confirmMessage: "Are you sure you want to delete this assets?",
+      confirmMessage: "Are you sure you want to delete this Employee assets?",
       successMessage: "assets deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetsApi.deleteAssetsRecord,
+      apiMethod: assetsApi.deleteEmployeeAssetsRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
     handleActionButtons({
       id,
       confirmMessage:
-        "Are you sure you want to undo the deletion of this assets?",
+        "Are you sure you want to undo the deletion of this  Employee assets?",
       successMessage: "assets restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetsApi.undoDeleteAssetRecord,
+      apiMethod: assetsApi.undoDeleteEmployeeAssetRecord,
     });
 
   const handleArchiveEntry = (id) =>
     handleActionButtons({
       id,
-      confirmMessage: "Are you sure you want to archive this assets?",
+      confirmMessage: "Are you sure you want to archive this  Employee assets?",
       successMessage: "assets archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetsApi.archiveAssetsRecord,
+      apiMethod: assetsApi.archiveEmployeeAssetsRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
     handleActionButtons({
       id,
       confirmMessage:
-        "Are you sure you want to undo the archive of this assets?",
+        "Are you sure you want to undo the archive of this Employee assets?",
       successMessage: "assets restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetsApi.undoArchiveAssetRecord,
+      apiMethod: assetsApi.undoArchiveEmployeeAssetRecord,
     });
 
-  const handleModalOpenForEdit = (assets) => {
+  const handleModalOpenForEdit = (employeeAssets) => {
     setModalMode("edit");
-    setSelectedAssets(assets);
-    setIsAssetsModalOpen(true);
+    setSelectedEmployeeAssets(employeeAssets);
+    setIsEmployeeAssetsModalOpen(true);
   };
 
   const handleFetchLatest = async () => {
-    fetchAssets();
+    fetchEmployeeAssets();
     showToast("Updated data fetched successfully", "success");
   };
 
@@ -381,25 +296,22 @@ const AssetsTable = () => {
       width: "120px",
     },
     {
-      name: "Acquisition Date",
-      selector: (row) =>
-        row.acquisitionDate
-          ? formatReadableDate(row.acquisitionDate)
-          : "No Date Yet",
+      name: "PAR NO",
+      selector: (row) => (row.parNo ? row.parNo : "N/A"),
     },
     {
-      name: "Equipment / Property Name",
+      name: "Fund Cluster",
       width: "300px",
-      selector: (row) => row.propName || "",
+      selector: (row) => row.fundCluster || "",
     },
     {
-      name: "Property No",
-      selector: (row) => row.propNo || "",
+      name: "Entity Name",
+      selector: (row) => row.entityName || "",
     },
     {
-      name: "Asset Description",
+      name: "Employee Name",
       width: "300px",
-      selector: (row) => row.propDescription || "",
+      selector: (row) => row.employeeName || "",
     },
     {
       name: "Actions",
@@ -478,8 +390,7 @@ const AssetsTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          {/* <FaBookSkull size={20} /> */}
-          <h1 className="font-bold">Assets Management</h1>
+          <h1 className="font-bold">Employee Assets Management</h1>
 
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
@@ -518,7 +429,7 @@ const AssetsTable = () => {
 
         <DataTable
           columns={columns}
-          data={assets}
+          data={EmployeeAssets}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -533,7 +444,7 @@ const AssetsTable = () => {
           sortDirection={sortOrder}
           onSort={(column) => toggleSortOrder(column.id)}
         />
-        {isAssetsModalOpen && (
+        {/* {isAssetsModalOpen && (
           <AssetsModal
             mode={modalMode}
             isOpen={isAssetsModalOpen}
@@ -542,10 +453,10 @@ const AssetsTable = () => {
             assetsData={selectedAssets}
             refreshTable={refreshTable}
           />
-        )}
+        )} */}
       </div>
     </>
   );
 };
 
-export default AssetsTable;
+export default EmployeeAssetsTable;

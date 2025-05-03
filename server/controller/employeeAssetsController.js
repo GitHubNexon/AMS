@@ -5,28 +5,9 @@ const mongoose = require("mongoose");
 
 const createEmployeeAssetsRecord = async (req, res) => {
   try {
-    const {
-      parNo,
-      fundCluster,
-      entityName,
-      employeeName,
-      position,
-      approvedBy,
-      issuedBy,
-      assetRecords,
-    } = req.body;
+    const EmployeeAssetsData = req.body;
 
-    const newEmployeeAssets = new employeeAssetsModel({
-      parNo,
-      fundCluster,
-      entityName,
-      employeeName,
-      position,
-      approvedBy,
-      issuedBy,
-      assetRecords,
-    });
-
+    const newEmployeeAssets = new employeeAssetsModel(EmployeeAssetsData);
     const savedEmployeeAssets = await newEmployeeAssets.save();
 
     res.status(201).json(savedEmployeeAssets);

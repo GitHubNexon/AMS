@@ -1,10 +1,12 @@
 import React from "react";
 import AssetsTable from "../Sub-pages/AssetsTable";
+import EmployeeAssetsTable from "../Sub-pages/EmployeeAssetsTable";
 
 const AssetManagement = () => {
   return (
     <div>
       <AssetsTable />
+      <EmployeeAssetsTable />
     </div>
   );
 };

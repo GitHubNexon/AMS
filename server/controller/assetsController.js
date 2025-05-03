@@ -16,52 +16,6 @@ const createAssetsRecord = async (req, res) => {
   }
 };
 
-const createAssetsAssignmentRecord = async (req, res) => {
-  try {
-    const { assetsId } = req.params;
-    const {
-      parNo,
-      fundCluster,
-      entityName,
-      employeeName,
-      position,
-      approvedBy,
-      issuedBy,
-      assetRecords,
-    } = req.body;
-
-    const asset = await AssetsModel.findById(assetsId);
-
-    if (!asset) {
-      return res.status(404).json({ message: "Asset not found" });
-    }
-
-    // Construct the assignment record
-    const assignmentRecord = {
-      parNo,
-      fundCluster,
-      entityName,
-      employeeName,
-      position,
-      approvedBy,
-      issuedBy,
-      assetRecords,
-    };
-
-    // Add to the assetsAssignment array
-    asset.assetsAssignment.push(assignmentRecord);
-
-    // Save the updated document
-    await asset.save();
-
-    res
-      .status(200)
-      .json({ message: "Asset assignment record added successfully", asset });
-  } catch (error) {
-    console.error("Error creating assets assignment record:", error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-};
 
 const updateAssetsRecord = async (req, res) => {
   try {
@@ -355,7 +309,6 @@ const undoArchiveAssetRecord = async (req, res) => {
 };
 
 module.exports = {
-  createAssetsAssignmentRecord,
   createAssetsRecord,
   updateAssetsRecord,
   getAllAssetsRecords,
