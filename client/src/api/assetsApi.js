@@ -36,7 +36,6 @@ const assetsApi = {
     const response = await axios.get(`${API_BASE_URL}/assets/get-all`, {
       params: { page, limit, keyword, sortBy, sortOrder, status },
     });
-    console.log(response);
     return response.data;
   },
 
@@ -82,6 +81,49 @@ const assetsApi = {
       console.error("Error undoing archive assets:", error.message);
       throw error;
     }
+  },
+
+  createEmployeeAssetsRecord: async (data) => {
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/employee-assets/create`,
+        data
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error creating employee assets:", error.message);
+      throw error;
+    }
+  },
+
+  updateEmployeeAssetsRecord: async (id, data) => {
+    try {
+      const response = await axios.patch(
+        `${API_BASE_URL}/employee-assets/update/${id}`,
+        data
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error updating employee assets:", error.message);
+      throw error;
+    }
+  },
+
+  getEmployeeAssetsRecord: async (
+    page = 1,
+    limit = 10,
+    keyword = "",
+    sortBy = "",
+    sortOrder = "asc",
+    status = ""
+  ) => {
+    const response = await axios.get(
+      `${API_BASE_URL}/employee-assets/get-all`,
+      {
+        params: { page, limit, keyword, sortBy, sortOrder, status },
+      }
+    );
+    return response.data;
   },
 };
 
