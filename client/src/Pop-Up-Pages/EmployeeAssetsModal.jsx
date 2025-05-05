@@ -51,6 +51,7 @@ const EmployeeAssetsModal = ({
   });
 
   useEffect(() => {
+    console.log(employeeAssetsData);
     if (mode === "edit" && employeeAssetsData) {
       const formattedAssetRecords = employeeAssetsData.assetRecords.map(
         (record) => ({

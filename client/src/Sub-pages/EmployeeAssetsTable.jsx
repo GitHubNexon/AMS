@@ -28,6 +28,7 @@ import assetsApi from "../api/assetsApi";
 import EmployeeAssetsLogic from "../hooks/employeeAssetsLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import EmployeeAssetsModal from "../Pop-Up-Pages/EmployeeAssetsModal";
+import ParModal from "../Pop-Up-Pages/ParModal";
 
 const ExpandedRowComponent = ({ data }) => {
   return (
@@ -66,8 +67,6 @@ const ExpandedRowComponent = ({ data }) => {
             {formatReadableDate(data.dateReleased)}
           </p>
         </div>
-
-
       </div>
     </div>
   );
@@ -81,6 +80,7 @@ const EmployeeAssetsTable = () => {
   const [isEmployeeAssetsModalOpen, setIsEmployeeAssetsModalOpen] =
     useState(false);
   const [modalMode, setModalMode] = useState("add");
+  const [isParModalOpen, setIsParModalOpen] = useState(false);
 
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
@@ -110,6 +110,11 @@ const EmployeeAssetsTable = () => {
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
     fetchEmployeeAssets();
+  };
+
+  const handleParModalOpen = (employeeAssets) => {
+    setSelectedEmployeeAssets(employeeAssets);
+    setIsParModalOpen(true);
   };
 
   // Debounce the search input
@@ -245,6 +250,19 @@ const EmployeeAssetsTable = () => {
           {!row.Status?.isDeleted && !row.Status?.isArchived && (
             <div className="group relative">
               <button
+                onClick={() => handleParModalOpen(row)}
+                className="text-white bg-green-600 p-2 rounded-md"
+              >
+                <FaFileAlt size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                View PAR
+              </span>
+            </div>
+          )}
+          {!row.Status?.isDeleted && !row.Status?.isArchived && (
+            <div className="group relative">
+              <button
                 onClick={() => handleModalOpenForEdit(row)}
                 className="text-white bg-blue-600 p-2 rounded-md"
               >
@@ -377,6 +395,14 @@ const EmployeeAssetsTable = () => {
             onSaveEmployeeAssetsData={fetchEmployeeAssets}
             employeeAssetsData={selectedEmployeeAssets}
             refreshTable={refreshTable}
+          />
+        )}
+
+        {isParModalOpen && (
+          <ParModal
+            isOpen={isParModalOpen}
+            onClose={() => setIsParModalOpen(false)}
+            employeeAssetsData={selectedEmployeeAssets}
           />
         )}
       </div>
