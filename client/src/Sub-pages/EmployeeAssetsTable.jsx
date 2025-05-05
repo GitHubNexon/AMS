@@ -27,6 +27,7 @@ import showDialog from "../utils/showDialog";
 import assetsApi from "../api/assetsApi";
 import EmployeeAssetsLogic from "../hooks/employeeAssetsLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
+import EmployeeAssetsModal from "../Pop-Up-Pages/EmployeeAssetsModal";
 
 const ExpandedRowComponent = ({ data }) => {
   return (
@@ -444,16 +445,16 @@ const EmployeeAssetsTable = () => {
           sortDirection={sortOrder}
           onSort={(column) => toggleSortOrder(column.id)}
         />
-        {/* {isAssetsModalOpen && (
-          <AssetsModal
+        {isEmployeeAssetsModalOpen && (
+          <EmployeeAssetsModal
             mode={modalMode}
-            isOpen={isAssetsModalOpen}
+            isOpen={isEmployeeAssetsModalOpen}
             onClose={handleModalClose}
-            onSaveAssets={fetchAssets}
-            assetsData={selectedAssets}
+            onSaveEmployeeAssetsData={fetchEmployeeAssets}
+            employeeAssetsData={selectedEmployeeAssets}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
       </div>
     </>
   );
