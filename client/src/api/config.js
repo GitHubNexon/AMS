@@ -10,7 +10,7 @@ switch (process.env.NODE_ENV) {
     break;
   case "production":
     // use this if backend is reversed proxy and front end is hosted elsewhere (adjust in cors)
-    API_BASE_URL = `${window.location.protocol}//${window.location.hostname}/api`;
+    API_BASE_URL = `${window.location.protocol}//${window.location.hostname}/ams/api`;
     // use this if front end is hosted by express server itself on :3000/NDC_AMS/
     // API_BASE_URL = `${window.location.protocol}//${window.location.hostname}:3000/api`; //
     break;
