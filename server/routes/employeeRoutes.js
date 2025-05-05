@@ -11,4 +11,19 @@ router.post("/create", employeeController.createEmployee);
 //update an record of employee
 router.patch("/update/:id", employeeController.updateEmployee);
 
+//get all records of employee
+router.get("/get-all", employeeController.getAllEmployeeRecords);
+
+//delete an asset record
+router.post("/delete/:id", employeeController.deleteEmployee);
+
+//archive an asset record
+router.post("/archive/:id", employeeController.archiveEmployee);
+
+//undo delete an asset record
+router.post("/undo-delete/:id", employeeController.undoDeleteEmployee);
+
+//undo archive an asset record
+router.post("/undo-archive/:id", employeeController.undoArchiveEmployee);
+
 module.exports = router;
