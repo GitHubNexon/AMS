@@ -129,22 +129,25 @@ const ExpandedRowComponent = ({ data }) => {
                 <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
                   <thead className="bg-gray-100">
                     <tr>
-                      <th className="px-3 py-2 border-b border-gray-300">
+                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
                         Employee Name
                       </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
+                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
                         Description
                       </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
+                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
+                        Property Name
+                      </th>
+                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
                         Inventory No
                       </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
+                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
                         Amount
                       </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
+                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
                         Date Acquired
                       </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
+                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
                         Condition
                       </th>
                     </tr>
@@ -158,6 +161,9 @@ const ExpandedRowComponent = ({ data }) => {
                           </td>
                           <td className="px-3 py-2 border-b">
                             {record.description}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {record.propName}
                           </td>
                           <td className="px-3 py-2 border-b">
                             {record.inventoryNo}

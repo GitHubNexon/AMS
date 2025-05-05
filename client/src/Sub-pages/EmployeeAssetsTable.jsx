@@ -35,28 +35,15 @@ const ExpandedRowComponent = ({ data }) => {
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
           <FaBox className="text-blue-500" />
-          {data.parNo || "Unnamed PAR"}
+          Assets Record
         </h3>
-        <div className="flex gap-2">
-          {data.Status?.isArchived ? (
-            <span className="text-yellow-600 flex items-center gap-1 text-sm">
-              <FaArchive /> Archived
-            </span>
-          ) : data.Status?.isDeleted ? (
-            <span className="text-red-600 flex items-center gap-1 text-sm">
-              <FaTrash /> Deleted
-            </span>
-          ) : (
-            <span className="text-green-600 text-sm">Active</span>
-          )}
-        </div>
       </div>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* Left Column */}
         <div className="space-y-3">
           <p className="flex items-center gap-2 text-gray-600">
             <FaTag className="text-gray-400" />
-            <span className="font-semibold">PAR No:</span> {data.parNo}
+            <span className="font-semibold">Par No:</span> {data.parNo}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
             <FaFileAlt className="text-gray-400" />
@@ -64,86 +51,23 @@ const ExpandedRowComponent = ({ data }) => {
             {data.fundCluster || "N/A"}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
-            <FaUserTie className="text-gray-400" />
-            <span className="font-semibold">Employee Name:</span>{" "}
-            {data.employeeName || "N/A"}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaUserCheck className="text-gray-400" />
+            <FaDollarSign className="text-gray-400" />
             <span className="font-semibold">Entity Name:</span>{" "}
-            {data.entityName || "N/A"}
+            {data.entityName}
+          </p>
+          <p className="flex items-center gap-2 text-gray-600">
+            <FaCalendarAlt className="text-gray-400" />
+            <span className="font-semibold">Date Acquired:</span>{" "}
+            {formatReadableDate(data.dateAcquired)}
+          </p>
+          <p className="flex items-center gap-2 text-gray-600">
+            <FaCalendarAlt className="text-gray-400" />
+            <span className="font-semibold">Date Released:</span>{" "}
+            {formatReadableDate(data.dateReleased)}
           </p>
         </div>
 
-        <div className="space-y-3">
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaUserTie className="text-gray-400" />
-            <span className="font-semibold">Approved By:</span>{" "}
-            {data.approvedBy?.name || "N/A"} (
-            {data.approvedBy?.position || "N/A"})
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaUserTie className="text-gray-400" />
-            <span className="font-semibold">Issued By:</span>{" "}
-            {data.issuedBy?.name || "N/A"} ({data.issuedBy?.position || "N/A"})
-          </p>
-        </div>
-      </div>
 
-      <div className="mt-6 pt-4 border-t border-gray-200">
-        <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-          <FaBox className="text-blue-500" /> Asset Records
-        </h4>
-        <div className="overflow-auto">
-          <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="px-3 py-2 border-b border-gray-300">
-                  Inventory No
-                </th>
-                <th className="px-3 py-2 border-b border-gray-300">
-                  Description
-                </th>
-                <th className="px-3 py-2 border-b border-gray-300">Category</th>
-                <th className="px-3 py-2 border-b border-gray-300">Amount</th>
-                <th className="px-3 py-2 border-b border-gray-300">
-                  Date Acquired
-                </th>
-                <th className="px-3 py-2 border-b border-gray-300">
-                  Condition
-                </th>
-                <th className="px-3 py-2 border-b border-gray-300">Assigned</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.assetRecords?.map((record) => (
-                <tr key={record._id} className="hover:bg-gray-50">
-                  <td className="px-3 py-2 border-b">
-                    {record.inventoryNo || "N/A"}
-                  </td>
-                  <td className="px-3 py-2 border-b">
-                    {record.description || "N/A"}
-                  </td>
-                  <td className="px-3 py-2 border-b">
-                    {record.category || "N/A"}
-                  </td>
-                  <td className="px-3 py-2 border-b">
-                    {numberToCurrencyString(record.amount)}
-                  </td>
-                  <td className="px-3 py-2 border-b">
-                    {formatReadableDate(record.dateAcquired)}
-                  </td>
-                  <td className="px-3 py-2 border-b">
-                    {record.condition || "N/A"}
-                  </td>
-                  <td className="px-3 py-2 border-b">
-                    {record.isAssigned ? "Yes" : "No"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   );
