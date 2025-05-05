@@ -10,16 +10,6 @@ const StatusSchema = new mongoose.Schema({
   isArchived: { type: Boolean, default: false },
 });
 
-// const ConditionSchema = new mongoose.Schema(
-//   {
-//     isGood: Boolean,
-//     forSale: Boolean,
-//     forDisposal: Boolean,
-//     forRepair: Boolean,
-//     lost: Boolean,
-//   },
-//   { _id: false }
-// );
 
 const InventoryItemSchema = new mongoose.Schema({
   invNo: String,
