@@ -25,6 +25,7 @@ import showDialog from "../utils/showDialog";
 import employeeApi from "../api/employeeApi";
 import EmployeeLogic from "../hooks/employeeLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
+import EmployeeModal from "../Pop-Up-Pages/EmployeeModal";
 
 const EmployeesTable = () => {
   const [page, setPage] = useState(1);
@@ -326,16 +327,16 @@ const EmployeesTable = () => {
           sortDirection={sortOrder}
           onSort={(column) => toggleSortOrder(column.id)}
         />
-        {/* {isAssetsModalOpen && (
-          <AssetsModal
+        {isEmployeeModalOpen && (
+          <EmployeeModal
             mode={modalMode}
-            isOpen={isAssetsModalOpen}
+            isOpen={isEmployeeModalOpen}
             onClose={handleModalClose}
-            onSaveAssets={fetchAssets}
-            assetsData={selectedAssets}
+            onSaveEmployees={fetchEmployees}
+            employeeData={selectedEmployees}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
       </div>
     </>
   );
