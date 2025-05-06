@@ -26,12 +26,22 @@ import assetsApi from "../api/assetsApi";
 import AssetsLogic from "../hooks/AssetsLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsModal from "../Pop-Up-Pages/AssetsModal";
+
 const ExpandedRowComponent = ({ data }) => {
   return (
     <div className="p-6 bg-white rounded-lg shadow-lg max-w-full mx-auto my-4 border border-gray-200 transition-all hover:shadow-xl">
       <div className="flex justify-between items-center mb-4">
+        {/* Displaying assetImage if it exists */}
+        {data.assetImage && (
+          <div className="mt-6 pt-4  border-gray-200">
+            <img
+              src={data.assetImage}
+              alt="Asset Image"
+              className="w-32 h-auto object-contain "
+            />
+          </div>
+        )}
         <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-          <FaBox className="text-blue-500" />
           {data.propName || "Unnamed Asset"}
         </h3>
         <div className="flex gap-2">
@@ -53,21 +63,17 @@ const ExpandedRowComponent = ({ data }) => {
         {/* Left Column */}
         <div className="space-y-3">
           <p className="flex items-center gap-2 text-gray-600">
-            <FaTag className="text-gray-400" />
             <span className="font-semibold">Property No:</span> {data.propNo}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
-            <FaFileAlt className="text-gray-400" />
             <span className="font-semibold">Description:</span>{" "}
             {data.propDescription || "N/A"}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
-            <FaDollarSign className="text-gray-400" />
             <span className="font-semibold">Unit Cost:</span>{" "}
             {numberToCurrencyString(data.unitCost)}
           </p>
           <p className="flex items-center gap-2 text-gray-600">
-            <FaCalendarAlt className="text-gray-400" />
             <span className="font-semibold">Acquisition Date:</span>{" "}
             {formatReadableDate(data.acquisitionDate)}
           </p>
@@ -119,73 +125,6 @@ const ExpandedRowComponent = ({ data }) => {
 
       <div className="mt-6 pt-4 border-t border-gray-200">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Assets Assigned Table (Left) */}
-          {data.assetsAssigned && data.assetsAssigned.length > 0 && (
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <FaBox className="text-blue-500" /> Assets Assigned Details
-              </h4>
-              <div className="overflow-auto">
-                <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
-                  <thead className="bg-gray-100">
-                    <tr>
-                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
-                        Employee Name
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
-                        Description
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
-                        Property Name
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
-                        Inventory No
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
-                        Amount
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
-                        Date Acquired
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300 whitespace-nowrap">
-                        Condition
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.assetsAssigned.map((ass) =>
-                      ass.assetRecords.map((record) => (
-                        <tr key={record._id} className="hover:bg-gray-50">
-                          <td className="px-3 py-2 border-b">
-                            {ass.employeeName || "N/A"}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {record.description}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {record.propName}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {record.inventoryNo}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {numberToCurrencyString(record.amount)}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {formatReadableDate(record.dateAcquired)}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {record.condition || "N/A"}
-                          </td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
-
           {data.inventory && data.inventory.length > 0 && (
             <div>
               <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
@@ -202,10 +141,10 @@ const ExpandedRowComponent = ({ data }) => {
                         Name
                       </th>
                       <th className="px-3 py-2 border-b border-gray-300">
-                        Assigned
+                        Inventory Code
                       </th>
                       <th className="px-3 py-2 border-b border-gray-300">
-                        Condition
+                        Status
                       </th>
                     </tr>
                   </thead>
@@ -219,10 +158,10 @@ const ExpandedRowComponent = ({ data }) => {
                           {inv.invName || "N/A"}
                         </td>
                         <td className="px-3 py-2 border-b">
-                          {inv.isAssigned ? "Yes" : "No"}
+                          {inv.code || "N/A"}
                         </td>
                         <td className="px-3 py-2 border-b">
-                          {inv.condition || "N/A"}
+                          {inv.status || "N/A"}
                         </td>
                       </tr>
                     ))}
@@ -485,7 +424,7 @@ const AssetsTable = () => {
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
           {/* <FaBookSkull size={20} /> */}
-          <h1 className="font-bold">Assets Management</h1>
+          <h1 className="font-bold">Assets Records </h1>
 
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button

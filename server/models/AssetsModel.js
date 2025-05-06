@@ -12,10 +12,21 @@ const StatusSchema = new mongoose.Schema({
 
 const InventoryItemSchema = new mongoose.Schema({
   invNo: String,
-  invImage: String,
   invName: String,
-  isAssigned: Boolean,
-  condition: String,
+  description: String,
+  code: String,
+  status: {
+    type: String,
+    enum: [
+      "Available",
+      "Issued",
+      "Returned",
+      "Defective",
+      "Under-repair",
+      "Disposed",
+    ],
+    default: "Available", // optional, if you want a default value
+  },
 });
 
 const assetsSchema = new mongoose.Schema(

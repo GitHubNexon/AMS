@@ -10,6 +10,8 @@ import { useAuth } from "../context/AuthContext";
 const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState("assets");
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const fileInputRef = useRef(null);
 
   const [formData, setFormData] = useState({
     propNo: "",
@@ -17,6 +19,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
     propDescription: "",
     unitCost: 0,
     acquisitionDate: moment().format("YYYY-MM-DD"),
+    assetImage: "",
     useFullLife: 0,
     quantity: 0,
     acquisitionCost: 0,
@@ -32,10 +35,10 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
     inventory: [
       {
         invNo: "",
-        invImage: "",
+        description: "",
+        code: "",
         invName: "",
-        isAssigned: false,
-        condition: "",
+        status: "Available",
       },
     ],
   });
@@ -48,6 +51,30 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Check file size (5MB = 5 * 1024 * 1024 bytes)
+      if (file.size > 5 * 1024 * 1024) {
+        showToast("Image size must be less than 5MB", "error");
+        e.target.value = null;
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        setFormData((prevData) => ({
+          ...prevData,
+          assetImage: reader.result,
+        }));
+      };
+      reader.onerror = () => {
+        showToast("Error reading image file", "error");
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleInventoryChange = (index, field, value) => {
@@ -65,15 +92,23 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
   };
 
   const addInventoryRecord = () => {
+    if (formData.inventory.length >= formData.quantity) {
+      showToast(
+        `Cannot add more inventory items. Maximum quantity is ${formData.quantity}.`,
+        "warning"
+      );
+      return;
+    }
     setFormData((prevData) => ({
       ...prevData,
       inventory: [
         ...prevData.inventory,
         {
           invNo: "",
+          description: "",
+          code: "",
           invName: "",
-          isAssigned: false,
-          condition: "",
+          status: "Available",
         },
       ],
     }));
@@ -90,9 +125,10 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
           : [
               {
                 invNo: "",
+                description: "",
+                code: "",
                 invName: "",
-                isAssigned: false,
-                condition: "",
+                status: "Available",
               },
             ],
       };
@@ -103,21 +139,33 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
     if (mode === "edit" && assetsData) {
       const formattedDate = assetsData.acquisitionDate
         ? new Date(assetsData.acquisitionDate).toISOString().split("T")[0]
-        : "";
+        : moment().format("YYYY-MM-DD");
+
+      const inventoryData =
+        Array.isArray(assetsData.inventory) && assetsData.inventory.length > 0
+          ? assetsData.inventory.map((item) => ({
+              invNo: item.invNo || "",
+              invName: item.invName || "",
+              description: item.description || "",
+              code: item.code || "",
+              status: item.status || "Available",
+              _id: item._id || undefined,
+            }))
+          : [
+              {
+                invNo: "",
+                invName: "",
+                description: "",
+                code: "",
+                status: "Available",
+              },
+            ];
+
       setFormData({
         ...assetsData,
-        acquisitionDate: formattedDate || "",
-        inventory:
-          assetsData.inventory && assetsData.inventory.length
-            ? assetsData.inventory
-            : [
-                {
-                  invNo: "",
-                  invName: "",
-                  isAssigned: false,
-                  condition: "",
-                },
-              ],
+        acquisitionDate: formattedDate,
+        inventory: inventoryData,
+        assetImage: assetsData.assetImage || "",
       });
     }
   }, [mode, assetsData]);
@@ -137,25 +185,38 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
     console.log("Parent selected", user);
   };
 
-  const validateForm = () => {
-    // if (!formData.recordedBy) {
-    //   showToast("ReviewedBy is required.", "warning");
-    //   return false;
-    // }
+  const requiredFields = [
+    { key: "propNo", message: "Property Number is required." },
+    { key: "propName", message: "Property Name is required." },
+    { key: "propDescription", message: "Property Description is required." },
+    { key: "unitCost", message: "Unit Cost is required." },
+    { key: "acquisitionDate", message: "Acquisition Date is required." },
+    { key: "useFullLife", message: "Use Full Life is required." },
+    { key: "quantity", message: "Quantity is required." },
+    { key: "acquisitionCost", message: "Acquisition Cost is required." },
+    { key: "category", message: "Category is required." },
+  ];
 
-    // if (!formData.propNo) {
-    //   showToast("ReviewedBy is required.", "warning");
-    //   return false;
-    // }
-    // if (!formData.propName) {
-    //   showToast("ReviewedBy is required.", "warning");
-    //   return false;
-    // }
+  const validateForm = () => {
+    for (let { key, message } of requiredFields) {
+      if (!formData[key]) {
+        showToast(message, "warning");
+        return false;
+      }
+    }
     return true;
   };
 
   const handleSubmit = async () => {
     if (!validateForm()) {
+      return;
+    }
+
+    if (formData.inventory.length !== parseInt(formData.quantity)) {
+      showToast(
+        `Inventory items (${formData.inventory.length}) must equal quantity (${formData.quantity}).`,
+        "warning"
+      );
       return;
     }
 
@@ -251,6 +312,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   name="propNo"
                   value={formData.propNo}
                   onChange={handleChange}
+                  required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
@@ -264,6 +326,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   name="propName"
                   value={formData.propName}
                   onChange={handleChange}
+                  required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
@@ -275,6 +338,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   type="text"
                   id="propDescription"
                   name="propDescription"
+                  required
                   value={formData.propDescription}
                   onChange={handleChange}
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
@@ -288,6 +352,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   type="number"
                   id="unitCost"
                   name="unitCost"
+                  required
                   value={formData.unitCost}
                   onChange={handleChange}
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
@@ -303,6 +368,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   name="acquisitionDate"
                   value={formData.acquisitionDate}
                   onChange={handleChange}
+                  required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
@@ -316,6 +382,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   name="useFullLife"
                   value={formData.useFullLife}
                   onChange={handleChange}
+                  required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
@@ -328,6 +395,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   id="quantity"
                   name="quantity"
                   value={formData.quantity}
+                  required
                   onChange={handleChange}
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
@@ -397,6 +465,43 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="file"
+                  id="assetImage"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                  style={{ display: "none" }} 
+                  ref={fileInputRef} 
+                />
+
+                {formData.assetImage ? (
+                  <div className="flex items-center space-x-2">
+                    <img
+                      src={formData.assetImage}
+                      alt="Asset Preview"
+                      className="w-20 h-20 object-cover rounded-md cursor-pointer border- p-2"
+                      onClick={() => setIsPreviewOpen(true)} 
+                    />
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current.click()}
+                      className="bg-blue-500 text-white py-1 px-2 rounded-md hover:bg-blue-600 text-sm"
+                    >
+                      Change Image
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current.click()}
+                    className="bg-blue-500 text-white py-1 px-2 rounded-md hover:bg-blue-600 text-sm"
+                  >
+                    Upload Image
+                  </button>
+                )}
+              </div>
             </div>
           )}
 
@@ -415,7 +520,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
               {formData.inventory.map((item, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 border p-3 rounded-md relative text-[0.7em]"
+                  className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 border p-3 rounded-md relative text-[0.7em]"
                 >
                   <div className="flex flex-col">
                     <label htmlFor={`invNo-${index}`} className="text-gray-700">
@@ -448,28 +553,42 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                       className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                     />
                   </div>
+
                   <div className="flex flex-col">
-                    <label
-                      htmlFor={`condition-${index}`}
-                      className="text-gray-700"
-                    >
-                      Condition
+                    <label htmlFor={`code-${index}`} className="text-gray-700">
+                      Code
                     </label>
                     <input
                       type="text"
-                      id={`condition-${index}`}
-                      value={item.condition}
+                      id={`code-${index}`}
+                      value={item.code}
+                      onChange={(e) =>
+                        handleInventoryChange(index, "code", e.target.value)
+                      }
+                      className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor={`description-${index}`}
+                      className="text-gray-700"
+                    >
+                      Description
+                    </label>
+                    <input
+                      type="text"
+                      id={`description-${index}`}
+                      value={item.description}
                       onChange={(e) =>
                         handleInventoryChange(
                           index,
-                          "condition",
+                          "description",
                           e.target.value
                         )
                       }
                       className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                     />
                   </div>
-                
 
                   {formData.inventory.length > 1 && (
                     <button
@@ -496,6 +615,29 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
             </button>
           </div>
         </form>
+
+        {isPreviewOpen && (
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
+            <div className="bg-white p-5 rounded-lg max-w-2xl w-full">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-bold">Image Preview</h3>
+                <button
+                  onClick={() => setIsPreviewOpen(false)}
+                  className="text-gray-500 hover:text-gray-800"
+                >
+                  <FaTimes size={20} />
+                </button>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src={formData.assetImage}
+                  alt="Asset Preview"
+                  className="max-w-full max-h-[500px] object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
