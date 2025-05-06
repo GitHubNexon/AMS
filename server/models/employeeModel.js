@@ -13,6 +13,7 @@ const StatusSchema = new mongoose.Schema({
 const EmployeeSchema = new mongoose.Schema(
   {
     employeeName: { type: String, required: false },
+    employeeImage: { type: String, required: false },
     employeeType: { type: String, required: false },
     employeeCode: { type: String, required: false },
     employeePosition: { type: String, required: false },

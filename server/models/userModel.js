@@ -17,14 +17,22 @@ const userSchema = new mongoose.Schema({
   },
   signatoryType: {
     type: [String],
-    enum: ["PreparedBy", "CreatedBy", "CertifiedBy", "ReviewedBy", "ApprovedBy1", "ApprovedBy2",],
+    enum: [
+      "PreparedBy",
+      "CreatedBy",
+      "CertifiedBy",
+      "ReviewedBy",
+      "IssuedBy",
+      "ApprovedBy1",
+      "ApprovedBy2",
+    ],
     required: false,
   },
   profileImage: { type: String },
   dateTimestamp: { type: Date, default: Date.now },
   dateUpdated: { type: Date, default: Date.now },
   failedAttempts: { type: Number, default: 0 },
-  lockoutUntil: { type: Date, default: null }
+  lockoutUntil: { type: Date, default: null },
 });
 
 // userSchema.index({ email: 1 });
