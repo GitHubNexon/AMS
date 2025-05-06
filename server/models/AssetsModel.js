@@ -10,7 +10,6 @@ const StatusSchema = new mongoose.Schema({
   isArchived: { type: Boolean, default: false },
 });
 
-
 const InventoryItemSchema = new mongoose.Schema({
   invNo: String,
   invImage: String,
@@ -19,26 +18,31 @@ const InventoryItemSchema = new mongoose.Schema({
   condition: String,
 });
 
-const assetsSchema = new mongoose.Schema({
-  propNo: { type: String, required: false },
-  propName: { type: String, required: false },
-  propDescription: { type: String, required: false },
-  unitCost: { type: Number, required: false },
-  acquisitionDate: { type: Date, required: false },
-  useFullLife: { type: Number, required: false },
-  assetImage: { type: String, required: false },
-  quantity: { type: Number, required: false },
-  acquisitionCost: { type: Number, required: false },
-  reference: { type: String, required: false },
-  category: { type: mongoose.Schema.Types.Mixed },
-  accumulatedAccount: { type: mongoose.Schema.Types.Mixed },
-  depreciationAccount: { type: mongoose.Schema.Types.Mixed },
-  assetsAssigned: { type: mongoose.Schema.Types.Mixed },
-  inventory: { type: [InventoryItemSchema], required: false },
-  attachments: { type: [String], required: false },
-  Status: { type: StatusSchema, required: false },
-  recordedBy: { type: SignatoriesSchema, required: false },
-});
+const assetsSchema = new mongoose.Schema(
+  {
+    propNo: { type: String, required: false },
+    propName: { type: String, required: false },
+    propDescription: { type: String, required: false },
+    unitCost: { type: Number, required: false },
+    acquisitionDate: { type: Date, required: false },
+    useFullLife: { type: Number, required: false },
+    assetImage: { type: String, required: false },
+    quantity: { type: Number, required: false },
+    acquisitionCost: { type: Number, required: false },
+    reference: { type: String, required: false },
+    category: { type: mongoose.Schema.Types.Mixed },
+    accumulatedAccount: { type: mongoose.Schema.Types.Mixed },
+    depreciationAccount: { type: mongoose.Schema.Types.Mixed },
+    assetsAssigned: { type: mongoose.Schema.Types.Mixed },
+    inventory: { type: [InventoryItemSchema], required: false },
+    attachments: { type: [String], required: false },
+    Status: { type: StatusSchema, required: false },
+    recordedBy: { type: SignatoriesSchema, required: false },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const AssetsModel = mongoose.model("Assets", assetsSchema);
 

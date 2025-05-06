@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AssetsTable from "../Sub-pages/AssetsTable";
+import EmployeesTable from "../Sub-pages/EmployeesTable";
 
 const TABS = [
   "Overview",
@@ -38,7 +39,9 @@ const AssetsNav = () => {
           </div>
         )}
         {activeTab === "Employee Records" && (
-          <div>Employee Records Content</div>
+          <div>
+            <EmployeesTable />
+          </div>
         )}
         {activeTab === "Issuance" && <div>Issuance Content</div>}
         {activeTab === "Turn In" && <div>Turn In Content</div>}
