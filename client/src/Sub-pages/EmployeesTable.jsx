@@ -18,6 +18,11 @@ import {
   FaFileAlt,
   FaFolder,
   FaTrash,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaBirthdayCake,
+  FaUserTie,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
@@ -26,6 +31,85 @@ import employeeApi from "../api/employeeApi";
 import EmployeeLogic from "../hooks/employeeLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import EmployeeModal from "../Pop-Up-Pages/EmployeeModal";
+import Placeholder from "../assets/images/placeholder.png";
+
+const InfoRow = ({ icon: Icon, label, value }) => (
+  <div className="flex items-center gap-2 text-sm text-gray-700">
+    <Icon className="text-blue-500" />
+    <span className="font-medium">{label}:</span>
+    <span>{value}</span>
+  </div>
+);
+const ExpandedRowComponent = ({ data }) => {
+  return (
+    <div className="max-w-5xl mx-auto bg-white ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex justify-center md:justify-start">
+          <img
+            src={data.employeeImage || Placeholder}
+            alt={data.employeeName}
+            className="w-40 h-40 object-cover rounded-full border shadow"
+          />
+        </div>
+
+        <div className="md:col-span-2 flex flex-col gap-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            {data.employeeName}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <InfoRow
+              icon={FaUserTie}
+              label="Position"
+              value={data.employeePosition}
+            />
+            <InfoRow icon={FaUserTie} label="Type" value={data.employeeType} />
+            <InfoRow
+              icon={FaUserTie}
+              label="Division"
+              value={data.employeeDivision}
+            />
+            <InfoRow
+              icon={FaUserTie}
+              label="Department"
+              value={data.employeeDepartment}
+            />
+            <InfoRow
+              icon={FaUserTie}
+              label="Section"
+              value={data.employeeSection}
+            />
+            <InfoRow
+              icon={FaMapMarkerAlt}
+              label="Address"
+              value={data.address}
+            />
+            <InfoRow
+              icon={FaPhone}
+              label="Contact No."
+              value={data.contactNo}
+            />
+            <InfoRow icon={FaEnvelope} label="Email" value={data.email} />
+            <InfoRow
+              icon={FaBirthdayCake}
+              label="Date of Birth"
+              value={new Date(data.dateOfBirth).toLocaleDateString()}
+            />
+          </div>
+
+          <hr className="my-4" />
+
+          <p className="text-xs text-gray-500">
+            Created by {data.CreatedBy?.name} ({data.CreatedBy?.position}) on{" "}
+            {formatReadableDate(data.createdAt)}
+          </p>
+          <p className="text-xs text-gray-500">
+            Last updated: {formatReadableDate(data.updatedAt)}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const EmployeesTable = () => {
   const [page, setPage] = useState(1);
@@ -319,8 +403,8 @@ const EmployeesTable = () => {
           onChangePage={setPage}
           onChangeRowsPerPage={setLimit}
           progressPending={loading}
-          //   expandableRows
-          //   expandableRowsComponent={ExpandedRowComponent}
+          expandableRows
+          expandableRowsComponent={ExpandedRowComponent}
           //   expandableRowExpanded={(row) => expandedRows.includes(row._id)}
           sortServer={true}
           sortColumn={sortBy}
