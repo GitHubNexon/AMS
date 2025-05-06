@@ -31,7 +31,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
       isDeleted: false,
       isArchived: false,
     },
-    recordedBy: { name: user.name, position: user.userType, _id: user._id },
+    CreatedBy: { name: user.name, position: user.userType, _id: user._id },
     inventory: [
       {
         invNo: "",
@@ -105,9 +105,9 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
         ...prevData.inventory,
         {
           invNo: "",
-          description: "",
+          description: prevData.propDescription,
           code: "",
-          invName: "",
+          invName: prevData.propName,
           status: "Available",
         },
       ],
@@ -134,6 +134,17 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
       };
     });
   };
+
+  useEffect(() => {
+    setFormData((prevData) => ({
+      ...prevData,
+      inventory: prevData.inventory.map((item) => ({
+        ...item,
+        invName: prevData.propName,
+        description: prevData.propDescription,
+      })),
+    }));
+  }, [formData.propName, formData.propDescription]);
 
   useEffect(() => {
     if (mode === "edit" && assetsData) {
@@ -294,6 +305,18 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
             Inventory Record
           </button>
         </div>
+        {activeTab === "inventory" && (
+          <div className="sticky top-0 z-50 bg-white p-2 flex justify-end border-b">
+            <button
+              type="button"
+              onClick={addInventoryRecord}
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition duration-200 text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <FaPlus className="text-white" />
+              Add Inventory Item
+            </button>
+          </div>
+        )}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -472,8 +495,8 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   accept="image/*"
                   onChange={handleImageChange}
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                  style={{ display: "none" }} 
-                  ref={fileInputRef} 
+                  style={{ display: "none" }}
+                  ref={fileInputRef}
                 />
 
                 {formData.assetImage ? (
@@ -482,7 +505,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                       src={formData.assetImage}
                       alt="Asset Preview"
                       className="w-20 h-20 object-cover rounded-md cursor-pointer border- p-2"
-                      onClick={() => setIsPreviewOpen(true)} 
+                      onClick={() => setIsPreviewOpen(true)}
                     />
                     <button
                       type="button"
@@ -507,7 +530,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
 
           {activeTab === "inventory" && (
             <div className="space-y-6">
-              <div className="flex justify-end">
+              {/* <div className="flex justify-end sticky top-0 bg-white z-10 py-2">
                 <button
                   type="button"
                   onClick={addInventoryRecord}
@@ -515,7 +538,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                 >
                   <FaPlus className="mr-1" /> Add Inventory Item
                 </button>
-              </div>
+              </div> */}
 
               {formData.inventory.map((item, index) => (
                 <div
@@ -532,6 +555,20 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                       value={item.invNo}
                       onChange={(e) =>
                         handleInventoryChange(index, "invNo", e.target.value)
+                      }
+                      className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor={`code-${index}`} className="text-gray-700">
+                      Code
+                    </label>
+                    <input
+                      type="text"
+                      id={`code-${index}`}
+                      value={item.code}
+                      onChange={(e) =>
+                        handleInventoryChange(index, "code", e.target.value)
                       }
                       className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                     />
@@ -554,20 +591,6 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                     />
                   </div>
 
-                  <div className="flex flex-col">
-                    <label htmlFor={`code-${index}`} className="text-gray-700">
-                      Code
-                    </label>
-                    <input
-                      type="text"
-                      id={`code-${index}`}
-                      value={item.code}
-                      onChange={(e) =>
-                        handleInventoryChange(index, "code", e.target.value)
-                      }
-                      className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                    />
-                  </div>
                   <div className="flex flex-col">
                     <label
                       htmlFor={`description-${index}`}
@@ -604,17 +627,16 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
               ))}
             </div>
           )}
-
-          <div className="flex justify-between mt-6">
-            <button
-              type="button"
-              onClick={handleSubmit}
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-            >
-              {mode === "edit" ? "Save Changes" : "Save"}
-            </button>
-          </div>
         </form>
+        <div className="flex justify-between">
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+          >
+            {mode === "edit" ? "Save Changes" : "Save"}
+          </button>
+        </div>
 
         {isPreviewOpen && (
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">

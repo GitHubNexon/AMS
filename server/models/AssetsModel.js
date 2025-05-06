@@ -25,7 +25,7 @@ const InventoryItemSchema = new mongoose.Schema({
       "Under-repair",
       "Disposed",
     ],
-    default: "Available", // optional, if you want a default value
+    default: "Available",
   },
 });
 
@@ -48,7 +48,7 @@ const assetsSchema = new mongoose.Schema(
     inventory: { type: [InventoryItemSchema], required: false },
     attachments: { type: [String], required: false },
     Status: { type: StatusSchema, required: false },
-    recordedBy: { type: SignatoriesSchema, required: false },
+    CreatedBy: { type: SignatoriesSchema, required: false },
   },
   {
     timestamps: true,
