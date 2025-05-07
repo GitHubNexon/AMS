@@ -175,6 +175,35 @@ const getAllAssetsRecords = async (req, res) => {
   }
 };
 
+
+const getAllAssetRecordsList = async (req, res) => {
+  try {
+    const excludedStatuses = ["Issued", "Dispose", "under-repair"];
+    
+    const query = {
+      ...(req.query.isDeleted === 'true' && { "Status.isDeleted": true }),
+      ...(req.query.isArchived === 'true' && { "Status.isArchived": true }),
+    };
+
+    const assets = await AssetsModel.find(query);
+
+    const filteredAssets = assets.map((asset) => {
+      asset.inventory = asset.inventory.filter((item) => {
+        return !excludedStatuses.includes(item.status);
+      });
+      return asset;
+    });
+
+    res.json({
+      assets: filteredAssets,
+    });
+  } catch (error) {
+    console.error("Error getting all Asset records", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+
 const deleteAssetsRecord = async (req, res) => {
   try {
     const { id } = req.params;
@@ -325,4 +354,5 @@ module.exports = {
   archiveAssetsRecord,
   undoDeleteAssetRecord,
   undoArchiveAssetRecord,
+  getAllAssetRecordsList,
 };

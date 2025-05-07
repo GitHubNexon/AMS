@@ -39,6 +39,15 @@ const assetsApi = {
     return response.data;
   },
 
+  getAllAssetRecordsList: async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/assets/get-list`);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching asset records:", error);
+    }
+  },
+
   deleteAssetsRecord: async (id) => {
     try {
       const response = await axios.post(`${API_BASE_URL}/assets/delete/${id}`);

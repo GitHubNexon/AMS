@@ -9,6 +9,8 @@ router.use(authenticateToken);
 router.post("/create", AssetsController.createAssetsRecord);
 
 
+router.get("/get-list", AssetsController.getAllAssetRecordsList)
+
 // update an existing asset record
 router.patch("/update/:id", AssetsController.updateAssetsRecord);
 

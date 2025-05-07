@@ -1,92 +1,79 @@
-// AssetsPicker.jsx
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import assetsApi from "../api/assetsApi";
 
-const AssetsPicker = ({
-  selectedAsset,
-  setSelectedAsset,
-  selectedInventory,
-  setSelectedInventory,
-  index
-}) => {
+const AssetsPicker = ({ onSelectAsset, onSelectInventory }) => {
   const [assets, setAssets] = useState([]);
-
-  const fetchAssets = async () => {
-    try {
-      const response = await assetsApi.getAllAssetsRecord();
-      setAssets(response.assets || []);
-    } catch (error) {
-      console.error("Error fetching assets:", error);
-    }
-  };
+  const [inventory, setInventory] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const fetchAssets = async () => {
+      setIsLoading(true);
+      try {
+        const response = await assetsApi.getAllAssetRecordsList();
+        setAssets(response.assets);
+      } catch (error) {
+        console.error("Error fetching assets:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     fetchAssets();
   }, []);
 
-  const assetOptions = assets.map((asset) => ({
-    label: `${asset.propName} (${asset.propNo})`,
-    value: asset._id,
-    asset,
-  }));
-
   const handleAssetChange = (selectedOption) => {
-    const asset = selectedOption ? selectedOption.asset : null;
-    setSelectedAsset(index, asset);
-    setSelectedInventory(index, null); 
+    onSelectAsset(selectedOption);
+    if (selectedOption) {
+      setInventory(selectedOption.inventory || []);
+    } else {
+      setInventory([]);
+    }
   };
 
   const handleInventoryChange = (selectedOption) => {
-    const inventory = selectedOption ? selectedOption.inventory : null;
-    setSelectedInventory(index, inventory);
+    onSelectInventory(selectedOption);
   };
 
-  const selectedAssetOption = selectedAsset
-    ? {
-        label: `${selectedAsset.propName} (${selectedAsset.propNo})`,
-        value: selectedAsset._id,
-        asset: selectedAsset,
-      }
-    : null;
+  const assetOptions = assets.map((asset) => ({
+    label: `${asset.propName} - ${asset.propDescription}`,
+    value: asset._id,
+    ...asset,
+  }));
 
-  const inventoryOptions =
-    selectedAsset?.inventory.map((inv) => ({
-      label: `${inv.invNo} - ${inv.condition}`,
-      value: inv._id,
-      inventory: inv,
-    })) || [];
-
-  const selectedInventoryOption = selectedInventory
-    ? {
-        label: `${selectedInventory.invNo} - ${selectedInventory.condition}`,
-        value: selectedInventory._id,
-        inventory: selectedInventory,
-      }
-    : null;
+  const inventoryOptions = inventory.map((inv) => ({
+    label: `${inv.invNo} - ${inv.invName}`,
+    value: inv._id,
+    ...inv,
+  }));
 
   return (
-    <div>
-      <h3>Select an Asset</h3>
-      <Select
-        options={assetOptions}
-        value={selectedAssetOption}
-        onChange={handleAssetChange}
-        placeholder="Choose an asset..."
-        isClearable
-      />
+    <div className="w-full">
+      <div className="w-full mb-4">
+        <Select
+          isClearable
+          isSearchable
+          isLoading={isLoading}
+          options={assetOptions}
+          onChange={handleAssetChange}
+          placeholder="Select Main Asset"
+          className="w-full"
+        />
+      </div>
 
-      {selectedAsset && (
-        <>
-          <h4 className="mt-4">Select Inventory Item</h4>
+      {inventory.length > 0 && (
+        <div className="w-full">
           <Select
-            options={inventoryOptions}
-            value={selectedInventoryOption}
-            onChange={handleInventoryChange}
-            placeholder="Choose inventory item..."
             isClearable
+            isSearchable
+            isLoading={isLoading}
+            options={inventoryOptions}
+            onChange={handleInventoryChange}
+            placeholder="Select Inventory"
+            className="w-full"
           />
-        </>
+        </div>
       )}
     </div>
   );
