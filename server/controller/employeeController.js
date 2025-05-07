@@ -1,4 +1,5 @@
 const EmployeeModel = require("../models/employeeModel");
+const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 
 const createEmployee = async (req, res) => {
   try {
@@ -42,8 +43,34 @@ const updateEmployee = async (req, res) => {
   }
 };
 
+const deleteIdAssetRecords = async () => {
+  try {
+    const existingIssuances = await AssetsIssuanceModel.find({}, "_id");
+    const validIssuanceIds = new Set(
+      existingIssuances.map((doc) => doc._id.toString())
+    );
+
+    const employees = await EmployeeModel.find({});
+
+    for (const employee of employees) {
+      const originalLength = employee.assetRecords.length;
+
+      employee.assetRecords = employee.assetRecords.filter((record) =>
+        validIssuanceIds.has(record.issuanceId.toString())
+      );
+
+      if (employee.assetRecords.length !== originalLength) {
+        await employee.save();
+      }
+    }
+  } catch (error) {
+    console.error("Error cleaning up assetRecords:", error);
+  }
+};
+
 const getAllEmployeeRecords = async (req, res) => {
   try {
+    await deleteIdAssetRecords();
     const page = parseInt(req.query.page, 10) || 1;
     const limit = parseInt(req.query.limit, 10) || 10;
     const keyword = req.query.keyword || "";

@@ -24,6 +24,11 @@ const EmployeeSchema = new mongoose.Schema(
     email: { type: String, required: false },
     dateOfBirth: { type: String, required: false },
     Status: { type: StatusSchema, required: false },
+    assetRecords: {
+      type: mongoose.Schema.Types.Mixed,
+      required: false,
+      default: [],
+    },
     CreatedBy: { type: SignatoriesSchema, required: false },
   },
   {

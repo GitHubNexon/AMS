@@ -1,5 +1,6 @@
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsModel = require("../models/AssetsModel");
+const EmployeeModel = require("../models/employeeModel");
 
 const createAssetsIssuance = async (req, res) => {
   try {
@@ -51,6 +52,20 @@ const createAssetsIssuance = async (req, res) => {
         }
       );
     }
+
+    await EmployeeModel.updateOne(
+      { _id: newAssetsIssuance.employeeId },
+      {
+        $push: {
+          assetRecords: {
+            issuanceId: newAssetsIssuance._id,
+            dateReleased: newAssetsIssuance.dateReleased,
+            issuedBy: newAssetsIssuance.CreatedBy,
+            assetDetails: AssetsIssuanceData.assetRecords,
+          },
+        },
+      }
+    );
 
     res.status(201).json({
       message:
