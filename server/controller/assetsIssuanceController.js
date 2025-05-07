@@ -38,6 +38,7 @@ const createAssetsIssuance = async (req, res) => {
         dateAcquired: newAssetsIssuance.dateAcquired,
         dateReleased: newAssetsIssuance.dateReleased,
         issuedBy: newAssetsIssuance.CreatedBy,
+        assetRecords: newAssetsIssuance.assetRecords
       };
 
       await AssetsModel.updateOne(
@@ -62,6 +63,7 @@ const createAssetsIssuance = async (req, res) => {
             dateReleased: newAssetsIssuance.dateReleased,
             issuedBy: newAssetsIssuance.CreatedBy,
             assetDetails: AssetsIssuanceData.assetRecords,
+            assetRecords: newAssetsIssuance.assetRecords
           },
         },
       }

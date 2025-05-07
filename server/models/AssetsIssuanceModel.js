@@ -13,6 +13,11 @@ const StatusSchema = new mongoose.Schema({
 const AssetsRecordSchema = new mongoose.Schema({
   assetId: { type: mongoose.Schema.Types.ObjectId, ref: "assets" },
   inventoryId: { type: mongoose.Schema.Types.ObjectId, ref: "assets" },
+  quantity: { type: Number, required: false, default: 1 },
+  unit: { type: String, required: false },
+  description: { type: String, required: false },
+  itemNo: { type: String, required: false },
+  amount: { type: Number, required: false, default: 0 },
 });
 
 const AssetsIssuanceSchema = new mongoose.Schema(

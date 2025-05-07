@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useMemo } from "react";
 import DataTable from "react-data-table-component";
 import {
   FaEdit,
@@ -23,6 +23,8 @@ import {
   FaMapMarkerAlt,
   FaBirthdayCake,
   FaUserTie,
+  FaCalendar,
+  FaMoneyBill,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
@@ -40,9 +42,56 @@ const InfoRow = ({ icon: Icon, label, value }) => (
     <span>{value}</span>
   </div>
 );
+
+const AssetRecordItem = React.memo(({ asset }) => (
+  <div className="border rounded-lg p-4 bg-gray-50 mb-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <InfoRow
+        icon={FaCalendar}
+        label="Date Released"
+        value={formatReadableDate(asset.dateReleased)}
+      />
+      <InfoRow icon={FaUserTie} label="Issued By" value={asset.issuedBy.name} />
+      <InfoRow
+        icon={FaUserTie}
+        label="Issuer Position"
+        value={asset.issuedBy.position}
+      />
+    </div>
+    <h4 className="text-lg font-semibold mt-4 mb-2">Asset Details</h4>
+    <div className="grid grid-cols-1 gap-2 overflow-auto h-40">
+      {asset.assetDetails.map((detail, index) => (
+        <div key={index} className="border-t pt-2">
+          <InfoRow icon={FaTag} label="Inventory No" value={detail.itemNo} />
+          <InfoRow
+            icon={FaTag}
+            label="Description"
+            value={detail.description}
+          />
+          <InfoRow icon={FaTag} label="Unit" value={detail.unit} />
+          <InfoRow
+            icon={FaMoneyBill}
+            label="Amount"
+            value={numberToCurrencyString(detail.amount)}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+));
+
 const ExpandedRowComponent = ({ data }) => {
+  const [showAssetRecords, setShowAssetRecords] = useState(false);
+
+  const assetRecordsContent = useMemo(() => {
+    if (!showAssetRecords || !data.assetRecords?.length) return null;
+    return data.assetRecords.map((asset, index) => (
+      <AssetRecordItem key={index} asset={asset} />
+    ));
+  }, [showAssetRecords, data.assetRecords]);
+
   return (
-    <div className="max-w-5xl mx-auto bg-white ">
+    <div className="max-w-5xl mx-auto bg-white p-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="flex justify-center md:justify-start">
           <img
@@ -107,6 +156,28 @@ const ExpandedRowComponent = ({ data }) => {
           </p>
         </div>
       </div>
+
+      {/* Asset Records Section */}
+      {data.assetRecords?.length > 0 && (
+        <div className="mt-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-bold text-gray-800">
+              Asset Records ({data.assetRecords.length})
+            </h3>
+            <button
+              onClick={() => setShowAssetRecords(!showAssetRecords)}
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+              aria-expanded={showAssetRecords}
+              aria-controls="asset-records"
+            >
+              {showAssetRecords ? "Hide Records" : "Show Records"}
+            </button>
+          </div>
+          <div id="asset-records" className="min-h-96 h-96 overflow-auto mt-4">
+            {assetRecordsContent}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

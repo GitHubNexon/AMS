@@ -108,19 +108,6 @@ const getAllEmployeeRecords = async (req, res) => {
       .sort(sortCriteria)
       .skip((page - 1) * limit)
       .limit(limit)
-      .populate({
-        path: "assetRecords",
-        populate: [
-          {
-            path: "issuanceId",
-            model: "AssetsIssuance"
-          },
-          {
-            path: "assetDetails.assetId",
-            model: "Assets"
-          }
-        ]
-      })
       .exec();
 
     res.json({
