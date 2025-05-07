@@ -95,7 +95,6 @@ const deleteLinkIdHistory = async () => {
   }
 };
 
-
 const getAllAssetsRecords = async (req, res) => {
   try {
     await deleteLinkIdHistory();
@@ -134,7 +133,35 @@ const getAllAssetsRecords = async (req, res) => {
     const assets = await AssetsModel.find(query)
       .sort(sortCriteria)
       .skip((page - 1) * limit)
-      .limit(limit);
+      .limit(limit)
+      .populate({
+        path: "inventory",
+        populate: [
+          {
+            path: "issuanceId",
+            model: "AssetsIssuance",
+          },
+          {
+            path: "employeeId",
+            model: "Employee",
+            select: "-employeeImage",
+          },
+          {
+            path: "history",
+            populate: [
+              {
+                path: "issuanceId",
+                model: "AssetsIssuance",
+              },
+              {
+                path: "employeeId",
+                model: "Employee",
+                select: "-employeeImage",
+              },
+            ],
+          },
+        ],
+      });
 
     res.json({
       totalItems,

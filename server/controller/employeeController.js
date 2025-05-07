@@ -1,5 +1,6 @@
 const EmployeeModel = require("../models/employeeModel");
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
+const AssetsModel = require("../models/AssetsModel");
 
 const createEmployee = async (req, res) => {
   try {
@@ -106,7 +107,21 @@ const getAllEmployeeRecords = async (req, res) => {
     const employees = await EmployeeModel.find(query)
       .sort(sortCriteria)
       .skip((page - 1) * limit)
-      .limit(limit);
+      .limit(limit)
+      .populate({
+        path: "assetRecords",
+        populate: [
+          {
+            path: "issuanceId",
+            model: "AssetsIssuance"
+          },
+          {
+            path: "assetDetails.assetId",
+            model: "Assets"
+          }
+        ]
+      })
+      .exec();
 
     res.json({
       totalItems,

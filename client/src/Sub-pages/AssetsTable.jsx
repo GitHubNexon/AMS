@@ -18,6 +18,7 @@ import {
   FaFileAlt,
   FaFolder,
   FaTrash,
+  FaHistory,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
@@ -28,16 +29,56 @@ import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsModal from "../Pop-Up-Pages/AssetsModal";
 
 const ExpandedRowComponent = ({ data }) => {
+  const [openHistoryIndex, setOpenHistoryIndex] = useState(null);
+
+  const toggleHistory = (index) => {
+    setOpenHistoryIndex(openHistoryIndex === index ? null : index);
+  };
+
+  const renderHistoryTable = (history) => (
+    <table className="min-w-full mt-2 border border-gray-300 text-xs text-left text-gray-700">
+      <thead className="bg-gray-100">
+        <tr>
+          <th className="px-2 py-1 border">Date</th>
+          <th className="px-2 py-1 border">Transaction</th>
+          <th className="px-2 py-1 border">Issued By</th>
+          <th className="px-2 py-1 border">Employee</th>
+          <th className="px-2 py-1 border">Fund Cluster</th>
+          <th className="px-2 py-1 border">Entity Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {history.map((entry, i) => (
+          <tr key={i} className="hover:bg-gray-50">
+            <td className="px-2 py-1 border">
+              {formatReadableDate(entry.date)}
+            </td>
+            <td className="px-2 py-1 border">{entry.transaction}</td>
+            <td className="px-2 py-1 border">
+              {entry.issuedBy
+                ? `${entry.issuedBy.name} - ${entry.issuedBy.position}`
+                : "N/A"}
+            </td>
+            <td className="px-2 py-1 border">
+              {entry.employeeId?.employeeName || "N/A"}
+            </td>
+            <td className="px-2 py-1 border">{entry.fundCluster || "N/A"}</td>
+            <td className="px-2 py-1 border">{entry.entityName || "N/A"}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+
   return (
     <div className="p-6 bg-white rounded-lg shadow-lg max-w-full mx-auto my-4 border border-gray-200 transition-all hover:shadow-xl">
       <div className="flex justify-between items-center mb-4">
-        {/* Displaying assetImage if it exists */}
         {data.assetImage && (
-          <div className="mt-6 pt-4  border-gray-200">
+          <div className="mt-6 pt-4 border-gray-200">
             <img
               src={data.assetImage}
               alt="Asset Image"
-              className="w-32 h-auto object-contain "
+              className="w-32 h-auto object-contain"
             />
           </div>
         )}
@@ -116,7 +157,7 @@ const ExpandedRowComponent = ({ data }) => {
         </p>
         <p className="flex items-center gap-2 text-gray-600 mt-2">
           <FaFileAlt className="text-gray-400" />
-          <span className="font-semibold">Attachments:</span>
+          <span className="font-semibold">Attachments:</span>{" "}
           {data.attachments.length > 0
             ? `${data.attachments.length} files`
             : "None"}
@@ -149,21 +190,42 @@ const ExpandedRowComponent = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {data.inventory.map((inv) => (
-                      <tr key={inv._id} className="hover:bg-gray-50">
-                        <td className="px-3 py-2 border-b">
-                          {inv.invNo || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.invName || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.code || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.status || "N/A"}
-                        </td>
-                      </tr>
+                    {data.inventory.map((inv, index) => (
+                      <React.Fragment key={inv._id}>
+                        <tr className="hover:bg-gray-50">
+                          <td className="px-3 py-2 border-b">
+                            {inv.invNo || "N/A"}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {inv.invName || "N/A"}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {inv.code || "N/A"}
+                          </td>
+                          <td className="px-3 py-2 border-b flex items-center gap-2">
+                            {inv.status || "N/A"}
+                            {inv.history && inv.history.length > 0 && (
+                              <button
+                                onClick={() => toggleHistory(index)}
+                                className="text-blue-600 hover:text-blue-800 ml-2"
+                                title="Toggle History"
+                              >
+                                <FaHistory />
+                              </button>
+                            )}
+                          </td>
+                        </tr>
+                        {openHistoryIndex === index && inv.history && (
+                          <tr>
+                            <td
+                              colSpan="4"
+                              className="px-3 py-2 border-b bg-gray-50"
+                            >
+                              {renderHistoryTable(inv.history)}
+                            </td>
+                          </tr>
+                        )}
+                      </React.Fragment>
                     ))}
                   </tbody>
                 </table>
