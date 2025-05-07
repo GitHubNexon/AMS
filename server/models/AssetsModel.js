@@ -27,6 +27,7 @@ const InventoryItemSchema = new mongoose.Schema({
     ],
     default: "Available",
   },
+  history: { type: mongoose.Schema.Types.Mixed },
 });
 
 const assetsSchema = new mongoose.Schema(

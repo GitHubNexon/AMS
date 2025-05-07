@@ -17,7 +17,11 @@ const AssetsRecordSchema = new mongoose.Schema({
 
 const AssetsIssuanceSchema = new mongoose.Schema(
   {
+    parNo: { type: String, required: false },
+    fundCluster: { type: String, required: false },
+    entityName: { type: String, required: false },
     employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
+    custodianId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
     dateAcquired: { type: Date, required: false },
     dateReleased: { type: Date, required: false },
     assetRecords: [AssetsRecordSchema],

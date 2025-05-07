@@ -8,4 +8,6 @@ router.use(authenticateToken);
 //create Assets issuance records
 router.post("/create", AssetsIssuanceController.createAssetsIssuance);
 
+router.get("/get-all", AssetsIssuanceController.getAllAssetsIssuanceRecords);
+
 module.exports = router;
