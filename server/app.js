@@ -11,6 +11,7 @@ const statementOfAccount = require("./controller/StatementOfAccountController");
 const setupHelmet = require("./middleware/helmetMiddleware");
 
 const app = express();
+app.disable("x-powered-by");
 const PORT = process.env.PORT || 3002;
 
 // Setup Helmet

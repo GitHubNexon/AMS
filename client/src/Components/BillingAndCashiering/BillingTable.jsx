@@ -19,7 +19,7 @@ function BillingTable() {
     async function getBilling(){
         const response = await axios.get(`/statementOfAccount/billing/${asofDate}?page=${page}`, { withCredentials: true });
         console.log(response.data);
-        setRows(response.data.data.filter(v=>v !== null));
+        setRows(response.data.filter(v=>v !== null) || []);
         setTotalPages(response.data.totalPages);
     }
 
