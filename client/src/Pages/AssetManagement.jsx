@@ -30,10 +30,10 @@ const AssetManagement = () => {
   return (
     <div>
       <AssetsNav />
-      <AssetsPicker
+      {/* <AssetsPicker
         onSelectAsset={handleSelectAsset} 
         onSelectInventory={handleSelectInventory} 
-      />
+      /> */}
     </div>
   );
 };

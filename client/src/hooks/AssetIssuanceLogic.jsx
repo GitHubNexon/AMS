@@ -45,7 +45,6 @@ const AssetIssuanceLogic = (
     issuanceRecords,
     totalItems,
     totalPages,
-    setAssets,
     loading,
     setLoading,
     setTotalItems,
@@ -58,3 +57,5 @@ const AssetIssuanceLogic = (
     setSortOrder,
   };
 };
+
+export default AssetIssuanceLogic;

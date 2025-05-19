@@ -49,7 +49,6 @@ const AssetIssuanceTable = () => {
     issuanceRecords,
     totalItems,
     totalPages,
-    setAssets,
     loading,
     setLoading,
     setTotalItems,
@@ -151,7 +150,192 @@ const AssetIssuanceTable = () => {
     });
 */
 
-  return <div>AssetIssuanceTable</div>;
+  const handleFetchLatest = async () => {
+    fetchIssuanceRecords();
+    showToast("Updated data fetched successfully", "success");
+  };
+
+  const columns = [
+    {
+      name: "Status",
+      cell: (row) => {
+        if (row.Status?.isDeleted) {
+          return (
+            <span className="text-red-500 flex items-center">Deleted</span>
+          );
+        }
+        if (row.Status?.isArchived) {
+          return (
+            <span className="text-orange-500 flex items-center">Archived</span>
+          );
+        }
+        return <span className="text-green-500 flex items-center">Active</span>;
+      },
+      width: "120px",
+    },
+    {
+      name: "Date Acquired",
+      selector: (row) =>
+        row.dateAcquired ? formatReadableDate(row.dateAcquired) : "No Date Yet",
+    },
+    {
+      name: "Date Released",
+      selector: (row) =>
+        row.dateReleased ? formatReadableDate(row.dateReleased) : "No Date Yet",
+    },
+    {
+      name: "Equipment / Property Name",
+      width: "300px",
+      selector: (row) => row.propName || "",
+    },
+    {
+      name: "Par No",
+      selector: (row) => row.parNo || "",
+    },
+    {
+      name: "Actions",
+      cell: (row) => (
+        <div className="flex space-x-2">
+          {!row.Status?.isDeleted && !row.Status?.isArchived && (
+            <div className="group relative">
+              <button
+                onClick={() => handleModalOpenForEdit(row)}
+                className="text-white bg-blue-600 p-2 rounded-md"
+              >
+                <FaEdit size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                Edit
+              </span>
+            </div>
+          )}
+          {row.Status?.isDeleted ? (
+            <div className="group relative">
+              <button
+                onClick={() => handleUndoDeleteEntry(row._id)}
+                className="text-white bg-yellow-600 p-2 rounded-md"
+              >
+                <FaUndo size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                Undo Delete
+              </span>
+            </div>
+          ) : !row.Status?.isArchived ? (
+            <div className="group relative">
+              <button
+                onClick={() => handleDeleteEntry(row._id)}
+                className="text-white bg-red-600 p-2 rounded-md"
+              >
+                <FaTrash size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                Delete
+              </span>
+            </div>
+          ) : null}
+
+          {row.Status?.isArchived ? (
+            <div className="group relative">
+              <button
+                onClick={() => handleUndoArchiveEntry(row._id)}
+                className="text-white bg-yellow-600 p-2 rounded-md"
+              >
+                <FaUndo size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                Undo Archive
+              </span>
+            </div>
+          ) : !row.Status?.isDeleted ? (
+            <div className="group relative">
+              <button
+                onClick={() => handleArchiveEntry(row._id)}
+                className="text-white bg-orange-600 p-2 rounded-md"
+              >
+                <FaArchive size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                Archive
+              </span>
+            </div>
+          ) : null}
+        </div>
+      ),
+    },
+  ];
+
+  
+
+  return (
+    <>
+      <div className="mx-auto p-8">
+        <div className="flex flex-col overflow-auto">
+          <h1 className="font-bold">Assets Issuance Records </h1>
+          <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
+            <button
+              onClick={handleFetchLatest}
+              className="bg-blue-600 text-white rounded-md px-6 py-2 text-sm hover:scale-105 transition transform duration-300 flex items-center"
+            >
+              <FaSync size={16} className="mr-2" />
+              Fetch latest Data
+            </button>
+            {/* Status Filter Dropdown */}
+            <select
+              className="border px-2 py-1 rounded-md"
+              value={status}
+              onChange={handleStatusChange}
+            >
+              <option value="">All</option>
+              <option value="isDeleted">Deleted</option>
+              <option value="isArchived">Archived</option>
+            </select>
+
+            <input
+              type="text"
+              placeholder={`Search Property`}
+              className="border px-2 py-1 rounded-md"
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button
+              onClick={handleModalOpen}
+              className="bg-blue-600 text-white rounded-md px-6 py-2 text-sm hover:scale-105 transition transform duration-300 flex items-center"
+            >
+              <FaPlus size={16} className="mr-2" />
+              Create
+            </button>
+          </div>
+        </div>
+
+        <DataTable
+          columns={columns}
+          data={issuanceRecords}
+          pagination
+          paginationServer
+          paginationTotalRows={totalItems}
+          onChangePage={setPage}
+          onChangeRowsPerPage={setLimit}
+          progressPending={loading}
+          // expandableRows
+          // expandableRowsComponent={ExpandedRowComponent}
+          //   expandableRowExpanded={(row) => expandedRows.includes(row._id)}
+          sortServer={true}
+          sortColumn={sortBy}
+          sortDirection={sortOrder}
+        />
+        {/* {isAssetsModalOpen && (
+          <AssetsModal
+            mode={modalMode}
+            isOpen={isAssetsModalOpen}
+            onClose={handleModalClose}
+            onSaveAssets={fetchAssets}
+            assetsData={selectedAssets}
+            refreshTable={refreshTable}
+          />
+        )} */}
+      </div>
+    </>
+  );;
 };
 
 export default AssetIssuanceTable;
