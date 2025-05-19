@@ -9,6 +9,7 @@ import { useAuth } from "../context/AuthContext";
 import EmployeePicker from "../Components/EmployeePicker";
 import AssetsPicker from "../Components/AssetsPicker";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
+import assetsApi from "../api/assetsApi";
 
 const AssetsIssuanceModal = ({
   isOpen,
@@ -22,6 +23,7 @@ const AssetsIssuanceModal = ({
   const [selectedAsset, setSelectedAsset] = useState(null);
   const [selectedInventory, setSelectedInventory] = useState(null);
   const [invalidAssetIds, setInvalidAssetIds] = useState([]);
+  const [allAssets, setAllAssets] = useState([]);
 
   const [formData, setFormData] = useState({
     docType: "",
@@ -50,6 +52,9 @@ const AssetsIssuanceModal = ({
       [name]: value,
     }));
   };
+
+
+
 
   const handleUserSelect = (user, field) => {
     setFormData((prevData) => ({
@@ -187,6 +192,10 @@ const AssetsIssuanceModal = ({
                 inv.inventoryId === record.inventoryId
             )
         );
+      }
+
+      if (cleanedRecords.length === 0) {
+        return showToast("No valid assets to save.", "warning");
       }
 
       const dataToSubmit = {
