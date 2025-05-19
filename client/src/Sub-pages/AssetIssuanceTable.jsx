@@ -34,11 +34,9 @@ const AssetIssuanceTable = () => {
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
   const [selectedAssetIssuance, setSelectedAssetIssuance] = useState([]);
-  const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] = useState(
-    []
-  );
+  const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] =
+    useState(false);
   const [modalMode, setModalMode] = useState("add");
-
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
@@ -152,6 +150,12 @@ const AssetIssuanceTable = () => {
   const handleFetchLatest = async () => {
     fetchIssuanceRecords();
     showToast("Updated data fetched successfully", "success");
+  };
+
+  const handleModalOpenForEdit = (issuanceRecords) => {
+    setModalMode("edit");
+    setSelectedAssetIssuance(issuanceRecords);
+    setIsAssetsIssuanceModalOpen(true);
   };
 
   const columns = [

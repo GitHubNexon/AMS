@@ -6,6 +6,8 @@ import moment from "moment";
 import assetIssuanceApi from "../api/assetIssuanceApi";
 import SignatoriesPicker from "../Components/SignatoriesPicker";
 import { useAuth } from "../context/AuthContext";
+import EmployeePicker from "../Components/EmployeePicker";
+import AssetsPicker from "../Components/AssetsPicker";
 
 const AssetsIssuanceModal = ({
   isOpen,
@@ -23,6 +25,7 @@ const AssetsIssuanceModal = ({
     fundCluster: "",
     fundCluster: "",
     entityName: "",
+    employeeName: "",
     employeeId: "",
     dateAcquired: moment().format("YYYY-MM-DD"),
     dateReleased: moment().format("YYYY-MM-DD"),
@@ -34,8 +37,6 @@ const AssetsIssuanceModal = ({
     CreatedBy: { name: user.name, position: user.userType, _id: user._id },
   });
 
-  if (!isOpen) return null;
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -43,6 +44,31 @@ const AssetsIssuanceModal = ({
       [name]: value,
     }));
   };
+
+  useEffect(() => {
+    if (mode === "edit" && assetsIssuanceData) {
+      const {
+        dateAcquired,
+        dateReleased,
+        employeeId = "",
+        employeeName = "",
+        ...rest
+      } = assetsIssuanceData;
+
+      setFormData((prev) => ({
+        ...prev,
+        ...rest,
+        employeeId,
+        employeeName,
+        dateAcquired: dateAcquired
+          ? new Date(dateAcquired).toISOString().split("T")[0]
+          : moment().format("YYYY-MM-DD"),
+        dateReleased: dateReleased
+          ? new Date(dateReleased).toISOString().split("T")[0]
+          : moment().format("YYYY-MM-DD"),
+      }));
+    }
+  }, [mode, assetsIssuanceData]);
 
   const requiredFields = [
     { key: "propNo", message: "Property Number is required." },
@@ -68,7 +94,7 @@ const AssetsIssuanceModal = ({
       let dataToSubmit = formData;
       if (mode === "edit") {
         dataToSubmit = Object.keys(formData).reduce((acc, key) => {
-          if (formData[key] !== assetsData[key]) {
+          if (formData[key] !== assetsIssuanceData[key]) {
             acc[key] = formData[key];
           }
           return acc;
@@ -94,6 +120,8 @@ const AssetsIssuanceModal = ({
       showToast("Something went wrong. Please try again.", "error");
     }
   };
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50 ">
@@ -212,6 +240,26 @@ const AssetsIssuanceModal = ({
                   onChange={handleChange}
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <EmployeePicker
+                  value={
+                    formData.employeeId && formData.employeeName
+                      ? {
+                          _id: formData.employeeId,
+                          employeeName: formData.employeeName,
+                        }
+                      : null
+                  }
+                  onSelect={(employee) => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      employeeId: employee._id,
+                      employeeName: employee.employeeName,
+                    }));
+                  }}
                 />
               </div>
             </div>
