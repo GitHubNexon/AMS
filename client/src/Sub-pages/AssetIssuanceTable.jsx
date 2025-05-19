@@ -28,6 +28,7 @@ import AssetsLogic from "../hooks/AssetsLogic";
 import AssetIssuanceLogic from "../hooks/AssetIssuanceLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsIssuanceModal";
+import ICSModal from "../Pop-Up-Pages/ICSModal";
 
 const AssetIssuanceTable = () => {
   const [page, setPage] = useState(1);
@@ -37,6 +38,7 @@ const AssetIssuanceTable = () => {
   const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] =
     useState(false);
   const [modalMode, setModalMode] = useState("add");
+  const [isICSModalOpen, setIsICSModalOpen] = useState(false);
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
@@ -83,6 +85,16 @@ const AssetIssuanceTable = () => {
 
   const handleModalClose = () => {
     setIsAssetsIssuanceModalOpen(false);
+    setSelectedAssetIssuance(null);
+  };
+
+  const handleICSModalOpen = (row) => {
+    setSelectedAssetIssuance(row);
+    setIsICSModalOpen(true);
+  };
+
+  const handleICSModalClose = () => {
+    setIsICSModalOpen(false);
     setSelectedAssetIssuance(null);
   };
 
@@ -204,6 +216,17 @@ const AssetIssuanceTable = () => {
       name: "Actions",
       cell: (row) => (
         <div className="flex space-x-2">
+          <div className="group relative">
+            <button
+              onClick={() => handleICSModalOpen(row)}
+              className="text-white bg-green-600 p-2 rounded-md"
+            >
+              <FaEye size={16} />
+            </button>
+            <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+              View ICS
+            </span>
+          </div>
           {!row.Status?.isDeleted &&
             !row.Status?.isArchived &&
             row.docType !== "Approved" && (
@@ -339,6 +362,14 @@ const AssetIssuanceTable = () => {
             onSaveAssetIssuance={fetchIssuanceRecords}
             assetsIssuanceData={selectedAssetIssuance}
             refreshTable={refreshTable}
+          />
+        )}
+
+        {isICSModalOpen && (
+          <ICSModal
+            isOpen={isICSModalOpen}
+            onClose={handleICSModalClose}
+            employeeAssetsData={selectedAssetIssuance}
           />
         )}
       </div>
