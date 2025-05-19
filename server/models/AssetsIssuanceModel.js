@@ -17,6 +17,7 @@ const AssetsRecordSchema = new mongoose.Schema({
   unit: { type: String, required: false },
   description: { type: String, required: false },
   itemNo: { type: String, required: false },
+  useFullLife: { type: Number, required: false },
   amount: { type: Number, required: false, default: 0 },
 });
 

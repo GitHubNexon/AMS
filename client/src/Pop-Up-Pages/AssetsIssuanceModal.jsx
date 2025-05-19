@@ -26,7 +26,6 @@ const AssetsIssuanceModal = ({
     docType: "",
     parNo: "",
     fundCluster: "",
-    fundCluster: "",
     entityName: "",
     employeeName: "",
     employeeId: "",
@@ -81,10 +80,25 @@ const AssetsIssuanceModal = ({
       return;
     }
 
+    const alreadyExists = formData.assetRecords.some(
+      (record) =>
+        record.assetId === selectedAsset._id &&
+        record.inventoryId === selectedInventory._id
+    );
+
+    if (alreadyExists) {
+      showToast(
+        "This asset-inventory combination is already added.",
+        "warning"
+      );
+      return;
+    }
+
     const newRecord = {
       assetId: selectedAsset._id,
       inventoryId: selectedInventory._id,
       unit: selectedAsset.category,
+      useFullLife: selectedAsset.useFullLife,
       description:
         selectedInventory.invDescription || selectedInventory.description,
       itemNo: selectedInventory.invNo,
@@ -106,6 +120,7 @@ const AssetsIssuanceModal = ({
       _id: assetId,
       category: record.unit,
       unitCost: record.amount,
+      useFullLife: record.useFullLife,
     });
     setSelectedInventory({
       _id: inventoryId,
@@ -115,8 +130,8 @@ const AssetsIssuanceModal = ({
   };
 
   const requiredFields = [
-    { key: "propNo", message: "Property Number is required." },
-    { key: "propName", message: "Property Name is required." },
+    { key: "parNo", message: "Par No is required." },
+    { key: "fundCluster", message: "fund Cluster is required." },
   ];
 
   const validateForm = () => {
@@ -129,36 +144,42 @@ const AssetsIssuanceModal = ({
     return true;
   };
 
-  const handleSubmit = async () => {
-    // if (!validateForm()) {
-    //   return;
-    // }
-
+  const handleSubmit = async (docType) => {
     try {
-      let dataToSubmit = formData;
+      if (!validateForm()) {
+        return;
+      }
+      const dataToSubmit = {
+        ...formData,
+        docType,
+      };
+
       if (mode === "edit") {
-        dataToSubmit = Object.keys(formData).reduce((acc, key) => {
-          if (formData[key] !== assetsIssuanceData[key]) {
-            acc[key] = formData[key];
+        const changedData = Object.keys(dataToSubmit).reduce((acc, key) => {
+          if (dataToSubmit[key] !== assetsIssuanceData[key]) {
+            acc[key] = dataToSubmit[key];
           }
           return acc;
         }, {});
 
-        if (Object.keys(dataToSubmit).length === 0) {
+        if (Object.keys(changedData).length === 0) {
           console.log("No changes detected.");
           return;
         }
 
-        // await assetsApi.updateAssetsRecord(assetsData._id, dataToSubmit);
-        console.log("FORM DATA UPDATED", dataToSubmit);
+        await assetIssuanceApi.updateAssetsIssuanceRecord(
+          assetsIssuanceData._id,
+          changedData
+        );
         showToast("Assets updated successfully!", "success");
       } else {
-        // await assetsApi.createAssetsRecord(formData);
-        console.log("FORM DATA CREATED", formData);
-        showToast("Assets Recorded successfully!", "success");
+        await assetIssuanceApi.createAssetsIssuanceRecord(dataToSubmit);
+        showToast("Assets recorded successfully!", "success");
       }
-      //   onSaveAssetIssuance(formData);
-      //   onClose();
+
+      // Optional: trigger parent callback and close modal
+      onSaveAssetIssuance(dataToSubmit);
+      onClose();
     } catch (error) {
       console.error("Error submitting Assets:", error);
       showToast("Something went wrong. Please try again.", "error");
@@ -169,7 +190,7 @@ const AssetsIssuanceModal = ({
 
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50 ">
-      <div className="bg-white p-5 rounded-lg w-full m-10 max-h-[40rem]">
+      <div className="bg-white p-5 rounded-lg w-full m-10 ">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
             {mode === "edit" ? "Update Issuance " : "Create Issuance"}
@@ -214,7 +235,7 @@ const AssetsIssuanceModal = ({
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className={"space-y-4 overflow-scroll max-h-[25rem] p-5"}
+          className={"space-y-4 overflow-scroll  p-5"}
         >
           {activeTab === "issuance-info" && (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 text-[0.7em]">
@@ -367,13 +388,21 @@ const AssetsIssuanceModal = ({
             </div>
           )}
         </form>
-        <div className="flex justify-between">
+        <div className="flex justify-end gap-2 mt-4">
           <button
             type="button"
-            onClick={handleSubmit}
-            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+            onClick={() => handleSubmit("Draft")}
+            className="bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600"
           >
-            {mode === "edit" ? "Save Changes" : "Save"}
+            {mode === "edit" ? "Update Draft" : "Save as Draft"}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleSubmit("Approved")}
+            className="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700"
+          >
+            {mode === "edit" ? "Save as Approved" : "Save as Approved"}
           </button>
         </div>
       </div>

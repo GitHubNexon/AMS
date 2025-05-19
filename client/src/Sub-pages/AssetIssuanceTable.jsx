@@ -187,8 +187,13 @@ const AssetIssuanceTable = () => {
         row.dateReleased ? formatReadableDate(row.dateReleased) : "No Date Yet",
     },
     {
+      name: "Employee Name",
+      width: "200px",
+      selector: (row) => row.employeeName || "",
+    },
+    {
       name: "Document Status",
-      width: "300px",
+      width: "200px",
       selector: (row) => row.docType || "",
     },
     {
