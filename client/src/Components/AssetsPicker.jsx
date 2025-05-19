@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import assetsApi from "../api/assetsApi";
 
-const AssetsPicker = ({ onSelectAsset, onSelectInventory }) => {
+const AssetsPicker = ({ onSelectAsset, onSelectInventory, value }) => {
   const [assets, setAssets] = useState([]);
   const [inventory, setInventory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,6 +22,15 @@ const AssetsPicker = ({ onSelectAsset, onSelectInventory }) => {
 
     fetchAssets();
   }, []);
+
+  useEffect(() => {
+    // Load inventory when asset changes (from parent)
+    if (value?.asset) {
+      setInventory(value.asset.inventory || []);
+    } else {
+      setInventory([]);
+    }
+  }, [value?.asset]);
 
   const handleAssetChange = (selectedOption) => {
     onSelectAsset(selectedOption);
@@ -57,6 +66,7 @@ const AssetsPicker = ({ onSelectAsset, onSelectInventory }) => {
           isLoading={isLoading}
           options={assetOptions}
           onChange={handleAssetChange}
+          value={value?.asset || null}
           placeholder="Select Main Asset"
           className="w-full"
         />
@@ -70,6 +80,7 @@ const AssetsPicker = ({ onSelectAsset, onSelectInventory }) => {
             isLoading={isLoading}
             options={inventoryOptions}
             onChange={handleInventoryChange}
+            value={value?.inventory || null}
             placeholder="Select Inventory"
             className="w-full"
           />

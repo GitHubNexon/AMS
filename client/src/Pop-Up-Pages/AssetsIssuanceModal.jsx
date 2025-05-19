@@ -8,6 +8,7 @@ import SignatoriesPicker from "../Components/SignatoriesPicker";
 import { useAuth } from "../context/AuthContext";
 import EmployeePicker from "../Components/EmployeePicker";
 import AssetsPicker from "../Components/AssetsPicker";
+import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 
 const AssetsIssuanceModal = ({
   isOpen,
@@ -18,6 +19,8 @@ const AssetsIssuanceModal = ({
 }) => {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState("issuance-info");
+  const [selectedAsset, setSelectedAsset] = useState(null);
+  const [selectedInventory, setSelectedInventory] = useState(null);
 
   const [formData, setFormData] = useState({
     docType: "",
@@ -50,6 +53,7 @@ const AssetsIssuanceModal = ({
       const {
         dateAcquired,
         dateReleased,
+        assetRecords = [],
         employeeId = "",
         employeeName = "",
         ...rest
@@ -58,6 +62,7 @@ const AssetsIssuanceModal = ({
       setFormData((prev) => ({
         ...prev,
         ...rest,
+        assetRecords,
         employeeId,
         employeeName,
         dateAcquired: dateAcquired
@@ -69,6 +74,45 @@ const AssetsIssuanceModal = ({
       }));
     }
   }, [mode, assetsIssuanceData]);
+
+  const handleAddRecord = () => {
+    if (!selectedAsset || !selectedInventory) {
+      showToast("Select both asset and inventory before adding.", "warning");
+      return;
+    }
+
+    const newRecord = {
+      assetId: selectedAsset._id,
+      inventoryId: selectedInventory._id,
+      unit: selectedAsset.category,
+      description:
+        selectedInventory.invDescription || selectedInventory.description,
+      itemNo: selectedInventory.invNo,
+      amount: selectedAsset.unitCost,
+    };
+
+    setFormData((prev) => ({
+      ...prev,
+      assetRecords: [...prev.assetRecords, newRecord],
+    }));
+
+    setSelectedAsset(null);
+    setSelectedInventory(null);
+  };
+
+  const handleRowClick = (record) => {
+    const { assetId, inventoryId } = record;
+    setSelectedAsset({
+      _id: assetId,
+      category: record.unit,
+      unitCost: record.amount,
+    });
+    setSelectedInventory({
+      _id: inventoryId,
+      invNo: record.itemNo,
+      invDescription: record.description,
+    });
+  };
 
   const requiredFields = [
     { key: "propNo", message: "Property Number is required." },
@@ -242,7 +286,6 @@ const AssetsIssuanceModal = ({
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
-
               <div className="flex flex-col">
                 <EmployeePicker
                   value={
@@ -265,7 +308,64 @@ const AssetsIssuanceModal = ({
             </div>
           )}
 
-          {activeTab === "inventory" && <div className="space-y-6"></div>}
+          {activeTab === "inventory" && (
+            <div className="space-y-4">
+              <AssetsPicker
+                value={{ asset: selectedAsset, inventory: selectedInventory }}
+                onSelectAsset={setSelectedAsset}
+                onSelectInventory={setSelectedInventory}
+              />
+
+              <button
+                type="button"
+                className="flex items-center gap-2 text-sm bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+                onClick={handleAddRecord}
+              >
+                <FaPlus /> Add Record
+              </button>
+
+              <table className="w-full text-xs mt-4 border">
+                <thead>
+                  <tr>
+                    <th>Unit</th>
+                    <th>Description</th>
+                    <th>Item No</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {formData.assetRecords.map((record, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-100 cursor-pointer"
+                      onClick={() => handleRowClick(record)}
+                    >
+                      <td>{record.unit}</td>
+                      <td>{record.description}</td>
+                      <td>{record.itemNo}</td>
+                      <td>{numberToCurrencyString(record.amount)}</td>
+                      <td>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFormData((prev) => ({
+                              ...prev,
+                              assetRecords: prev.assetRecords.filter(
+                                (_, i) => i !== index
+                              ),
+                            }));
+                          }}
+                        >
+                          <FaTrash className="text-red-500" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </form>
         <div className="flex justify-between">
           <button
