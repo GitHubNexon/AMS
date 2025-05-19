@@ -27,6 +27,7 @@ import assetIssuanceApi from "../api/assetIssuanceApi";
 import AssetsLogic from "../hooks/AssetsLogic";
 import AssetIssuanceLogic from "../hooks/AssetIssuanceLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
+import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsIssuanceModal";
 
 const AssetIssuanceTable = () => {
   const [page, setPage] = useState(1);
@@ -194,19 +195,21 @@ const AssetIssuanceTable = () => {
       name: "Actions",
       cell: (row) => (
         <div className="flex space-x-2">
-          {!row.Status?.isDeleted && !row.Status?.isArchived && row.docType !== 'Approved' &&(
-            <div className="group relative">
-              <button
-                onClick={() => handleModalOpenForEdit(row)}
-                className="text-white bg-blue-600 p-2 rounded-md"
-              >
-                <FaEdit size={16} />
-              </button>
-              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                Edit
-              </span>
-            </div>
-          )}
+          {!row.Status?.isDeleted &&
+            !row.Status?.isArchived &&
+            row.docType !== "Approved" && (
+              <div className="group relative">
+                <button
+                  onClick={() => handleModalOpenForEdit(row)}
+                  className="text-white bg-blue-600 p-2 rounded-md"
+                >
+                  <FaEdit size={16} />
+                </button>
+                <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                  Edit
+                </span>
+              </div>
+            )}
           {row.Status?.isDeleted ? (
             <div className="group relative">
               <button
@@ -319,16 +322,16 @@ const AssetIssuanceTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-        {/* {isAssetsModalOpen && (
-          <AssetsModal
+        {isAssetsIssuanceModalOpen && (
+          <AssetsIssuanceModal
             mode={modalMode}
-            isOpen={isAssetsModalOpen}
+            isOpen={isAssetsIssuanceModalOpen}
             onClose={handleModalClose}
-            onSaveAssets={fetchAssets}
-            assetsData={selectedAssets}
+            onSaveAssetIssuance={fetchIssuanceRecords}
+            assetsIssuanceData={selectedAssetIssuance}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
       </div>
     </>
   );
