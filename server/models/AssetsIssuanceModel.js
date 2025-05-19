@@ -22,6 +22,7 @@ const AssetsRecordSchema = new mongoose.Schema({
 
 const AssetsIssuanceSchema = new mongoose.Schema(
   {
+    docType: { type: String, required: false },
     parNo: { type: String, required: false },
     fundCluster: { type: String, required: false },
     entityName: { type: String, required: false },

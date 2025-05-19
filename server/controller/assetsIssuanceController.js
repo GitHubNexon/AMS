@@ -2,80 +2,115 @@ const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
 
+const handleIssuanceApproval = async (issuance) => {
+  for (let record of issuance.assetRecords) {
+    const asset = await AssetsModel.findOne({ _id: record.assetId });
+    if (!asset) {
+      throw new Error(`Asset with ID ${record.assetId} not found`);
+    }
+
+    const inventoryItem = asset.inventory.find(
+      (item) => item._id.toString() === record.inventoryId
+    );
+
+    const historyData = {
+      parNo: issuance.parNo,
+      fundCluster: issuance.fundCluster,
+      entityName: issuance.entityName,
+      date: issuance.createdAt,
+      transaction: "Issuance",
+      issuanceId: issuance._id,
+      employeeId: issuance.employeeId,
+      dateAcquired: issuance.dateAcquired,
+      dateReleased: issuance.dateReleased,
+      issuedBy: issuance.CreatedBy,
+      assetRecords: issuance.assetRecords,
+    };
+
+    await AssetsModel.updateOne(
+      { _id: record.assetId, "inventory._id": record.inventoryId },
+      {
+        $push: { "inventory.$.history": historyData },
+        $set: { "inventory.$.status": "Issued" },
+      }
+    );
+  }
+
+  await EmployeeModel.updateOne(
+    { _id: issuance.employeeId },
+    {
+      $push: {
+        assetRecords: {
+          parNo: issuance.parNo,
+          fundCluster: issuance.fundCluster,
+          entityName: issuance.entityName,
+          issuanceId: issuance._id,
+          dateReleased: issuance.dateReleased,
+          issuedBy: issuance.CreatedBy,
+          assetDetails: issuance.assetRecords,
+          assetRecords: issuance.assetRecords,
+        },
+      },
+    }
+  );
+};
+
 const createAssetsIssuance = async (req, res) => {
   try {
     const AssetsIssuanceData = req.body;
     const newAssetsIssuance = new AssetsIssuanceModel(AssetsIssuanceData);
     await newAssetsIssuance.save();
 
-    for (let record of AssetsIssuanceData.assetRecords) {
-      const asset = await AssetsModel.findOne({ _id: record.assetId });
-
-      if (!asset) {
-        return res
-          .status(404)
-          .json({ message: `Asset with ID ${record.assetId} not found` });
+    if (AssetsIssuanceData.docType === "Approved") {
+      try {
+        await handleIssuanceApproval(newAssetsIssuance);
+      } catch (err) {
+        // Handle errors inside the helper (e.g. asset/inventory not found)
+        return res.status(404).json({ message: err.message });
       }
-
-      const inventoryItem = asset.inventory.find(
-        (item) => item._id.toString() === record.inventoryId
-      );
-
-      if (!inventoryItem) {
-        return res.status(404).json({
-          message: `Inventory item with ID ${record.inventoryId} not found`,
-        });
-      }
-
-      const historyData = {
-        parNo: newAssetsIssuance.parNo,
-        fundCluster: newAssetsIssuance.fundCluster,
-        entityName: newAssetsIssuance.entityName,
-        date: newAssetsIssuance.createdAt,
-        transaction: "Issuance",
-        issuanceId: newAssetsIssuance._id,
-        employeeId: newAssetsIssuance.employeeId,
-        dateAcquired: newAssetsIssuance.dateAcquired,
-        dateReleased: newAssetsIssuance.dateReleased,
-        issuedBy: newAssetsIssuance.CreatedBy,
-        assetRecords: newAssetsIssuance.assetRecords
-      };
-
-      await AssetsModel.updateOne(
-        { _id: record.assetId, "inventory._id": record.inventoryId },
-        {
-          $push: {
-            "inventory.$.history": historyData,
-          },
-          $set: {
-            "inventory.$.status": "Issued",
-          },
-        }
-      );
     }
-
-    await EmployeeModel.updateOne(
-      { _id: newAssetsIssuance.employeeId },
-      {
-        $push: {
-          assetRecords: {
-            issuanceId: newAssetsIssuance._id,
-            dateReleased: newAssetsIssuance.dateReleased,
-            issuedBy: newAssetsIssuance.CreatedBy,
-            assetDetails: AssetsIssuanceData.assetRecords,
-            assetRecords: newAssetsIssuance.assetRecords
-          },
-        },
-      }
-    );
 
     res.status(201).json({
       message:
-        "Assets Issuance record created and history updated successfully",
+        AssetsIssuanceData.docType === "Approved"
+          ? "Assets Issuance record created and history updated successfully"
+          : "Draft saved successfully",
       data: newAssetsIssuance,
     });
   } catch (error) {
     console.error("Error creating assets record:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+const updateAssetsIssuance = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body;
+
+    const updatedIssuance = await AssetsIssuanceModel.findByIdAndUpdate(
+      id,
+      { $set: updateData },
+      { new: true }
+    );
+
+    if (!updatedIssuance) {
+      return res.status(404).json({ message: "Issuance record not found" });
+    }
+
+    if (updatedIssuance.docType === "Approved") {
+      await handleIssuanceApproval(updatedIssuance);
+    }
+
+    res.status(200).json({
+      message:
+        updatedIssuance.docType === "Approved"
+          ? "Issuance approved and updated"
+          : "Draft updated",
+      data: updatedIssuance,
+    });
+  } catch (error) {
+    console.error("Error updating assets record:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -129,7 +164,154 @@ const getAllAssetsIssuanceRecords = async (req, res) => {
   }
 };
 
+const deleteAssetsIssuanceRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsIssuanceModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (asset.Status.isArchived) {
+      return res
+        .status(400)
+        .json({ message: "Cannot delete an archived asset." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res.status(400).json({ message: "Asset is already deleted." });
+    }
+
+    const updatedAsset = await AssetsIssuanceModel.findByIdAndUpdate(
+      id,
+      { "Status.isDeleted": true },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error deleting asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const archiveAssetsIssuanceRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsIssuanceModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (asset.Status.isArchived) {
+      return res.status(400).json({ message: "Asset is already archived." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res
+        .status(400)
+        .json({ message: "Cannot archive a deleted asset." });
+    }
+
+    const updatedAsset = await AssetsIssuanceModel.findByIdAndUpdate(
+      id,
+      { "Status.isArchived": true },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error archiving asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const undoDeleteAssetsIssuanceRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsIssuanceModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (!asset.Status.isDeleted) {
+      return res.status(400).json({ message: "Asset is not deleted." });
+    }
+
+    const updatedAsset = await AssetsIssuanceModel.findByIdAndUpdate(
+      id,
+      { "Status.isDeleted": false },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error undoing delete of asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const undoArchiveAssetsIssuanceRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsIssuanceModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (!asset.Status.isArchived) {
+      return res.status(400).json({ message: "Asset is not archived." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res
+        .status(400)
+        .json({ message: "Cannot undo archive for a deleted asset." });
+    }
+
+    const updatedAsset = await AssetsIssuanceModel.findByIdAndUpdate(
+      id,
+      { "Status.isArchived": false },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error(
+      "Error undoing archive of asset:",
+      error.message,
+      error.stack
+    );
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
 module.exports = {
   createAssetsIssuance,
   getAllAssetsIssuanceRecords,
+  updateAssetsIssuance,
+  deleteAssetsIssuanceRecord,
+  archiveAssetsIssuanceRecord,
+  undoDeleteAssetsIssuanceRecord,
+  undoArchiveAssetsIssuanceRecord,
 };

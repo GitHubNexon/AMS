@@ -87,7 +87,6 @@ const AssetIssuanceTable = () => {
     setSelectedAssetIssuance(null);
   };
 
-  /*
   const handleActionButtons = async ({
     id,
     confirmMessage,
@@ -103,7 +102,7 @@ const AssetIssuanceTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchAssets?.();
+        fetchIssuanceRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -114,41 +113,40 @@ const AssetIssuanceTable = () => {
   const handleDeleteEntry = (id) =>
     handleActionButtons({
       id,
-      confirmMessage: "Are you sure you want to delete this assets?",
-      successMessage: "assets deleted successfully",
+      confirmMessage: "Are you sure you want to delete this Record?",
+      successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetsApi.deleteAssetsRecord,
+      apiMethod: assetIssuanceApi.deleteAssetsIssuanceRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
     handleActionButtons({
       id,
       confirmMessage:
-        "Are you sure you want to undo the deletion of this assets?",
-      successMessage: "assets restoration successful",
+        "Are you sure you want to undo the deletion of this Record?",
+      successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetsApi.undoDeleteAssetRecord,
+      apiMethod: assetIssuanceApi.undoDeleteAssetsIssuanceRecord,
     });
 
   const handleArchiveEntry = (id) =>
     handleActionButtons({
       id,
-      confirmMessage: "Are you sure you want to archive this assets?",
-      successMessage: "assets archive successful",
+      confirmMessage: "Are you sure you want to archive this Record?",
+      successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetsApi.archiveAssetsRecord,
+      apiMethod: assetIssuanceApi.archiveAssetsIssuanceRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
     handleActionButtons({
       id,
       confirmMessage:
-        "Are you sure you want to undo the archive of this assets?",
-      successMessage: "assets restoration successful",
+        "Are you sure you want to undo the archive of this Record?",
+      successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetsApi.undoArchiveAssetRecord,
+      apiMethod: assetIssuanceApi.undoArchiveAssetsIssuanceRecord,
     });
-*/
 
   const handleFetchLatest = async () => {
     fetchIssuanceRecords();
@@ -184,9 +182,9 @@ const AssetIssuanceTable = () => {
         row.dateReleased ? formatReadableDate(row.dateReleased) : "No Date Yet",
     },
     {
-      name: "Equipment / Property Name",
+      name: "Document Status",
       width: "300px",
-      selector: (row) => row.propName || "",
+      selector: (row) => row.docType || "",
     },
     {
       name: "Par No",
@@ -196,7 +194,7 @@ const AssetIssuanceTable = () => {
       name: "Actions",
       cell: (row) => (
         <div className="flex space-x-2">
-          {!row.Status?.isDeleted && !row.Status?.isArchived && (
+          {!row.Status?.isDeleted && !row.Status?.isArchived && row.docType !== 'Approved' &&(
             <div className="group relative">
               <button
                 onClick={() => handleModalOpenForEdit(row)}
@@ -221,7 +219,7 @@ const AssetIssuanceTable = () => {
                 Undo Delete
               </span>
             </div>
-          ) : !row.Status?.isArchived ? (
+          ) : !row.Status?.isArchived && row.docType !== "Approved" ? (
             <div className="group relative">
               <button
                 onClick={() => handleDeleteEntry(row._id)}
@@ -264,8 +262,6 @@ const AssetIssuanceTable = () => {
       ),
     },
   ];
-
-  
 
   return (
     <>
@@ -335,7 +331,7 @@ const AssetIssuanceTable = () => {
         )} */}
       </div>
     </>
-  );;
+  );
 };
 
 export default AssetIssuanceTable;
