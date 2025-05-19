@@ -28,6 +28,7 @@ const AssetsIssuanceModal = ({
     fundCluster: "",
     entityName: "",
     employeeName: "",
+    employeePosition: "",
     employeeId: "",
     dateAcquired: moment().format("YYYY-MM-DD"),
     dateReleased: moment().format("YYYY-MM-DD"),
@@ -37,6 +38,8 @@ const AssetsIssuanceModal = ({
       isArchived: false,
     },
     CreatedBy: { name: user.name, position: user.userType, _id: user._id },
+    ReviewedBy: { name: "", position: "", _id: "" },
+    ApprovedBy1: { name: "", position: "", _id: "" },
   });
 
   const handleChange = (e) => {
@@ -44,6 +47,13 @@ const AssetsIssuanceModal = ({
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
+    }));
+  };
+
+  const handleUserSelect = (user, field) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: { name: user.name, position: user.userType, _id: user._id },
     }));
   };
 
@@ -310,10 +320,13 @@ const AssetsIssuanceModal = ({
               <div className="flex flex-col">
                 <EmployeePicker
                   value={
-                    formData.employeeId && formData.employeeName
+                    formData.employeeId &&
+                    formData.employeeName &&
+                    formData.employeePosition
                       ? {
                           _id: formData.employeeId,
                           employeeName: formData.employeeName,
+                          employeePosition: formData.employeePosition,
                         }
                       : null
                   }
@@ -322,8 +335,33 @@ const AssetsIssuanceModal = ({
                       ...prev,
                       employeeId: employee._id,
                       employeeName: employee.employeeName,
+                      employeePosition: employee.employeePosition,
                     }));
                   }}
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="ReviewedBy" className="text-gray-700">
+                  Reviewed By
+                </label>
+                <SignatoriesPicker
+                  signatoryType="ReviewedBy"
+                  value={formData.ReviewedBy || ""}
+                  onSelectSignatory={(user) =>
+                    handleUserSelect(user, "ReviewedBy")
+                  }
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="ApprovedBy1" className="text-gray-700">
+                  Approved By
+                </label>
+                <SignatoriesPicker
+                  signatoryType="ApprovedBy1"
+                  value={formData.ApprovedBy1 || ""}
+                  onSelectSignatory={(user) =>
+                    handleUserSelect(user, "ApprovedBy1")
+                  }
                 />
               </div>
             </div>

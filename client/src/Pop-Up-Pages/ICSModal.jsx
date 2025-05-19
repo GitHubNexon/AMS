@@ -5,7 +5,15 @@ import { formatReadableDate, numberToCurrencyString } from "../helper/helper";
 const ICSModal = ({ isOpen, onClose, employeeAssetsData }) => {
   if (!isOpen || !employeeAssetsData) return null;
 
-  const { entityName, fundCluster, parNo, assetRecords } = employeeAssetsData;
+  const {
+    entityName,
+    fundCluster,
+    parNo,
+    assetRecords,
+    ApprovedBy1,
+    employeeName,
+    employeePosition,
+  } = employeeAssetsData;
 
   const totalAmount = assetRecords.reduce(
     (total, record) => total + record.amount,
@@ -111,9 +119,7 @@ const ICSModal = ({ isOpen, onClose, employeeAssetsData }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 overflow-y-auto">
-      <div
-        className="w-[70vw] h-auto max-h-[90vh] overflow-scroll m-10 rounded-lg shadow-lg bg-white p-7 text-[0.8rem]"
-      >
+      <div className="w-[70vw] h-auto max-h-[90vh] overflow-scroll m-10 rounded-lg shadow-lg bg-white p-7 text-[0.8rem]">
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-200 no-print">
           <div className="flex items-center">
@@ -195,9 +201,13 @@ const ICSModal = ({ isOpen, onClose, employeeAssetsData }) => {
                       >
                         <td className="py-2 px-3 border">{asset.quantity}</td>
                         <td className="py-2 px-3 border">{asset.unit}</td>
-                        <td className="py-2 px-3 border">{asset.description}</td>
+                        <td className="py-2 px-3 border">
+                          {asset.description}
+                        </td>
                         <td className="py-2 px-3 border">{asset.itemNo}</td>
-                        <td className="py-2 px-3 border">{asset.useFullLife}</td>
+                        <td className="py-2 px-3 border">
+                          {asset.useFullLife}
+                        </td>
                         <td className="py-2 px-3 border text-right">
                           {numberToCurrencyString(asset.amount)}
                         </td>
@@ -218,26 +228,36 @@ const ICSModal = ({ isOpen, onClose, employeeAssetsData }) => {
             {/* Signatories */}
             <div className="signatory-box flex justify-between mt-10">
               <div className="signatory w-[45%] text-center">
-                <p className="text-sm text-gray-600">Received By:</p>
+                <p className="text-sm text-gray-600">Received From:</p>
                 <div className="signature-line h-10 border-t border-gray-800 mt-2"></div>
-                <p className="font-semibold text-gray-800 mt-2">Mr. Manager</p>
-                <p className="text-sm text-gray-600">
-                  Signature over Printed Name of End User
+                <p className="font-semibold text-gray-800 mt-2">
+                  {ApprovedBy1.name}
                 </p>
-                <p className="text-sm text-gray-600">Position: Manager</p>
-                <p className="text-sm text-gray-600">Date: May 5, 2025</p>
+                <p className="text-sm text-gray-600">
+                  Signature over Printed Name
+                </p>
+                <p className="text-sm text-gray-600">
+                  Position: {ApprovedBy1.position}
+                </p>
+                <p className="text-sm text-gray-600">
+                  Date: {formatReadableDate(new Date())}
+                </p>
               </div>
               <div className="signatory w-[45%] text-center">
-                <p className="text-sm text-gray-600">Issued By:</p>
+                <p className="text-sm text-gray-600">Received By:</p>
                 <div className="signature-line h-10 border-t border-gray-800 mt-2"></div>
-                <p className="font-semibold text-gray-800 mt-2">Ms. Issuer</p>
-                <p className="text-sm text-gray-600">
-                  Signature over Printed Name of Issuer
+                <p className="font-semibold text-gray-800 mt-2">
+                  {employeeName}
                 </p>
                 <p className="text-sm text-gray-600">
-                  Position: Property Custodian
+                  Signature over Printed Name
                 </p>
-                <p className="text-sm text-gray-600">Date: May 5, 2025</p>
+                <p className="text-sm text-gray-600">
+                  Position: {employeePosition}
+                </p>
+                <p className="text-sm text-gray-600">
+                  Date: {formatReadableDate(new Date())}
+                </p>
               </div>
             </div>
           </div>

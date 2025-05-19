@@ -28,6 +28,7 @@ const AssetsIssuanceSchema = new mongoose.Schema(
     fundCluster: { type: String, required: false },
     entityName: { type: String, required: false },
     employeeName: { type: String, required: false },
+    employeePosition: { type: String, required: false },
     employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
     custodianId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
     dateAcquired: { type: Date, required: false },
@@ -35,6 +36,8 @@ const AssetsIssuanceSchema = new mongoose.Schema(
     assetRecords: [AssetsRecordSchema],
     Status: { type: StatusSchema, required: false },
     CreatedBy: { type: SignatoriesSchema, required: false },
+    ReviewedBy: { type: SignatoriesSchema, required: false },
+    ApprovedBy1: { type: SignatoriesSchema, required: false },
   },
   {
     timestamps: true,

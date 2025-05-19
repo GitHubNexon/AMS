@@ -40,7 +40,7 @@ const EmployeePicker = ({ onSelect, value }) => {
   };
 
   return (
-    <div className="text-sm">
+    <div className="text-[0.6rem]">
       <label className="text-gray-700 mb-1 block">Select Employee</label>
       <Select
         options={options}
