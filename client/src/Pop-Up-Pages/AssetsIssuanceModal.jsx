@@ -21,6 +21,7 @@ const AssetsIssuanceModal = ({
   const [activeTab, setActiveTab] = useState("issuance-info");
   const [selectedAsset, setSelectedAsset] = useState(null);
   const [selectedInventory, setSelectedInventory] = useState(null);
+  const [invalidAssetIds, setInvalidAssetIds] = useState([]);
 
   const [formData, setFormData] = useState({
     docType: "",
@@ -81,6 +82,21 @@ const AssetsIssuanceModal = ({
           ? new Date(dateReleased).toISOString().split("T")[0]
           : moment().format("YYYY-MM-DD"),
       }));
+
+      const fetchValidation = async () => {
+        try {
+          const result = await assetIssuanceApi.validateAssetRecords(
+            assetsIssuanceData._id
+          );
+          console.log("Invalid records fetched:", result.issuedRecords);
+          setInvalidAssetIds(result.issuedRecords || []);
+        } catch (err) {
+          console.error("Validation fetch error:", err);
+          showToast("Failed to validate asset records.", "error");
+        }
+      };
+
+      fetchValidation();
     }
   }, [mode, assetsIssuanceData]);
 
@@ -159,9 +175,24 @@ const AssetsIssuanceModal = ({
       if (!validateForm()) {
         return;
       }
+
+      let cleanedRecords = [...formData.assetRecords];
+
+      if (mode === "edit" && invalidAssetIds.length > 0) {
+        cleanedRecords = cleanedRecords.filter(
+          (record) =>
+            !invalidAssetIds.some(
+              (inv) =>
+                inv.assetId === record.assetId &&
+                inv.inventoryId === record.inventoryId
+            )
+        );
+      }
+
       const dataToSubmit = {
         ...formData,
         docType,
+        assetRecords: cleanedRecords,
       };
 
       if (mode === "edit") {
@@ -187,7 +218,6 @@ const AssetsIssuanceModal = ({
         showToast("Assets recorded successfully!", "success");
       }
 
-      // Optional: trigger parent callback and close modal
       onSaveAssetIssuance(dataToSubmit);
       onClose();
     } catch (error) {
@@ -397,8 +427,25 @@ const AssetsIssuanceModal = ({
                   {formData.assetRecords.map((record, index) => (
                     <tr
                       key={index}
-                      className="hover:bg-gray-100 cursor-pointer"
+                      className={`cursor-pointer ${
+                        invalidAssetIds.some(
+                          (inv) =>
+                            inv.assetId === record.assetId &&
+                            inv.inventoryId === record.inventoryId
+                        )
+                          ? "bg-yellow-500"
+                          : "hover:bg-gray-100"
+                      }`}
                       onClick={() => handleRowClick(record)}
+                      title={
+                        invalidAssetIds.some(
+                          (inv) =>
+                            inv.assetId === record.assetId &&
+                            inv.inventoryId === record.inventoryId
+                        )
+                          ? "This asset is already in use, for repair, or issued to another employee. It will be removed on next submission or you can remove it."
+                          : ""
+                      }
                     >
                       <td>{record.unit}</td>
                       <td>{record.description}</td>

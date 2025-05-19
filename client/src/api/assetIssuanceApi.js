@@ -47,7 +47,9 @@ const assetIssuanceApi = {
 
   deleteAssetsIssuanceRecord: async (id) => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/assets-issuance/delete/${id}`);
+      const response = await axios.post(
+        `${API_BASE_URL}/assets-issuance/delete/${id}`
+      );
       return response.data;
     } catch (error) {
       console.error("Error deleting assets:", error.message);
@@ -57,7 +59,9 @@ const assetIssuanceApi = {
 
   archiveAssetsIssuanceRecord: async (id) => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/assets-issuance/archive/${id}`);
+      const response = await axios.post(
+        `${API_BASE_URL}/assets-issuance/archive/${id}`
+      );
       return response.data;
     } catch (error) {
       console.error("Error archiving assets:", error.message);
@@ -85,6 +89,18 @@ const assetIssuanceApi = {
       return response.data;
     } catch (error) {
       console.error("Error undoing archive assets:", error.message);
+      throw error;
+    }
+  },
+
+  validateAssetRecords: async (id) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/assets-issuance/validate-assets/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error validating asset records:", error.message);
       throw error;
     }
   },

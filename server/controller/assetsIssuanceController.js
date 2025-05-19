@@ -306,6 +306,70 @@ const undoArchiveAssetsIssuanceRecord = async (req, res) => {
   }
 };
 
+const validateAssetsRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const issuanceRecord = await AssetsIssuanceModel.findById(id);
+
+    if (!issuanceRecord || issuanceRecord.docType !== "Draft") {
+      return res.status(404).json({ message: "Draft record not found." });
+    }
+
+    const assetRecords = issuanceRecord.assetRecords || [];
+
+    const inventoryIds = assetRecords.map((record) => record.inventoryId);
+
+    const issuedInventories = await AssetsModel.aggregate([
+      { $unwind: "$inventory" },
+      {
+        $match: {
+          "inventory._id": { $in: inventoryIds },
+          "inventory.status": "Issued",
+        },
+      },
+      {
+        $project: {
+          assetId: "$_id",
+          inventoryId: "$inventory._id",
+        },
+      },
+    ]);
+
+    const issuedSet = new Set(
+      issuedInventories.map((inv) => `${inv.assetId}_${inv.inventoryId}`)
+    );
+
+    const issuedRecords = [];
+    const validAssetRecords = [];
+
+    for (const record of assetRecords) {
+      const key = `${record.assetId}_${record.inventoryId}`;
+      if (issuedSet.has(key)) {
+        issuedRecords.push({
+          assetId: record.assetId,
+          inventoryId: record.inventoryId,
+          description: record.description,
+          itemNo: record.itemNo,
+          message:
+            "This asset is already in use, for repair, or issued to another employee. It will be removed on next submission.",
+        });
+      } else {
+        validAssetRecords.push(record);
+      }
+    }
+
+    res.json({
+      assetRecords: validAssetRecords,
+      issuedRecords,
+    });
+  } catch (error) {
+    console.error("Validation Error:", error);
+    res.status(500).json({ message: "Error Validating Assets" });
+  }
+};
+
+
 module.exports = {
   createAssetsIssuance,
   getAllAssetsIssuanceRecords,
@@ -314,4 +378,5 @@ module.exports = {
   archiveAssetsIssuanceRecord,
   undoDeleteAssetsIssuanceRecord,
   undoArchiveAssetsIssuanceRecord,
+  validateAssetsRecord,
 };
