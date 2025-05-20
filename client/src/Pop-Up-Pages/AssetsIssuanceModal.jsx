@@ -84,21 +84,6 @@ const AssetsIssuanceModal = ({
           ? new Date(dateReleased).toISOString().split("T")[0]
           : moment().format("YYYY-MM-DD"),
       }));
-
-      // const fetchValidation = async () => {
-      //   try {
-      //     const result = await assetIssuanceApi.validateAssetRecords(
-      //       assetsIssuanceData._id
-      //     );
-      //     console.log("Invalid records fetched:", result.issuedRecords);
-      //     setInvalidAssetIds(result.issuedRecords || []);
-      //   } catch (err) {
-      //     console.error("Validation fetch error:", err);
-      //     showToast("Failed to validate asset records.", "error");
-      //   }
-      // };
-
-      // fetchValidation();
     }
   }, [mode, assetsIssuanceData]);
 
@@ -131,6 +116,7 @@ const AssetsIssuanceModal = ({
         selectedInventory.invDescription || selectedInventory.description,
       itemNo: selectedInventory.invNo,
       amount: selectedAsset.unitCost,
+      location: "",
     };
 
     setFormData((prev) => ({
@@ -179,17 +165,6 @@ const AssetsIssuanceModal = ({
       }
 
       let cleanedRecords = [...formData.assetRecords];
-
-      // if (mode === "edit" && invalidAssetIds.length > 0) {
-      //   cleanedRecords = cleanedRecords.filter(
-      //     (record) =>
-      //       !invalidAssetIds.some(
-      //         (inv) =>
-      //           inv.assetId === record.assetId &&
-      //           inv.inventoryId === record.inventoryId
-      //       )
-      //   );
-      // }
 
       if (cleanedRecords.length === 0) {
         return showToast("No valid assets to save.", "warning");
@@ -424,6 +399,7 @@ const AssetsIssuanceModal = ({
                   <tr>
                     <th>Unit</th>
                     <th>Description</th>
+                    <th>Location</th>
                     <th>Item No</th>
                     <th>Amount</th>
                     <th>Action</th>
@@ -432,26 +408,6 @@ const AssetsIssuanceModal = ({
                 <tbody>
                   {formData.assetRecords.map((record, index) => (
                     <tr
-                      // key={index}
-                      // className={`cursor-pointer ${
-                      //   invalidAssetIds.some(
-                      //     (inv) =>
-                      //       inv.assetId === record.assetId &&
-                      //       inv.inventoryId === record.inventoryId
-                      //   )
-                      //     ? "bg-yellow-500"
-                      //     : "hover:bg-gray-100"
-                      // }`}
-                      // onClick={() => handleRowClick(record)}
-                      // title={
-                      //   invalidAssetIds.some(
-                      //     (inv) =>
-                      //       inv.assetId === record.assetId &&
-                      //       inv.inventoryId === record.inventoryId
-                      //   )
-                      //     ? "This asset is already in use, for repair, or issued to another employee. It will be removed on next submission or you can remove it."
-                      //     : ""
-                      // }
                       key={index}
                       className="cursor-pointer hover:bg-gray-100"
                       onClick={() => handleRowClick(record)}
@@ -459,6 +415,22 @@ const AssetsIssuanceModal = ({
                     >
                       <td>{record.unit}</td>
                       <td>{record.description}</td>
+                      <td>
+                        <input
+                          type="text"
+                          value={record.location || ""}
+                          onChange={(e) => {
+                            const updatedRecords = [...formData.assetRecords];
+                            updatedRecords[index].location = e.target.value;
+                            setFormData((prev) => ({
+                              ...prev,
+                              assetRecords: updatedRecords,
+                            }));
+                          }}
+                          className="border border-gray-300 rounded p-1 text-xs w-full"
+                          placeholder="Enter location"
+                        />
+                      </td>
                       <td>{record.itemNo}</td>
                       <td>{numberToCurrencyString(record.amount)}</td>
                       <td>

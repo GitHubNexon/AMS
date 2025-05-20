@@ -20,3 +20,7 @@ const AssetsRecordSchema = new mongoose.Schema({
   useFullLife: { type: Number, required: false },
   amount: { type: Number, required: false, default: 0 },
 });
+
+const AssetsReturnSchema = new mongoose.Schema({
+    
+})

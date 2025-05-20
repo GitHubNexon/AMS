@@ -13,6 +13,12 @@ const StatusSchema = new mongoose.Schema({
 const AssetsRecordSchema = new mongoose.Schema({
   assetId: { type: mongoose.Schema.Types.ObjectId, ref: "assets" },
   inventoryId: { type: mongoose.Schema.Types.ObjectId, ref: "assets" },
+  quantity: { type: Number, required: false, default: 1 },
+  unit: { type: String, required: false },
+  description: { type: String, required: false },
+  itemNo: { type: String, required: false },
+  useFullLife: { type: Number, required: false },
+  amount: { type: Number, required: false, default: 0 },
 });
 
 const AssetsTransferSchema = new mongoose.Schema(
@@ -27,10 +33,9 @@ const AssetsTransferSchema = new mongoose.Schema(
     assetRecords: [AssetsRecordSchema],
     reason: { type: String, required: false },
     Status: { type: StatusSchema, required: false },
-    ApprovedBy: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
-    IssuedBy: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
-    ReceivedBy: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
     CreatedBy: { type: SignatoriesSchema, required: false },
+    ReviewedBy: { type: SignatoriesSchema, required: false },
+    ApprovedBy1: { type: SignatoriesSchema, required: false },
   },
   {
     timestamps: true,
