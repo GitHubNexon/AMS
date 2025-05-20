@@ -18,9 +18,21 @@ const AssetsRecordSchema = new mongoose.Schema({
   description: { type: String, required: false },
   itemNo: { type: String, required: false },
   useFullLife: { type: Number, required: false },
+  location: { type: String, required: false },
   amount: { type: Number, required: false, default: 0 },
 });
 
-const AssetsReturnSchema = new mongoose.Schema({
-    
-})
+const AssetsReturnSchema = new mongoose.Schema(
+  {
+    docType: { type: String, required: false },
+    assetRecords: [AssetsRecordSchema],
+    Status: { type: StatusSchema, required: false },
+    purpose: {type: String, required: true},
+    CreatedBy: { type: SignatoriesSchema, required: false },
+    ReviewedBy: { type: SignatoriesSchema, required: false },
+    ApprovedBy1: { type: SignatoriesSchema, required: false },
+  },
+  {
+    timestamps: true,
+  }
+);

@@ -24,6 +24,7 @@ const InventoryItemSchema = new mongoose.Schema({
       "Defective",
       "Under-repair",
       "Disposed",
+      "Reserved",
     ],
     default: "Available",
   },
