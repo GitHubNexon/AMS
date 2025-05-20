@@ -68,6 +68,35 @@ const handleIssuanceReservation = async (issuance) => {
   // No update to EmployeeModel or inventory history for reservations
 };
 
+const CleanAssetsIssuanceRecord = async () => {
+  try {
+    const allDrafts = await AssetsIssuanceModel.find({ docType: "Draft" });
+
+    for (let issuance of allDrafts) {
+      const isDeleted = issuance.Status?.isDeleted;
+      const isArchived = issuance.Status?.isArchived;
+
+      const newStatus = isDeleted || isArchived ? "Available" : "Reserved";
+
+      for (let record of issuance.assetRecords) {
+        const asset = await AssetsModel.findOne({ _id: record.assetId });
+        if (!asset) continue;
+
+        await AssetsModel.updateOne(
+          { _id: record.assetId, "inventory._id": record.inventoryId },
+          {
+            $set: { "inventory.$.status": newStatus },
+          }
+        );
+      }
+    }
+
+    console.log("Asset inventory statuses updated based on draft status");
+  } catch (error) {
+    console.error("Error cleaning/restoring asset reservations:", error);
+  }
+};
+
 const createAssetsIssuance = async (req, res) => {
   try {
     const AssetsIssuanceData = req.body;
@@ -132,7 +161,6 @@ const updateAssetsIssuance = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
 
 //
 /*
@@ -200,6 +228,9 @@ const updateAssetsIssuance = async (req, res) => {
 
 const getAllAssetsIssuanceRecords = async (req, res) => {
   try {
+    // Ensure inventory statuses are up-to-date based on draft status
+    await CleanAssetsIssuanceRecord();
+
     const page = parseInt(req.query.page, 10) || 1;
     const limit = parseInt(req.query.limit, 10) || 10;
     const keyword = req.query.keyword || "";
@@ -451,7 +482,6 @@ const validateAssetsRecord = async (req, res) => {
     res.status(500).json({ message: "Error Validating Assets" });
   }
 };
-
 
 module.exports = {
   createAssetsIssuance,

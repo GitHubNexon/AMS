@@ -251,7 +251,7 @@ const AssetIssuanceTable = () => {
                 <FaUndo size={16} />
               </button>
               <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                Undo Delete
+                Undo Delete / Cancelled
               </span>
             </div>
           ) : !row.Status?.isArchived && row.docType !== "Approved" ? (
@@ -263,12 +263,12 @@ const AssetIssuanceTable = () => {
                 <FaTrash size={16} />
               </button>
               <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                Delete
+                Delete / Cancelled
               </span>
             </div>
           ) : null}
 
-          {row.Status?.isArchived ? (
+          {/* {row.Status?.isArchived ? (
             <div className="group relative">
               <button
                 onClick={() => handleUndoArchiveEntry(row._id)}
@@ -292,7 +292,7 @@ const AssetIssuanceTable = () => {
                 Archive
               </span>
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       ),
     },
