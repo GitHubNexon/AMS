@@ -176,7 +176,7 @@ const getAllAssetsRecords = async (req, res) => {
 
 const getAllAssetRecordsList = async (req, res) => {
   try {
-    const excludedStatuses = ["Issued", "Dispose", "under-repair"];
+    const excludedStatuses = ["Issued", "Dispose", "under-repair", "Reserved"];
     
     const query = {
       ...(req.query.isDeleted === 'true' && { "Status.isDeleted": true }),

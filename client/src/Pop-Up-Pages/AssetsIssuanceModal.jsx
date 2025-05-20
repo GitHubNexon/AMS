@@ -53,9 +53,6 @@ const AssetsIssuanceModal = ({
     }));
   };
 
-
-
-
   const handleUserSelect = (user, field) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -88,20 +85,20 @@ const AssetsIssuanceModal = ({
           : moment().format("YYYY-MM-DD"),
       }));
 
-      const fetchValidation = async () => {
-        try {
-          const result = await assetIssuanceApi.validateAssetRecords(
-            assetsIssuanceData._id
-          );
-          console.log("Invalid records fetched:", result.issuedRecords);
-          setInvalidAssetIds(result.issuedRecords || []);
-        } catch (err) {
-          console.error("Validation fetch error:", err);
-          showToast("Failed to validate asset records.", "error");
-        }
-      };
+      // const fetchValidation = async () => {
+      //   try {
+      //     const result = await assetIssuanceApi.validateAssetRecords(
+      //       assetsIssuanceData._id
+      //     );
+      //     console.log("Invalid records fetched:", result.issuedRecords);
+      //     setInvalidAssetIds(result.issuedRecords || []);
+      //   } catch (err) {
+      //     console.error("Validation fetch error:", err);
+      //     showToast("Failed to validate asset records.", "error");
+      //   }
+      // };
 
-      fetchValidation();
+      // fetchValidation();
     }
   }, [mode, assetsIssuanceData]);
 
@@ -183,16 +180,16 @@ const AssetsIssuanceModal = ({
 
       let cleanedRecords = [...formData.assetRecords];
 
-      if (mode === "edit" && invalidAssetIds.length > 0) {
-        cleanedRecords = cleanedRecords.filter(
-          (record) =>
-            !invalidAssetIds.some(
-              (inv) =>
-                inv.assetId === record.assetId &&
-                inv.inventoryId === record.inventoryId
-            )
-        );
-      }
+      // if (mode === "edit" && invalidAssetIds.length > 0) {
+      //   cleanedRecords = cleanedRecords.filter(
+      //     (record) =>
+      //       !invalidAssetIds.some(
+      //         (inv) =>
+      //           inv.assetId === record.assetId &&
+      //           inv.inventoryId === record.inventoryId
+      //       )
+      //   );
+      // }
 
       if (cleanedRecords.length === 0) {
         return showToast("No valid assets to save.", "warning");
@@ -435,26 +432,30 @@ const AssetsIssuanceModal = ({
                 <tbody>
                   {formData.assetRecords.map((record, index) => (
                     <tr
+                      // key={index}
+                      // className={`cursor-pointer ${
+                      //   invalidAssetIds.some(
+                      //     (inv) =>
+                      //       inv.assetId === record.assetId &&
+                      //       inv.inventoryId === record.inventoryId
+                      //   )
+                      //     ? "bg-yellow-500"
+                      //     : "hover:bg-gray-100"
+                      // }`}
+                      // onClick={() => handleRowClick(record)}
+                      // title={
+                      //   invalidAssetIds.some(
+                      //     (inv) =>
+                      //       inv.assetId === record.assetId &&
+                      //       inv.inventoryId === record.inventoryId
+                      //   )
+                      //     ? "This asset is already in use, for repair, or issued to another employee. It will be removed on next submission or you can remove it."
+                      //     : ""
+                      // }
                       key={index}
-                      className={`cursor-pointer ${
-                        invalidAssetIds.some(
-                          (inv) =>
-                            inv.assetId === record.assetId &&
-                            inv.inventoryId === record.inventoryId
-                        )
-                          ? "bg-yellow-500"
-                          : "hover:bg-gray-100"
-                      }`}
+                      className="cursor-pointer hover:bg-gray-100"
                       onClick={() => handleRowClick(record)}
-                      title={
-                        invalidAssetIds.some(
-                          (inv) =>
-                            inv.assetId === record.assetId &&
-                            inv.inventoryId === record.inventoryId
-                        )
-                          ? "This asset is already in use, for repair, or issued to another employee. It will be removed on next submission or you can remove it."
-                          : ""
-                      }
+                      title=""
                     >
                       <td>{record.unit}</td>
                       <td>{record.description}</td>

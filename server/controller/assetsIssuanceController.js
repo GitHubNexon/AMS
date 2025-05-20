@@ -8,11 +8,6 @@ const handleIssuanceApproval = async (issuance) => {
     if (!asset) {
       throw new Error(`Asset with ID ${record.assetId} not found`);
     }
-
-    const inventoryItem = asset.inventory.find(
-      (item) => item._id.toString() === record.inventoryId
-    );
-
     const historyData = {
       parNo: issuance.parNo,
       fundCluster: issuance.fundCluster,
@@ -55,6 +50,92 @@ const handleIssuanceApproval = async (issuance) => {
   );
 };
 
+const handleIssuanceReservation = async (issuance) => {
+  for (let record of issuance.assetRecords) {
+    const asset = await AssetsModel.findOne({ _id: record.assetId });
+    if (!asset) {
+      throw new Error(`Asset with ID ${record.assetId} not found`);
+    }
+
+    await AssetsModel.updateOne(
+      { _id: record.assetId, "inventory._id": record.inventoryId },
+      {
+        $set: { "inventory.$.status": "Reserved" },
+      }
+    );
+  }
+
+  // No update to EmployeeModel or inventory history for reservations
+};
+
+const createAssetsIssuance = async (req, res) => {
+  try {
+    const AssetsIssuanceData = req.body;
+    const newAssetsIssuance = new AssetsIssuanceModel(AssetsIssuanceData);
+    await newAssetsIssuance.save();
+
+    try {
+      if (AssetsIssuanceData.docType === "Approved") {
+        await handleIssuanceApproval(newAssetsIssuance);
+      } else if (AssetsIssuanceData.docType === "Draft") {
+        await handleIssuanceReservation(newAssetsIssuance);
+      }
+    } catch (err) {
+      return res.status(404).json({ message: err.message });
+    }
+
+    res.status(201).json({
+      message:
+        AssetsIssuanceData.docType === "Approved"
+          ? "Assets Issuance record created and issued successfully"
+          : "Draft saved and assets reserved successfully",
+      data: newAssetsIssuance,
+    });
+  } catch (error) {
+    console.error("Error creating assets record:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+const updateAssetsIssuance = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body;
+
+    const updatedIssuance = await AssetsIssuanceModel.findByIdAndUpdate(
+      id,
+      { $set: updateData },
+      { new: true }
+    );
+
+    if (!updatedIssuance) {
+      return res.status(404).json({ message: "Issuance record not found" });
+    }
+
+    if (updateData.docType === "Approved") {
+      try {
+        await handleIssuanceApproval(updatedIssuance);
+      } catch (err) {
+        return res.status(404).json({ message: err.message });
+      }
+    }
+
+    res.status(200).json({
+      message:
+        updateData.docType === "Approved"
+          ? "Issuance approved and assets issued"
+          : "Draft updated",
+      data: updatedIssuance,
+    });
+  } catch (error) {
+    console.error("Error updating assets record:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+
+//
+/*
 const createAssetsIssuance = async (req, res) => {
   try {
     const AssetsIssuanceData = req.body;
@@ -114,6 +195,8 @@ const updateAssetsIssuance = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+*/
 
 const getAllAssetsIssuanceRecords = async (req, res) => {
   try {
