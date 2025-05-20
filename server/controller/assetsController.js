@@ -88,8 +88,6 @@ const deleteLinkIdHistory = async () => {
         await asset.save();
       }
     }
-
-    console.log("Orphaned history entries removed and status updated.");
   } catch (err) {
     console.error("Error in deleteLinkIdHistory:", err);
   }

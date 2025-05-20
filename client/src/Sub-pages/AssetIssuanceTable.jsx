@@ -28,7 +28,7 @@ import AssetsLogic from "../hooks/AssetsLogic";
 import AssetIssuanceLogic from "../hooks/AssetIssuanceLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsIssuanceModal";
-import ICSModal from "../Pop-Up-Pages/ICSModal";
+import ParModal from "../Pop-Up-Pages/ParModal";
 
 const AssetIssuanceTable = () => {
   const [page, setPage] = useState(1);
@@ -38,7 +38,7 @@ const AssetIssuanceTable = () => {
   const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] =
     useState(false);
   const [modalMode, setModalMode] = useState("add");
-  const [isICSModalOpen, setIsICSModalOpen] = useState(false);
+  const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
@@ -88,13 +88,13 @@ const AssetIssuanceTable = () => {
     setSelectedAssetIssuance(null);
   };
 
-  const handleICSModalOpen = (row) => {
+  const handlePARModalOpen = (row) => {
     setSelectedAssetIssuance(row);
-    setIsICSModalOpen(true);
+    setIsPARModalOpen(true);
   };
 
-  const handleICSModalClose = () => {
-    setIsICSModalOpen(false);
+  const handlePARModalClose = () => {
+    setIsPARModalOpen(false);
     setSelectedAssetIssuance(null);
   };
 
@@ -218,7 +218,7 @@ const AssetIssuanceTable = () => {
         <div className="flex space-x-2">
           <div className="group relative">
             <button
-              onClick={() => handleICSModalOpen(row)}
+              onClick={() => handlePARModalOpen(row)}
               className="text-white bg-green-600 p-2 rounded-md"
             >
               <FaEye size={16} />
@@ -365,10 +365,10 @@ const AssetIssuanceTable = () => {
           />
         )}
 
-        {isICSModalOpen && (
-          <ICSModal
-            isOpen={isICSModalOpen}
-            onClose={handleICSModalClose}
+        {isPARModalOpen && (
+          <ParModal
+            isOpen={isPARModalOpen}
+            onClose={handlePARModalClose}
             employeeAssetsData={selectedAssetIssuance}
           />
         )}
