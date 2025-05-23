@@ -9,4 +9,8 @@ router.post("/create", AssetsReturnController.createAssetsReturn);
 
 router.patch("/update/:id", AssetsReturnController.updateAssetsReturn);
 
+
+router.get("/get-all", AssetsReturnController.getAllAssetsReturnRecords);
+
+
 module.exports = router;

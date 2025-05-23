@@ -60,7 +60,7 @@ const handleIssuanceReservation = async (issuance) => {
     await AssetsModel.updateOne(
       { _id: record.assetId, "inventory._id": record.inventoryId },
       {
-        $set: { "inventory.$.status": "Reserved" },
+        $set: { "inventory.$.status": "Reserved for Issuance" },
       }
     );
   }
@@ -76,7 +76,7 @@ const CleanAssetsIssuanceRecord = async () => {
       const isDeleted = issuance.Status?.isDeleted;
       const isArchived = issuance.Status?.isArchived;
 
-      const newStatus = isDeleted || isArchived ? "Available" : "Reserved";
+      const newStatus = isDeleted || isArchived ? "Available" : "Reserved for Issuance";
 
       for (let record of issuance.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });

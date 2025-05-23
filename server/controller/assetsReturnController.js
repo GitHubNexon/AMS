@@ -61,7 +61,6 @@ const handleReturnReservation = async (returnDoc) => {
   }
 };
 
-
 const CleanAssetsReturnRecord = async () => {
   try {
     const allDrafts = await AssetsReturnModel.find({ docType: "Draft" });
@@ -70,7 +69,7 @@ const CleanAssetsReturnRecord = async () => {
       const isDeleted = returnDoc.Status?.isDeleted;
       const isArchived = returnDoc.Status?.isArchived;
 
-      const newStatus = isDeleted || isArchived ? "Issued" : "Reserved"; // Or whatever default applies
+      const newStatus = isDeleted || isArchived ? "Issued" : "Reserved for Return"; // Or whatever default applies
 
       for (let record of returnDoc.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -84,12 +83,10 @@ const CleanAssetsReturnRecord = async () => {
         );
       }
     }
-
   } catch (error) {
     console.error("Error cleaning/restoring return asset statuses:", error);
   }
 };
-
 
 const createAssetsReturn = async (req, res) => {
   try {
@@ -119,7 +116,6 @@ const createAssetsReturn = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
 
 const updateAssetsReturn = async (req, res) => {
   try {
@@ -159,8 +155,60 @@ const updateAssetsReturn = async (req, res) => {
   }
 };
 
+const getAllAssetsReturnRecords = async (req, res) => {
+  try {
+    // Ensure inventory statuses are up-to-date based on draft status
+    await CleanAssetsReturnRecord();
+
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 10;
+    const keyword = req.query.keyword || "";
+    const sortBy = req.query.sortBy || "createdAt";
+    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
+    const status = req.query.status;
+
+    const query = {
+      ...(keyword && {
+        $or: [
+          { "CreatedBy.name": { $regex: keyword, $options: "i" } },
+          { "CreatedBy.position": { $regex: keyword, $options: "i" } },
+        ],
+      }),
+      ...(status &&
+        status === "isDeleted" && {
+          "Status.isDeleted": true,
+        }),
+      ...(status &&
+        status === "isArchived" && {
+          "Status.isArchived": true,
+        }),
+    };
+
+    const sortCriteria = {
+      "Status.isDeleted": 1,
+      "Status.isArchived": 1,
+      [sortBy]: sortOrder,
+    };
+    const totalItems = await AssetsIssuanceModel.countDocuments(query);
+    const returnRecords = await AssetsIssuanceModel.find(query)
+      .sort(sortCriteria)
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+    res.json({
+      totalItems,
+      totalPages: Math.ceil(totalItems / limit),
+      currentPage: page,
+      returnRecords: returnRecords,
+    });
+  } catch (error) {
+    console.error("Error getting all Employee record", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
 
 module.exports = {
   createAssetsReturn,
   updateAssetsReturn,
+  getAllAssetsReturnRecords,
 };
