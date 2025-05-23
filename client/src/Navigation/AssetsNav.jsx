@@ -8,7 +8,7 @@ const TABS = [
   "Asset Records",
   "Employee Records",
   "Issuance Records",
-  "Turn In",
+  "Return Records",
   "History",
   "Reports",
 ];
@@ -49,7 +49,7 @@ const AssetsNav = () => {
             <AssetIssuanceTable />
           </div>
         )}
-        {activeTab === "Turn In" && <div>Turn In Content</div>}
+        {activeTab === "Return Records" && <div>Turn In Content</div>}
         {activeTab === "History" && <div>History Content</div>}
         {activeTab === "Reports" && <div>Reports Content</div>}
       </div>

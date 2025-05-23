@@ -27,7 +27,11 @@ const AssetsReturnSchema = new mongoose.Schema(
     docType: { type: String, required: false },
     assetRecords: [AssetsRecordSchema],
     Status: { type: StatusSchema, required: false },
-    purpose: {type: String, required: true},
+    purpose: {
+      type: String,
+      required: true,
+      enum: ["Return", "Disposal", "Repair"],
+    },
     CreatedBy: { type: SignatoriesSchema, required: false },
     ReviewedBy: { type: SignatoriesSchema, required: false },
     ApprovedBy1: { type: SignatoriesSchema, required: false },
@@ -36,3 +40,7 @@ const AssetsReturnSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+const AssetsReturnModel = mongoose.model("AssetsReturn", AssetsReturnSchema);
+
+module.exports = AssetsReturnModel;

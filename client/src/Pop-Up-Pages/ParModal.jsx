@@ -2,7 +2,7 @@ import React from "react";
 import { FaFileAlt, FaTimes } from "react-icons/fa";
 import { formatReadableDate, numberToCurrencyString } from "../helper/helper";
 
-const ParModal = ({ isOpen, onClose, employeeAssetsData }) => {
+const PARModal = ({ isOpen, onClose, employeeAssetsData }) => {
   if (!isOpen || !employeeAssetsData) return null;
 
   const {
@@ -265,4 +265,4 @@ const ParModal = ({ isOpen, onClose, employeeAssetsData }) => {
   );
 };
 
-export default ParModal;
+export default PARModal;
