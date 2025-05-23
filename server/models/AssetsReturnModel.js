@@ -23,6 +23,12 @@ const AssetsRecordSchema = new mongoose.Schema({
 const AssetsReturnSchema = new mongoose.Schema(
   {
     docType: { type: String, required: false },
+    parNo: { type: String, required: false },
+    fundCluster: { type: String, required: false },
+    entityName: { type: String, required: false },
+    employeeName: { type: String, required: false },
+    employeePosition: { type: String, required: false },
+    employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
     assetRecords: [AssetsRecordSchema],
     Status: { type: StatusSchema, required: false },
     purpose: {

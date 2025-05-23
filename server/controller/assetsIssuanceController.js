@@ -90,8 +90,6 @@ const CleanAssetsIssuanceRecord = async () => {
         );
       }
     }
-
-    console.log("Asset inventory statuses updated based on draft status");
   } catch (error) {
     console.error("Error cleaning/restoring asset reservations:", error);
   }

@@ -1,5 +1,6 @@
 const AssetsModel = require("../models/AssetsModel");
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
+const AssetsReturnModel = require("../models/AssetsReturnModel");
 
 const createAssetsRecord = async (req, res) => {
   try {
@@ -41,9 +42,10 @@ const updateAssetsRecord = async (req, res) => {
 
 const deleteLinkIdHistory = async () => {
   try {
-    const validIssuanceCheckers = {
+
+    const validCheckers = {
       issuanceId: AssetsIssuanceModel,
-      // returnId: AssetsReturnModel,
+      returnId: AssetsReturnModel,
       // disposalId: AssetsDisposalModel,
       // repairId: AssetsRepairModel,
     };
@@ -62,7 +64,7 @@ const deleteLinkIdHistory = async () => {
         for (const historyItem of inventory.history) {
           let isValid = false;
 
-          for (const [key, model] of Object.entries(validIssuanceCheckers)) {
+          for (const [key, model] of Object.entries(validCheckers)) {
             if (historyItem[key]) {
               const exists = await model.exists({ _id: historyItem[key] });
               if (exists) {
@@ -93,6 +95,107 @@ const deleteLinkIdHistory = async () => {
   }
 };
 
+// const getAllAssetsRecords = async (req, res) => {
+//   try {
+//     await deleteLinkIdHistory();
+
+//     const page = parseInt(req.query.page, 10) || 1;
+//     const limit = parseInt(req.query.limit, 10) || 10;
+//     const keyword = req.query.keyword || "";
+//     const sortBy = req.query.sortBy || "createdAt";
+//     const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
+//     const status = req.query.status;
+
+//     const query = {
+//       ...(keyword && {
+//         $or: [
+//           { propNo: { $regex: keyword, $options: "i" } },
+//           { propName: { $regex: keyword, $options: "i" } },
+//           { propDescription: { $regex: keyword, $options: "i" } },
+//         ],
+//       }),
+//       ...(status &&
+//         status === "isDeleted" && {
+//           "Status.isDeleted": true,
+//         }),
+//       ...(status &&
+//         status === "isArchived" && {
+//           "Status.isArchived": true,
+//         }),
+//     };
+
+//     const sortCriteria = {
+//       "Status.isDeleted": 1,
+//       "Status.isArchived": 1,
+//       [sortBy]: sortOrder,
+//     };
+//     const totalItems = await AssetsModel.countDocuments(query);
+//     const assets = await AssetsModel.find(query)
+//       .sort(sortCriteria)
+//       .skip((page - 1) * limit)
+//       .limit(limit)
+//       .populate({
+//         path: "inventory",
+//         populate: [
+//           {
+//             path: "issuanceId",
+//             model: "AssetsIssuance",
+//           },
+//           {
+//             path: "employeeId",
+//             model: "Employee",
+//             select: "-employeeImage",
+//           },
+//           {
+//             path: "history",
+//             populate: [
+//               {
+//                 path: "issuanceId",
+//                 model: "AssetsIssuance",
+//               },
+//               {
+//                 path: "employeeId",
+//                 model: "Employee",
+//                 select: "-employeeImage",
+//               },
+//             ],
+//           },
+//         ],
+//       });
+
+//     res.json({
+//       totalItems,
+//       totalPages: Math.ceil(totalItems / limit),
+//       currentPage: page,
+//       assets: assets,
+//     });
+//   } catch (error) {
+//     console.error("Error getting all Employee record", error);
+//     res.status(500).json({ message: "Internal server error" });
+//   }
+// };
+
+// Helper to populate issuance history and related employee
+
+
+const populateIssuanceHistory = () => ({
+  path: "issuanceId",
+  model: "AssetsIssuance",
+});
+
+// Helper to populate return history and related employee
+const populateReturnHistory = () => ({
+  path: "returnId",
+  model: "AssetsReturn",
+});
+
+// Helper to populate employee without image
+const populateEmployee = () => ({
+  path: "employeeId",
+  model: "Employee",
+  select: "-employeeImage",
+});
+
 const getAllAssetsRecords = async (req, res) => {
   try {
     await deleteLinkIdHistory();
@@ -101,7 +204,7 @@ const getAllAssetsRecords = async (req, res) => {
     const limit = parseInt(req.query.limit, 10) || 10;
     const keyword = req.query.keyword || "";
     const sortBy = req.query.sortBy || "createdAt";
-    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
+    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1; 
     const status = req.query.status;
 
     const query = {
@@ -112,14 +215,8 @@ const getAllAssetsRecords = async (req, res) => {
           { propDescription: { $regex: keyword, $options: "i" } },
         ],
       }),
-      ...(status &&
-        status === "isDeleted" && {
-          "Status.isDeleted": true,
-        }),
-      ...(status &&
-        status === "isArchived" && {
-          "Status.isArchived": true,
-        }),
+      ...(status === "isDeleted" && { "Status.isDeleted": true }),
+      ...(status === "isArchived" && { "Status.isArchived": true }),
     };
 
     const sortCriteria = {
@@ -127,7 +224,9 @@ const getAllAssetsRecords = async (req, res) => {
       "Status.isArchived": 1,
       [sortBy]: sortOrder,
     };
+
     const totalItems = await AssetsModel.countDocuments(query);
+
     const assets = await AssetsModel.find(query)
       .sort(sortCriteria)
       .skip((page - 1) * limit)
@@ -135,27 +234,15 @@ const getAllAssetsRecords = async (req, res) => {
       .populate({
         path: "inventory",
         populate: [
-          {
-            path: "issuanceId",
-            model: "AssetsIssuance",
-          },
-          {
-            path: "employeeId",
-            model: "Employee",
-            select: "-employeeImage",
-          },
+          populateIssuanceHistory(),
+          populateReturnHistory(),
+          populateEmployee(),
           {
             path: "history",
             populate: [
-              {
-                path: "issuanceId",
-                model: "AssetsIssuance",
-              },
-              {
-                path: "employeeId",
-                model: "Employee",
-                select: "-employeeImage",
-              },
+              populateIssuanceHistory(),
+              populateReturnHistory(),
+              populateEmployee(),
             ],
           },
         ],
@@ -165,13 +252,14 @@ const getAllAssetsRecords = async (req, res) => {
       totalItems,
       totalPages: Math.ceil(totalItems / limit),
       currentPage: page,
-      assets: assets,
+      assets,
     });
   } catch (error) {
-    console.error("Error getting all Employee record", error);
+    console.error("Error getting all assets records", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 
 
 const getAllAssetRecordsList = async (req, res) => {
