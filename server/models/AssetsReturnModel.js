@@ -17,8 +17,6 @@ const AssetsRecordSchema = new mongoose.Schema({
   unit: { type: String, required: false },
   description: { type: String, required: false },
   itemNo: { type: String, required: false },
-  useFullLife: { type: Number, required: false },
-  location: { type: String, required: false },
   amount: { type: Number, required: false, default: 0 },
 });
 
@@ -30,7 +28,10 @@ const AssetsReturnSchema = new mongoose.Schema(
     purpose: {
       type: String,
       required: true,
-      enum: ["Return", "Disposal", "Repair"],
+    },
+    dateReturned: {
+      type: Date,
+      required: true,
     },
     CreatedBy: { type: SignatoriesSchema, required: false },
     ReviewedBy: { type: SignatoriesSchema, required: false },
