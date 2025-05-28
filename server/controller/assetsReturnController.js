@@ -33,16 +33,19 @@ const handleReturnApproval = async (returnDoc) => {
     );
   }
 
-  await EmployeeModel.updateOne(
-    { _id: returnDoc.employeeId },
-    {
-      $pull: {
-        assetRecords: {
-          issuanceId: returnDoc.issuanceId,
-        },
-      },
-    }
-  );
+  // await EmployeeModel.updateOne(
+  //   { _id: returnDoc.employeeId },
+  //   {
+  //     $pull: {
+  //       assetRecords: {
+  //         assetId: { $in: returnDoc.assetRecords.map((r) => r.assetId) },
+  //         inventoryId: {
+  //           $in: returnDoc.assetRecords.map((r) => r.inventoryId),
+  //         },
+  //       },
+  //     },
+  //   }
+  // );
 };
 
 const handleReturnReservation = async (returnDoc) => {
@@ -70,7 +73,7 @@ const CleanAssetsReturnRecord = async () => {
       const isArchived = returnDoc.Status?.isArchived;
 
       const newStatus =
-        isDeleted || isArchived ? "Issued" : "Reserved for Return"; 
+        isDeleted || isArchived ? "Issued" : "Reserved for Return";
 
       for (let record of returnDoc.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -88,7 +91,6 @@ const CleanAssetsReturnRecord = async () => {
     console.error("Error cleaning/restoring return asset statuses:", error);
   }
 };
-
 
 const createAssetsReturn = async (req, res) => {
   try {
