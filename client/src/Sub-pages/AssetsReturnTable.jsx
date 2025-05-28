@@ -26,6 +26,7 @@ import showDialog from "../utils/showDialog";
 import assetsReturnApi from "../api/assetReturnApi";
 import AssetsReturnLogic from "../hooks/AssetsReturnLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
+import AssetsReturnModal from "../Pop-Up-Pages/AssetsReturnModal";
 
 const AssetsReturnTable = () => {
   const [page, setPage] = useState(1);
@@ -345,16 +346,16 @@ const AssetsReturnTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-        {/* {isAssetsIssuanceModalOpen && (
-          <AssetsIssuanceModal
+        {isAssetsReturnModalOpen && (
+          <AssetsReturnModal
             mode={modalMode}
-            isOpen={isAssetsIssuanceModalOpen}
+            isOpen={isAssetsReturnModalOpen}
             onClose={handleModalClose}
-            onSaveAssetIssuance={fetchIssuanceRecords}
-            assetsIssuanceData={selectedAssetIssuance}
+            onSaveAssetReturn={fetchReturnRecords}
+            assetsReturnData={selectedAssetsReturn}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
 
         {/* {isPARModalOpen && (
           <PARModal
