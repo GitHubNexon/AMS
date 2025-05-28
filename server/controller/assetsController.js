@@ -1,6 +1,7 @@
 const AssetsModel = require("../models/AssetsModel");
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsReturnModel = require("../models/AssetsReturnModel");
+const EmployeeModel = require("../models/employeeModel");
 
 const createAssetsRecord = async (req, res) => {
   try {
@@ -42,7 +43,6 @@ const updateAssetsRecord = async (req, res) => {
 
 const deleteLinkIdHistory = async () => {
   try {
-
     const validCheckers = {
       issuanceId: AssetsIssuanceModel,
       returnId: AssetsReturnModel,
@@ -177,7 +177,6 @@ const deleteLinkIdHistory = async () => {
 
 // Helper to populate issuance history and related employee
 
-
 const populateIssuanceHistory = () => ({
   path: "issuanceId",
   model: "AssetsIssuance",
@@ -204,7 +203,7 @@ const getAllAssetsRecords = async (req, res) => {
     const limit = parseInt(req.query.limit, 10) || 10;
     const keyword = req.query.keyword || "";
     const sortBy = req.query.sortBy || "createdAt";
-    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1; 
+    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
     const status = req.query.status;
 
     const query = {
@@ -260,15 +259,13 @@ const getAllAssetsRecords = async (req, res) => {
   }
 };
 
-
-
 const getAllAssetRecordsList = async (req, res) => {
   try {
     const excludedStatuses = ["Issued", "Dispose", "under-repair", "Reserved"];
-    
+
     const query = {
-      ...(req.query.isDeleted === 'true' && { "Status.isDeleted": true }),
-      ...(req.query.isArchived === 'true' && { "Status.isArchived": true }),
+      ...(req.query.isDeleted === "true" && { "Status.isDeleted": true }),
+      ...(req.query.isArchived === "true" && { "Status.isArchived": true }),
     };
 
     const assets = await AssetsModel.find(query);
@@ -288,7 +285,6 @@ const getAllAssetRecordsList = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
 
 const deleteAssetsRecord = async (req, res) => {
   try {
@@ -432,6 +428,27 @@ const undoArchiveAssetRecord = async (req, res) => {
   }
 };
 
+const getEmployeeAssetsRecords = async (req, res) => {
+  try {
+    const { employeeId } = req.params;
+
+    const employee = await EmployeeModel.findById(employeeId)
+      .populate("assetRecords.assetId") 
+      .exec();
+
+    if (!employee) {
+      return res.status(404).json({ message: "Employee not found" });
+    }
+
+    return res.status(200).json({
+      assetRecords: employee.assetRecords,
+    });
+  } catch (error) {
+    console.error("Error fetching asset records:", error);
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
 module.exports = {
   createAssetsRecord,
   updateAssetsRecord,
@@ -441,4 +458,5 @@ module.exports = {
   undoDeleteAssetRecord,
   undoArchiveAssetRecord,
   getAllAssetRecordsList,
+  getEmployeeAssetsRecords,
 };

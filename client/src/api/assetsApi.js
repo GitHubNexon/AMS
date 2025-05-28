@@ -91,6 +91,18 @@ const assetsApi = {
       throw error;
     }
   },
+
+  getEmployeeAssetsRecords: async (employeeId) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/assets/employee-assets/${employeeId}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching employee asset records:", error.message);
+      throw error;
+    }
+  },
 };
 
 export default assetsApi;

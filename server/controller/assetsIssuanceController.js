@@ -43,7 +43,7 @@ const handleIssuanceApproval = async (issuance) => {
           dateReleased: issuance.dateReleased,
           issuedBy: issuance.CreatedBy,
           assetDetails: issuance.assetRecords,
-          assetRecords: issuance.assetRecords,
+          // assetRecords: issuance.assetRecords,
         },
       },
     }

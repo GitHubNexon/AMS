@@ -29,4 +29,6 @@ router.post("/undo-delete/:id", AssetsController.undoDeleteAssetRecord);
 //undo archive an asset record
 router.post("/undo-archive/:id", AssetsController.undoArchiveAssetRecord);
 
+router.get("/employee-assets/:employeeId", AssetsController.getEmployeeAssetsRecords);
+
 module.exports = router;

@@ -70,7 +70,7 @@ const CleanAssetsReturnRecord = async () => {
       const isArchived = returnDoc.Status?.isArchived;
 
       const newStatus =
-        isDeleted || isArchived ? "Issued" : "Reserved for Return"; // Or whatever default applies
+        isDeleted || isArchived ? "Issued" : "Reserved for Return"; 
 
       for (let record of returnDoc.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -88,6 +88,7 @@ const CleanAssetsReturnRecord = async () => {
     console.error("Error cleaning/restoring return asset statuses:", error);
   }
 };
+
 
 const createAssetsReturn = async (req, res) => {
   try {
