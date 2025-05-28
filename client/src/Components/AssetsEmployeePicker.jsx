@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Select from "react-select";
 import employeeApi from "../api/employeeApi";
 import assetsApi from "../api/assetsApi";
 
 // EmployeePicker component
-const EmployeePicker = ({ onSelect, value }) => {
+const EmployeePicker = ({ onSelect, value, isDisabled }) => {
   const [options, setOptions] = useState([]);
   const [selected, setSelected] = useState(null);
 
@@ -46,6 +46,7 @@ const EmployeePicker = ({ onSelect, value }) => {
         onChange={handleChange}
         placeholder="Search employee..."
         isClearable
+        isDisabled={isDisabled}
       />
     </div>
   );
@@ -153,10 +154,63 @@ const AssetDetailsPicker = ({ assetDetails = [], onSelect, value }) => {
   );
 };
 
-const AssetsEmployeePicker = () => {
+const AssetsEmployeePicker = ({
+  value,
+  onSelect,
+  onEmployeeSelect,
+  onCancelEmployee,
+  lockedEmployeeId,
+}) => {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [selectedAssetRecord, setSelectedAssetRecord] = useState(null);
   const [selectedAssetDetail, setSelectedAssetDetail] = useState(null);
+  const [isEmployeeLocked, setIsEmployeeLocked] = useState(!!lockedEmployeeId);
+
+  // Sync with value prop (for edit mode)
+  useEffect(() => {
+    if (value) {
+      setSelectedAssetDetail(value);
+    } else {
+      setSelectedAssetDetail(null);
+    }
+  }, [value]);
+
+  // Fetch employee details when lockedEmployeeId changes
+  useEffect(() => {
+    if (lockedEmployeeId) {
+      const fetchEmployee = async () => {
+        try {
+          const res = await employeeApi.getAllEmployeeRecord();
+          const employee = res?.employees?.find(
+            (emp) => emp._id === lockedEmployeeId
+          );
+          if (employee) {
+            const employeeData = {
+              _id: employee._id,
+              employeeName: employee.employeeName,
+              employeePosition: employee.employeePosition,
+            };
+            setSelectedEmployee(employeeData);
+            // Only call onEmployeeSelect if not already locked to avoid loop
+            if (!isEmployeeLocked && onEmployeeSelect) {
+              onEmployeeSelect(employeeData);
+            }
+            setIsEmployeeLocked(true);
+          } else {
+            console.error("Employee not found for ID:", lockedEmployeeId);
+            setIsEmployeeLocked(false);
+          }
+        } catch (err) {
+          console.error("Error fetching employee:", err);
+          setIsEmployeeLocked(false);
+        }
+      };
+      fetchEmployee();
+    } else {
+      setSelectedEmployee(null);
+      setIsEmployeeLocked(false);
+    }
+  }, [lockedEmployeeId, isEmployeeLocked, onEmployeeSelect]);
 
   // Reset dependent pickers when employee changes
   useEffect(() => {
@@ -164,48 +218,112 @@ const AssetsEmployeePicker = () => {
     setSelectedAssetDetail(null);
   }, [selectedEmployee]);
 
+  // Reset asset detail when asset record changes
   useEffect(() => {
     setSelectedAssetDetail(null);
   }, [selectedAssetRecord]);
 
+  // Call onSelect when an asset detail is selected
   useEffect(() => {
-    console.log("Selected Employee:", selectedEmployee);
-  }, [selectedEmployee]);
-
-  useEffect(() => {
-    console.log("Selected Asset Record:", selectedAssetRecord);
-  }, [selectedAssetRecord]);
-
-  useEffect(() => {
-    if (selectedAssetDetail) {
-      console.log("Selected Asset Detail:", selectedAssetDetail);
-      console.log("assetId =", selectedAssetDetail.assetId);
-      console.log("inventoryId =", selectedAssetDetail.inventoryId);
-      console.log("quantity =", selectedAssetDetail.quantity);
-      console.log("unit =", selectedAssetDetail.unit);
-      console.log("description =", selectedAssetDetail.description);
-      console.log("itemNo =", selectedAssetDetail.itemNo);
-      console.log("amount =", selectedAssetDetail.amount);
+    if (selectedAssetDetail && onSelect) {
+      onSelect(selectedAssetDetail);
     }
-  }, [selectedAssetDetail]);
+  }, [selectedAssetDetail, onSelect]);
+
+  // Handle employee selection from picker
+  const handleEmployeePickerSelect = useCallback(
+    (employee) => {
+      setSelectedEmployee(employee);
+      if (employee && onEmployeeSelect) {
+        onEmployeeSelect({
+          _id: employee._id,
+          employeeName: employee.employeeName,
+          employeePosition: employee.employeePosition,
+        });
+      }
+    },
+    [onEmployeeSelect]
+  );
+
+  const handleConfirmEmployee = () => {
+    if (selectedEmployee) {
+      setIsEmployeeLocked(true);
+    }
+  };
+
+  const handleCancelEmployee = () => {
+    setIsEmployeeLocked(false);
+    setSelectedEmployee(null);
+    setSelectedAssetRecord(null);
+    setSelectedAssetDetail(null);
+    if (onCancelEmployee) {
+      onCancelEmployee();
+    }
+  };
 
   return (
-    <div className="flex flex-row gap-4 max-w-full  ">
-      <EmployeePicker onSelect={setSelectedEmployee} value={selectedEmployee} />
-      <AssetRecordsPicker
-        employeeId={selectedEmployee?._id}
-        onSelect={setSelectedAssetRecord}
-        value={selectedAssetRecord}
-      />
-      {selectedAssetRecord?.assetDetails && (
-        <AssetDetailsPicker
-          assetDetails={selectedAssetRecord.assetDetails}
-          onSelect={setSelectedAssetDetail}
-          value={selectedAssetDetail}
-        />
+    <div className="flex flex-col gap-4 max-w-full">
+      <div className="flex flex-row gap-4">
+        {!isEmployeeLocked && (
+          <EmployeePicker
+            onSelect={handleEmployeePickerSelect}
+            value={selectedEmployee}
+            isDisabled={isEmployeeLocked}
+          />
+        )}
+        {isEmployeeLocked && selectedEmployee && (
+          <div className="text-[0.6rem]">
+            <label className="text-gray-700 mb-1 block">
+              Selected Employee
+            </label>
+            <div className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500">
+              {selectedEmployee.employeeName} -{" "}
+              {selectedEmployee.employeePosition}
+            </div>
+          </div>
+        )}
+        {selectedEmployee && (
+          <AssetRecordsPicker
+            employeeId={selectedEmployee._id}
+            onSelect={setSelectedAssetRecord}
+            value={selectedAssetRecord}
+          />
+        )}
+        {selectedAssetRecord?.assetDetails && (
+          <AssetDetailsPicker
+            assetDetails={selectedAssetRecord.assetDetails}
+            onSelect={setSelectedAssetDetail}
+            value={selectedAssetDetail}
+          />
+        )}
+      </div>
+      {selectedEmployee && !isEmployeeLocked && (
+        <div className="flex gap-2">
+          <button
+            type="button"
+            className="flex items-center gap-2 text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+            onClick={handleConfirmEmployee}
+          >
+            Save Employee
+          </button>
+          <button
+            type="button"
+            className="flex items-center gap-2 text-sm bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+            onClick={handleCancelEmployee}
+          >
+            Cancel
+          </button>
+        </div>
       )}
-
-     
+      {isEmployeeLocked && (
+        <button
+          type="button"
+          className="flex items-center gap-2 text-sm bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+          onClick={handleCancelEmployee}
+        >
+          Change Employee
+        </button>
+      )}
     </div>
   );
 };

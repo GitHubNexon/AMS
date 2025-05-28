@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { FaTimes, FaPlus, FaTrash } from "react-icons/fa";
 import showDialog from "../utils/showDialog";
 import { showToast } from "../utils/toastNotifications";
 import moment from "moment";
 import SignatoriesPicker from "../Components/SignatoriesPicker";
+import AssetsEmployeePicker from "../Components/AssetsEmployeePicker";
 import { useAuth } from "../context/AuthContext";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
+import { numberToCurrencyString } from "../helper/helper";
 import assetReturnApi from "./../api/assetReturnApi";
 
 const AssetsReturnModal = ({
@@ -17,6 +18,8 @@ const AssetsReturnModal = ({
 }) => {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState("return-info");
+  const [selectedAssetDetail, setSelectedAssetDetail] = useState(null);
+  const [lockedEmployeeId, setLockedEmployeeId] = useState(null);
 
   const [formData, setFormData] = useState({
     docType: "",
@@ -38,6 +41,33 @@ const AssetsReturnModal = ({
     ApprovedBy1: { name: "", position: "", _id: "" },
   });
 
+  // Populate formData in edit mode
+  useEffect(() => {
+    if (mode === "edit" && assetsReturnData) {
+      const {
+        dateReturned,
+        assetRecords = [],
+        employeeId = "",
+        employeeName = "",
+        employeePosition = "",
+        ...rest
+      } = assetsReturnData;
+
+      setFormData((prev) => ({
+        ...prev,
+        ...rest,
+        assetRecords,
+        employeeId,
+        employeeName,
+        employeePosition,
+        dateReturned: dateReturned
+          ? new Date(dateReturned).toISOString().split("T")[0]
+          : moment().format("YYYY-MM-DD"),
+      }));
+      setLockedEmployeeId(employeeId || null);
+    }
+  }, [mode, assetsReturnData]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -46,9 +76,89 @@ const AssetsReturnModal = ({
     }));
   };
 
+  const handleUserSelect = (user, field) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: { name: user.name, position: user.userType, _id: user._id },
+    }));
+  };
+
+  // Handle employee selection
+  const handleEmployeeSelect = useCallback((employee) => {
+    setFormData((prev) => ({
+      ...prev,
+      employeeId: employee._id,
+      employeeName: employee.employeeName,
+      employeePosition: employee.employeePosition,
+    }));
+    setLockedEmployeeId(employee._id);
+  }, []);
+
+  // Handle canceling employee selection
+  const handleCancelEmployee = useCallback(() => {
+    setLockedEmployeeId(null);
+    setFormData((prev) => ({
+      ...prev,
+      assetRecords: [],
+      employeeId: "",
+      employeeName: "",
+      employeePosition: "",
+    }));
+  }, []);
+
+  // Handle adding a new asset record
+  const handleAddRecord = () => {
+    if (!selectedAssetDetail) {
+      showToast("Please select an asset detail to add.", "warning");
+      return;
+    }
+
+    const alreadyExists = formData.assetRecords.some(
+      (record) =>
+        record.assetId === selectedAssetDetail.assetId &&
+        record.inventoryId === selectedAssetDetail.inventoryId
+    );
+
+    if (alreadyExists) {
+      showToast("This asset is already added.", "warning");
+      return;
+    }
+
+    const newRecord = {
+      assetId: selectedAssetDetail.assetId,
+      inventoryId: selectedAssetDetail.inventoryId,
+      quantity: selectedAssetDetail.quantity || 1,
+      unit: selectedAssetDetail.unit,
+      description: selectedAssetDetail.description,
+      itemNo: selectedAssetDetail.itemNo,
+      amount: selectedAssetDetail.amount,
+    };
+
+    setFormData((prev) => ({
+      ...prev,
+      assetRecords: [...prev.assetRecords, newRecord],
+    }));
+
+    setSelectedAssetDetail(null);
+  };
+
+  // Handle row click to populate AssetsEmployeePicker for editing
+  const handleRowClick = (record) => {
+    setSelectedAssetDetail({
+      assetId: record.assetId,
+      inventoryId: record.inventoryId,
+      quantity: record.quantity,
+      unit: record.unit,
+      description: record.description,
+      itemNo: record.itemNo,
+      amount: record.amount,
+    });
+  };
+
   const requiredFields = [
-    { key: "parNo", message: "Par No is required." },
-    { key: "fundCluster", message: "fund Cluster is required." },
+    { key: "parNo", message: "PAR No is required." },
+    { key: "fundCluster", message: "Fund Cluster is required." },
+    { key: "employeeId", message: "Employee selection is required." },
   ];
 
   const validateForm = () => {
@@ -67,7 +177,7 @@ const AssetsReturnModal = ({
         return;
       }
 
-      let cleanedRecords = [...formData.assetRecords];
+      const cleanedRecords = [...formData.assetRecords];
 
       if (cleanedRecords.length === 0) {
         return showToast("No valid assets to save.", "warning");
@@ -81,7 +191,10 @@ const AssetsReturnModal = ({
 
       if (mode === "edit") {
         const changedData = Object.keys(dataToSubmit).reduce((acc, key) => {
-          if (dataToSubmit[key] !== assetsReturnData[key]) {
+          if (
+            JSON.stringify(dataToSubmit[key]) !==
+            JSON.stringify(assetsReturnData[key])
+          ) {
             acc[key] = dataToSubmit[key];
           }
           return acc;
@@ -96,9 +209,11 @@ const AssetsReturnModal = ({
           assetsReturnData._id,
           changedData
         );
+        console.log("Updating Assets Return Record:", changedData);
         showToast("Assets updated successfully!", "success");
       } else {
         await assetReturnApi.createAssetsReturnRecord(dataToSubmit);
+        console.log("Creating Assets Return Record:", dataToSubmit);
         showToast("Assets recorded successfully!", "success");
       }
 
@@ -113,11 +228,11 @@ const AssetsReturnModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50 ">
-      <div className="bg-white p-5 rounded-lg w-full m-10 ">
+    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
+      <div className="bg-white p-5 rounded-lg w-full m-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
-            {mode === "edit" ? "Update Returning " : "Create Returning"}
+            {mode === "edit" ? "Update Returning" : "Create Returning"}
           </h2>
           <button
             onClick={async () => {
@@ -159,7 +274,7 @@ const AssetsReturnModal = ({
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className={"space-y-4 overflow-scroll  p-5"}
+          className="space-y-4 overflow-scroll p-5"
         >
           {activeTab === "return-info" && (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 text-[0.7em]">
@@ -199,6 +314,19 @@ const AssetsReturnModal = ({
                   id="entityName"
                   name="entityName"
                   value={formData.entityName}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="purpose" className="text-gray-700">
+                  Purpose
+                </label>
+                <input
+                  type="text"
+                  id="purpose"
+                  name="purpose"
+                  value={formData.purpose}
                   onChange={handleChange}
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
@@ -244,7 +372,69 @@ const AssetsReturnModal = ({
             </div>
           )}
 
-          {activeTab === "inventory" && <div className="space-y-4"></div>}
+          {activeTab === "inventory" && (
+            <div className="space-y-4">
+              <AssetsEmployeePicker
+                value={selectedAssetDetail}
+                onSelect={setSelectedAssetDetail}
+                onEmployeeSelect={handleEmployeeSelect}
+                onCancelEmployee={handleCancelEmployee}
+                lockedEmployeeId={lockedEmployeeId}
+              />
+
+              <button
+                type="button"
+                className="flex items-center gap-2 text-sm bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+                onClick={handleAddRecord}
+              >
+                <FaPlus /> Add Record
+              </button>
+
+              <table className="w-full text-xs mt-4 border">
+                <thead>
+                  <tr>
+                    <th>Unit</th>
+                    <th>Description</th>
+                    <th>Item No</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {formData.assetRecords.map((record, index) => (
+                    <tr
+                      key={index}
+                      className="cursor-pointer hover:bg-gray-100"
+                      onClick={() => handleRowClick(record)}
+                      title="Click to edit"
+                    >
+                      <td>{record.unit}</td>
+                      <td>{record.description}</td>
+                      <td>{record.itemNo}</td>
+                      <td>{record.quantity}</td>
+                      <td>{numberToCurrencyString(record.amount)}</td>
+                      <td>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFormData((prev) => ({
+                              ...prev,
+                              assetRecords: prev.assetRecords.filter(
+                                (_, i) => i !== index
+                              ),
+                            }));
+                          }}
+                        >
+                          <FaTrash className="text-red-500" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </form>
         <div className="flex justify-end gap-2 mt-4">
           <button
@@ -254,7 +444,6 @@ const AssetsReturnModal = ({
           >
             {mode === "edit" ? "Update Draft" : "Save as Draft"}
           </button>
-
           <button
             type="button"
             onClick={() => handleSubmit("Approved")}
