@@ -3,7 +3,7 @@ import AssetsTable from "../Sub-pages/AssetsTable";
 import EmployeesTable from "../Sub-pages/EmployeesTable";
 import AssetIssuanceTable from "../Sub-pages/AssetIssuanceTable";
 import AssetsReturnTable from "../Sub-pages/AssetsReturnTable";
-
+import AssetOverView from "../Sub-pages/AssetOverView";
 const TABS = [
   "Overview",
   "Asset Records",
@@ -34,7 +34,11 @@ const AssetsNav = () => {
       </ul>
 
       <div className="p-4">
-        {activeTab === "Overview" && <div>Overview Content</div>}
+        {activeTab === "Overview" && (
+          <div>
+            <AssetOverView />
+          </div>
+        )}
         {activeTab === "Asset Records" && (
           <div>
             <AssetsTable />{" "}

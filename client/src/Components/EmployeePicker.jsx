@@ -19,7 +19,6 @@ const EmployeePicker = ({ onSelect, value }) => {
 
         setOptions(mapped);
 
-        // ✨ Set initial selected if `value` is passed (edit mode)
         if (value) {
           const matched = mapped.find((opt) => opt.value._id === value._id);
           setSelected(matched || null);
