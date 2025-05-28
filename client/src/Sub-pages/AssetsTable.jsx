@@ -19,6 +19,7 @@ import {
   FaFolder,
   FaTrash,
   FaHistory,
+  FaTimes,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
@@ -36,38 +37,58 @@ const ExpandedRowComponent = ({ data }) => {
   };
 
   const renderHistoryTable = (history) => (
-    <table className="min-w-full mt-2 border border-gray-300 text-xs text-left text-gray-700">
-      <thead className="bg-gray-100">
-        <tr>
-          <th className="px-2 py-1 border">Date</th>
-          <th className="px-2 py-1 border">Transaction</th>
-          <th className="px-2 py-1 border">Issued By</th>
-          <th className="px-2 py-1 border">Employee</th>
-          <th className="px-2 py-1 border">Fund Cluster</th>
-          <th className="px-2 py-1 border">Entity Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        {history.map((entry, i) => (
-          <tr key={i} className="hover:bg-gray-50">
-            <td className="px-2 py-1 border">
-              {formatReadableDate(entry.date)}
-            </td>
-            <td className="px-2 py-1 border">{entry.transaction}</td>
-            <td className="px-2 py-1 border">
-              {entry.issuedBy
-                ? `${entry.issuedBy.name} - ${entry.issuedBy.position}`
-                : "N/A"}
-            </td>
-            <td className="px-2 py-1 border">
-              {entry.employeeId?.employeeName || "N/A"}
-            </td>
-            <td className="px-2 py-1 border">{entry.fundCluster || "N/A"}</td>
-            <td className="px-2 py-1 border">{entry.entityName || "N/A"}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="flex flex-col">
+      <div className="flex justify-between items-center mb-4">
+        <h4 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+          <FaHistory className="text-blue-500" /> History Details
+        </h4>
+        <button
+          onClick={() => setOpenHistoryIndex(null)}
+          className="text-gray-600 hover:text-gray-800"
+          title="Close History"
+        >
+          <FaTimes size={20} />
+        </button>
+      </div>
+      <div className="overflow-auto">
+        <table className="min-w-full border border-gray-300 text-xs text-left text-gray-700">
+          <thead className="bg-gray-100 sticky top-0">
+            <tr>
+              <th className="px-2 py-1 border">Date</th>
+              <th className="px-2 py-1 border">Transaction</th>
+              <th className="px-2 py-1 border">Issued By</th>
+              <th className="px-2 py-1 border">Employee</th>
+              <th className="px-2 py-1 border">Fund Cluster</th>
+              <th className="px-2 py-1 border">Entity Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {history.map((entry, i) => (
+              <tr key={i} className="hover:bg-gray-50">
+                <td className="px-2 py-1 border">
+                  {formatReadableDate(entry.date)}
+                </td>
+                <td className="px-2 py-1 border">{entry.transaction}</td>
+                <td className="px-2 py-1 border">
+                  {entry.issuedBy
+                    ? `${entry.issuedBy.name} - ${entry.issuedBy.position}`
+                    : "N/A"}
+                </td>
+                <td className="px-2 py-1 border">
+                  {entry.employeeId?.employeeName || "N/A"}
+                </td>
+                <td className="px-2 py-1 border">
+                  {entry.fundCluster || "N/A"}
+                </td>
+                <td className="px-2 py-1 border">
+                  {entry.entityName || "N/A"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 
   return (
@@ -191,47 +212,41 @@ const ExpandedRowComponent = ({ data }) => {
                   </thead>
                   <tbody>
                     {data.inventory.map((inv, index) => (
-                      <React.Fragment key={inv._id}>
-                        <tr className="hover:bg-gray-50">
-                          <td className="px-3 py-2 border-b">
-                            {inv.invNo || "N/A"}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {inv.invName || "N/A"}
-                          </td>
-                          <td className="px-3 py-2 border-b">
-                            {inv.code || "N/A"}
-                          </td>
-                          <td className="px-3 py-2 border-b flex items-center gap-2">
-                            {inv.status || "N/A"}
-                            {inv.history && inv.history.length > 0 && (
-                              <button
-                                onClick={() => toggleHistory(index)}
-                                className="text-blue-600 hover:text-blue-800 ml-2"
-                                title="Toggle History"
-                              >
-                                <FaHistory />
-                              </button>
-                            )}
-                          </td>
-                        </tr>
-                        {openHistoryIndex === index && inv.history && (
-                          <tr>
-                            <td
-                              colSpan="4"
-                              className="px-3 py-2 border-b bg-gray-50"
+                      <tr key={inv._id} className="hover:bg-gray-50">
+                        <td className="px-3 py-2 border-b">
+                          {inv.invNo || "N/A"}
+                        </td>
+                        <td className="px-3 py-2 border-b">
+                          {inv.invName || "N/A"}
+                        </td>
+                        <td className="px-3 py-2 border-b">
+                          {inv.code || "N/A"}
+                        </td>
+                        <td className="px-3 py-2 border-b flex items-center gap-2">
+                          {inv.status || "N/A"}
+                          {inv.history && inv.history.length > 0 && (
+                            <button
+                              onClick={() => toggleHistory(index)}
+                              className="text-blue-600 hover:text-blue-800 ml-2"
+                              title="View History"
                             >
-                              {renderHistoryTable(inv.history)}
-                            </td>
-                          </tr>
-                        )}
-                      </React.Fragment>
+                              <FaHistory />
+                            </button>
+                          )}
+                        </td>
+                      </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             </div>
           )}
+          {openHistoryIndex !== null &&
+            data.inventory[openHistoryIndex]?.history && (
+              <div>
+                {renderHistoryTable(data.inventory[openHistoryIndex].history)}
+              </div>
+            )}
         </div>
       </div>
     </div>

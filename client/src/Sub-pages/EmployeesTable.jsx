@@ -162,7 +162,7 @@ const ExpandedRowComponent = ({ data }) => {
         <div className="mt-6">
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-bold text-gray-800">
-              Asset Records ({data.assetRecords.length})
+              Current Asset Records ({data.assetRecords.length})
             </h3>
             <button
               onClick={() => setShowAssetRecords(!showAssetRecords)}
