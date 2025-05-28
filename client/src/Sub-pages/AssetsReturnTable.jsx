@@ -23,31 +23,27 @@ import {
 import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
-import assetIssuanceApi from "../api/assetIssuanceApi";
-import AssetsLogic from "../hooks/AssetsLogic";
-import AssetIssuanceLogic from "../hooks/AssetIssuanceLogic";
+import assetsReturnApi from "../api/assetReturnApi";
+import AssetsReturnLogic from "../hooks/AssetsReturnLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsIssuanceModal";
-import PARModal from "../Pop-Up-Pages/PARModal";
 
-const AssetIssuanceTable = () => {
+const AssetsReturnTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetIssuance, setSelectedAssetIssuance] = useState([]);
-  const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] =
-    useState(false);
-  const [modalMode, setModalMode] = useState("add");
+  const [selectedAssetsReturn, setSelectedAssetsReturn] = useState([]);
+  const [isAssetsReturnModalOpen, setIsAssetsReturnModalOpen] = useState(false);
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
+  const [modalMode, setModalMode] = useState("add");
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
   };
 
   const {
-    fetchIssuanceRecords,
-    setIssuanceRecords,
-    issuanceRecords,
+    fetchReturnRecords,
+    setReturnRecords,
+    returnRecords,
     totalItems,
     totalPages,
     loading,
@@ -60,15 +56,15 @@ const AssetIssuanceTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = AssetIssuanceLogic(page, limit, status);
+  } = AssetsReturnLogic(page, limit, status);
 
   function refreshTable() {
-    fetchIssuanceRecords();
+    fetchReturnRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchIssuanceRecords();
+    fetchReturnRecords();
   };
 
   useEffect(() => {
@@ -80,22 +76,22 @@ const AssetIssuanceTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsIssuanceModalOpen(true);
+    setIsAssetsReturnModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsIssuanceModalOpen(false);
-    setSelectedAssetIssuance(null);
+    setIsAssetsReturnModalOpen(false);
+    setSelectedAssetsReturn(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetIssuance(row);
+    setSelectedAssetsReturn(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetIssuance(null);
+    setSelectedAssetsReturn(null);
   };
 
   const handleActionButtons = async ({
@@ -113,7 +109,7 @@ const AssetIssuanceTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchIssuanceRecords?.();
+        fetchReturnRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -127,7 +123,7 @@ const AssetIssuanceTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetIssuanceApi.deleteAssetsIssuanceRecord,
+      apiMethod: assetsReturnApi.deleteAssetsReturnRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -137,7 +133,7 @@ const AssetIssuanceTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetIssuanceApi.undoDeleteAssetsIssuanceRecord,
+      apiMethod: assetsReturnApi.undoDeleteAssetsReturnRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -146,7 +142,7 @@ const AssetIssuanceTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetIssuanceApi.archiveAssetsIssuanceRecord,
+      apiMethod: assetsReturnApi.archiveAssetsReturnRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -156,18 +152,18 @@ const AssetIssuanceTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetIssuanceApi.undoArchiveAssetsIssuanceRecord,
+      apiMethod: assetsReturnApi.undoArchiveAssetsReturnRecord,
     });
 
   const handleFetchLatest = async () => {
-    fetchIssuanceRecords();
+    fetchReturnRecords();
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (issuanceRecords) => {
+  const handleModalOpenForEdit = (returnRecords) => {
     setModalMode("edit");
-    setSelectedAssetIssuance(issuanceRecords);
-    setIsAssetsIssuanceModalOpen(true);
+    setSelectedAssetsReturn(returnRecords);
+    setIsAssetsReturnModalOpen(true);
   };
 
   const columns = [
@@ -189,14 +185,9 @@ const AssetIssuanceTable = () => {
       width: "120px",
     },
     {
-      name: "Date Acquired",
+      name: "Date Returned",
       selector: (row) =>
-        row.dateAcquired ? formatReadableDate(row.dateAcquired) : "No Date Yet",
-    },
-    {
-      name: "Date Released",
-      selector: (row) =>
-        row.dateReleased ? formatReadableDate(row.dateReleased) : "No Date Yet",
+        row.dateReturned ? formatReadableDate(row.dateReturned) : "No Date Yet",
     },
     {
       name: "Employee Name",
@@ -224,7 +215,7 @@ const AssetIssuanceTable = () => {
               <FaEye size={16} />
             </button>
             <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-              View PAR FORM
+              View
             </span>
           </div>
           {!row.Status?.isDeleted &&
@@ -269,30 +260,30 @@ const AssetIssuanceTable = () => {
           ) : null}
 
           {/* {row.Status?.isArchived ? (
-            <div className="group relative">
-              <button
-                onClick={() => handleUndoArchiveEntry(row._id)}
-                className="text-white bg-yellow-600 p-2 rounded-md"
-              >
-                <FaUndo size={16} />
-              </button>
-              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                Undo Archive
-              </span>
-            </div>
-          ) : !row.Status?.isDeleted ? (
-            <div className="group relative">
-              <button
-                onClick={() => handleArchiveEntry(row._id)}
-                className="text-white bg-orange-600 p-2 rounded-md"
-              >
-                <FaArchive size={16} />
-              </button>
-              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                Archive
-              </span>
-            </div>
-          ) : null} */}
+              <div className="group relative">
+                <button
+                  onClick={() => handleUndoArchiveEntry(row._id)}
+                  className="text-white bg-yellow-600 p-2 rounded-md"
+                >
+                  <FaUndo size={16} />
+                </button>
+                <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                  Undo Archive
+                </span>
+              </div>
+            ) : !row.Status?.isDeleted ? (
+              <div className="group relative">
+                <button
+                  onClick={() => handleArchiveEntry(row._id)}
+                  className="text-white bg-orange-600 p-2 rounded-md"
+                >
+                  <FaArchive size={16} />
+                </button>
+                <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                  Archive
+                </span>
+              </div>
+            ) : null} */}
         </div>
       ),
     },
@@ -302,7 +293,7 @@ const AssetIssuanceTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Issuance Records </h1>
+          <h1 className="font-bold">Assets Return Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -340,7 +331,7 @@ const AssetIssuanceTable = () => {
 
         <DataTable
           columns={columns}
-          data={issuanceRecords}
+          data={returnRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -354,7 +345,7 @@ const AssetIssuanceTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-        {isAssetsIssuanceModalOpen && (
+        {/* {isAssetsIssuanceModalOpen && (
           <AssetsIssuanceModal
             mode={modalMode}
             isOpen={isAssetsIssuanceModalOpen}
@@ -363,18 +354,18 @@ const AssetIssuanceTable = () => {
             assetsIssuanceData={selectedAssetIssuance}
             refreshTable={refreshTable}
           />
-        )}
+        )} */}
 
-        {isPARModalOpen && (
+        {/* {isPARModalOpen && (
           <PARModal
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
             employeeAssetsData={selectedAssetIssuance}
           />
-        )}
+        )} */}
       </div>
     </>
   );
 };
 
-export default AssetIssuanceTable;
+export default AssetsReturnTable;

@@ -190,8 +190,8 @@ const getAllAssetsReturnRecords = async (req, res) => {
       "Status.isArchived": 1,
       [sortBy]: sortOrder,
     };
-    const totalItems = await AssetsIssuanceModel.countDocuments(query);
-    const returnRecords = await AssetsIssuanceModel.find(query)
+    const totalItems = await AssetsReturnModel.countDocuments(query);
+    const returnRecords = await AssetsReturnModel.find(query)
       .sort(sortCriteria)
       .skip((page - 1) * limit)
       .limit(limit);
