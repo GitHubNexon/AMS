@@ -4,6 +4,62 @@ const EmployeeModel = require("../models/employeeModel");
 const AssetsReturnModel = require("../models/AssetsReturnModel");
 const mongoose = require("mongoose");
 
+// const handleReturnApproval = async (returnDoc) => {
+//   for (let record of returnDoc.assetRecords) {
+//     const asset = await AssetsModel.findOne({ _id: record.assetId });
+//     if (!asset) {
+//       throw new Error(`Asset with ID ${record.assetId} not found`);
+//     }
+
+//     const historyData = {
+//       parNo: returnDoc.parNo,
+//       fundCluster: returnDoc.fundCluster,
+//       entityName: returnDoc.entityName,
+//       date: returnDoc.createdAt,
+//       transaction: "Return",
+//       returnId: returnDoc._id,
+//       employeeId: returnDoc.employeeId,
+//       dateReturned: returnDoc.dateReturned,
+//       issuedBy: returnDoc.CreatedBy,
+//       assetRecords: returnDoc.assetRecords,
+//     };
+
+//     await AssetsModel.updateOne(
+//       { _id: record.assetId, "inventory._id": record.inventoryId },
+//       {
+//         $push: { "inventory.$.history": historyData },
+//         $set: { "inventory.$.status": "Available" },
+//       }
+//     );
+//   }
+
+//   const assetDetailIdsToRemove = returnDoc.assetRecords.map((r) =>
+//     mongoose.Types.ObjectId(r.inventoryId)
+//   );
+
+//   await EmployeeModel.updateOne(
+//     { _id: returnDoc.employeeId },
+//     {
+//       $pull: {
+//         "assetRecords.$[record].assetDetails": {
+//           inventoryId: { $in: assetDetailIdsToRemove },
+//         },
+//       },
+//     },
+//     {
+//       arrayFilters: [
+//         {
+//           "record.assetDetails": {
+//             $elemMatch: {
+//               inventoryId: { $in: assetDetailIdsToRemove },
+//             },
+//           },
+//         },
+//       ],
+//     }
+//   );
+// };
+
 const handleReturnApproval = async (returnDoc) => {
   for (let record of returnDoc.assetRecords) {
     const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -33,19 +89,44 @@ const handleReturnApproval = async (returnDoc) => {
     );
   }
 
-  // await EmployeeModel.updateOne(
-  //   { _id: returnDoc.employeeId },
-  //   {
-  //     $pull: {
-  //       assetRecords: {
-  //         assetId: { $in: returnDoc.assetRecords.map((r) => r.assetId) },
-  //         inventoryId: {
-  //           $in: returnDoc.assetRecords.map((r) => r.inventoryId),
-  //         },
-  //       },
-  //     },
-  //   }
-  // );
+  const assetDetailIdsToRemove = returnDoc.assetRecords.map(
+    (r) => new mongoose.Types.ObjectId(r.inventoryId)
+  );
+
+  // Step 1: Pull assetDetails matching returned inventoryIds
+  await EmployeeModel.updateOne(
+    { _id: returnDoc.employeeId },
+    {
+      $pull: {
+        "assetRecords.$[record].assetDetails": {
+          inventoryId: { $in: assetDetailIdsToRemove },
+        },
+      },
+    },
+    {
+      arrayFilters: [
+        {
+          "record.assetDetails": {
+            $elemMatch: {
+              inventoryId: { $in: assetDetailIdsToRemove },
+            },
+          },
+        },
+      ],
+    }
+  );
+
+  // Step 2: Remove any assetRecords where assetDetails is now empty
+  await EmployeeModel.updateOne(
+    { _id: returnDoc.employeeId },
+    {
+      $pull: {
+        assetRecords: {
+          assetDetails: { $size: 0 },
+        },
+      },
+    }
+  );
 };
 
 const handleReturnReservation = async (returnDoc) => {
