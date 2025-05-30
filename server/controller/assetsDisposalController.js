@@ -1,4 +1,4 @@
-const AssetsDisposal = require("../models/AssetsDisposalModel");
+const AssetsDisposalModel = require("../models/AssetsDisposalModel");
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
 
@@ -21,7 +21,7 @@ const handleDisposalApproval = async (disposalDoc) => {
       assetRecords: disposalDoc.assetRecords,
     };
     await AssetsModel.updateOne(
-      { _id: record.assetId, "inventory._id": record.inventoryId }, 
+      { _id: record.assetId, "inventory._id": record.inventoryId },
       {
         $push: { "inventory.$.history": historyData },
         $set: { "inventory.$.status": "Dispose" },
@@ -55,7 +55,7 @@ const CleanAssetsDisposalRecord = async () => {
       const isArchived = disposalDoc.Status?.isArchived;
 
       const newStatus =
-        isDeleted || isArchived ? "Issued" : "Reserved for Return";
+        isDeleted || isArchived ? "Available" : "Reserved for Disposal";
 
       for (let record of disposalDoc.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -77,7 +77,7 @@ const CleanAssetsDisposalRecord = async () => {
 const createAssetsDisposal = async (req, res) => {
   try {
     const AssetsDisposalData = req.body;
-    const NewAssetsDisposalData = new AssetsDisposal(AssetsDisposalData);
+    const NewAssetsDisposalData = new AssetsDisposalModel(AssetsDisposalData);
     await NewAssetsDisposalData.save();
 
     try {
@@ -108,7 +108,7 @@ const updateAssetsDisposal = async (req, res) => {
     const { id } = req.params;
     const updateData = req.body;
 
-    const updatedDisposal = await AssetsDisposal.findByIdAndUpdate(
+    const updatedDisposal = await AssetsDisposalModel.findByIdAndUpdate(
       id,
       { $set: updateData },
       { new: true }
@@ -141,7 +141,206 @@ const updateAssetsDisposal = async (req, res) => {
   }
 };
 
+const getAllAssetsDisposals = async (req, res) => {
+  try {
+    await CleanAssetsDisposalRecord();
+
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 10;
+    const keyword = req.query.keyword || "";
+    const sortBy = req.query.sortBy || "createdAt";
+    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
+    const status = req.query.status;
+
+    const query = {
+      ...(keyword && {
+        $or: [
+          { "CreatedBy.name": { $regex: keyword, $options: "i" } },
+          { "CreatedBy.position": { $regex: keyword, $options: "i" } },
+        ],
+      }),
+      ...(status &&
+        status === "isDeleted" && {
+          "Status.isDeleted": true,
+        }),
+      ...(status &&
+        status === "isArchived" && {
+          "Status.isArchived": true,
+        }),
+    };
+
+    const sortCriteria = {
+      "Status.isDeleted": 1,
+      "Status.isArchived": 1,
+      [sortBy]: sortOrder,
+    };
+
+    const totalItems = await AssetsDisposalModel.countDocuments(query);
+    const disposalRecords = await AssetsDisposalModel.find(query)
+      .sort(sortCriteria)
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+    res.json({
+      totalItems,
+      totalPages: Math.ceil(totalItems / limit),
+      currentPage: page,
+      disposalRecords: disposalRecords,
+    });
+  } catch (error) {
+    console.error("Error fetching all assets disposals:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+const deleteAssetsDisposalRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsDisposalModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (asset.Status.isArchived) {
+      return res
+        .status(400)
+        .json({ message: "Cannot delete an archived asset." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res.status(400).json({ message: "Asset is already deleted." });
+    }
+
+    const updatedAsset = await AssetsDisposalModel.findByIdAndUpdate(
+      id,
+      { "Status.isDeleted": true },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error deleting asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const archiveAssetsDisposalRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsDisposalModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (asset.Status.isArchived) {
+      return res.status(400).json({ message: "Asset is already archived." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res
+        .status(400)
+        .json({ message: "Cannot archive a deleted asset." });
+    }
+
+    const updatedAsset = await AssetsDisposalModel.findByIdAndUpdate(
+      id,
+      { "Status.isArchived": true },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error archiving asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const undoDeleteAssetsDisposalRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsDisposalModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (!asset.Status.isDeleted) {
+      return res.status(400).json({ message: "Asset is not deleted." });
+    }
+
+    const updatedAsset = await AssetsDisposalModel.findByIdAndUpdate(
+      id,
+      { "Status.isDeleted": false },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error("Error undoing delete of asset:", error.message, error.stack);
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
+const undoArchiveAssetsDisposalRecord = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const asset = await AssetsDisposalModel.findById(id);
+    if (!asset || !asset.Status) {
+      return res.status(404).json({ message: "Asset or status not found" });
+    }
+
+    if (!asset.Status.isArchived) {
+      return res.status(400).json({ message: "Asset is not archived." });
+    }
+
+    if (asset.Status.isDeleted) {
+      return res
+        .status(400)
+        .json({ message: "Cannot undo archive for a deleted asset." });
+    }
+
+    const updatedAsset = await AssetsDisposalModel.findByIdAndUpdate(
+      id,
+      { "Status.isArchived": false },
+      { new: true }
+    );
+
+    if (!updatedAsset) {
+      return res.status(404).json({ message: "Asset not found" });
+    }
+
+    res.status(200).json(updatedAsset);
+  } catch (error) {
+    console.error(
+      "Error undoing archive of asset:",
+      error.message,
+      error.stack
+    );
+    res.status(500).json({ message: "Error processing request" });
+  }
+};
+
 module.exports = {
   createAssetsDisposal,
   updateAssetsDisposal,
+  getAllAssetsDisposals,
+  deleteAssetsDisposalRecord,
+  archiveAssetsDisposalRecord,
+  undoDeleteAssetsDisposalRecord,
+  undoArchiveAssetsDisposalRecord,
 };
