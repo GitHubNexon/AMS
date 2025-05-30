@@ -1,0 +1,61 @@
+import { useState, useEffect } from "react";
+import assetDisposalApi from "../api/assetDisposalApi";
+
+const AssetsDisposalLogic = (
+  initialPage = 1,
+  initialLimit = 10,
+  status = ""
+) => {
+  const [disposalRecords, setDisposalRecords] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [totalItems, setTotalItems] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+
+  const fetchDisposalRecords = async () => {
+    setLoading(true);
+    try {
+      const response = await assetDisposalApi.getAllAssetsDisposalRecord(
+        initialPage,
+        initialLimit,
+        searchQuery,
+        sortBy,
+        sortOrder,
+        status
+      );
+      setDisposalRecords(response.disposalRecords);
+      setTotalItems(response.totalItems);
+      setTotalPages(Math.ceil(response.totalItems / initialLimit));
+    } catch (error) {
+      console.error("Error fetching assets:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchDisposalRecords();
+  }, [initialPage, initialLimit, searchQuery, sortBy, sortOrder, status]);
+
+  return {
+    fetchDisposalRecords,
+    setDisposalRecords,
+    disposalRecords,
+    totalItems,
+    totalPages,
+    loading,
+    setLoading,
+    setTotalItems,
+    setTotalPages,
+    searchQuery,
+    setSearchQuery,
+    sortBy,
+    setSortBy,
+    sortOrder,
+    setSortOrder,
+  };
+};
+
+export default AssetsDisposalLogic;
