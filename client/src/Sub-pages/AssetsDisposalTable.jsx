@@ -24,10 +24,11 @@ import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import AssetsReturnModal from "../Pop-Up-Pages/AssetsReturnModal";
 import assetsReturnApi from "../api/assetReturnApi";
 import assetDisposalApi from "../api/assetDisposalApi";
 import AssetsDisposalLogic from "../hooks/AssetsDisposalLogic";
+import AssetsDisposalModal from "../Pop-Up-Pages/AssetsDisposalModal";
+
 
 const AssetsDisposalTable = () => {
   const [page, setPage] = useState(1);
@@ -349,16 +350,16 @@ const AssetsDisposalTable = () => {
           sortDirection={sortOrder}
         />
 
-        {/* {isAssetsReturnModalOpen && (
-          <AssetsReturnModal
+        {isAssetsDisposalModalOpen && (
+          <AssetsDisposalModal
             mode={modalMode}
-            isOpen={isAssetsReturnModalOpen}
+            isOpen={isAssetsDisposalModalOpen}
             onClose={handleModalClose}
-            onSaveAssetReturn={fetchReturnRecords}
-            assetsReturnData={selectedAssetsReturn}
+            onSaveAssetDisposal={fetchDisposalRecords}
+            assetsDisposalData={selectedAssetsDisposal}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
 
         {/* {isPARModalOpen && (
           <PARModal
