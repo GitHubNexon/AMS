@@ -33,11 +33,11 @@ const AssetsDisposalSchema = new mongoose.Schema(
     Status: { type: StatusSchema, required: false },
     description: {
       type: String,
-      required: true,
+      required: false,
     },
     dateDisposed: {
       type: Date,
-      required: true,
+      required: false,
     },
     CreatedBy: { type: SignatoriesSchema, required: false },
     ReviewedBy: { type: SignatoriesSchema, required: false },
@@ -48,5 +48,8 @@ const AssetsDisposalSchema = new mongoose.Schema(
   }
 );
 
-const AssetsDisposalModel = mongoose.model("AssetsDisposal", AssetsDisposalSchema);
+const AssetsDisposalModel = mongoose.model(
+  "AssetsDisposal",
+  AssetsDisposalSchema
+);
 module.exports = AssetsDisposalModel;

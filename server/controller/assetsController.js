@@ -1,6 +1,8 @@
 const AssetsModel = require("../models/AssetsModel");
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsReturnModel = require("../models/AssetsReturnModel");
+const AssetsDisposal = require("../models/AssetsDisposalModel");
+
 const EmployeeModel = require("../models/employeeModel");
 
 const createAssetsRecord = async (req, res) => {
@@ -46,7 +48,7 @@ const deleteLinkIdHistory = async () => {
     const validCheckers = {
       issuanceId: AssetsIssuanceModel,
       returnId: AssetsReturnModel,
-      // disposalId: AssetsDisposalModel,
+      disposalId: AssetsDisposal,
       // repairId: AssetsRepairModel,
     };
 
@@ -188,6 +190,11 @@ const populateReturnHistory = () => ({
   model: "AssetsReturn",
 });
 
+const populateDisposalHistory = () => ({
+  path: "disposalId",
+  model: "AssetsDisposal",
+});
+
 // Helper to populate employee without image
 const populateEmployee = () => ({
   path: "employeeId",
@@ -235,12 +242,14 @@ const getAllAssetsRecords = async (req, res) => {
         populate: [
           populateIssuanceHistory(),
           populateReturnHistory(),
+          populateDisposalHistory(),
           populateEmployee(),
           {
             path: "history",
             populate: [
               populateIssuanceHistory(),
               populateReturnHistory(),
+              populateDisposalHistory(),
               populateEmployee(),
             ],
           },
@@ -428,7 +437,6 @@ const undoArchiveAssetRecord = async (req, res) => {
   }
 };
 
-
 const getEmployeeAssetsRecords = async (req, res) => {
   try {
     const { employeeId } = req.params;
@@ -453,7 +461,6 @@ const getEmployeeAssetsRecords = async (req, res) => {
         });
       }
     });
-
 
     const employee = await EmployeeModel.findById(employeeId)
       .populate("assetRecords.assetId")
