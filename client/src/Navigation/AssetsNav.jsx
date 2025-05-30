@@ -3,6 +3,8 @@ import AssetsTable from "../Sub-pages/AssetsTable";
 import EmployeesTable from "../Sub-pages/EmployeesTable";
 import AssetIssuanceTable from "../Sub-pages/AssetIssuanceTable";
 import AssetsReturnTable from "../Sub-pages/AssetsReturnTable";
+import AssetsDisposalTable from "../Sub-pages/AssetsDisposalTable";
+import AssetsRepairTable from "../Sub-pages/AssetsRepairTable";
 import AssetOverView from "../Sub-pages/AssetOverView";
 const TABS = [
   "Overview",
@@ -10,6 +12,8 @@ const TABS = [
   "Employee Records",
   "Issuance Records",
   "Return Records",
+  "Disposal Records",
+  "Repair Records",
   "History",
   "Reports",
 ];
@@ -57,6 +61,16 @@ const AssetsNav = () => {
         {activeTab === "Return Records" && (
           <div>
             <AssetsReturnTable />
+          </div>
+        )}
+        {activeTab === "Disposal Records" && (
+          <div>
+            <AssetsDisposalTable />
+          </div>
+        )}
+        {activeTab === "Repair Records" && (
+          <div>
+            <AssetsRepairTable />
           </div>
         )}
         {activeTab === "History" && <div>History Content</div>}
