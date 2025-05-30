@@ -428,20 +428,56 @@ const undoArchiveAssetRecord = async (req, res) => {
   }
 };
 
+
 const getEmployeeAssetsRecords = async (req, res) => {
   try {
     const { employeeId } = req.params;
 
+    const activeDraftReturns = await AssetsReturnModel.find(
+      {
+        docType: "Draft",
+        "Status.isDeleted": false,
+        "Status.isArchived": false,
+      },
+      { "assetRecords.inventoryId": 1 }
+    );
+
+    // Extract all inventoryIds from active draft returns
+    const draftInventoryIds = [];
+    activeDraftReturns.forEach((returnDoc) => {
+      if (returnDoc.assetRecords && Array.isArray(returnDoc.assetRecords)) {
+        returnDoc.assetRecords.forEach((asset) => {
+          if (asset.inventoryId) {
+            draftInventoryIds.push(asset.inventoryId.toString());
+          }
+        });
+      }
+    });
+
+
     const employee = await EmployeeModel.findById(employeeId)
-      .populate("assetRecords.assetId") 
+      .populate("assetRecords.assetId")
       .exec();
 
     if (!employee) {
       return res.status(404).json({ message: "Employee not found" });
     }
 
+    const filteredAssetRecords = employee.assetRecords
+      .map((record) => {
+        const availableAssetDetails = record.assetDetails.filter((asset) => {
+          return !draftInventoryIds.includes(asset.inventoryId.toString());
+        });
+
+        return {
+          ...record,
+          assetDetails: availableAssetDetails,
+        };
+      })
+      .filter((record) => record.assetDetails.length > 0); // Remove records with no available assets
+
     return res.status(200).json({
-      assetRecords: employee.assetRecords,
+      assetRecords: filteredAssetRecords,
     });
   } catch (error) {
     console.error("Error fetching asset records:", error);
