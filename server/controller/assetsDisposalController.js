@@ -8,6 +8,14 @@ const handleDisposalApproval = async (disposalDoc) => {
     if (!asset) {
       throw new Error(`Asset with ID ${record.assetId} not found`);
     }
+    // Filter only the asset records relevant to this inventory
+    const filteredAssetRecords = disposalDoc.assetRecords.filter(
+      (ar) => ar.inventoryId.toString() === record.inventoryId.toString()
+    );
+
+    // If no matching records, skip
+    if (filteredAssetRecords.length === 0) continue;
+
     const historyData = {
       parNo: disposalDoc.parNo,
       fundCluster: disposalDoc.fundCluster,
@@ -18,7 +26,8 @@ const handleDisposalApproval = async (disposalDoc) => {
       employeeId: disposalDoc.employeeId,
       dateDisposed: disposalDoc.dateDisposed,
       issuedBy: disposalDoc.CreatedBy,
-      assetRecords: disposalDoc.assetRecords,
+      // assetRecords: disposalDoc.assetRecords,
+      assetRecords: filteredAssetRecords,
     };
     await AssetsModel.updateOne(
       { _id: record.assetId, "inventory._id": record.inventoryId },

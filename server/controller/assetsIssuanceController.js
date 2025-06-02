@@ -8,6 +8,15 @@ const handleIssuanceApproval = async (issuance) => {
     if (!asset) {
       throw new Error(`Asset with ID ${record.assetId} not found`);
     }
+
+    // Filter only the asset records relevant to this inventory
+    const filteredAssetRecords = issuance.assetRecords.filter(
+      (ar) => ar.inventoryId.toString() === record.inventoryId.toString()
+    );
+
+    // If no matching records, skip
+    if (filteredAssetRecords.length === 0) continue;
+
     const historyData = {
       parNo: issuance.parNo,
       fundCluster: issuance.fundCluster,
@@ -19,7 +28,8 @@ const handleIssuanceApproval = async (issuance) => {
       dateAcquired: issuance.dateAcquired,
       dateReleased: issuance.dateReleased,
       issuedBy: issuance.CreatedBy,
-      assetRecords: issuance.assetRecords,
+      // assetRecords: issuance.assetRecords,
+      assetRecords: filteredAssetRecords,
     };
 
     await AssetsModel.updateOne(
@@ -76,7 +86,8 @@ const CleanAssetsIssuanceRecord = async () => {
       const isDeleted = issuance.Status?.isDeleted;
       const isArchived = issuance.Status?.isArchived;
 
-      const newStatus = isDeleted || isArchived ? "Available" : "Reserved for Issuance";
+      const newStatus =
+        isDeleted || isArchived ? "Available" : "Reserved for Issuance";
 
       for (let record of issuance.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
