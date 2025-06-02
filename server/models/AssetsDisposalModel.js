@@ -17,6 +17,7 @@ const AssetsRecordSchema = new mongoose.Schema({
   unit: { type: String, required: false },
   description: { type: String, required: false },
   itemNo: { type: String, required: false },
+  location: { type: String, required: false },
   amount: { type: Number, required: false, default: 0 },
 });
 
@@ -26,9 +27,9 @@ const AssetsDisposalSchema = new mongoose.Schema(
     parNo: { type: String, required: false },
     fundCluster: { type: String, required: false },
     entityName: { type: String, required: false },
-    employeeName: { type: String, required: false },
-    employeePosition: { type: String, required: false },
-    employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
+    // employeeName: { type: String, required: false },
+    // employeePosition: { type: String, required: false },
+    // employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
     assetRecords: [AssetsRecordSchema],
     Status: { type: StatusSchema, required: false },
     description: {

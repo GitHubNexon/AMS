@@ -23,7 +23,7 @@ const handleDisposalApproval = async (disposalDoc) => {
       date: disposalDoc.createdAt,
       transaction: "Disposal",
       disposalId: disposalDoc._id,
-      employeeId: disposalDoc.employeeId,
+      // employeeId: disposalDoc.employeeId,
       dateDisposed: disposalDoc.dateDisposed,
       issuedBy: disposalDoc.CreatedBy,
       // assetRecords: disposalDoc.assetRecords,

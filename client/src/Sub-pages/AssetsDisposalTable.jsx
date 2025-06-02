@@ -193,11 +193,11 @@ const AssetsDisposalTable = () => {
       selector: (row) =>
         row.dateDisposed ? formatReadableDate(row.dateDisposed) : "No Date Yet",
     },
-    {
-      name: "Employee Name",
-      width: "200px",
-      selector: (row) => row.employeeName || "",
-    },
+    // {
+    //   name: "Employee Name",
+    //   width: "200px",
+    //   selector: (row) => row.employeeName || "",
+    // },
     {
       name: "Document Status",
       width: "200px",
