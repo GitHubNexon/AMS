@@ -80,9 +80,9 @@ const AssetsDisposalModal = ({
         dateDisposed: dateDisposed
           ? new Date(dateDisposed).toISOString().split("T")[0]
           : moment().format("YYYY-MM-DD"),
-        dateReleased: dateReleased
-          ? new Date(dateReleased).toISOString().split("T")[0]
-          : moment().format("YYYY-MM-DD"),
+        // dateReleased: dateReleased
+        //   ? new Date(dateReleased).toISOString().split("T")[0]
+        //   : moment().format("YYYY-MM-DD"),
       }));
     }
   }, [mode, assetsDisposalData]);
@@ -193,9 +193,11 @@ const AssetsDisposalModal = ({
           assetsDisposalData._id,
           changedData
         );
+        console.log("Assets Disposal Data to Update:", changedData);
         showToast("Assets updated successfully!", "success");
       } else {
         await assetDisposalApi.createAssetsDisposalRecord(dataToSubmit);
+        console.log("Assets Disposal Data to Submit:", dataToSubmit);
         showToast("Assets recorded successfully!", "success");
       }
 
@@ -214,7 +216,7 @@ const AssetsDisposalModal = ({
       <div className="bg-white p-5 rounded-lg w-full m-10 ">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
-            {mode === "edit" ? "Update Issuance " : "Create Issuance"}
+            {mode === "edit" ? "Update Disposal Record " : "Create Disposal Record"}
           </h2>
           <button
             onClick={async () => {
@@ -301,20 +303,33 @@ const AssetsDisposalModal = ({
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="dateAcquired" className="text-gray-700">
-                  Date Acquired
+                <label htmlFor="description" className="text-gray-700">
+                  Description
+                </label>
+                <input
+                  type="text"
+                  id="description"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="dateDisposed" className="text-gray-700">
+                  Date Disposed
                 </label>
                 <input
                   type="date"
-                  id="dateAcquired"
-                  name="dateAcquired"
-                  value={formData.dateAcquired}
+                  id="dateDisposed"
+                  name="dateDisposed"
+                  value={formData.dateDisposed}
                   onChange={handleChange}
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label htmlFor="dateReleased" className="text-gray-700">
                   Date Released
                 </label>
@@ -327,7 +342,7 @@ const AssetsDisposalModal = ({
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
-              </div>
+              </div> */}
               <div className="flex flex-col">
                 <EmployeePicker
                   value={
