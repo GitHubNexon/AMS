@@ -189,11 +189,11 @@ const AssetsRepairTable = () => {
       selector: (row) =>
         row.dateRepaired ? formatReadableDate(row.dateRepaired) : "No Date Yet",
     },
-    {
-      name: "Employee Name",
-      width: "200px",
-      selector: (row) => row.employeeName || "",
-    },
+    // {
+    //   name: "Employee Name",
+    //   width: "200px",
+    //   selector: (row) => row.employeeName || "",
+    // },
     {
       name: "Document Status",
       width: "200px",

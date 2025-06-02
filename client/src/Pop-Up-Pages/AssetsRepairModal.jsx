@@ -39,9 +39,9 @@ const AssetsRepairModal = ({
     parNo: "",
     fundCluster: "",
     entityName: "",
-    employeeName: "",
-    employeePosition: "",
-    employeeId: "",
+    // employeeName: "",
+    // employeePosition: "",
+    // employeeId: "",
     description: "",
     dateRepaired: moment().format("YYYY-MM-DD"),
     assetRecords: [],
@@ -74,8 +74,8 @@ const AssetsRepairModal = ({
       const {
         dateRepaired,
         assetRecords = [],
-        employeeId = "",
-        employeeName = "",
+        // employeeId = "",
+        // employeeName = "",
         ...rest
       } = assetsRepairData;
 
@@ -83,8 +83,8 @@ const AssetsRepairModal = ({
         ...prev,
         ...rest,
         assetRecords,
-        employeeId,
-        employeeName,
+        // employeeId,
+        // employeeName,
         dateRepaired: dateRepaired
           ? new Date(dateRepaired).toISOString().split("T")[0]
           : moment().format("YYYY-MM-DD"),
@@ -351,7 +351,7 @@ const AssetsRepairModal = ({
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div> */}
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <EmployeePicker
                   value={
                     formData.employeeId &&
@@ -373,7 +373,7 @@ const AssetsRepairModal = ({
                     }));
                   }}
                 />
-              </div>
+              </div> */}
               <div className="flex flex-col">
                 <label htmlFor="ReviewedBy" className="text-gray-700">
                   Reviewed By

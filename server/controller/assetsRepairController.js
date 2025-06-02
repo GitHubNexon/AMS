@@ -21,9 +21,9 @@ const handleRepairApproval = async (repairDoc) => {
       fundCluster: repairDoc.fundCluster,
       entityName: repairDoc.entityName,
       date: repairDoc.createdAt,
-      transaction: "Repair",
+      transaction: "Under-Repair",
       repairId: repairDoc._id,
-      employeeId: repairDoc.employeeId,
+      // employeeId: repairDoc.employeeId,
       dateRepaired: repairDoc.dateRepaired,
       issuedBy: repairDoc.CreatedBy,
       // assetRecords: repairDoc.assetRecords,
@@ -33,7 +33,7 @@ const handleRepairApproval = async (repairDoc) => {
       { _id: record.assetId, "inventory._id": record.inventoryId },
       {
         $push: { "inventory.$.history": historyData },
-        $set: { "inventory.$.status": "Repair" },
+        $set: { "inventory.$.status": "Under-Repair" },
       }
     );
   }
