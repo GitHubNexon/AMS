@@ -10,6 +10,7 @@ import EmployeePicker from "../Components/EmployeePicker";
 import AssetsPicker from "../Components/AssetsPicker";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assetsApi from "../api/assetsApi";
+import AssetsLogic from "./../hooks/AssetsLogic";
 
 const AssetsIssuanceModal = ({
   isOpen,
@@ -24,6 +25,12 @@ const AssetsIssuanceModal = ({
   const [selectedInventory, setSelectedInventory] = useState(null);
   const [invalidAssetIds, setInvalidAssetIds] = useState([]);
   const [allAssets, setAllAssets] = useState([]);
+
+  const { fetchAssets } = AssetsLogic();
+
+  useEffect(() => {
+    fetchAssets();
+  }, []);
 
   const [formData, setFormData] = useState({
     docType: "",
@@ -214,7 +221,9 @@ const AssetsIssuanceModal = ({
       <div className="bg-white p-5 rounded-lg w-full m-10 ">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
-            {mode === "edit" ? "Update Issuance " : "Create Issuance"}
+            {mode === "edit"
+              ? "Update Issuance Records "
+              : "Create Issuance Records"}
           </h2>
           <button
             onClick={async () => {

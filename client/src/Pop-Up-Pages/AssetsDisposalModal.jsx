@@ -11,6 +11,7 @@ import AssetsPicker from "../Components/AssetsPicker";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assetsApi from "../api/assetsApi";
 import assetDisposalApi from "./../api/assetDisposalApi";
+import AssetsLogic from "./../hooks/AssetsLogic";
 
 const AssetsDisposalModal = ({
   isOpen,
@@ -25,6 +26,12 @@ const AssetsDisposalModal = ({
   const [selectedInventory, setSelectedInventory] = useState(null);
   const [invalidAssetIds, setInvalidAssetIds] = useState([]);
   const [allAssets, setAllAssets] = useState([]);
+
+  const { fetchAssets } = AssetsLogic();
+
+  useEffect(() => {
+    fetchAssets();
+  }, []);
 
   const [formData, setFormData] = useState({
     docType: "",
@@ -216,7 +223,9 @@ const AssetsDisposalModal = ({
       <div className="bg-white p-5 rounded-lg w-full m-10 ">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
-            {mode === "edit" ? "Update Disposal Record " : "Create Disposal Record"}
+            {mode === "edit"
+              ? "Update Disposal Record "
+              : "Create Disposal Record"}
           </h2>
           <button
             onClick={async () => {

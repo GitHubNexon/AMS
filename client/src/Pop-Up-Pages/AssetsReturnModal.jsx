@@ -232,7 +232,9 @@ const AssetsReturnModal = ({
       <div className="bg-white p-5 rounded-lg w-full m-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
-            {mode === "edit" ? "Update Returning" : "Create Returning"}
+            {mode === "edit"
+              ? "Update Returning Records"
+              : "Create Returning Records"}
           </h2>
           <button
             onClick={async () => {
