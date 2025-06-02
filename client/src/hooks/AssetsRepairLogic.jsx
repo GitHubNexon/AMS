@@ -57,3 +57,5 @@ const AssetsRepairLogic = (
     setSortOrder,
   };
 };
+
+export default AssetsRepairLogic;

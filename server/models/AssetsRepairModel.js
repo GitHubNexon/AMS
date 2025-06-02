@@ -35,7 +35,7 @@ const AssetsRepairSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    dateDisposed: {
+    dateRepaired: {
       type: Date,
       required: false,
     },
