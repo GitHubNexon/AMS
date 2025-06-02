@@ -24,9 +24,8 @@ import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-//
 import assetRepairLogic from "../hooks/AssetsRepairLogic";
-//
+import AssetsRepairModal from "../Pop-Up-Pages/AssetsRepairModal"
 
 const AssetsRepairTable = () => {
   const [page, setPage] = useState(1);
@@ -347,16 +346,16 @@ const AssetsRepairTable = () => {
           sortDirection={sortOrder}
         />
 
-        {/* {isAssetsDisposalModalOpen && (
-          <AssetsDisposalModal
+        {isAssetsRepairModalOpen && (
+          <AssetsRepairModal
             mode={modalMode}
-            isOpen={isAssetsDisposalModalOpen}
+            isOpen={isAssetsRepairModalOpen}
             onClose={handleModalClose}
-            onSaveAssetDisposal={fetchDisposalRecords}
-            assetsDisposalData={selectedAssetsDisposal}
+            onSaveAssetRepair={fetchRepairRecords}
+            assetsRepairData={selectedAssetsRepair}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
 
         {/* {isPARModalOpen && (
               <PARModal
