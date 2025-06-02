@@ -195,6 +195,11 @@ const populateDisposalHistory = () => ({
   model: "AssetsDisposal",
 });
 
+const populateRepairHistory = () => ({
+  path: "repairId",
+  model: "AssetsRepair",
+});
+
 // Helper to populate employee without image
 const populateEmployee = () => ({
   path: "employeeId",
@@ -243,6 +248,7 @@ const getAllAssetsRecords = async (req, res) => {
           populateIssuanceHistory(),
           populateReturnHistory(),
           populateDisposalHistory(),
+          populateRepairHistory(),
           populateEmployee(),
           {
             path: "history",
@@ -250,6 +256,7 @@ const getAllAssetsRecords = async (req, res) => {
               populateIssuanceHistory(),
               populateReturnHistory(),
               populateDisposalHistory(),
+              populateRepairHistory(),
               populateEmployee(),
             ],
           },

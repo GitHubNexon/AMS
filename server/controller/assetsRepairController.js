@@ -21,8 +21,8 @@ const handleRepairApproval = async (repairDoc) => {
       fundCluster: repairDoc.fundCluster,
       entityName: repairDoc.entityName,
       date: repairDoc.createdAt,
-      transaction: "Disposal",
-      disposalId: repairDoc._id,
+      transaction: "Repair",
+      repairId: repairDoc._id,
       employeeId: repairDoc.employeeId,
       dateDisposed: repairDoc.dateDisposed,
       issuedBy: repairDoc.CreatedBy,
@@ -140,12 +140,12 @@ const updateAssetsRepair = async (req, res) => {
     res.status(200).json({
       message:
         updateData.docType === "Approved"
-          ? "Disposal approved and assets marked as disposed"
-          : "Draft disposal updated and assets marked as 'DisposalReserved'",
-      data: updatedDisposal,
+          ? "Repair approved and assets marked as repaired"
+          : "Draft repair updated and assets marked as 'RepairReserved'",
+      data: updatedRepair,
     });
   } catch (error) {
-    console.error("Error updating disposal record:", error);
+    console.error("Error updating repair record:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
