@@ -298,7 +298,7 @@ const AssetsLostStolenTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Disposal Records </h1>
+          <h1 className="font-bold">Assets Lost/Stolen/Damage Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}

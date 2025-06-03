@@ -3,6 +3,7 @@ const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsReturnModel = require("../models/AssetsReturnModel");
 const AssetsDisposal = require("../models/AssetsDisposalModel");
 const AssetsRepairModel = require("../models/AssetsRepairModel");
+const AssetsLostStolenModel = require("../models/AssetsLostStolenModel");
 
 const EmployeeModel = require("../models/employeeModel");
 
@@ -51,6 +52,7 @@ const deleteLinkIdHistory = async () => {
       returnId: AssetsReturnModel,
       disposalId: AssetsDisposal,
       repairId: AssetsRepairModel,
+      lostStolenId: AssetsLostStolenModel,
     };
 
     const allAssets = await AssetsModel.find({});
@@ -201,6 +203,11 @@ const populateRepairHistory = () => ({
   model: "AssetsRepair",
 });
 
+const populateLostStolenHistory = () => ({
+  path: "lostStolenId",
+  model: "AssetsLostStolen",
+});
+
 // Helper to populate employee without image
 const populateEmployee = () => ({
   path: "employeeId",
@@ -250,6 +257,7 @@ const getAllAssetsRecords = async (req, res) => {
           populateReturnHistory(),
           populateDisposalHistory(),
           populateRepairHistory(),
+          populateLostStolenHistory(),
           populateEmployee(),
           {
             path: "history",
@@ -258,6 +266,8 @@ const getAllAssetsRecords = async (req, res) => {
               populateReturnHistory(),
               populateDisposalHistory(),
               populateRepairHistory(),
+              populateLostStolenHistory(),
+
               populateEmployee(),
             ],
           },
