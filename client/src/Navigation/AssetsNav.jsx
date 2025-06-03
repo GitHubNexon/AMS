@@ -5,6 +5,7 @@ import AssetIssuanceTable from "../Sub-pages/AssetIssuanceTable";
 import AssetsReturnTable from "../Sub-pages/AssetsReturnTable";
 import AssetsDisposalTable from "../Sub-pages/AssetsDisposalTable";
 import AssetsRepairTable from "../Sub-pages/AssetsRepairTable";
+import AssetsLostStolenTable from "../Sub-pages/AssetsLostStolenTable";
 import AssetOverView from "../Sub-pages/AssetOverView";
 const TABS = [
   "Overview",
@@ -14,6 +15,7 @@ const TABS = [
   "Return Records",
   "Disposal Records",
   "Repair Records",
+  "Lost/Stolen/Damage Records",
   "History",
   "Reports",
 ];
@@ -71,6 +73,11 @@ const AssetsNav = () => {
         {activeTab === "Repair Records" && (
           <div>
             <AssetsRepairTable />
+          </div>
+        )}
+        {activeTab === "Lost/Stolen/Damage Records" && (
+          <div>
+            <AssetsLostStolenTable />
           </div>
         )}
         {activeTab === "History" && <div>History Content</div>}

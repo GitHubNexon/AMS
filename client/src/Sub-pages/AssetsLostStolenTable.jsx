@@ -26,14 +26,16 @@ import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assetRepairLogic from "../hooks/AssetsRepairLogic";
 import AssetsRepairModal from "../Pop-Up-Pages/AssetsRepairModal";
-import assetsRepairApi from "../api/assetRepairApi";
+import assesLostStolenApi from "../api/assetLostStolenApi.js";
+import AssetsLostStolenLogic from "../hooks/AssetsLostStolenLogic";
 
-const AssetsRepairTable = () => {
+const AssetsLostStolenTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetsRepair, setSelectedAssetsRepair] = useState([]);
-  const [isAssetsRepairModalOpen, setIsAssetsRepairModalOpen] = useState(false);
+  const [selectedAssetsLostStolen, setSelectedAssetsLostStolen] = useState([]);
+  const [isAssetsLostStolenModalOpen, setIsAssetsLostStolenModalOpen] =
+    useState(false);
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
   const [query, setQuery] = useState("");
@@ -42,9 +44,9 @@ const AssetsRepairTable = () => {
   };
 
   const {
-    fetchRepairRecords,
-    setRepairRecords,
-    repairRecords,
+    fetchLostStolenRecords,
+    setLostStolenRecords,
+    lostStolenRecords,
     totalItems,
     totalPages,
     loading,
@@ -57,15 +59,15 @@ const AssetsRepairTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = assetRepairLogic(page, limit, status);
+  } = AssetsLostStolenLogic(page, limit, status);
 
   function refreshTable() {
-    fetchRepairRecords();
+    fetchLostStolenRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchRepairRecords();
+    fetchLostStolenRecords();
   };
 
   useEffect(() => {
@@ -77,22 +79,22 @@ const AssetsRepairTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsRepairModalOpen(true);
+    setIsAssetsLostStolenModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsRepairModalOpen(false);
-    setSelectedAssetsRepair(null);
+    setIsAssetsLostStolenModalOpen(false);
+    setSelectedAssetsLostStolen(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetsRepair(row);
+    setSelectedAssetsLostStolen(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetsRepair(null);
+    setSelectedAssetsLostStolen(null);
   };
 
   const handleActionButtons = async ({
@@ -110,7 +112,7 @@ const AssetsRepairTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchRepairRecords?.();
+        fetchLostStolenRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -124,7 +126,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetsRepairApi.deleteAssetsRepairRecord,
+      apiMethod: assetsLostStolenApi.deleteAssetsLostStolenRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -134,7 +136,7 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetsRepairApi.undoDeleteAssetsRepairRecord,
+      apiMethod: assetsLostStolenApi.undoDeleteAssetsLostStolenRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -143,7 +145,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetsRepairApi.archiveAssetsRepairRecord,
+      apiMethod: assetsLostStolenApi.archiveAssetsLostStolenRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -153,18 +155,18 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetsRepairApi.undoArchiveAssetsRepairRecord,
+      apiMethod: assetsLostStolenApi.undoArchiveAssetsLostStolenRecord,
     });
 
   const handleFetchLatest = async () => {
-    fetchRepairRecords();
+    fetchLostStolenRecords();
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (repairRecords) => {
+  const handleModalOpenForEdit = (lostStolenRecords) => {
     setModalMode("edit");
-    setSelectedAssetsRepair(repairRecords);
-    setIsAssetsRepairModalOpen(true);
+    setSelectedAssetsLostStolen(lostStolenRecords);
+    setIsAssetsLostStolenModalOpen(true);
   };
 
   const columns = [
@@ -186,9 +188,11 @@ const AssetsRepairTable = () => {
       width: "120px",
     },
     {
-      name: "Date Disposed",
+      name: "Date Lost/Stolen/Damaged",
       selector: (row) =>
-        row.dateRepaired ? formatReadableDate(row.dateRepaired) : "No Date Yet",
+        row.dateLostStolen
+          ? formatReadableDate(row.dateLostStolen)
+          : "No Date Yet",
     },
     // {
     //   name: "Employee Name",
@@ -332,7 +336,7 @@ const AssetsRepairTable = () => {
 
         <DataTable
           columns={columns}
-          data={repairRecords}
+          data={lostStolenRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -347,7 +351,7 @@ const AssetsRepairTable = () => {
           sortDirection={sortOrder}
         />
 
-        {isAssetsRepairModalOpen && (
+        {/* {isAssetsRepairModalOpen && (
           <AssetsRepairModal
             mode={modalMode}
             isOpen={isAssetsRepairModalOpen}
@@ -356,7 +360,7 @@ const AssetsRepairTable = () => {
             assetsRepairData={selectedAssetsRepair}
             refreshTable={refreshTable}
           />
-        )}
+        )} */}
 
         {/* {isPARModalOpen && (
               <PARModal
@@ -370,4 +374,4 @@ const AssetsRepairTable = () => {
   );
 };
 
-export default AssetsRepairTable;
+export default AssetsLostStolenTable;

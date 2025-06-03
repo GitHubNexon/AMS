@@ -37,7 +37,7 @@ const AssetsLostStolenSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    dateRepaired: {
+    dateLostStolen: {
       type: Date,
       required: false,
     },
