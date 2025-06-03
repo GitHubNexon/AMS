@@ -33,7 +33,7 @@ const AssetsReturnSchema = new mongoose.Schema(
     Status: { type: StatusSchema, required: false },
     purpose: {
       type: String,
-      required: true,
+      required: false,
     },
     dateReturned: {
       type: Date,

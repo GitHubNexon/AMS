@@ -17,9 +17,9 @@ const handleLostStolenApproval = async (lostStolenDoc) => {
     if (filteredAssetRecords.length === 0) continue;
 
     const historyData = {
-      parNo: disposalDoc.parNo,
-      fundCluster: disposalDoc.fundCluster,
-      entityName: disposalDoc.entityName,
+      parNo: lostStolenDoc.parNo,
+      fundCluster: lostStolenDoc.fundCluster,
+      entityName: lostStolenDoc.entityName,
       date: lostStolenDoc.createdAt,
       transaction: "Lost/Stolen",
       lostStolenId: lostStolenDoc._id,

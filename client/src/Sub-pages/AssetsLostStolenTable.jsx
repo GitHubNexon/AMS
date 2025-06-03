@@ -24,10 +24,10 @@ import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assetRepairLogic from "../hooks/AssetsRepairLogic";
-import AssetsRepairModal from "../Pop-Up-Pages/AssetsRepairModal";
 import assesLostStolenApi from "../api/assetLostStolenApi.js";
 import AssetsLostStolenLogic from "../hooks/AssetsLostStolenLogic";
+import AssetsLostStolenModal from "../Pop-Up-Pages/AssetsLostStolenModal";
+
 
 const AssetsLostStolenTable = () => {
   const [page, setPage] = useState(1);
@@ -351,16 +351,16 @@ const AssetsLostStolenTable = () => {
           sortDirection={sortOrder}
         />
 
-        {/* {isAssetsRepairModalOpen && (
-          <AssetsRepairModal
+        {isAssetsLostStolenModalOpen && (
+          <AssetsLostStolenModal
             mode={modalMode}
-            isOpen={isAssetsRepairModalOpen}
+            isOpen={isAssetsLostStolenModalOpen}
             onClose={handleModalClose}
-            onSaveAssetRepair={fetchRepairRecords}
-            assetsRepairData={selectedAssetsRepair}
+            onSaveAssetsLostStolen={fetchLostStolenRecords}
+            assetsLostStolenData={selectedAssetsLostStolen}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
 
         {/* {isPARModalOpen && (
               <PARModal
