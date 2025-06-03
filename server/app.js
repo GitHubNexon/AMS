@@ -85,6 +85,7 @@ const assetsReturnRoutes = require("./routes/assetReturnRoutes");
 const assetsDisposalRoutes = require("./routes/assetsDisposalRoutes");
 const assetsRepairRouters = require("./routes/assetsRepairRoutes");
 const assetsReportsRoutes = require("./routes/assetsReportsRoutes");
+const assetsLostStolenRoutes = require("./routes/assetsLostStolenRoutes");
 
 const cron = require("node-cron");
 
@@ -158,6 +159,7 @@ app.use("/ams/api/assets-return", assetsReturnRoutes);
 app.use("/ams/api/assets-disposal", assetsDisposalRoutes);
 app.use("/ams/api/assets-repair", assetsRepairRouters);
 app.use("/ams/api/assets-reports", assetsReportsRoutes);
+app.use("/ams/api/assets-lost-stolen", assetsLostStolenRoutes);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's(frontend) index.html file.
