@@ -57,7 +57,7 @@ const handleRepairReservation = async (repairDoc) => {
 
 const CleanAssetsRepairRecord = async () => {
   try {
-    const allDrafts = await AssetsRepair.find({ docType: "Draft" });
+    const allDrafts = await AssetsRepairModel.find({ docType: "Draft" });
 
     for (let repairDoc of allDrafts) {
       const isDeleted = repairDoc.Status?.isDeleted;

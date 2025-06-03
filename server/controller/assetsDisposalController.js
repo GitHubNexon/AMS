@@ -57,7 +57,7 @@ const handleDisposalReservation = async (disposalDoc) => {
 
 const CleanAssetsDisposalRecord = async () => {
   try {
-    const allDrafts = await AssetsDisposal.find({ docType: "Draft" });
+    const allDrafts = await AssetsDisposalModel.find({ docType: "Draft" });
 
     for (let disposalDoc of allDrafts) {
       const isDeleted = disposalDoc.Status?.isDeleted;
