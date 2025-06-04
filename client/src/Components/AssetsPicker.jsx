@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import assetsApi from "../api/assetsApi";
 
-const AssetsPicker = ({ onSelectAsset, onSelectInventory, value }) => {
+const AssetsPicker = ({
+  onSelectAsset,
+  onSelectInventory,
+  value,
+  isInventoryEnabled = true, // default to true for backward compatibility
+}) => {
   const [assets, setAssets] = useState([]);
   const [inventory, setInventory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -72,7 +77,7 @@ const AssetsPicker = ({ onSelectAsset, onSelectInventory, value }) => {
         />
       </div>
 
-      {inventory.length > 0 && (
+      {isInventoryEnabled && inventory.length > 0 && (
         <div className="w-full">
           <Select
             isClearable

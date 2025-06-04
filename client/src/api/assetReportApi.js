@@ -2,14 +2,13 @@ import axios from "axios";
 import { API_BASE_URL } from "./config.js";
 
 const assetReportApi = {
-  getAssetsHistory: async (assetId, employeeId, inventoryId, filter) => {
+  getAssetsHistory: async (assetId, employeeId, filter) => {
     try {
       const response = await axios.post(
         `${API_BASE_URL}/assets-reports/history`,
         {
           assetId,
           employeeId,
-          inventoryId,
           filter,
         }
       );

@@ -1,45 +1,32 @@
-const AssetsModel = require("../models/AssetsModel");
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsReturnModel = require("../models/AssetsReturnModel");
 const AssetsDisposal = require("../models/AssetsDisposalModel");
 const AssetsRepairModel = require("../models/AssetsRepairModel");
+const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
 
-// Helper function to convert string to ObjectId
 const toObjectId = (id) => {
   const ObjectId = require("mongoose").Types.ObjectId;
   return new ObjectId(id);
 };
 
-// Helper function to build match conditions
-const buildMatchConditionsHistory = (assetId, inventoryId, employeeId, filter) => {
+const buildMatchConditionsHistory = (assetId, employeeId, filter) => {
   const conditions = [];
 
-  // Asset match condition
   conditions.push({ $match: { _id: toObjectId(assetId) } });
 
-  // Unwind operations
   conditions.push(
     { $unwind: { path: "$inventory" } },
     { $unwind: { path: "$inventory.history" } },
     { $match: { "inventory.history": { $exists: true, $ne: null } } }
   );
 
-  // Inventory filter
-  if (inventoryId) {
-    conditions.push({
-      $match: { "inventory._id": toObjectId(inventoryId) },
-    });
-  }
-
-  // Employee filter
   if (employeeId) {
     conditions.push({
       $match: { "inventory.history.employeeId": toObjectId(employeeId) },
     });
   }
 
-  // Status filter
   if (filter && Object.keys(filter).length > 0) {
     const statusFilters = Object.entries(filter)
       .filter(([key, value]) => value === true)
@@ -55,16 +42,14 @@ const buildMatchConditionsHistory = (assetId, inventoryId, employeeId, filter) =
   return conditions;
 };
 
-// Helper function to build aggregation pipeline
-const buildAggregationPipelineHistory = (assetId, inventoryId, employeeId, filter) => {
+const buildAggregationPipelineHistory = (assetId, employeeId, filter) => {
   const matchConditions = buildMatchConditionsHistory(
     assetId,
-    inventoryId,
     employeeId,
     filter
   );
 
-  const pipeline = [
+  return [
     ...matchConditions,
     {
       $group: {
@@ -80,11 +65,8 @@ const buildAggregationPipelineHistory = (assetId, inventoryId, employeeId, filte
       },
     },
   ];
-
-  return pipeline;
 };
 
-// Helper function to populate employee details
 const populateEmployeeDetails = async (historyRecords) => {
   for (let record of historyRecords) {
     if (record.employeeId) {
@@ -96,34 +78,40 @@ const populateEmployeeDetails = async (historyRecords) => {
           .lean();
 
         if (employee) {
-          record.employeeName = employee.employeeName || null;
-          record.employeePosition = employee.employeePosition || null;
-          record.employeeDepartment = employee.employeeDepartment || null;
-          record.employeeDivision = employee.employeeDivision || null;
-          record.employeeSection = employee.employeeSection || null;
-          record.employeeEmail = employee.email || null;
-          record.employeeContactNo = employee.contactNo || null;
+          Object.assign(record, {
+            employeeName: employee.employeeName || null,
+            employeePosition: employee.employeePosition || null,
+            employeeDepartment: employee.employeeDepartment || null,
+            employeeDivision: employee.employeeDivision || null,
+            employeeSection: employee.employeeSection || null,
+            employeeEmail: employee.email || null,
+            employeeContactNo: employee.contactNo || null,
+          });
         } else {
-          record.employeeName = null;
-          record.employeePosition = null;
-          record.employeeDepartment = null;
-          record.employeeDivision = null;
-          record.employeeSection = null;
-          record.employeeEmail = null;
-          record.employeeContactNo = null;
+          Object.assign(record, {
+            employeeName: null,
+            employeePosition: null,
+            employeeDepartment: null,
+            employeeDivision: null,
+            employeeSection: null,
+            employeeEmail: null,
+            employeeContactNo: null,
+          });
         }
       } catch (error) {
         console.warn(
           `Failed to populate employee ${record.employeeId}:`,
           error.message
         );
-        record.employeeName = null;
-        record.employeePosition = null;
-        record.employeeDepartment = null;
-        record.employeeDivision = null;
-        record.employeeSection = null;
-        record.employeeEmail = null;
-        record.employeeContactNo = null;
+        Object.assign(record, {
+          employeeName: null,
+          employeePosition: null,
+          employeeDepartment: null,
+          employeeDivision: null,
+          employeeSection: null,
+          employeeEmail: null,
+          employeeContactNo: null,
+        });
       }
     }
   }
@@ -132,17 +120,14 @@ const populateEmployeeDetails = async (historyRecords) => {
 
 const getAssetsHistory = async (req, res) => {
   try {
-    const { assetId, employeeId, inventoryId, filter } = req.body;
+    const { assetId, employeeId, filter } = req.body;
 
-    // Validate required field
     if (!assetId) {
       return res.status(400).json({ message: "assetId is required" });
     }
 
-    // Build and execute aggregation pipeline
     const pipeline = buildAggregationPipelineHistory(
       assetId,
-      inventoryId,
       employeeId,
       filter
     );
@@ -155,7 +140,6 @@ const getAssetsHistory = async (req, res) => {
       });
     }
 
-    // Populate employee details for each history record
     const populatedHistory = await populateEmployeeDetails(
       result[0].inventoryHistory || []
     );
