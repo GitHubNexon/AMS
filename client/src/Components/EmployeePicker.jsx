@@ -12,35 +12,45 @@ const EmployeePicker = ({ onSelect, value }) => {
         const res = await employeeApi.getAllEmployeeRecord();
         const employees = res?.employees || [];
 
+        // Use employee._id as value, label is name + position
         const mapped = employees.map((emp) => ({
-          value: emp,
+          value: emp._id,
           label: `${emp.employeeName} - ${emp.employeePosition}`,
+          employee: emp, // Keep the full emp object for your reference if needed
         }));
 
         setOptions(mapped);
 
-        if (value) {
-          const matched = mapped.find((opt) => opt.value._id === value._id);
-          setSelected(matched || null);
+        if (!value) {
+          setSelected(null);
+          return;
         }
+
+        // Find the option matching the passed value (which should be the whole employee object)
+        const matched = mapped.find((opt) => opt.value === value._id);
+        setSelected(matched || null);
       } catch (err) {
         console.error("Error loading employee list:", err);
       }
     };
 
     fetchEmployees();
-  }, [value]); // re-run if `value` changes
+  }, [value]);
 
   const handleChange = (option) => {
     setSelected(option);
-    if (onSelect && option?.value) {
-      onSelect(option.value);
+    if (onSelect) {
+      if (option === null) {
+        onSelect(null); // Clear selection
+      } else {
+        // Pass the full employee object back, if you want
+        onSelect(option.employee);
+      }
     }
   };
 
   return (
     <div className="text-[0.6rem]">
-      <label className="text-gray-700 mb-1 block">Select Employee</label>
       <Select
         options={options}
         value={selected}

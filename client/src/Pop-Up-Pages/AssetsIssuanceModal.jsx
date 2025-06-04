@@ -338,6 +338,9 @@ const AssetsIssuanceModal = ({
                 />
               </div>
               <div className="flex flex-col">
+                <label htmlFor="employee" className="text-gray-700">
+                  Select Employee
+                </label>
                 <EmployeePicker
                   value={
                     formData.employeeId &&
@@ -350,13 +353,30 @@ const AssetsIssuanceModal = ({
                         }
                       : null
                   }
+                  // onSelect={(employee) => {
+                  //   setFormData((prev) => ({
+                  //     ...prev,
+                  //     employeeId: employee._id,
+                  //     employeeName: employee.employeeName,
+                  //     employeePosition: employee.employeePosition,
+                  //   }));
+                  // }}
                   onSelect={(employee) => {
-                    setFormData((prev) => ({
-                      ...prev,
-                      employeeId: employee._id,
-                      employeeName: employee.employeeName,
-                      employeePosition: employee.employeePosition,
-                    }));
+                    if (employee) {
+                      setFormData((prev) => ({
+                        ...prev,
+                        employeeId: employee._id,
+                        employeeName: employee.employeeName,
+                        employeePosition: employee.employeePosition,
+                      }));
+                    } else {
+                      setFormData((prev) => ({
+                        ...prev,
+                        employeeId: "",
+                        employeeName: "",
+                        employeePosition: "",
+                      }));
+                    }
                   }}
                 />
               </div>

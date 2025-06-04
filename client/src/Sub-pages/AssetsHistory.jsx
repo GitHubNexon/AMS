@@ -62,7 +62,7 @@ const AssetsHistory = () => {
   const handleReset = () => {
     setForm({
       asset: null,
-      employee: null,
+      employee: false,
       filter: {
         Issuance: false,
         Return: false,
