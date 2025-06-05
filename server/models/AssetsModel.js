@@ -36,6 +36,11 @@ const assetsSchema = new mongoose.Schema(
     propNo: { type: String, required: false },
     propName: { type: String, required: false },
     propDescription: { type: String, required: false },
+    //added new fields
+    manufacturer: { type: String, required: false },
+    model: { type: String, required: false },
+    warrantyDate: { type: Date, required: false },
+    //
     unitCost: { type: Number, required: false },
     acquisitionDate: { type: Date, required: false },
     useFullLife: { type: Number, required: false },
