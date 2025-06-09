@@ -1,0 +1,692 @@
+[
+  {
+    "employeeName": "Cooper",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Manager",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 2",
+    "address": "211 Fictional St, Movie City",
+    "contactNo": "+1-555-3227",
+    "email": "cooper@example.com",
+    "dateOfBirth": "1968-10-23",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Bruce Wayne",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Engineer",
+    "employeeDivision": "Operations",
+    "employeeDepartment": "Department B",
+    "employeeSection": "Section 2",
+    "address": "402 Fictional St, Movie City",
+    "contactNo": "+1-555-9379",
+    "email": "brucewayne@testmail.com",
+    "dateOfBirth": "1964-02-16",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Tony Stark",
+    "employeeImage": "",
+    "employeeType": "Contractor",
+    "employeePosition": "Technician",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department C",
+    "employeeSection": "Section 3",
+    "address": "833 Fictional St, Movie City",
+    "contactNo": "+1-555-9410",
+    "email": "tonystark@email.com",
+    "dateOfBirth": "1985-01-24",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Natasha Romanoff",
+    "employeeImage": "",
+    "employeeType": "Contractor",
+    "employeePosition": "Clerk",
+    "employeeDivision": "IT",
+    "employeeDepartment": "Department C",
+    "employeeSection": "Section 3",
+    "address": "288 Fictional St, Movie City",
+    "contactNo": "+1-555-9456",
+    "email": "natasharomanoff@testmail.com",
+    "dateOfBirth": "1991-08-14",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Clark Kent",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Technician",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 2",
+    "address": "560 Fictional St, Movie City",
+    "contactNo": "+1-555-1073",
+    "email": "clarkkent@testmail.com",
+    "dateOfBirth": "1997-01-20",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Diana Prince",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Consultant",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department D",
+    "employeeSection": "Section 3",
+    "address": "629 Fictional St, Movie City",
+    "contactNo": "+1-555-9396",
+    "email": "dianaprince@email.com",
+    "dateOfBirth": "1989-10-02",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Peter Parker",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Clerk",
+    "employeeDivision": "Finance",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 2",
+    "address": "925 Fictional St, Movie City",
+    "contactNo": "+1-555-2504",
+    "email": "peterparker@testmail.com",
+    "dateOfBirth": "1973-10-12",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Selina Kyle",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Clerk",
+    "employeeDivision": "Finance",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 2",
+    "address": "956 Fictional St, Movie City",
+    "contactNo": "+1-555-2436",
+    "email": "selinakyle@example.com",
+    "dateOfBirth": "1993-01-03",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Barry Allen",
+    "employeeImage": "",
+    "employeeType": "Contractor",
+    "employeePosition": "Developer",
+    "employeeDivision": "IT",
+    "employeeDepartment": "Department D",
+    "employeeSection": "Section 2",
+    "address": "542 Fictional St, Movie City",
+    "contactNo": "+1-555-3983",
+    "email": "barryallen@email.com",
+    "dateOfBirth": "1983-08-08",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Arthur Curry",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Technician",
+    "employeeDivision": "HR",
+    "employeeDepartment": "Department D",
+    "employeeSection": "Section 3",
+    "address": "203 Fictional St, Movie City",
+    "contactNo": "+1-555-9957",
+    "email": "arthurcurry@example.com",
+    "dateOfBirth": "1997-06-24",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Steve Rogers",
+    "employeeImage": "",
+    "employeeType": "Contractor",
+    "employeePosition": "Developer",
+    "employeeDivision": "IT",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 3",
+    "address": "863 Fictional St, Movie City",
+    "contactNo": "+1-555-6114",
+    "email": "steverogers@example.com",
+    "dateOfBirth": "1987-03-17",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Wanda Maximoff",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Analyst",
+    "employeeDivision": "Finance",
+    "employeeDepartment": "Department D",
+    "employeeSection": "Section 1",
+    "address": "597 Fictional St, Movie City",
+    "contactNo": "+1-555-8745",
+    "email": "wandamaximoff@testmail.com",
+    "dateOfBirth": "1998-05-08",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Bruce Banner",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Clerk",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department B",
+    "employeeSection": "Section 2",
+    "address": "321 Fictional St, Movie City",
+    "contactNo": "+1-555-1453",
+    "email": "brucebanner@email.com",
+    "dateOfBirth": "1985-04-15",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Stephen Strange",
+    "employeeImage": "",
+    "employeeType": "Contractor",
+    "employeePosition": "Manager",
+    "employeeDivision": "HR",
+    "employeeDepartment": "Department B",
+    "employeeSection": "Section 1",
+    "address": "861 Fictional St, Movie City",
+    "contactNo": "+1-555-8309",
+    "email": "stephenstrange@email.com",
+    "dateOfBirth": "1974-10-16",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Lara Croft",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Engineer",
+    "employeeDivision": "Operations",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 2",
+    "address": "968 Fictional St, Movie City",
+    "contactNo": "+1-555-9118",
+    "email": "laracroft@testmail.com",
+    "dateOfBirth": "1968-11-16",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Jason Bourne",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Consultant",
+    "employeeDivision": "Marketing",
+    "employeeDepartment": "Department D",
+    "employeeSection": "Section 3",
+    "address": "775 Fictional St, Movie City",
+    "contactNo": "+1-555-8363",
+    "email": "jasonbourne@email.com",
+    "dateOfBirth": "1975-07-17",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Ellen Ripley",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Consultant",
+    "employeeDivision": "HR",
+    "employeeDepartment": "Department D",
+    "employeeSection": "Section 1",
+    "address": "466 Fictional St, Movie City",
+    "contactNo": "+1-555-6409",
+    "email": "ellenripley@example.com",
+    "dateOfBirth": "1960-04-05",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "John Wick",
+    "employeeImage": "",
+    "employeeType": "Full-Time",
+    "employeePosition": "Analyst",
+    "employeeDivision": "HR",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 2",
+    "address": "406 Fictional St, Movie City",
+    "contactNo": "+1-555-1637",
+    "email": "johnwick@testmail.com",
+    "dateOfBirth": "1988-12-24",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "James Bond",
+    "employeeImage": "",
+    "employeeType": "Full-Time",
+    "employeePosition": "Analyst",
+    "employeeDivision": "HR",
+    "employeeDepartment": "Department C",
+    "employeeSection": "Section 2",
+    "address": "248 Fictional St, Movie City",
+    "contactNo": "+1-555-7822",
+    "email": "jamesbond@testmail.com",
+    "dateOfBirth": "1962-03-09",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Trinity",
+    "employeeImage": "",
+    "employeeType": "Full-Time",
+    "employeePosition": "Developer",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 3",
+    "address": "230 Fictional St, Movie City",
+    "contactNo": "+1-555-4000",
+    "email": "trinity@email.com",
+    "dateOfBirth": "1992-12-03",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Neo",
+    "employeeImage": "",
+    "employeeType": "Full-Time",
+    "employeePosition": "Manager",
+    "employeeDivision": "IT",
+    "employeeDepartment": "Department C",
+    "employeeSection": "Section 2",
+    "address": "992 Fictional St, Movie City",
+    "contactNo": "+1-555-3923",
+    "email": "neo@testmail.com",
+    "dateOfBirth": "1990-09-24",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Morpheus",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Consultant",
+    "employeeDivision": "Marketing",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 3",
+    "address": "605 Fictional St, Movie City",
+    "contactNo": "+1-555-3238",
+    "email": "morpheus@email.com",
+    "dateOfBirth": "1967-10-26",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Rick Deckard",
+    "employeeImage": "",
+    "employeeType": "Full-Time",
+    "employeePosition": "Analyst",
+    "employeeDivision": "Marketing",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 3",
+    "address": "823 Fictional St, Movie City",
+    "contactNo": "+1-555-3153",
+    "email": "rickdeckard@email.com",
+    "dateOfBirth": "1976-11-25",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Sarah Connor",
+    "employeeImage": "",
+    "employeeType": "Contractor",
+    "employeePosition": "Clerk",
+    "employeeDivision": "IT",
+    "employeeDepartment": "Department C",
+    "employeeSection": "Section 3",
+    "address": "153 Fictional St, Movie City",
+    "contactNo": "+1-555-2918",
+    "email": "sarahconnor@example.com",
+    "dateOfBirth": "1987-07-25",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Max Rockatansky",
+    "employeeImage": "",
+    "employeeType": "Full-Time",
+    "employeePosition": "Technician",
+    "employeeDivision": "IT",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 1",
+    "address": "287 Fictional St, Movie City",
+    "contactNo": "+1-555-6472",
+    "email": "maxrockatansky@email.com",
+    "dateOfBirth": "1996-06-06",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Elle Woods",
+    "employeeImage": "",
+    "employeeType": "Part-Time",
+    "employeePosition": "Developer",
+    "employeeDivision": "Operations",
+    "employeeDepartment": "Department B",
+    "employeeSection": "Section 2",
+    "address": "303 Fictional St, Movie City",
+    "contactNo": "+1-555-1707",
+    "email": "ellewoods@email.com",
+    "dateOfBirth": "1983-05-14",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Forrest Gump",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Consultant",
+    "employeeDivision": "Operations",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 3",
+    "address": "931 Fictional St, Movie City",
+    "contactNo": "+1-555-5573",
+    "email": "forrestgump@email.com",
+    "dateOfBirth": "1998-08-28",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Jack Sparrow",
+    "employeeImage": "",
+    "employeeType": "Full-Time",
+    "employeePosition": "Manager",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 3",
+    "address": "811 Fictional St, Movie City",
+    "contactNo": "+1-555-7562",
+    "email": "jacksparrow@testmail.com",
+    "dateOfBirth": "1986-12-15",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Indiana Jones",
+    "employeeImage": "",
+    "employeeType": "Contractor",
+    "employeePosition": "Clerk",
+    "employeeDivision": "Legal",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 1",
+    "address": "987 Fictional St, Movie City",
+    "contactNo": "+1-555-7055",
+    "email": "indianajones@email.com",
+    "dateOfBirth": "2000-04-27",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "employeeName": "Hermione Granger",
+    "employeeImage": "",
+    "employeeType": "Intern",
+    "employeePosition": "Analyst",
+    "employeeDivision": "IT",
+    "employeeDepartment": "Department A",
+    "employeeSection": "Section 1",
+    "address": "227 Fictional St, Movie City",
+    "contactNo": "+1-555-4687",
+    "email": "hermionegranger@testmail.com",
+    "dateOfBirth": "1984-07-05",
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "assetRecords": [],
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  }
+]

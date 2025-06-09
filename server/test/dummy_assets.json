@@ -1,0 +1,1552 @@
+[
+  {
+    "propNo": "Laptop-001",
+    "propName": "ACER",
+    "propDescription": "ACER LAPTOP",
+    "unitCost": 25000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Laptop-001-A",
+        "invName": "ACER",
+        "description": "ACER LAPTOP",
+        "code": "0001",
+        "status": "Available"
+      },
+      {
+        "invNo": "Laptop-001-B",
+        "invName": "ACER",
+        "description": "ACER LAPTOP",
+        "code": "0002",
+        "status": "Available"
+      },
+      {
+        "invNo": "Laptop-001-C",
+        "invName": "ACER",
+        "description": "ACER LAPTOP",
+        "code": "0003",
+        "status": "Available"
+      },
+      {
+        "invNo": "Laptop-001-D",
+        "invName": "ACER",
+        "description": "ACER LAPTOP",
+        "code": "0004",
+        "status": "Available"
+      },
+      {
+        "invNo": "Laptop-001-E",
+        "invName": "ACER",
+        "description": "ACER LAPTOP",
+        "code": "0005",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 125000,
+    "reference": "test",
+    "category": "Office Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Printer-002",
+    "propName": "HP LaserJet",
+    "propDescription": "HP Laser Printer",
+    "unitCost": 15000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Printer-002-A",
+        "invName": "HP LaserJet",
+        "description": "HP Laser Printer",
+        "code": "0006",
+        "status": "Available"
+      },
+      {
+        "invNo": "Printer-002-B",
+        "invName": "HP LaserJet",
+        "description": "HP Laser Printer",
+        "code": "0007",
+        "status": "Available"
+      },
+      {
+        "invNo": "Printer-002-C",
+        "invName": "HP LaserJet",
+        "description": "HP Laser Printer",
+        "code": "0008",
+        "status": "Available"
+      },
+      {
+        "invNo": "Printer-002-D",
+        "invName": "HP LaserJet",
+        "description": "HP Laser Printer",
+        "code": "0009",
+        "status": "Available"
+      },
+      {
+        "invNo": "Printer-002-E",
+        "invName": "HP LaserJet",
+        "description": "HP Laser Printer",
+        "code": "0010",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 75000,
+    "reference": "test",
+    "category": "Office Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Scanner-003",
+    "propName": "CanonScan",
+    "propDescription": "Document Scanner",
+    "unitCost": 10000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Scanner-003-A",
+        "invName": "CanonScan",
+        "description": "Document Scanner",
+        "code": "0011",
+        "status": "Available"
+      },
+      {
+        "invNo": "Scanner-003-B",
+        "invName": "CanonScan",
+        "description": "Document Scanner",
+        "code": "0012",
+        "status": "Available"
+      },
+      {
+        "invNo": "Scanner-003-C",
+        "invName": "CanonScan",
+        "description": "Document Scanner",
+        "code": "0013",
+        "status": "Available"
+      },
+      {
+        "invNo": "Scanner-003-D",
+        "invName": "CanonScan",
+        "description": "Document Scanner",
+        "code": "0014",
+        "status": "Available"
+      },
+      {
+        "invNo": "Scanner-003-E",
+        "invName": "CanonScan",
+        "description": "Document Scanner",
+        "code": "0015",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 50000,
+    "reference": "test",
+    "category": "Office Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Shredder-004",
+    "propName": "Fellowes",
+    "propDescription": "Paper Shredder",
+    "unitCost": 8000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Shredder-004-A",
+        "invName": "Fellowes",
+        "description": "Paper Shredder",
+        "code": "0016",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shredder-004-B",
+        "invName": "Fellowes",
+        "description": "Paper Shredder",
+        "code": "0017",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shredder-004-C",
+        "invName": "Fellowes",
+        "description": "Paper Shredder",
+        "code": "0018",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shredder-004-D",
+        "invName": "Fellowes",
+        "description": "Paper Shredder",
+        "code": "0019",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shredder-004-E",
+        "invName": "Fellowes",
+        "description": "Paper Shredder",
+        "code": "0020",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 40000,
+    "reference": "test",
+    "category": "Office Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Phone-005",
+    "propName": "Cisco",
+    "propDescription": "VoIP Phone",
+    "unitCost": 7000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Phone-005-A",
+        "invName": "Cisco",
+        "description": "VoIP Phone",
+        "code": "0021",
+        "status": "Available"
+      },
+      {
+        "invNo": "Phone-005-B",
+        "invName": "Cisco",
+        "description": "VoIP Phone",
+        "code": "0022",
+        "status": "Available"
+      },
+      {
+        "invNo": "Phone-005-C",
+        "invName": "Cisco",
+        "description": "VoIP Phone",
+        "code": "0023",
+        "status": "Available"
+      },
+      {
+        "invNo": "Phone-005-D",
+        "invName": "Cisco",
+        "description": "VoIP Phone",
+        "code": "0024",
+        "status": "Available"
+      },
+      {
+        "invNo": "Phone-005-E",
+        "invName": "Cisco",
+        "description": "VoIP Phone",
+        "code": "0025",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 35000,
+    "reference": "test",
+    "category": "Office Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Chair-006",
+    "propName": "ErgoChair",
+    "propDescription": "Ergonomic Office Chair",
+    "unitCost": 5000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Chair-006-A",
+        "invName": "ErgoChair",
+        "description": "Ergonomic Office Chair",
+        "code": "0026",
+        "status": "Available"
+      },
+      {
+        "invNo": "Chair-006-B",
+        "invName": "ErgoChair",
+        "description": "Ergonomic Office Chair",
+        "code": "0027",
+        "status": "Available"
+      },
+      {
+        "invNo": "Chair-006-C",
+        "invName": "ErgoChair",
+        "description": "Ergonomic Office Chair",
+        "code": "0028",
+        "status": "Available"
+      },
+      {
+        "invNo": "Chair-006-D",
+        "invName": "ErgoChair",
+        "description": "Ergonomic Office Chair",
+        "code": "0029",
+        "status": "Available"
+      },
+      {
+        "invNo": "Chair-006-E",
+        "invName": "ErgoChair",
+        "description": "Ergonomic Office Chair",
+        "code": "0030",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 25000,
+    "reference": "test",
+    "category": "Furniture",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Desk-007",
+    "propName": "IKEA Desk",
+    "propDescription": "Office Desk",
+    "unitCost": 10000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Desk-007-A",
+        "invName": "IKEA Desk",
+        "description": "Office Desk",
+        "code": "0031",
+        "status": "Available"
+      },
+      {
+        "invNo": "Desk-007-B",
+        "invName": "IKEA Desk",
+        "description": "Office Desk",
+        "code": "0032",
+        "status": "Available"
+      },
+      {
+        "invNo": "Desk-007-C",
+        "invName": "IKEA Desk",
+        "description": "Office Desk",
+        "code": "0033",
+        "status": "Available"
+      },
+      {
+        "invNo": "Desk-007-D",
+        "invName": "IKEA Desk",
+        "description": "Office Desk",
+        "code": "0034",
+        "status": "Available"
+      },
+      {
+        "invNo": "Desk-007-E",
+        "invName": "IKEA Desk",
+        "description": "Office Desk",
+        "code": "0035",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 50000,
+    "reference": "test",
+    "category": "Furniture",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Cabinet-008",
+    "propName": "SteelCab",
+    "propDescription": "Filing Cabinet",
+    "unitCost": 8000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Cabinet-008-A",
+        "invName": "SteelCab",
+        "description": "Filing Cabinet",
+        "code": "0036",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cabinet-008-B",
+        "invName": "SteelCab",
+        "description": "Filing Cabinet",
+        "code": "0037",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cabinet-008-C",
+        "invName": "SteelCab",
+        "description": "Filing Cabinet",
+        "code": "0038",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cabinet-008-D",
+        "invName": "SteelCab",
+        "description": "Filing Cabinet",
+        "code": "0039",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cabinet-008-E",
+        "invName": "SteelCab",
+        "description": "Filing Cabinet",
+        "code": "0040",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 40000,
+    "reference": "test",
+    "category": "Furniture",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Table-009",
+    "propName": "ConfTable",
+    "propDescription": "Conference Table",
+    "unitCost": 15000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Table-009-A",
+        "invName": "ConfTable",
+        "description": "Conference Table",
+        "code": "0041",
+        "status": "Available"
+      },
+      {
+        "invNo": "Table-009-B",
+        "invName": "ConfTable",
+        "description": "Conference Table",
+        "code": "0042",
+        "status": "Available"
+      },
+      {
+        "invNo": "Table-009-C",
+        "invName": "ConfTable",
+        "description": "Conference Table",
+        "code": "0043",
+        "status": "Available"
+      },
+      {
+        "invNo": "Table-009-D",
+        "invName": "ConfTable",
+        "description": "Conference Table",
+        "code": "0044",
+        "status": "Available"
+      },
+      {
+        "invNo": "Table-009-E",
+        "invName": "ConfTable",
+        "description": "Conference Table",
+        "code": "0045",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 75000,
+    "reference": "test",
+    "category": "Furniture",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Shelf-010",
+    "propName": "Bookshelf",
+    "propDescription": "Office Bookshelf",
+    "unitCost": 6000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Shelf-010-A",
+        "invName": "Bookshelf",
+        "description": "Office Bookshelf",
+        "code": "0046",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shelf-010-B",
+        "invName": "Bookshelf",
+        "description": "Office Bookshelf",
+        "code": "0047",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shelf-010-C",
+        "invName": "Bookshelf",
+        "description": "Office Bookshelf",
+        "code": "0048",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shelf-010-D",
+        "invName": "Bookshelf",
+        "description": "Office Bookshelf",
+        "code": "0049",
+        "status": "Available"
+      },
+      {
+        "invNo": "Shelf-010-E",
+        "invName": "Bookshelf",
+        "description": "Office Bookshelf",
+        "code": "0050",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 30000,
+    "reference": "test",
+    "category": "Furniture",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Vehicle-011",
+    "propName": "Toyota",
+    "propDescription": "Company Car",
+    "unitCost": 800000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Vehicle-011-A",
+        "invName": "Toyota",
+        "description": "Company Car",
+        "code": "0051",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-011-B",
+        "invName": "Toyota",
+        "description": "Company Car",
+        "code": "0052",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-011-C",
+        "invName": "Toyota",
+        "description": "Company Car",
+        "code": "0053",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-011-D",
+        "invName": "Toyota",
+        "description": "Company Car",
+        "code": "0054",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-011-E",
+        "invName": "Toyota",
+        "description": "Company Car",
+        "code": "0055",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 4000000,
+    "reference": "test",
+    "category": "Vehicle",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Vehicle-012",
+    "propName": "Honda",
+    "propDescription": "Delivery Van",
+    "unitCost": 600000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Vehicle-012-A",
+        "invName": "Honda",
+        "description": "Delivery Van",
+        "code": "0056",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-012-B",
+        "invName": "Honda",
+        "description": "Delivery Van",
+        "code": "0057",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-012-C",
+        "invName": "Honda",
+        "description": "Delivery Van",
+        "code": "0058",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-012-D",
+        "invName": "Honda",
+        "description": "Delivery Van",
+        "code": "0059",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-012-E",
+        "invName": "Honda",
+        "description": "Delivery Van",
+        "code": "0060",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 3000000,
+    "reference": "test",
+    "category": "Vehicle",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Vehicle-013",
+    "propName": "Suzuki",
+    "propDescription": "Service Motorcycle",
+    "unitCost": 150000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Vehicle-013-A",
+        "invName": "Suzuki",
+        "description": "Service Motorcycle",
+        "code": "0061",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-013-B",
+        "invName": "Suzuki",
+        "description": "Service Motorcycle",
+        "code": "0062",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-013-C",
+        "invName": "Suzuki",
+        "description": "Service Motorcycle",
+        "code": "0063",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-013-D",
+        "invName": "Suzuki",
+        "description": "Service Motorcycle",
+        "code": "0064",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-013-E",
+        "invName": "Suzuki",
+        "description": "Service Motorcycle",
+        "code": "0065",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 750000,
+    "reference": "test",
+    "category": "Vehicle",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Vehicle-014",
+    "propName": "Mitsubishi",
+    "propDescription": "Pickup Truck",
+    "unitCost": 700000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Vehicle-014-A",
+        "invName": "Mitsubishi",
+        "description": "Pickup Truck",
+        "code": "0066",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-014-B",
+        "invName": "Mitsubishi",
+        "description": "Pickup Truck",
+        "code": "0067",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-014-C",
+        "invName": "Mitsubishi",
+        "description": "Pickup Truck",
+        "code": "0068",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-014-D",
+        "invName": "Mitsubishi",
+        "description": "Pickup Truck",
+        "code": "0069",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-014-E",
+        "invName": "Mitsubishi",
+        "description": "Pickup Truck",
+        "code": "0070",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 3500000,
+    "reference": "test",
+    "category": "Vehicle",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Vehicle-015",
+    "propName": "Isuzu",
+    "propDescription": "Cargo Truck",
+    "unitCost": 900000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Vehicle-015-A",
+        "invName": "Isuzu",
+        "description": "Cargo Truck",
+        "code": "0071",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-015-B",
+        "invName": "Isuzu",
+        "description": "Cargo Truck",
+        "code": "0072",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-015-C",
+        "invName": "Isuzu",
+        "description": "Cargo Truck",
+        "code": "0073",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-015-D",
+        "invName": "Isuzu",
+        "description": "Cargo Truck",
+        "code": "0074",
+        "status": "Available"
+      },
+      {
+        "invNo": "Vehicle-015-E",
+        "invName": "Isuzu",
+        "description": "Cargo Truck",
+        "code": "0075",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 4500000,
+    "reference": "test",
+    "category": "Vehicle",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Projector-016",
+    "propName": "Epson",
+    "propDescription": "Multimedia Projector",
+    "unitCost": 30000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Projector-016-A",
+        "invName": "Epson",
+        "description": "Multimedia Projector",
+        "code": "0076",
+        "status": "Available"
+      },
+      {
+        "invNo": "Projector-016-B",
+        "invName": "Epson",
+        "description": "Multimedia Projector",
+        "code": "0077",
+        "status": "Available"
+      },
+      {
+        "invNo": "Projector-016-C",
+        "invName": "Epson",
+        "description": "Multimedia Projector",
+        "code": "0078",
+        "status": "Available"
+      },
+      {
+        "invNo": "Projector-016-D",
+        "invName": "Epson",
+        "description": "Multimedia Projector",
+        "code": "0079",
+        "status": "Available"
+      },
+      {
+        "invNo": "Projector-016-E",
+        "invName": "Epson",
+        "description": "Multimedia Projector",
+        "code": "0080",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 150000,
+    "reference": "test",
+    "category": "Electronic Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Monitor-017",
+    "propName": "Dell",
+    "propDescription": "LED Monitor",
+    "unitCost": 12000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Monitor-017-A",
+        "invName": "Dell",
+        "description": "LED Monitor",
+        "code": "0081",
+        "status": "Available"
+      },
+      {
+        "invNo": "Monitor-017-B",
+        "invName": "Dell",
+        "description": "LED Monitor",
+        "code": "0082",
+        "status": "Available"
+      },
+      {
+        "invNo": "Monitor-017-C",
+        "invName": "Dell",
+        "description": "LED Monitor",
+        "code": "0083",
+        "status": "Available"
+      },
+      {
+        "invNo": "Monitor-017-D",
+        "invName": "Dell",
+        "description": "LED Monitor",
+        "code": "0084",
+        "status": "Available"
+      },
+      {
+        "invNo": "Monitor-017-E",
+        "invName": "Dell",
+        "description": "LED Monitor",
+        "code": "0085",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 60000,
+    "reference": "test",
+    "category": "Electronic Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Camera-018",
+    "propName": "Logitech",
+    "propDescription": "Web Camera",
+    "unitCost": 5000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Camera-018-A",
+        "invName": "Logitech",
+        "description": "Web Camera",
+        "code": "0086",
+        "status": "Available"
+      },
+      {
+        "invNo": "Camera-018-B",
+        "invName": "Logitech",
+        "description": "Web Camera",
+        "code": "0087",
+        "status": "Available"
+      },
+      {
+        "invNo": "Camera-018-C",
+        "invName": "Logitech",
+        "description": "Web Camera",
+        "code": "0088",
+        "status": "Available"
+      },
+      {
+        "invNo": "Camera-018-D",
+        "invName": "Logitech",
+        "description": "Web Camera",
+        "code": "0089",
+        "status": "Available"
+      },
+      {
+        "invNo": "Camera-018-E",
+        "invName": "Logitech",
+        "description": "Web Camera",
+        "code": "0090",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 25000,
+    "reference": "test",
+    "category": "Electronic Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Router-019",
+    "propName": "TP-Link",
+    "propDescription": "WiFi Router",
+    "unitCost": 4000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Router-019-A",
+        "invName": "TP-Link",
+        "description": "WiFi Router",
+        "code": "0091",
+        "status": "Available"
+      },
+      {
+        "invNo": "Router-019-B",
+        "invName": "TP-Link",
+        "description": "WiFi Router",
+        "code": "0092",
+        "status": "Available"
+      },
+      {
+        "invNo": "Router-019-C",
+        "invName": "TP-Link",
+        "description": "WiFi Router",
+        "code": "0093",
+        "status": "Available"
+      },
+      {
+        "invNo": "Router-019-D",
+        "invName": "TP-Link",
+        "description": "WiFi Router",
+        "code": "0094",
+        "status": "Available"
+      },
+      {
+        "invNo": "Router-019-E",
+        "invName": "TP-Link",
+        "description": "WiFi Router",
+        "code": "0095",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 20000,
+    "reference": "test",
+    "category": "Electronic Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Speaker-020",
+    "propName": "JBL",
+    "propDescription": "Conference Speaker",
+    "unitCost": 10000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Speaker-020-A",
+        "invName": "JBL",
+        "description": "Conference Speaker",
+        "code": "0096",
+        "status": "Available"
+      },
+      {
+        "invNo": "Speaker-020-B",
+        "invName": "JBL",
+        "description": "Conference Speaker",
+        "code": "0097",
+        "status": "Available"
+      },
+      {
+        "invNo": "Speaker-020-C",
+        "invName": "JBL",
+        "description": "Conference Speaker",
+        "code": "0098",
+        "status": "Available"
+      },
+      {
+        "invNo": "Speaker-020-D",
+        "invName": "JBL",
+        "description": "Conference Speaker",
+        "code": "0099",
+        "status": "Available"
+      },
+      {
+        "invNo": "Speaker-020-E",
+        "invName": "JBL",
+        "description": "Conference Speaker",
+        "code": "0100",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 50000,
+    "reference": "test",
+    "category": "Electronic Equipment",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Drill-021",
+    "propName": "Bosch",
+    "propDescription": "Electric Drill",
+    "unitCost": 10000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Drill-021-A",
+        "invName": "Bosch",
+        "description": "Electric Drill",
+        "code": "0101",
+        "status": "Available"
+      },
+      {
+        "invNo": "Drill-021-B",
+        "invName": "Bosch",
+        "description": "Electric Drill",
+        "code": "0102",
+        "status": "Available"
+      },
+      {
+        "invNo": "Drill-021-C",
+        "invName": "Bosch",
+        "description": "Electric Drill",
+        "code": "0103",
+        "status": "Available"
+      },
+      {
+        "invNo": "Drill-021-D",
+        "invName": "Bosch",
+        "description": "Electric Drill",
+        "code": "0104",
+        "status": "Available"
+      },
+      {
+        "invNo": "Drill-021-E",
+        "invName": "Bosch",
+        "description": "Electric Drill",
+        "code": "0105",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 50000,
+    "reference": "test",
+    "category": "Machinery & Tools",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Cutter-022",
+    "propName": "Makita",
+    "propDescription": "Metal Cutter",
+    "unitCost": 15000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Cutter-022-A",
+        "invName": "Makita",
+        "description": "Metal Cutter",
+        "code": "0106",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cutter-022-B",
+        "invName": "Makita",
+        "description": "Metal Cutter",
+        "code": "0107",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cutter-022-C",
+        "invName": "Makita",
+        "description": "Metal Cutter",
+        "code": "0108",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cutter-022-D",
+        "invName": "Makita",
+        "description": "Metal Cutter",
+        "code": "0109",
+        "status": "Available"
+      },
+      {
+        "invNo": "Cutter-022-E",
+        "invName": "Makita",
+        "description": "Metal Cutter",
+        "code": "0110",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 75000,
+    "reference": "test",
+    "category": "Machinery & Tools",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Welder-023",
+    "propName": "Lincoln",
+    "propDescription": "Welding Machine",
+    "unitCost": 25000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Welder-023-A",
+        "invName": "Lincoln",
+        "description": "Welding Machine",
+        "code": "0111",
+        "status": "Available"
+      },
+      {
+        "invNo": "Welder-023-B",
+        "invName": "Lincoln",
+        "description": "Welding Machine",
+        "code": "0112",
+        "status": "Available"
+      },
+      {
+        "invNo": "Welder-023-C",
+        "invName": "Lincoln",
+        "description": "Welding Machine",
+        "code": "0113",
+        "status": "Available"
+      },
+      {
+        "invNo": "Welder-023-D",
+        "invName": "Lincoln",
+        "description": "Welding Machine",
+        "code": "0114",
+        "status": "Available"
+      },
+      {
+        "invNo": "Welder-023-E",
+        "invName": "Lincoln",
+        "description": "Welding Machine",
+        "code": "0115",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 125000,
+    "reference": "test",
+    "category": "Machinery & Tools",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Compressor-024",
+    "propName": "Hitachi",
+    "propDescription": "Air Compressor",
+    "unitCost": 30000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Compressor-024-A",
+        "invName": "Hitachi",
+        "description": "Air Compressor",
+        "code": "0116",
+        "status": "Available"
+      },
+      {
+        "invNo": "Compressor-024-B",
+        "invName": "Hitachi",
+        "description": "Air Compressor",
+        "code": "0117",
+        "status": "Available"
+      },
+      {
+        "invNo": "Compressor-024-C",
+        "invName": "Hitachi",
+        "description": "Air Compressor",
+        "code": "0118",
+        "status": "Available"
+      },
+      {
+        "invNo": "Compressor-024-D",
+        "invName": "Hitachi",
+        "description": "Air Compressor",
+        "code": "0119",
+        "status": "Available"
+      },
+      {
+        "invNo": "Compressor-024-E",
+        "invName": "Hitachi",
+        "description": "Air Compressor",
+        "code": "0120",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 150000,
+    "reference": "test",
+    "category": "Machinery & Tools",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "Saw-025",
+    "propName": "DeWalt",
+    "propDescription": "Circular Saw",
+    "unitCost": 18000,
+    "acquisitionDate": "2025-05-06T00:00:00.000Z",
+    "inventory": [
+      {
+        "invNo": "Saw-025-A",
+        "invName": "DeWalt",
+        "description": "Circular Saw",
+        "code": "0121",
+        "status": "Available"
+      },
+      {
+        "invNo": "Saw-025-B",
+        "invName": "DeWalt",
+        "description": "Circular Saw",
+        "code": "0122",
+        "status": "Available"
+      },
+      {
+        "invNo": "Saw-025-C",
+        "invName": "DeWalt",
+        "description": "Circular Saw",
+        "code": "0123",
+        "status": "Available"
+      },
+      {
+        "invNo": "Saw-025-D",
+        "invName": "DeWalt",
+        "description": "Circular Saw",
+        "code": "0124",
+        "status": "Available"
+      },
+      {
+        "invNo": "Saw-025-E",
+        "invName": "DeWalt",
+        "description": "Circular Saw",
+        "code": "0125",
+        "status": "Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 90000,
+    "reference": "test",
+    "category": "Machinery & Tools",
+    "accumulatedAccount": "accumulated",
+    "depreciationAccount": "depreciation",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  }
+]

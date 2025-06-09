@@ -1,0 +1,83 @@
+{
+    
+  "Tony Stark": {
+    "alias": "Iron Man",
+    "email": "t.stark@starkindustries.com"
+  },
+  "Steve Rogers": {
+    "alias": "Captain America",
+    "email": "s.rogers@avengers.org"
+  },
+  "Peter Parker": {
+    "alias": "Spider-Man",
+    "email": "p.parker@dailybugle.net"
+  },
+  "Bruce Banner": {
+    "alias": "Hulk",
+    "email": "b.banner@gammaresearch.org"
+  },
+  "Natasha Romanoff": {
+    "alias": "Black Widow",
+    "email": "n.romanoff@shield.gov"
+  },
+  "Clint Barton": {
+    "alias": "Hawkeye",
+    "email": "c.barton@shield.gov"
+  },
+  "Stephen Strange": {
+    "alias": "Doctor Strange",
+    "email": "s.strange@sanctumsanctorum.org"
+  },
+  "Wanda Maximoff": {
+    "alias": "Scarlet Witch",
+    "email": "w.maximoff@avengers.org"
+  },
+  "Vision": {
+    "alias": "No civilian name (android created by Ultron)",
+    "email": "vision@avengers.org"
+  },
+  "Sam Wilson": {
+    "alias": "Falcon / Captain America",
+    "email": "s.wilson@usaf.mil"
+  },
+  "James \"Logan\" Howlett": {
+    "alias": "Wolverine",
+    "email": "logan.howlett@xavier.edu"
+  },
+  "Charles Xavier": {
+    "alias": "Professor X",
+    "email": "c.xavier@xavier.edu"
+  },
+  "Scott Summers": {
+    "alias": "Cyclops",
+    "email": "s.summers@xavier.edu"
+  },
+  "Jean Grey": {
+    "alias": "Marvel Girl / Phoenix",
+    "email": "j.grey@xavier.edu"
+  },
+  "Ororo Munroe": {
+    "alias": "Storm",
+    "email": "o.munroe@xavier.edu"
+  },
+  "T'Challa": {
+    "alias": "Black Panther",
+    "email": "t.challa@wakanda.gov"
+  },
+  "Carol Danvers": {
+    "alias": "Captain Marvel",
+    "email": "c.danvers@starforce.space"
+  },
+  "Matt Murdock": {
+    "alias": "Daredevil",
+    "email": "m.murdock@hellskitchenlaw.com"
+  },
+  "Jessica Jones": {
+    "alias": "Alias",
+    "email": "j.jones@aliasinvestigations.com"
+  },
+  "Marc Spector": {
+    "alias": "Moon Knight",
+    "email": "m.spector@midnightmission.org"
+  }
+}
