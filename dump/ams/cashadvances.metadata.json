@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"caNo":{"$numberInt":"1"}},"name":"caNo_1","background":true,"unique":true}],"uuid":"9be539aea5e14192953279ba3f0d025a","collectionName":"cashadvances","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"caNo":{"$numberInt":"1"}},"name":"caNo_1","background":true,"unique":true}],"uuid":"0820b52f7e1241ef902986a99abdc509","collectionName":"cashadvances","type":"collection"}

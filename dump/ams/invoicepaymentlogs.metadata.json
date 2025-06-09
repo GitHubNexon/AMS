@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"029ae8b6fae34d2581e6d316463a2631","collectionName":"invoicepaymentlogs","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"8ad450282c8447aebfd45f0974e02f61","collectionName":"invoicepaymentlogs","type":"collection"}

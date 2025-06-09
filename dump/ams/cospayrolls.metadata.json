@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"532d298927f3418191da0e01dfe55a69","collectionName":"cospayrolls","type":"collection"}

@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"6f74b6165e914c4384ee42667ea12268","collectionName":"bankreconciliations","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0ab4abf0ede348a98b0449f7fbc4143c","collectionName":"bankreconciliations","type":"collection"}
