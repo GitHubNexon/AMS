@@ -12,6 +12,7 @@ import {
 import { numberToCurrencyString } from "../helper/helper";
 import { showToast } from "../utils/toastNotifications";
 import moment from "moment";
+import assetExportApi from "../api/assetExportApi";
 
 const FILTER_OPTIONS = [
   { key: "Issuance", label: "Issuance" },
@@ -37,6 +38,12 @@ const AssetsHistory = () => {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
+
+  const handleExportReport = () => {
+    if (response?.inventoryHistory?.length) {
+      assetExportApi.exportAssetHistory(response.inventoryHistory);
+    }
+  };
 
   const handleAssetSelect = (asset) =>
     setForm((prev) => ({
@@ -125,6 +132,16 @@ const AssetsHistory = () => {
               onSelect={handleEmployeeSelect}
             />
           </div>
+          {response?.inventoryHistory?.length > 0 && (
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={handleExportReport}
+                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+              >
+                <FaCheckCircle /> Export to Excel
+              </button>
+            </div>
+          )}
         </div>
 
         <div>

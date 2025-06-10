@@ -42,6 +42,31 @@ const buildMatchConditionsHistory = (assetId, employeeId, filter) => {
   return conditions;
 };
 
+// const buildAggregationPipelineHistory = (assetId, employeeId, filter) => {
+//   const matchConditions = buildMatchConditionsHistory(
+//     assetId,
+//     employeeId,
+//     filter
+//   );
+
+//   return [
+//     ...matchConditions,
+//     {
+//       $group: {
+//         _id: "$_id",
+//         inventoryHistory: { $push: "$inventory.history" },
+//       },
+//     },
+//     {
+//       $project: {
+//         _id: 1,
+//         assetId: "$_id",
+//         inventoryHistory: 1,
+//       },
+//     },
+//   ];
+// };
+
 const buildAggregationPipelineHistory = (assetId, employeeId, filter) => {
   const matchConditions = buildMatchConditionsHistory(
     assetId,
@@ -51,10 +76,41 @@ const buildAggregationPipelineHistory = (assetId, employeeId, filter) => {
 
   return [
     ...matchConditions,
+    // Normalize assetRecords to array for each inventory.history
     {
+      $addFields: {
+        "inventory.history.assetRecords": {
+          $cond: {
+            if: { $isArray: "$inventory.history.assetRecords" },
+            then: "$inventory.history.assetRecords",
+            else: {
+              $cond: {
+                if: { $ne: ["$inventory.history.assetRecords", null] },
+                then: ["$inventory.history.assetRecords"],
+                else: [],
+              },
+            },
+          },
+        },
+      },
+    },
+    {
+      // Group to collect all inventory.history records into an array
       $group: {
         _id: "$_id",
         inventoryHistory: { $push: "$inventory.history" },
+        totalAmount: {
+          // Sum amounts inside each inventory.history.assetRecords array
+          $sum: {
+            $sum: {
+              $map: {
+                input: "$inventory.history.assetRecords",
+                as: "record",
+                in: { $ifNull: ["$$record.amount", 0] },
+              },
+            },
+          },
+        },
       },
     },
     {
@@ -62,6 +118,7 @@ const buildAggregationPipelineHistory = (assetId, employeeId, filter) => {
         _id: 1,
         assetId: "$_id",
         inventoryHistory: 1,
+        totalAmount: 1,
       },
     },
   ];
@@ -148,6 +205,7 @@ const getAssetsHistory = async (req, res) => {
       message: "Assets history retrieved successfully",
       assetId: result[0].assetId,
       inventoryHistory: populatedHistory,
+      totalAmount: result[0].totalAmount || 0,
     });
   } catch (error) {
     console.error("Error fetching assets history:", error);

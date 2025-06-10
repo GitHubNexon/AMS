@@ -11,7 +11,7 @@ const EmployeePicker = ({ onSelect, value, isDisabled }) => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await employeeApi.getAllEmployeeRecord();
+        const res = await employeeApi.getAllEmployeeRecord(1, 999999);
         const employees = res?.employees || [];
         const mapped = employees.map((emp) => ({
           value: emp,
@@ -180,7 +180,7 @@ const AssetsEmployeePicker = ({
     if (lockedEmployeeId) {
       const fetchEmployee = async () => {
         try {
-          const res = await employeeApi.getAllEmployeeRecord();
+          const res = await employeeApi.getAllEmployeeRecord(1, 999999);
           const employee = res?.employees?.find(
             (emp) => emp._id === lockedEmployeeId
           );
