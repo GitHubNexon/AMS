@@ -213,6 +213,38 @@ const getAssetsHistory = async (req, res) => {
   }
 };
 
+const getAssetsConditions = async (req, res) => {
+  try {
+    const result = await AssetsModel.aggregate([
+      { $unwind: "$inventory" },
+      {
+        $group: {
+          _id: "$inventory.status",
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          status: "$_id",
+          count: 1,
+        },
+      },
+    ]);
+
+    // Structure data for Chart.js Polar Area chart
+    // Polar Area chart needs: labels and data arrays
+    const labels = result.map((item) => item.status);
+    const data = result.map((item) => item.count);
+
+    res.json({ labels, data });
+  } catch (error) {
+    console.error("Error Getting all assets Condition", error);
+    res.status(500).json({ message: "Internal Server error" });
+  }
+};
+
 module.exports = {
   getAssetsHistory,
+  getAssetsConditions,
 };

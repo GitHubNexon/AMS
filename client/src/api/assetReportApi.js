@@ -18,6 +18,16 @@ const assetReportApi = {
       throw error;
     }
   },
+
+  getInventoryStatus: async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/assets-reports/inventory-status`);
+      return response.data; // { labels, data }
+    } catch (error) {
+      console.error("Error fetching inventory status:", error.message);
+      throw error;
+    }
+  },
 };
 
 export default assetReportApi;

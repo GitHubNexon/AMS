@@ -165,9 +165,9 @@ app.use("/ams/api/asset-export/", assetExportRoutes);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's(frontend) index.html file.
-app.get("/AMS/*", (req, res) => {
-  res.sendFile(path.join(__dirname + "./../dist/index.html"));
-});
+// app.get("/AMS/*", (req, res) => {
+//   res.sendFile(path.join(__dirname + "./../dist/index.html"));
+// });
 
 cron.schedule("0 * * * *", async () => {
   console.log("cron job fired");

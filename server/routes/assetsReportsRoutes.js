@@ -6,4 +6,7 @@ router.use(authenticateToken);
 
 router.post("/history", AssetsReportsController.getAssetsHistory);
 
+// New route for inventory status counts for Polar Area chart
+router.get("/inventory-status", AssetsReportsController.getAssetsConditions);
+
 module.exports = router;
