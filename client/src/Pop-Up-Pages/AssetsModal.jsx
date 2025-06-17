@@ -235,20 +235,9 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
     }
 
     try {
-      let dataToSubmit = formData;
+      let dataToSubmit = assetsData;
+      console.log("to submit", dataToSubmit);
       if (mode === "edit") {
-        dataToSubmit = Object.keys(formData).reduce((acc, key) => {
-          if (formData[key] !== assetsData[key]) {
-            acc[key] = formData[key];
-          }
-          return acc;
-        }, {});
-
-        if (Object.keys(dataToSubmit).length === 0) {
-          console.log("No changes detected.");
-          return;
-        }
-
         await assetsApi.updateAssetsRecord(assetsData._id, dataToSubmit);
         console.log("FORM DATA UPDATED", dataToSubmit);
         showToast("Assets updated successfully!", "success");

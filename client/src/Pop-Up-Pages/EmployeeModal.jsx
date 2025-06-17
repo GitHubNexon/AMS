@@ -114,7 +114,7 @@ const EmployeeModal = ({
     }
 
     try {
-      let dataToSubmit = formData;
+      let dataToSubmit = employeeData;
 
       if (mode === "edit") {
         dataToSubmit = Object.keys(formData).reduce((acc, key) => {
