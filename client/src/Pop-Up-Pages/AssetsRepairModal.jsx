@@ -209,8 +209,8 @@ const AssetsRepairModal = ({
         showToast("Assets recorded successfully!", "success");
       }
 
-        onSaveAssetRepair(dataToSubmit);
-        onClose();
+      onSaveAssetRepair(dataToSubmit);
+      onClose();
     } catch (error) {
       console.error("Error submitting Assets:", error);
       showToast("Something went wrong. Please try again.", "error");
@@ -249,7 +249,7 @@ const AssetsRepairModal = ({
             }`}
             onClick={() => setActiveTab("repair-info")}
           >
-            Assets Issuance Information
+            Assets Repair Information
           </button>
           <button
             className={`px-4 py-2 font-semibold ${
@@ -325,7 +325,7 @@ const AssetsRepairModal = ({
               </div>
               <div className="flex flex-col">
                 <label htmlFor="dateRepaired" className="text-gray-700">
-                  Date to Repair
+                  Date for Repair
                 </label>
                 <input
                   type="date"

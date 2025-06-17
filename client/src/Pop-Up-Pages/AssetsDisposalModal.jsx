@@ -250,7 +250,7 @@ const AssetsDisposalModal = ({
             }`}
             onClick={() => setActiveTab("disposal-info")}
           >
-            Assets Issuance Information
+            Assets Disposal Information
           </button>
           <button
             className={`px-4 py-2 font-semibold ${

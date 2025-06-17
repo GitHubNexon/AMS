@@ -253,7 +253,7 @@ const AssetsLostStolenModal = ({
             }`}
             onClick={() => setActiveTab("lost-stolen-info")}
           >
-            Assets Issuance Information
+            Assets Lost/Stolen Information
           </button>
           <button
             className={`px-4 py-2 font-semibold ${
