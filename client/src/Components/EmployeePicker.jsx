@@ -9,7 +9,7 @@ const EmployeePicker = ({ onSelect, value }) => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await employeeApi.getAllEmployeeRecord();
+        const res = await employeeApi.getAllEmployeeRecord(1, 999999);
         const employees = res?.employees || [];
 
         // Use employee._id as value, label is name + position
