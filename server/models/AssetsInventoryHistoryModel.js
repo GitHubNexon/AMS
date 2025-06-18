@@ -8,6 +8,10 @@ const AssetsInventoryHistorySchema = new mongoose.Schema(
     date: { type: mongoose.Schema.Types.Mixed },
     transaction: { type: mongoose.Schema.Types.Mixed },
     issuanceId: { type: mongoose.Schema.Types.Mixed },
+    returnId: { type: mongoose.Schema.Types.Mixed },
+    disposalId: { type: mongoose.Schema.Types.Mixed },
+    repairId: { type: mongoose.Schema.Types.Mixed },
+    lostStolenId: { type: mongoose.Schema.Types.Mixed },
     employeeId: { type: mongoose.Schema.Types.Mixed },
     dateAcquired: { type: mongoose.Schema.Types.Mixed },
     dateReleased: { type: mongoose.Schema.Types.Mixed },
@@ -15,6 +19,7 @@ const AssetsInventoryHistorySchema = new mongoose.Schema(
     assetRecords: { type: mongoose.Schema.Types.Mixed },
     assetId: { type: mongoose.Schema.Types.Mixed },
     inventoryId: { type: mongoose.Schema.Types.Mixed },
+    dateReturned: { type: mongoose.Schema.Types.Mixed },
   },
   { timestamps: true }
 );

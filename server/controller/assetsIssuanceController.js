@@ -194,12 +194,12 @@ const handleIssuanceApproval = async (issuance) => {
       parNo: issuance.parNo,
       fundCluster: issuance.fundCluster,
       entityName: issuance.entityName,
-      date: issuance.createdAt,
+      date: issuance.dateAcquired,
       transaction: "Issuance",
       issuanceId: issuance._id,
       employeeId: issuance.employeeId,
-      dateAcquired: issuance.dateAcquired,
-      dateReleased: issuance.dateReleased,
+      // dateAcquired: issuance.dateAcquired,
+      // dateReleased: issuance.dateReleased,
       issuedBy: issuance.CreatedBy,
       assetRecords: filteredAssetRecords,
       assetId: record.assetId,
@@ -218,18 +218,23 @@ const handleIssuanceApproval = async (issuance) => {
     );
   }
 
-  // // Save to employee record collection (one document per issuance)
-  // const employeeRecord = {
-  //   parNo: issuance.parNo,
-  //   fundCluster: issuance.fundCluster,
-  //   entityName: issuance.entityName,
-  //   issuanceId: issuance._id,
-  //   dateReleased: issuance.dateReleased,
-  //   issuedBy: issuance.CreatedBy,
-  //   assetDetails: issuance.assetRecords,
-  // };
-
-  // await AssetsEmployeeRecordModel.create(employeeRecord);
+  await EmployeeModel.updateOne(
+    { _id: issuance.employeeId },
+    {
+      $push: {
+        assetRecords: {
+          parNo: issuance.parNo,
+          fundCluster: issuance.fundCluster,
+          entityName: issuance.entityName,
+          issuanceId: issuance._id,
+          dateReleased: issuance.dateReleased,
+          issuedBy: issuance.CreatedBy,
+          assetDetails: issuance.assetRecords,
+          // assetRecords: issuance.assetRecords,
+        },
+      },
+    }
+  );
 };
 
 const handleIssuanceReservation = async (issuance) => {

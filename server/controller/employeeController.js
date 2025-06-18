@@ -71,63 +71,9 @@ const deleteIdAssetRecords = async () => {
   }
 };
 
-// const getAllEmployeeRecords = async (req, res) => {
-//   try {
-//     await deleteIdAssetRecords();
-//     const page = parseInt(req.query.page, 10) || 1;
-//     const limit = parseInt(req.query.limit, 10) || 10;
-//     const keyword = req.query.keyword || "";
-//     const sortBy = req.query.sortBy || "createdAt";
-//     const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
-//     const status = req.query.status;
-
-//     const query = {
-//       ...(keyword && {
-//         $or: [
-//           { employeeName: { $regex: keyword, $options: "i" } },
-//           { employeeType: { $regex: keyword, $options: "i" } },
-//           { employeeCode: { $regex: keyword, $options: "i" } },
-//           { employeePosition: { $regex: keyword, $options: "i" } },
-//         ],
-//       }),
-//       ...(status &&
-//         status === "isDeleted" && {
-//           "Status.isDeleted": true,
-//         }),
-//       ...(status &&
-//         status === "isArchived" && {
-//           "Status.isArchived": true,
-//         }),
-//     };
-
-//     const sortCriteria = {
-//       "Status.isDeleted": 1,
-//       "Status.isArchived": 1,
-//       [sortBy]: sortOrder,
-//     };
-//     const totalItems = await EmployeeModel.countDocuments(query);
-//     const employees = await EmployeeModel.find(query)
-//       .sort(sortCriteria)
-//       .skip((page - 1) * limit)
-//       .limit(limit)
-//       .exec();
-
-//     res.json({
-//       totalItems,
-//       totalPages: Math.ceil(totalItems / limit),
-//       currentPage: page,
-//       employees: employees,
-//     });
-//   } catch (error) {
-//     console.error("Error getting all Employee record", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// };
-
 const getAllEmployeeRecords = async (req, res) => {
   try {
     await deleteIdAssetRecords();
-
     const page = parseInt(req.query.page, 10) || 1;
     const limit = parseInt(req.query.limit, 10) || 10;
     const keyword = req.query.keyword || "";
@@ -144,8 +90,14 @@ const getAllEmployeeRecords = async (req, res) => {
           { employeePosition: { $regex: keyword, $options: "i" } },
         ],
       }),
-      ...(status === "isDeleted" && { "Status.isDeleted": true }),
-      ...(status === "isArchived" && { "Status.isArchived": true }),
+      ...(status &&
+        status === "isDeleted" && {
+          "Status.isDeleted": true,
+        }),
+      ...(status &&
+        status === "isArchived" && {
+          "Status.isArchived": true,
+        }),
     };
 
     const sortCriteria = {
@@ -153,49 +105,26 @@ const getAllEmployeeRecords = async (req, res) => {
       "Status.isArchived": 1,
       [sortBy]: sortOrder,
     };
-
-    // Fetch employees as plain objects
+    const totalItems = await EmployeeModel.countDocuments(query);
     const employees = await EmployeeModel.find(query)
       .sort(sortCriteria)
       .skip((page - 1) * limit)
       .limit(limit)
-      .lean();
-
-    // Extract employee ObjectIds
-     const employeeIds = employees.map((emp) => emp._id);
-
-       // Find asset records with employeeId in employeeIds array
-    const assetRecords = await AssetInventoryHistoryModel.find({
-      employeeId: { $in: employeeIds },
-    }).lean();
-
-    // Group asset records by employeeId ObjectId (using .toString() for map keys)
-    const assetRecordsByEmployee = {};
-    for (const record of assetRecords) {
-      const empIdStr = record.employeeId.toString();
-      if (!assetRecordsByEmployee[empIdStr]) assetRecordsByEmployee[empIdStr] = [];
-      assetRecordsByEmployee[empIdStr].push(record);
-    }
-
-    // Attach assetRecords to each employee dynamically
-    const employeesWithAssets = employees.map((emp) => ({
-      ...emp,
-      assetRecords: assetRecordsByEmployee[emp._id.toString()] || [],
-    }));
-
-    const totalItems = await EmployeeModel.countDocuments(query);
+      .exec();
 
     res.json({
       totalItems,
       totalPages: Math.ceil(totalItems / limit),
       currentPage: page,
-      employees: employeesWithAssets,
+      employees: employees,
     });
   } catch (error) {
     console.error("Error getting all Employee record", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+
 
 const deleteEmployee = async (req, res) => {
   try {

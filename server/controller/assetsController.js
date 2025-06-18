@@ -281,9 +281,11 @@ const populateEmployee = () => ({
   select: "-employeeImage",
 });
 
+
 const getAllAssetsRecords = async (req, res) => {
   try {
     await deleteLinkIdHistory();
+
     const page = parseInt(req.query.page, 10) || 1;
     const limit = parseInt(req.query.limit, 10) || 10;
     const keyword = req.query.keyword || "";
@@ -319,11 +321,11 @@ const getAllAssetsRecords = async (req, res) => {
         path: "inventory",
         populate: [
           populateIssuanceHistory(),
-          // populateReturnHistory(),
-          // populateDisposalHistory(),
-          // populateRepairHistory(),
-          // populateLostStolenHistory(),
-          // populateEmployee(),
+          populateReturnHistory(),
+          populateDisposalHistory(),
+          populateRepairHistory(),
+          populateLostStolenHistory(),
+          populateEmployee(),
         ],
       })
       .lean();
@@ -333,16 +335,20 @@ const getAllAssetsRecords = async (req, res) => {
 
       for (const inventoryItem of asset.inventory) {
         const historyDocs = await AssetInventoryHistoryModel.find({
-          assetId: asset._id,
-          inventoryId: inventoryItem._id,
+          assetRecords: {
+            $elemMatch: {
+              assetId: asset._id,
+              inventoryId: inventoryItem._id,
+            },
+          },
         })
           .populate([
             populateIssuanceHistory(),
-            // populateReturnHistory(),
-            // populateDisposalHistory(),
-            // populateRepairHistory(),
-            // populateLostStolenHistory(),
-            // populateEmployee(),
+            populateReturnHistory(),
+            populateDisposalHistory(),
+            populateRepairHistory(),
+            populateLostStolenHistory(),
+            populateEmployee(),
           ])
           .lean();
 
@@ -368,7 +374,11 @@ const getAllAssetRecordsList = async (req, res) => {
       "Issued",
       "Dispose",
       "Under-Repair",
-      "Reserved",
+      "Reserved for Issuance",
+      "Reserved for Return",
+      "Reserved for Repair",
+      "Reserved for Disposal",
+      "Reserved for Lost/Stolen",
       "Lost/Stolen",
     ];
 
