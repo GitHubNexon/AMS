@@ -162,7 +162,12 @@ const ExpandedRowComponent = ({ data }) => {
         <div className="mt-6">
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-bold text-gray-800">
-              Current Asset Records ({data.assetRecords.length})
+              Current Asset Records (
+              {data.assetRecords.reduce(
+                (acc, issuance) => acc + issuance.assetRecords.length,
+                0
+              )}
+              )
             </h3>
             <button
               onClick={() => setShowAssetRecords(!showAssetRecords)}
@@ -173,9 +178,47 @@ const ExpandedRowComponent = ({ data }) => {
               {showAssetRecords ? "Hide Records" : "Show Records"}
             </button>
           </div>
-          <div id="asset-records" className="min-h-96 h-96 overflow-auto mt-4">
-            {assetRecordsContent}
-          </div>
+          {showAssetRecords && (
+            <div
+              id="asset-records"
+              className="min-h-96 h-96 overflow-auto mt-4"
+            >
+              {data.assetRecords.map((issuance) => (
+                <div key={issuance._id} className="mb-6 border-b pb-4">
+                  <h4 className="font-semibold text-gray-700 mb-2">
+                    Issuance ID: {issuance._id} - Transaction:{" "}
+                    {issuance.transaction}
+                  </h4>
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr>
+                        <th className="p-2 border-b">Item No</th>
+                        <th className="p-2 border-b">Description</th>
+                        <th className="p-2 border-b">Quantity</th>
+                        <th className="p-2 border-b">Unit</th>
+                        <th className="p-2 border-b">Location</th>
+                        <th className="p-2 border-b">Amount</th>
+                        <th className="p-2 border-b">Use Full Life (months)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {issuance.assetRecords.map((asset) => (
+                        <tr key={asset._id}>
+                          <td className="p-2 border-b">{asset.itemNo}</td>
+                          <td className="p-2 border-b">{asset.description}</td>
+                          <td className="p-2 border-b">{asset.quantity}</td>
+                          <td className="p-2 border-b">{asset.unit}</td>
+                          <td className="p-2 border-b">{asset.location}</td>
+                          <td className="p-2 border-b">{asset.amount}</td>
+                          <td className="p-2 border-b">{asset.useFullLife}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
