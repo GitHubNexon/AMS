@@ -13,6 +13,14 @@ import {
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
+const statusColors = {
+  Available: "rgba(0, 128, 0, 0.6)", // Green
+  Dispose: "rgba(255, 0, 0, 0.6)", // Red
+  "Under-Repair": "rgba(255, 255, 0, 0.6)", // Yellow
+  "Lost/Stolen": "rgba(128, 128, 128, 0.6)", // Gray
+  Issued: "rgba(255, 165, 0, 0.6)", // Orange
+};
+
 const AssetsPolarAreaChart = () => {
   const [chartData, setChartData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -22,22 +30,23 @@ const AssetsPolarAreaChart = () => {
     const fetchInventoryStatus = async () => {
       try {
         const data = await assetReportApi.getInventoryStatus();
+
+        const backgroundColors = data.labels.map(
+          (label) => statusColors[label] || "rgba(0, 0, 0, 0.3)"
+        );
+
         setChartData({
           labels: data.labels,
           datasets: [
             {
               label: "Inventory",
               data: data.data,
-              backgroundColor: [
-                "rgba(255, 99, 132, 0.6)", // Red-ish
-                "rgba(54, 162, 235, 0.6)", // Blue-ish
-                "rgba(255, 206, 86, 0.6)", // Yellow-ish
-                // add more colors if you have more statuses
-              ],
+              backgroundColor: backgroundColors,
               borderWidth: 1,
             },
           ],
         });
+
         setLoading(false);
       } catch (err) {
         setError("Failed to fetch inventory status");
