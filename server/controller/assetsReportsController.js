@@ -201,8 +201,93 @@ const getAssetsConditions = async (req, res) => {
     res.status(500).json({ message: "Internal Server error" });
   }
 };
+const getICSReport = async (req, res) => {
+  try {
+    const { startDate, endDate } = req.body;
+
+    // Build query filter
+    let dateFilter = {};
+    if (startDate || endDate) {
+      dateFilter.acquisitionDate = {};
+
+      if (startDate) {
+        dateFilter.acquisitionDate.$gte = new Date(startDate);
+      }
+
+      if (endDate) {
+        const end = new Date(endDate);
+        end.setHours(23, 59, 59, 999); // Set to end of day
+        dateFilter.acquisitionDate.$lte = end;
+      }
+    }
+
+    // Query assets with optional date filtering and exclude deleted/archived
+    const query = {
+      ...dateFilter,
+      "Status.isDeleted": { $ne: true },
+      "Status.isArchived": { $ne: true },
+    };
+
+    const assets = await AssetsModel.find(query);
+
+    let reportData = [];
+    let totalAmount = 0;
+
+    // Process each asset
+    assets.forEach((asset) => {
+      // If asset has inventory items, create a report entry for each
+      if (asset.inventory && asset.inventory.length > 0) {
+        asset.inventory.forEach((inventoryItem) => {
+          const reportItem = {
+            quantity: 1, // Each inventory item represents 1 unit
+            unit: asset.propName,
+            amount: asset.unitCost, // Price per unit
+            totalCost: asset.unitCost, // Since quantity is 1, totalCost = unitCost
+            description: asset.propDescription,
+            inventoryItemNo: inventoryItem.invNo,
+            useFullLife: asset.useFullLife,
+          };
+
+          reportData.push(reportItem);
+          totalAmount += asset.unitCost;
+        });
+      } else {
+        // If no inventory items, create entry based on asset quantity
+        for (let i = 0; i < (asset.quantity || 1); i++) {
+          const reportItem = {
+            quantity: 1,
+            unit: asset.propName,
+            amount: asset.unitCost,
+            totalCost: asset.unitCost,
+            description: asset.propDescription,
+            inventoryItemNo: asset.propNo + `-${i + 1}`, // Generate inventory number
+            useFullLife: asset.useFullLife,
+          };
+
+          reportData.push(reportItem);
+          totalAmount += asset.unitCost;
+        }
+      }
+    });
+
+    // Return the formatted response
+    res.status(200).json({
+      reportData,
+      totalAmount,
+      dateRange: {
+        startDate: startDate || null,
+        endDate: endDate || null,
+      },
+      totalRecords: reportData.length,
+    });
+  } catch (error) {
+    console.error("Error getting ICS Report:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
 
 module.exports = {
   getAssetsHistory,
   getAssetsConditions,
+  getICSReport,
 };
