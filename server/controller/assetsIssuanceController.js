@@ -1,7 +1,9 @@
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
+const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 
+/*
 const handleIssuanceApproval = async (issuance) => {
   for (let record of issuance.assetRecords) {
     const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -171,28 +173,137 @@ const updateAssetsIssuance = async (req, res) => {
   }
 };
 
-//
-/*
+*/
+
+const handleIssuanceApproval = async (issuance) => {
+  for (let record of issuance.assetRecords) {
+    const asset = await AssetsModel.findOne({ _id: record.assetId });
+    if (!asset) {
+      throw new Error(`Asset with ID ${record.assetId} not found`);
+    }
+
+    // Filter only the asset records relevant to this inventory
+    const filteredAssetRecords = issuance.assetRecords.filter(
+      (ar) => ar.inventoryId.toString() === record.inventoryId.toString()
+    );
+
+    // If no matching records, skip
+    if (filteredAssetRecords.length === 0) continue;
+
+    const historyData = {
+      parNo: issuance.parNo,
+      fundCluster: issuance.fundCluster,
+      entityName: issuance.entityName,
+      date: issuance.dateAcquired,
+      transaction: "Issuance",
+      issuanceId: issuance._id,
+      employeeId: issuance.employeeId,
+      // dateAcquired: issuance.dateAcquired,
+      // dateReleased: issuance.dateReleased,
+      issuedBy: issuance.CreatedBy,
+      assetRecords: filteredAssetRecords,
+      assetId: record.assetId,
+      inventoryId: record.inventoryId,
+    };
+
+    // Insert history into separate collection instead of pushing into AssetsModel
+    await AssetInventoryHistoryModel.create(historyData);
+
+    // Update the asset's inventory status
+    await AssetsModel.updateOne(
+      { _id: record.assetId, "inventory._id": record.inventoryId },
+      {
+        $set: { "inventory.$.status": "Issued" },
+      }
+    );
+  }
+
+  await EmployeeModel.updateOne(
+    { _id: issuance.employeeId },
+    {
+      $push: {
+        assetRecords: {
+          parNo: issuance.parNo,
+          fundCluster: issuance.fundCluster,
+          entityName: issuance.entityName,
+          issuanceId: issuance._id,
+          dateReleased: issuance.dateReleased,
+          issuedBy: issuance.CreatedBy,
+          assetDetails: issuance.assetRecords,
+          // assetRecords: issuance.assetRecords,
+        },
+      },
+    }
+  );
+};
+
+const handleIssuanceReservation = async (issuance) => {
+  for (let record of issuance.assetRecords) {
+    const asset = await AssetsModel.findOne({ _id: record.assetId });
+    if (!asset) {
+      throw new Error(`Asset with ID ${record.assetId} not found`);
+    }
+
+    await AssetsModel.updateOne(
+      { _id: record.assetId, "inventory._id": record.inventoryId },
+      {
+        $set: { "inventory.$.status": "Reserved for Issuance" },
+      }
+    );
+  }
+
+  // No update to EmployeeModel or inventory history for reservations
+};
+
+const CleanAssetsIssuanceRecord = async () => {
+  try {
+    const allDrafts = await AssetsIssuanceModel.find({ docType: "Draft" });
+
+    for (let issuance of allDrafts) {
+      const isDeleted = issuance.Status?.isDeleted;
+      const isArchived = issuance.Status?.isArchived;
+
+      const newStatus =
+        isDeleted || isArchived ? "Available" : "Reserved for Issuance";
+
+      for (let record of issuance.assetRecords) {
+        const asset = await AssetsModel.findOne({ _id: record.assetId });
+        if (!asset) continue;
+
+        await AssetsModel.updateOne(
+          { _id: record.assetId, "inventory._id": record.inventoryId },
+          {
+            $set: { "inventory.$.status": newStatus },
+          }
+        );
+      }
+    }
+  } catch (error) {
+    console.error("Error cleaning/restoring asset reservations:", error);
+  }
+};
+
 const createAssetsIssuance = async (req, res) => {
   try {
     const AssetsIssuanceData = req.body;
     const newAssetsIssuance = new AssetsIssuanceModel(AssetsIssuanceData);
     await newAssetsIssuance.save();
 
-    if (AssetsIssuanceData.docType === "Approved") {
-      try {
+    try {
+      if (AssetsIssuanceData.docType === "Approved") {
         await handleIssuanceApproval(newAssetsIssuance);
-      } catch (err) {
-        // Handle errors inside the helper (e.g. asset/inventory not found)
-        return res.status(404).json({ message: err.message });
+      } else if (AssetsIssuanceData.docType === "Draft") {
+        await handleIssuanceReservation(newAssetsIssuance);
       }
+    } catch (err) {
+      return res.status(404).json({ message: err.message });
     }
 
     res.status(201).json({
       message:
         AssetsIssuanceData.docType === "Approved"
-          ? "Assets Issuance record created and history updated successfully"
-          : "Draft saved successfully",
+          ? "Assets Issuance record created and issued successfully"
+          : "Draft saved and assets reserved successfully",
       data: newAssetsIssuance,
     });
   } catch (error) {
@@ -216,14 +327,18 @@ const updateAssetsIssuance = async (req, res) => {
       return res.status(404).json({ message: "Issuance record not found" });
     }
 
-    if (updatedIssuance.docType === "Approved") {
-      await handleIssuanceApproval(updatedIssuance);
+    if (updateData.docType === "Approved") {
+      try {
+        await handleIssuanceApproval(updatedIssuance);
+      } catch (err) {
+        return res.status(404).json({ message: err.message });
+      }
     }
 
     res.status(200).json({
       message:
-        updatedIssuance.docType === "Approved"
-          ? "Issuance approved and updated"
+        updateData.docType === "Approved"
+          ? "Issuance approved and assets issued"
           : "Draft updated",
       data: updatedIssuance,
     });
@@ -232,8 +347,6 @@ const updateAssetsIssuance = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
-*/
 
 const getAllAssetsIssuanceRecords = async (req, res) => {
   try {

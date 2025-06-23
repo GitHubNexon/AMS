@@ -1,7 +1,9 @@
 const AssetsDisposalModel = require("../models/AssetsDisposalModel");
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
+const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 
+/*
 const handleDisposalApproval = async (disposalDoc) => {
   for (let record of disposalDoc.assetRecords) {
     const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -33,6 +35,42 @@ const handleDisposalApproval = async (disposalDoc) => {
       { _id: record.assetId, "inventory._id": record.inventoryId },
       {
         $push: { "inventory.$.history": historyData },
+        $set: { "inventory.$.status": "Dispose" },
+      }
+    );
+  }
+};
+*/
+
+const handleDisposalApproval = async (disposalDoc) => {
+  for (let record of disposalDoc.assetRecords) {
+    const asset = await AssetsModel.findOne({ _id: record.assetId });
+    if (!asset) {
+      throw new Error(`Asset with ID ${record.assetId} not found`);
+    }
+    // Filter only the asset records relevant to this inventory
+    const filteredAssetRecords = disposalDoc.assetRecords.filter(
+      (ar) => ar.inventoryId.toString() === record.inventoryId.toString()
+    );
+
+    // If no matching records, skip
+    if (filteredAssetRecords.length === 0) continue;
+
+    const historyData = {
+      parNo: disposalDoc.parNo,
+      fundCluster: disposalDoc.fundCluster,
+      entityName: disposalDoc.entityName,
+      date: disposalDoc.dateDisposed,
+      transaction: "Disposal",
+      disposalId: disposalDoc._id,
+      issuedBy: disposalDoc.CreatedBy,
+      assetRecords: filteredAssetRecords,
+    };
+
+    await AssetInventoryHistoryModel.create(historyData);
+    await AssetsModel.updateOne(
+      { _id: record.assetId, "inventory._id": record.inventoryId },
+      {
         $set: { "inventory.$.status": "Dispose" },
       }
     );

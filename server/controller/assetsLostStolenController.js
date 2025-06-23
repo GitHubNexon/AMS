@@ -1,6 +1,8 @@
 const AssetsLostStolenModel = require("../models/AssetsLostStolenModel");
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
+const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
+
 
 const handleLostStolenApproval = async (lostStolenDoc) => {
   for (let record of lostStolenDoc.assetRecords) {
@@ -29,10 +31,10 @@ const handleLostStolenApproval = async (lostStolenDoc) => {
       // assetRecords: lostStolenDoc.assetRecords,
       assetRecords: filteredAssetRecords,
     };
+    await AssetInventoryHistoryModel.create(historyData);
     await AssetsModel.updateOne(
       { _id: record.assetId, "inventory._id": record.inventoryId },
       {
-        $push: { "inventory.$.history": historyData },
         $set: { "inventory.$.status": "Lost/Stolen" },
       }
     );
@@ -206,7 +208,6 @@ const getAllAssetsLostStolen = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
 
 const deleteAssetsLostStolenRecord = async (req, res) => {
   try {

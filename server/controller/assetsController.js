@@ -4,6 +4,7 @@ const AssetsReturnModel = require("../models/AssetsReturnModel");
 const AssetsDisposal = require("../models/AssetsDisposalModel");
 const AssetsRepairModel = require("../models/AssetsRepairModel");
 const AssetsLostStolenModel = require("../models/AssetsLostStolenModel");
+const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 
 const EmployeeModel = require("../models/employeeModel");
 
@@ -45,6 +46,53 @@ const updateAssetsRecord = async (req, res) => {
   }
 };
 
+const deleteLinkIdHistory = async () => {
+  try {
+    const validCheckers = {
+      issuanceId: AssetsIssuanceModel,
+      returnId: AssetsReturnModel,
+      disposalId: AssetsDisposal,
+      repairId: AssetsRepairModel,
+      lostStolenId: AssetsLostStolenModel,
+    };
+
+    const allHistoryDocs = await AssetInventoryHistoryModel.find({});
+
+    for (const historyDoc of allHistoryDocs) {
+      let isValid = false;
+
+      for (const [key, model] of Object.entries(validCheckers)) {
+        if (historyDoc[key]) {
+          const exists = await model.exists({ _id: historyDoc[key] });
+          if (exists) {
+            isValid = true;
+            break;
+          }
+        }
+      }
+
+      // If not valid, delete and revert inventory status
+      if (!isValid) {
+        await AssetInventoryHistoryModel.deleteOne({ _id: historyDoc._id });
+
+        // Revert inventory status to "Available"
+        await AssetsModel.updateOne(
+          {
+            _id: historyDoc.assetId,
+            "inventory._id": historyDoc.inventoryId,
+          },
+          {
+            $set: { "inventory.$.status": "Available" },
+          }
+        );
+      }
+    }
+  } catch (err) {
+    console.error("Error in deleteLinkIdHistory:", err);
+  }
+};
+
+/*
 const deleteLinkIdHistory = async () => {
   try {
     const validCheckers = {
@@ -100,87 +148,6 @@ const deleteLinkIdHistory = async () => {
   }
 };
 
-// const getAllAssetsRecords = async (req, res) => {
-//   try {
-//     await deleteLinkIdHistory();
-
-//     const page = parseInt(req.query.page, 10) || 1;
-//     const limit = parseInt(req.query.limit, 10) || 10;
-//     const keyword = req.query.keyword || "";
-//     const sortBy = req.query.sortBy || "createdAt";
-//     const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
-//     const status = req.query.status;
-
-//     const query = {
-//       ...(keyword && {
-//         $or: [
-//           { propNo: { $regex: keyword, $options: "i" } },
-//           { propName: { $regex: keyword, $options: "i" } },
-//           { propDescription: { $regex: keyword, $options: "i" } },
-//         ],
-//       }),
-//       ...(status &&
-//         status === "isDeleted" && {
-//           "Status.isDeleted": true,
-//         }),
-//       ...(status &&
-//         status === "isArchived" && {
-//           "Status.isArchived": true,
-//         }),
-//     };
-
-//     const sortCriteria = {
-//       "Status.isDeleted": 1,
-//       "Status.isArchived": 1,
-//       [sortBy]: sortOrder,
-//     };
-//     const totalItems = await AssetsModel.countDocuments(query);
-//     const assets = await AssetsModel.find(query)
-//       .sort(sortCriteria)
-//       .skip((page - 1) * limit)
-//       .limit(limit)
-//       .populate({
-//         path: "inventory",
-//         populate: [
-//           {
-//             path: "issuanceId",
-//             model: "AssetsIssuance",
-//           },
-//           {
-//             path: "employeeId",
-//             model: "Employee",
-//             select: "-employeeImage",
-//           },
-//           {
-//             path: "history",
-//             populate: [
-//               {
-//                 path: "issuanceId",
-//                 model: "AssetsIssuance",
-//               },
-//               {
-//                 path: "employeeId",
-//                 model: "Employee",
-//                 select: "-employeeImage",
-//               },
-//             ],
-//           },
-//         ],
-//       });
-
-//     res.json({
-//       totalItems,
-//       totalPages: Math.ceil(totalItems / limit),
-//       currentPage: page,
-//       assets: assets,
-//     });
-//   } catch (error) {
-//     console.error("Error getting all Employee record", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// };
-
-// Helper to populate issuance history and related employee
 
 const populateIssuanceHistory = () => ({
   path: "issuanceId",
@@ -214,6 +181,7 @@ const populateEmployee = () => ({
   model: "Employee",
   select: "-employeeImage",
 });
+
 
 const getAllAssetsRecords = async (req, res) => {
   try {
@@ -285,6 +253,120 @@ const getAllAssetsRecords = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+*/
+
+const populateIssuanceHistory = () => ({
+  path: "issuanceId",
+  model: "AssetsIssuance",
+});
+const populateReturnHistory = () => ({
+  path: "returnId",
+  model: "AssetsReturn",
+});
+const populateDisposalHistory = () => ({
+  path: "disposalId",
+  model: "AssetsDisposal",
+});
+const populateRepairHistory = () => ({
+  path: "repairId",
+  model: "AssetsRepair",
+});
+const populateLostStolenHistory = () => ({
+  path: "lostStolenId",
+  model: "AssetsLostStolen",
+});
+const populateEmployee = () => ({
+  path: "employeeId",
+  model: "Employee",
+  select: "-employeeImage",
+});
+
+
+const getAllAssetsRecords = async (req, res) => {
+  try {
+    await deleteLinkIdHistory();
+
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 10;
+    const keyword = req.query.keyword || "";
+    const sortBy = req.query.sortBy || "createdAt";
+    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
+    const status = req.query.status;
+
+    const query = {
+      ...(keyword && {
+        $or: [
+          { propNo: { $regex: keyword, $options: "i" } },
+          { propName: { $regex: keyword, $options: "i" } },
+          { propDescription: { $regex: keyword, $options: "i" } },
+        ],
+      }),
+      ...(status === "isDeleted" && { "Status.isDeleted": true }),
+      ...(status === "isArchived" && { "Status.isArchived": true }),
+    };
+
+    const sortCriteria = {
+      "Status.isDeleted": 1,
+      "Status.isArchived": 1,
+      [sortBy]: sortOrder,
+    };
+
+    const totalItems = await AssetsModel.countDocuments(query);
+
+    const assets = await AssetsModel.find(query)
+      .sort(sortCriteria)
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .populate({
+        path: "inventory",
+        populate: [
+          populateIssuanceHistory(),
+          populateReturnHistory(),
+          populateDisposalHistory(),
+          populateRepairHistory(),
+          populateLostStolenHistory(),
+          populateEmployee(),
+        ],
+      })
+      .lean();
+
+    for (const asset of assets) {
+      if (!Array.isArray(asset.inventory)) continue;
+
+      for (const inventoryItem of asset.inventory) {
+        const historyDocs = await AssetInventoryHistoryModel.find({
+          assetRecords: {
+            $elemMatch: {
+              assetId: asset._id,
+              inventoryId: inventoryItem._id,
+            },
+          },
+        })
+          .populate([
+            populateIssuanceHistory(),
+            populateReturnHistory(),
+            populateDisposalHistory(),
+            populateRepairHistory(),
+            populateLostStolenHistory(),
+            populateEmployee(),
+          ])
+          .lean();
+
+        inventoryItem.history = historyDocs || [];
+      }
+    }
+
+    res.json({
+      totalItems,
+      totalPages: Math.ceil(totalItems / limit),
+      currentPage: page,
+      assets,
+    });
+  } catch (error) {
+    console.error("Error getting all assets records", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
 
 const getAllAssetRecordsList = async (req, res) => {
   try {
@@ -292,7 +374,11 @@ const getAllAssetRecordsList = async (req, res) => {
       "Issued",
       "Dispose",
       "Under-Repair",
-      "Reserved",
+      "Reserved for Issuance",
+      "Reserved for Return",
+      "Reserved for Repair",
+      "Reserved for Disposal",
+      "Reserved for Lost/Stolen",
       "Lost/Stolen",
     ];
 

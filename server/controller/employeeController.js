@@ -1,6 +1,8 @@
 const EmployeeModel = require("../models/employeeModel");
 const AssetsIssuanceModel = require("../models/AssetsIssuanceModel");
 const AssetsModel = require("../models/AssetsModel");
+const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
+const mongoose = require("mongoose");
 
 const createEmployee = async (req, res) => {
   try {
@@ -121,6 +123,8 @@ const getAllEmployeeRecords = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+
 
 const deleteEmployee = async (req, res) => {
   try {

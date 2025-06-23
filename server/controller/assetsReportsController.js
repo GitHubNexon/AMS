@@ -4,129 +4,56 @@ const AssetsDisposal = require("../models/AssetsDisposalModel");
 const AssetsRepairModel = require("../models/AssetsRepairModel");
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
+const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 
 const toObjectId = (id) => {
   const ObjectId = require("mongoose").Types.ObjectId;
   return new ObjectId(id);
 };
+const buildQueryConditions = (assetId, employeeId, filter) => {
+  // Query by assetId inside the assetRecords array
+  const conditions = { "assetRecords.assetId": toObjectId(assetId) };
 
-const buildMatchConditionsHistory = (assetId, employeeId, filter) => {
-  const conditions = [];
-
-  conditions.push({ $match: { _id: toObjectId(assetId) } });
-
-  conditions.push(
-    { $unwind: { path: "$inventory" } },
-    { $unwind: { path: "$inventory.history" } },
-    { $match: { "inventory.history": { $exists: true, $ne: null } } }
-  );
-
-  if (employeeId) {
-    conditions.push({
-      $match: { "inventory.history.employeeId": toObjectId(employeeId) },
-    });
-  }
-
+  // Apply transaction filter if provided
   if (filter && Object.keys(filter).length > 0) {
     const statusFilters = Object.entries(filter)
       .filter(([key, value]) => value === true)
       .map(([key]) => key);
 
     if (statusFilters.length > 0) {
-      conditions.push({
-        $match: { "inventory.history.transaction": { $in: statusFilters } },
-      });
+      conditions.transaction = { $in: statusFilters };
     }
   }
 
   return conditions;
 };
 
-// const buildAggregationPipelineHistory = (assetId, employeeId, filter) => {
-//   const matchConditions = buildMatchConditionsHistory(
-//     assetId,
-//     employeeId,
-//     filter
-//   );
+const filterByEmployeeId = (historyRecords, employeeId) => {
+  if (!employeeId) {
+    return historyRecords;
+  }
 
-//   return [
-//     ...matchConditions,
-//     {
-//       $group: {
-//         _id: "$_id",
-//         inventoryHistory: { $push: "$inventory.history" },
-//       },
-//     },
-//     {
-//       $project: {
-//         _id: 1,
-//         assetId: "$_id",
-//         inventoryHistory: 1,
-//       },
-//     },
-//   ];
-// };
-
-const buildAggregationPipelineHistory = (assetId, employeeId, filter) => {
-  const matchConditions = buildMatchConditionsHistory(
-    assetId,
-    employeeId,
-    filter
-  );
-
-  return [
-    ...matchConditions,
-    // Normalize assetRecords to array for each inventory.history
-    {
-      $addFields: {
-        "inventory.history.assetRecords": {
-          $cond: {
-            if: { $isArray: "$inventory.history.assetRecords" },
-            then: "$inventory.history.assetRecords",
-            else: {
-              $cond: {
-                if: { $ne: ["$inventory.history.assetRecords", null] },
-                then: ["$inventory.history.assetRecords"],
-                else: [],
-              },
-            },
-          },
-        },
-      },
-    },
-    {
-      // Group to collect all inventory.history records into an array
-      $group: {
-        _id: "$_id",
-        inventoryHistory: { $push: "$inventory.history" },
-        totalAmount: {
-          // Sum amounts inside each inventory.history.assetRecords array
-          $sum: {
-            $sum: {
-              $map: {
-                input: "$inventory.history.assetRecords",
-                as: "record",
-                in: { $ifNull: ["$$record.amount", 0] },
-              },
-            },
-          },
-        },
-      },
-    },
-    {
-      $project: {
-        _id: 1,
-        assetId: "$_id",
-        inventoryHistory: 1,
-        totalAmount: 1,
-      },
-    },
-  ];
+  // Filter records: keep all non-Issuance/Return transactions,
+  // and only Issuance/Return transactions that match the employeeId
+  return historyRecords.filter((record) => {
+    if (["Issuance", "Return"].includes(record.transaction)) {
+      return (
+        record.employeeId &&
+        record.employeeId.toString() === employeeId.toString()
+      );
+    }
+    // For all other transactions (Disposal, Repair, Lost, Stolen, etc.), include them
+    return true;
+  });
 };
 
 const populateEmployeeDetails = async (historyRecords) => {
   for (let record of historyRecords) {
-    if (record.employeeId) {
+    // Only populate employee details for transactions that have employeeId
+    if (
+      record.employeeId &&
+      ["Issuance", "Return"].includes(record.transaction)
+    ) {
       try {
         const employee = await EmployeeModel.findById(record.employeeId)
           .select(
@@ -170,9 +97,34 @@ const populateEmployeeDetails = async (historyRecords) => {
           employeeContactNo: null,
         });
       }
+    } else {
+      // For transactions without employeeId, set employee fields to null
+      Object.assign(record, {
+        employeeName: null,
+        employeePosition: null,
+        employeeDepartment: null,
+        employeeDivision: null,
+        employeeSection: null,
+        employeeEmail: null,
+        employeeContactNo: null,
+      });
     }
   }
   return historyRecords;
+};
+
+const calculateTotalAmount = (historyRecords) => {
+  return historyRecords.reduce((total, record) => {
+    if (record.assetRecords && Array.isArray(record.assetRecords)) {
+      const recordTotal = record.assetRecords.reduce((sum, assetRecord) => {
+        return sum + (assetRecord.amount || 0);
+      }, 0);
+      return total + recordTotal;
+    } else if (record.assetRecords && record.assetRecords.amount) {
+      return total + (record.assetRecords.amount || 0);
+    }
+    return total;
+  }, 0);
 };
 
 const getAssetsHistory = async (req, res) => {
@@ -183,29 +135,35 @@ const getAssetsHistory = async (req, res) => {
       return res.status(400).json({ message: "assetId is required" });
     }
 
-    const pipeline = buildAggregationPipelineHistory(
-      assetId,
-      employeeId,
-      filter
-    );
-    const result = await AssetsModel.aggregate(pipeline);
+    const queryConditions = buildQueryConditions(assetId, null, filter); // Don't filter by employeeId in DB query
 
-    if (!result || result.length === 0) {
+    // Fetch all matching history records from AssetInventoryHistoryModel
+    let historyRecords = await AssetInventoryHistoryModel.find(queryConditions)
+      .sort({ createdAt: -1 }) // Sort by newest first
+      .lean();
+
+    if (!historyRecords || historyRecords.length === 0) {
       return res.status(404).json({
-        message: "No asset found or no history available",
+        message: "No asset history found",
         inventoryHistory: [],
+        totalAmount: 0,
       });
     }
 
-    const populatedHistory = await populateEmployeeDetails(
-      result[0].inventoryHistory || []
-    );
+    // Apply employeeId filtering after fetching from DB
+    historyRecords = filterByEmployeeId(historyRecords, employeeId);
+
+    // Populate employee details for records that have employeeId
+    const populatedHistory = await populateEmployeeDetails(historyRecords);
+
+    // Calculate total amount from all records
+    const totalAmount = calculateTotalAmount(populatedHistory);
 
     res.status(200).json({
       message: "Assets history retrieved successfully",
-      assetId: result[0].assetId,
+      assetId: toObjectId(assetId),
       inventoryHistory: populatedHistory,
-      totalAmount: result[0].totalAmount || 0,
+      totalAmount: totalAmount,
     });
   } catch (error) {
     console.error("Error fetching assets history:", error);
