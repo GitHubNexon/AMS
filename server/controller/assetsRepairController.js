@@ -1,6 +1,7 @@
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
 const AssetsRepairModel = require("../models/AssetsRepairModel");
+const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 
 const handleRepairApproval = async (repairDoc) => {
   for (let record of repairDoc.assetRecords) {
@@ -29,10 +30,10 @@ const handleRepairApproval = async (repairDoc) => {
       // assetRecords: repairDoc.assetRecords,
       assetRecords: filteredAssetRecords,
     };
+    await AssetInventoryHistoryModel.create(historyData);
     await AssetsModel.updateOne(
       { _id: record.assetId, "inventory._id": record.inventoryId },
       {
-        $push: { "inventory.$.history": historyData },
         $set: { "inventory.$.status": "Under-Repair" },
       }
     );
