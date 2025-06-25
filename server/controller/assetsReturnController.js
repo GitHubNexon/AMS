@@ -279,7 +279,7 @@ const handleReturnApproval = async (returnDoc) => {
     await AssetsModel.updateOne(
       { _id: record.assetId, "inventory._id": record.inventoryId },
       {
-        $set: { "inventory.$.status": "Available" },
+        $set: { "inventory.$.status": "Used-Available" },
       }
     );
   }
