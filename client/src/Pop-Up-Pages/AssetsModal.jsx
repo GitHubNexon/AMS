@@ -235,7 +235,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
     }
 
     try {
-      let dataToSubmit = assetsData;
+      let dataToSubmit = formData;
       console.log("to submit", dataToSubmit);
       if (mode === "edit") {
         await assetsApi.updateAssetsRecord(assetsData._id, dataToSubmit);

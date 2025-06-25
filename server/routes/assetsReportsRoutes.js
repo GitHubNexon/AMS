@@ -9,4 +9,7 @@ router.post("/history", AssetsReportsController.getAssetsHistory);
 // New route for inventory status counts for Polar Area chart
 router.get("/inventory-status", AssetsReportsController.getAssetsConditions);
 
+router.post("/get-ics-report", AssetsReportsController.getICSReport);
+router.post("/get-wmr-report", AssetsReportsController.getWMRReport);
+
 module.exports = router;

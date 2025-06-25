@@ -5,6 +5,7 @@ const AssetsRepairModel = require("../models/AssetsRepairModel");
 const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
 const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
+const mongoose = require("mongoose");
 
 const toObjectId = (id) => {
   const ObjectId = require("mongoose").Types.ObjectId;
@@ -202,7 +203,192 @@ const getAssetsConditions = async (req, res) => {
   }
 };
 
+const getICSReport = async (req, res) => {
+  try {
+    const { startDate, endDate } = req.body;
+
+    // Build query filter
+    let dateFilter = {};
+    if (startDate || endDate) {
+      dateFilter.acquisitionDate = {};
+
+      if (startDate) {
+        dateFilter.acquisitionDate.$gte = new Date(startDate);
+      }
+
+      if (endDate) {
+        const end = new Date(endDate);
+        end.setHours(23, 59, 59, 999); // Set to end of day
+        dateFilter.acquisitionDate.$lte = end;
+      }
+    }
+
+    // Query assets with optional date filtering and exclude deleted/archived
+    const query = {
+      ...dateFilter,
+      "Status.isDeleted": { $ne: true },
+      "Status.isArchived": { $ne: true },
+    };
+
+    const assets = await AssetsModel.find(query);
+
+    let reportData = [];
+    let totalAmount = 0;
+
+    // Process each asset
+    assets.forEach((asset) => {
+      // If asset has inventory items, create a report entry for each
+      if (asset.inventory && asset.inventory.length > 0) {
+        asset.inventory.forEach((inventoryItem) => {
+          const reportItem = {
+            quantity: 1, // Each inventory item represents 1 unit
+            unit: asset.propName,
+            amount: asset.unitCost, // Price per unit
+            totalCost: asset.unitCost, // Since quantity is 1, totalCost = unitCost
+            description: asset.propDescription,
+            inventoryItemNo: inventoryItem.invNo,
+            useFullLife: asset.useFullLife,
+          };
+
+          reportData.push(reportItem);
+          totalAmount += asset.unitCost;
+        });
+      } else {
+        // If no inventory items, create entry based on asset quantity
+        for (let i = 0; i < (asset.quantity || 1); i++) {
+          const reportItem = {
+            quantity: 1,
+            unit: asset.propName,
+            amount: asset.unitCost,
+            totalCost: asset.unitCost,
+            description: asset.propDescription,
+            inventoryItemNo: asset.propNo + `-${i + 1}`, // Generate inventory number
+            useFullLife: asset.useFullLife,
+          };
+
+          reportData.push(reportItem);
+          totalAmount += asset.unitCost;
+        }
+      }
+    });
+
+    // Return the formatted response
+    res.status(200).json({
+      reportData,
+      totalAmount,
+      dateRange: {
+        startDate: startDate || null,
+        endDate: endDate || null,
+      },
+      totalRecords: reportData.length,
+    });
+  } catch (error) {
+    console.error("Error getting ICS Report:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+const getWMRReport = async (req, res) => {
+  try {
+    const { startDate, endDate, assetId, inventoryId } = req.body;
+
+    // Build the query filter
+    let query = { transaction: "Disposal" };
+
+    // Add date range filter if provided (check for non-empty strings)
+    if (
+      (startDate && startDate.trim() !== "") ||
+      (endDate && endDate.trim() !== "")
+    ) {
+      query.date = {};
+      if (startDate && startDate.trim() !== "") {
+        query.date.$gte = new Date(startDate);
+      }
+      if (endDate && endDate.trim() !== "") {
+        query.date.$lte = new Date(endDate);
+      }
+    }
+
+    // Add asset filtering if provided (check for non-empty strings)
+    if (
+      assetId &&
+      assetId.trim() !== "" &&
+      inventoryId &&
+      inventoryId.trim() !== ""
+    ) {
+      // Specific asset and inventory combination
+      query.$and = [
+        { "assetRecords.assetId": new mongoose.Types.ObjectId(assetId) },
+        {
+          "assetRecords.inventoryId": new mongoose.Types.ObjectId(inventoryId),
+        },
+      ];
+    } else if (assetId && assetId.trim() !== "") {
+      // All records with specific assetId
+      query["assetRecords.assetId"] = new mongoose.Types.ObjectId(assetId);
+    }
+
+    // Fetch the disposal records
+    console.log("Query:", JSON.stringify(query, null, 2));
+    const disposalRecords = await AssetInventoryHistoryModel.find(query);
+    console.log("Found records:", disposalRecords.length);
+
+    // Process the data to create reportData
+    let reportData = [];
+    let totalAmount = 0;
+
+    disposalRecords.forEach((record) => {
+      record.assetRecords.forEach((assetRecord) => {
+        // Filter asset records based on the criteria if specific filtering is needed
+        let includeRecord = true;
+
+        if (
+          assetId &&
+          assetId.trim() !== "" &&
+          inventoryId &&
+          inventoryId.trim() !== ""
+        ) {
+          includeRecord =
+            assetRecord.assetId.toString() === assetId &&
+            assetRecord.inventoryId.toString() === inventoryId;
+        } else if (assetId && assetId.trim() !== "") {
+          includeRecord = assetRecord.assetId.toString() === assetId;
+        }
+
+        if (includeRecord) {
+          reportData.push({
+            inventoryId: assetRecord.inventoryId,
+            quantity: 1, // Always 1 as specified
+            unit: assetRecord.unit,
+            description: assetRecord.description,
+          });
+
+          totalAmount += assetRecord.amount || 0;
+        }
+      });
+    });
+
+    // Prepare the response
+    const response = {
+      reportData,
+      totalAmount,
+      dateRange: {
+        startDate: startDate || null,
+        endDate: endDate || null,
+      },
+      totalRecords: reportData.length,
+    };
+
+    res.status(200).json(response);
+  } catch (error) {
+    console.error("Error Getting WMR Report", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
 module.exports = {
   getAssetsHistory,
   getAssetsConditions,
+  getICSReport,
+  getWMRReport,
 };
