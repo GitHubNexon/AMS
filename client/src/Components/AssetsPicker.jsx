@@ -57,7 +57,7 @@ const AssetsPicker = ({
   }));
 
   const inventoryOptions = inventory.map((inv) => ({
-    label: `${inv.invNo} - ${inv.invName}`,
+    label: `${inv.invNo} - ${inv.invName} - ${inv.status}`,
     value: inv._id,
     ...inv,
   }));
