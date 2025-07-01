@@ -28,7 +28,8 @@ import AssetsLogic from "../hooks/AssetsLogic";
 import AssetIssuanceLogic from "../hooks/AssetIssuanceLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsIssuanceModal";
-import PARModal from "../Pop-Up-Pages/PARModal";
+// import PARModal from "../Pop-Up-Pages/PARModal";
+import PARIssuance from "../Components/AssetsForm/PARIssuance";
 
 const AssetIssuanceTable = () => {
   const [page, setPage] = useState(1);
@@ -366,7 +367,7 @@ const AssetIssuanceTable = () => {
         )}
 
         {isPARModalOpen && (
-          <PARModal
+          <PARIssuance
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
             employeeAssetsData={selectedAssetIssuance}

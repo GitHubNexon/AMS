@@ -27,7 +27,7 @@ import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assetRepairLogic from "../hooks/AssetsRepairLogic";
 import AssetsRepairModal from "../Pop-Up-Pages/AssetsRepairModal";
 import assetsRepairApi from "../api/assetRepairApi";
-
+import PARUnderRepair from "../Components/AssetsForm/PARUnderRepair";
 const AssetsRepairTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
@@ -186,7 +186,7 @@ const AssetsRepairTable = () => {
       width: "120px",
     },
     {
-      name: "Date Disposed",
+      name: "Date Started",
       selector: (row) =>
         row.dateRepaired ? formatReadableDate(row.dateRepaired) : "No Date Yet",
     },
@@ -360,13 +360,13 @@ const AssetsRepairTable = () => {
 
         {/* <AssetsRepairTable /> */}
 
-        {/* {isPARModalOpen && (
-              <PARModal
-                isOpen={isPARModalOpen}
-                onClose={handlePARModalClose}
-                employeeAssetsData={selectedAssetIssuance}
-              />
-            )} */}
+        {isPARModalOpen && (
+          <PARUnderRepair
+            isOpen={isPARModalOpen}
+            onClose={handlePARModalClose}
+            employeeAssetsData={selectedAssetsRepair}
+          />
+        )}
       </div>
     </>
   );

@@ -28,7 +28,7 @@ import assetsReturnApi from "../api/assetReturnApi";
 import assetDisposalApi from "../api/assetDisposalApi";
 import AssetsDisposalLogic from "../hooks/AssetsDisposalLogic";
 import AssetsDisposalModal from "../Pop-Up-Pages/AssetsDisposalModal";
-
+import PARDisposal from "../Components/AssetsForm/PARDisposal";
 
 const AssetsDisposalTable = () => {
   const [page, setPage] = useState(1);
@@ -361,13 +361,13 @@ const AssetsDisposalTable = () => {
           />
         )}
 
-        {/* {isPARModalOpen && (
-          <PARModal
+        {isPARModalOpen && (
+          <PARDisposal
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetIssuance}
+            employeeAssetsData={selectedAssetsDisposal}
           />
-        )} */}
+        )}
       </div>
     </>
   );
