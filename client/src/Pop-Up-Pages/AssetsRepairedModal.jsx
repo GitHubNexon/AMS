@@ -13,11 +13,12 @@ import assetsApi from "../api/assetsApi";
 import assetDisposalApi from "./../api/assetDisposalApi";
 import AssetsLogic from "./../hooks/AssetsLogic";
 import assetRepairApi from "./../api/assetRepairApi";
+import assetsRepairedApi from "./../api/assetsRepairedApi";
 
-const AssetsRepairModal = ({
+const AssetsRepairedModal = ({
   isOpen,
   onClose,
-  onSaveAssetRepair,
+  onSaveAssetRepaired,
   assetsRepairData,
   mode,
 }) => {
@@ -43,7 +44,7 @@ const AssetsRepairModal = ({
     // employeePosition: "",
     // employeeId: "",
     description: "",
-    dateRepairStart: moment().format("YYYY-MM-DD"),
+    dateRepaired: moment().format("YYYY-MM-DD"),
     assetRecords: [],
     Status: {
       isDeleted: false,
@@ -72,7 +73,7 @@ const AssetsRepairModal = ({
   useEffect(() => {
     if (mode === "edit" && assetsRepairData) {
       const {
-        dateRepairStart,
+        dateRepaired,
         assetRecords = [],
         // employeeId = "",
         // employeeName = "",
@@ -85,8 +86,8 @@ const AssetsRepairModal = ({
         assetRecords,
         // employeeId,
         // employeeName,
-        dateRepairStart: dateRepairStart
-          ? new Date(dateRepairStart).toISOString().split("T")[0]
+        dateRepaired: dateRepaired
+          ? new Date(dateRepaired).toISOString().split("T")[0]
           : moment().format("YYYY-MM-DD"),
         // dateReleased: dateReleased
         //   ? new Date(dateReleased).toISOString().split("T")[0]
@@ -197,19 +198,19 @@ const AssetsRepairModal = ({
           return;
         }
 
-        await assetRepairApi.updateAssetsRepairRecord(
+        await assetsRepairedApi.updateAssetsRepairedRecord(
           assetsRepairData._id,
           changedData
         );
         console.log("Assets Repair Data to Update:", changedData);
         showToast("Assets updated successfully!", "success");
       } else {
-        await assetRepairApi.createAssetsRepairRecord(dataToSubmit);
+        await assetsRepairedApi.createAssetsRepairedRecord(dataToSubmit);
         console.log("Assets Repair Data to Submit:", dataToSubmit);
         showToast("Assets recorded successfully!", "success");
       }
 
-      onSaveAssetRepair(dataToSubmit);
+      onSaveAssetRepaired(dataToSubmit);
       onClose();
     } catch (error) {
       console.error("Error submitting Assets:", error);
@@ -224,7 +225,9 @@ const AssetsRepairModal = ({
       <div className="bg-white p-5 rounded-lg w-full m-10 ">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
-            {mode === "edit" ? "Update Repair Record " : "Create Repair Record"}
+            {mode === "edit"
+              ? "Update Repaired Record "
+              : "Create Repaired Record"}
           </h2>
           <button
             onClick={async () => {
@@ -249,7 +252,7 @@ const AssetsRepairModal = ({
             }`}
             onClick={() => setActiveTab("repair-info")}
           >
-            Assets Repair Information
+            Assets Repaired Information
           </button>
           <button
             className={`px-4 py-2 font-semibold ${
@@ -325,55 +328,18 @@ const AssetsRepairModal = ({
               </div>
               <div className="flex flex-col">
                 <label htmlFor="dateRepaired" className="text-gray-700">
-                  Date for Repair
+                  Date Repaired
                 </label>
                 <input
                   type="date"
-                  id="dateRepairStart"
-                  name="dateRepairStart"
-                  value={formData.dateRepairStart}
+                  id="dateRepaired"
+                  name="dateRepaired"
+                  value={formData.dateRepaired}
                   onChange={handleChange}
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
-              {/* <div className="flex flex-col">
-                <label htmlFor="dateReleased" className="text-gray-700">
-                  Date Released
-                </label>
-                <input
-                  type="date"
-                  id="dateReleased"
-                  name="dateReleased"
-                  value={formData.dateReleased}
-                  onChange={handleChange}
-                  required
-                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                />
-              </div> */}
-              {/* <div className="flex flex-col">
-                <EmployeePicker
-                  value={
-                    formData.employeeId &&
-                    formData.employeeName &&
-                    formData.employeePosition
-                      ? {
-                          _id: formData.employeeId,
-                          employeeName: formData.employeeName,
-                          employeePosition: formData.employeePosition,
-                        }
-                      : null
-                  }
-                  onSelect={(employee) => {
-                    setFormData((prev) => ({
-                      ...prev,
-                      employeeId: employee._id,
-                      employeeName: employee.employeeName,
-                      employeePosition: employee.employeePosition,
-                    }));
-                  }}
-                />
-              </div> */}
               <div className="flex flex-col">
                 <label htmlFor="ReviewedBy" className="text-gray-700">
                   Reviewed By
@@ -407,6 +373,7 @@ const AssetsRepairModal = ({
                 value={{ asset: selectedAsset, inventory: selectedInventory }}
                 onSelectAsset={setSelectedAsset}
                 onSelectInventory={setSelectedInventory}
+                isForRepair={true}
               />
 
               <button
@@ -500,4 +467,4 @@ const AssetsRepairModal = ({
   );
 };
 
-export default AssetsRepairModal;
+export default AssetsRepairedModal;

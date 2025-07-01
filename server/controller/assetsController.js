@@ -249,6 +249,37 @@ const getAllAssetRecordsList = async (req, res) => {
   }
 };
 
+const getAllAssetRecordsListUnderRepair = async (req, res) => {
+  try {
+    const query = {
+      ...(req.query.isDeleted === "true" && { "Status.isDeleted": true }),
+      ...(req.query.isArchived === "true" && { "Status.isArchived": true }),
+    };
+
+    const assets = await AssetsModel.find(query);
+
+    const filteredAssets = assets
+      .map((asset) => {
+        // Filter inventory to only include items with "Under-Repair" status
+        asset.inventory = asset.inventory.filter((item) => {
+          return item.status === "Under-Repair";
+        });
+        return asset;
+      })
+      .filter((asset) => {
+        // Remove assets that have no inventory items after filtering
+        return asset.inventory.length > 0;
+      });
+
+    res.json({
+      assets: filteredAssets,
+    });
+  } catch (error) {
+    console.error("Error getting Under-Repair Asset records", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 const deleteAssetsRecord = async (req, res) => {
   try {
     const { id } = req.params;
@@ -455,5 +486,6 @@ module.exports = {
   undoDeleteAssetRecord,
   undoArchiveAssetRecord,
   getAllAssetRecordsList,
+  getAllAssetRecordsListUnderRepair,
   getEmployeeAssetsRecords,
 };

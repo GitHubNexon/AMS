@@ -47,6 +47,17 @@ const assetsApi = {
       console.error("Error fetching asset records:", error);
     }
   },
+  
+  getAllAssetRecordsListUnderRepair: async () => {
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/assets/get-list/under-repair`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching asset records:", error);
+    }
+  },
 
   deleteAssetsRecord: async (id) => {
     try {

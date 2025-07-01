@@ -25,7 +25,7 @@ import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assetRepairedLogic from "../hooks/AssetsRepairedLogic";
-import AssetsRepairModal from "../Pop-Up-Pages/AssetsRepairModal";
+import AssetsRepairedModal from "../Pop-Up-Pages/AssetsRepairedModal";
 import assetsRepairedApi from "../api/assetsRepairedApi";
 
 const AssetsRepairTable = () => {
@@ -33,7 +33,8 @@ const AssetsRepairTable = () => {
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
   const [selectedAssetsRepaired, setSelectedAssetsRepaired] = useState([]);
-  const [isAssetsRepairedModalOpen, setIsAssetsRepairedModalOpen] = useState(false);
+  const [isAssetsRepairedModalOpen, setIsAssetsRepairedModalOpen] =
+    useState(false);
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
   const [query, setQuery] = useState("");
@@ -347,16 +348,16 @@ const AssetsRepairTable = () => {
           sortDirection={sortOrder}
         />
 
-        {/* {isAssetsRepairedModalOpen && (
-          <AssetsRepairModal
+        {isAssetsRepairedModalOpen && (
+          <AssetsRepairedModal
             mode={modalMode}
             isOpen={isAssetsRepairedModalOpen}
             onClose={handleModalClose}
-            onSaveAssetRepair={fetchRepairedRecords}
+            onSaveAssetRepaired={fetchRepairedRecords}
             assetsRepairData={selectedAssetsRepaired}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
 
         {/* {isPARModalOpen && (
               <PARModal

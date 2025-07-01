@@ -25,7 +25,7 @@ const handleRepairApproval = async (repairDoc) => {
       transaction: "Under-Repair",
       repairId: repairDoc._id,
       // employeeId: repairDoc.employeeId,
-      dateRepaired: repairDoc.dateRepaired,
+      dateRepairStart: repairDoc.dateRepairStart,
       issuedBy: repairDoc.CreatedBy,
       // assetRecords: repairDoc.assetRecords,
       assetRecords: filteredAssetRecords,

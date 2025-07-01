@@ -5,7 +5,7 @@ const assetRepairedApi = {
   createAssetsRepairedRecord: async (data) => {
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/assets-repaireded/create`,
+        `${API_BASE_URL}/assets-repaired/create`,
         data
       );
       return response.data;
