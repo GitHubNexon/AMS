@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const path = require("path");
 const statementOfAccount = require("./controller/StatementOfAccountController");
+const errorHandler = require("./middleware/errorMiddleware");
 
 // Import the custom Helmet middleware setup
 const setupHelmet = require("./middleware/helmetMiddleware");
@@ -170,6 +171,9 @@ app.use("/ams/api/assets-repaired", assetsRepairedRoutes);
 // app.get("/AMS/*", (req, res) => {
 //   res.sendFile(path.join(__dirname + "./../dist/index.html"));
 // });
+
+//for error handling
+app.use(errorHandler);
 
 cron.schedule("0 * * * *", async () => {
   console.log("cron job fired");

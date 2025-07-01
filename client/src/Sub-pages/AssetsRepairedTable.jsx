@@ -24,16 +24,16 @@ import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assetRepairLogic from "../hooks/AssetsRepairLogic";
+import assetRepairedLogic from "../hooks/AssetsRepairedLogic";
 import AssetsRepairModal from "../Pop-Up-Pages/AssetsRepairModal";
-import assetsRepairApi from "../api/assetRepairApi";
+import assetsRepairedApi from "../api/assetsRepairedApi";
 
 const AssetsRepairTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetsRepair, setSelectedAssetsRepair] = useState([]);
-  const [isAssetsRepairModalOpen, setIsAssetsRepairModalOpen] = useState(false);
+  const [selectedAssetsRepaired, setSelectedAssetsRepaired] = useState([]);
+  const [isAssetsRepairedModalOpen, setIsAssetsRepairedModalOpen] = useState(false);
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
   const [query, setQuery] = useState("");
@@ -42,9 +42,9 @@ const AssetsRepairTable = () => {
   };
 
   const {
-    fetchRepairRecords,
-    setRepairRecords,
-    repairRecords,
+    fetchRepairedRecords,
+    setRepairedRecords,
+    repairedRecords,
     totalItems,
     totalPages,
     loading,
@@ -57,15 +57,15 @@ const AssetsRepairTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = assetRepairLogic(page, limit, status);
+  } = assetRepairedLogic(page, limit, status);
 
   function refreshTable() {
-    fetchRepairRecords();
+    fetchRepairedRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchRepairRecords();
+    fetchRepairedRecords();
   };
 
   useEffect(() => {
@@ -77,22 +77,22 @@ const AssetsRepairTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsRepairModalOpen(true);
+    setIsAssetsRepairedModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsRepairModalOpen(false);
-    setSelectedAssetsRepair(null);
+    setIsAssetsRepairedModalOpen(false);
+    setSelectedAssetsRepaired(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetsRepair(row);
+    setSelectedAssetsRepaired(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetsRepair(null);
+    setSelectedAssetsRepaired(null);
   };
 
   const handleActionButtons = async ({
@@ -110,7 +110,7 @@ const AssetsRepairTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchRepairRecords?.();
+        fetchRepairedRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -124,7 +124,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetsRepairApi.deleteAssetsRepairRecord,
+      apiMethod: assetsRepairedApi.deleteAssetsRepairedRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -134,7 +134,7 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetsRepairApi.undoDeleteAssetsRepairRecord,
+      apiMethod: assetsRepairedApi.undoDeleteAssetsRepairedRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -143,7 +143,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetsRepairApi.archiveAssetsRepairRecord,
+      apiMethod: assetsRepairedApi.archiveAssetsRepairedRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -153,7 +153,7 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetsRepairApi.undoArchiveAssetsRepairRecord,
+      apiMethod: assetsRepairedApi.undoArchiveAssetsRepairedRecord,
     });
 
   const handleFetchLatest = async () => {
@@ -161,10 +161,10 @@ const AssetsRepairTable = () => {
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (repairRecords) => {
+  const handleModalOpenForEdit = (repairedRecords) => {
     setModalMode("edit");
-    setSelectedAssetsRepair(repairRecords);
-    setIsAssetsRepairModalOpen(true);
+    setSelectedAssetsRepaired(repairedRecords);
+    setIsAssetsRepairedModalOpen(true);
   };
 
   const columns = [
@@ -294,7 +294,7 @@ const AssetsRepairTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Under Repair Records </h1>
+          <h1 className="font-bold">Assets Repaired Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -332,7 +332,7 @@ const AssetsRepairTable = () => {
 
         <DataTable
           columns={columns}
-          data={repairRecords}
+          data={repairedRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -347,18 +347,16 @@ const AssetsRepairTable = () => {
           sortDirection={sortOrder}
         />
 
-        {isAssetsRepairModalOpen && (
+        {/* {isAssetsRepairedModalOpen && (
           <AssetsRepairModal
             mode={modalMode}
-            isOpen={isAssetsRepairModalOpen}
+            isOpen={isAssetsRepairedModalOpen}
             onClose={handleModalClose}
-            onSaveAssetRepair={fetchRepairRecords}
-            assetsRepairData={selectedAssetsRepair}
+            onSaveAssetRepair={fetchRepairedRecords}
+            assetsRepairData={selectedAssetsRepaired}
             refreshTable={refreshTable}
           />
-        )}
-
-        {/* <AssetsRepairTable /> */}
+        )} */}
 
         {/* {isPARModalOpen && (
               <PARModal

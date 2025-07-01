@@ -173,7 +173,7 @@ async function createDefaultUser() {
     const defaultUser = {
       name: "Administrator",
       email: "admin@mail.com",
-      password: "P@ssword321",
+      password: "AMS321Itr@ckSolutions",
       userType: "Administrator",
       signatoryType: ["PreparedBy", "CreatedBy", "CertifiedBy", "ReviewedBy", "ApprovedBy1", "ApprovedBy2",]
     };

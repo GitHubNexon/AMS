@@ -3,6 +3,7 @@ const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
 const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 const AssetsRepairedModel = require("../models/AssetsRepairedModel");
+const generateStatusHandlers = require("../utils/generateStatusHandlers");
 
 const mongoose = require("mongoose");
 
@@ -254,8 +255,19 @@ const getAllAssetsRepairedRecords = async (req, res) => {
   }
 };
 
+const {
+  softDelete: softDeleteRepaired,
+  undoDelete: undoDeleteRepaired,
+  softArchive: softArchiveRepaired,
+  undoArchive: undoArchiveRepaired,
+} = generateStatusHandlers(AssetsRepairedModel, "AssetsRepaired");
+
 module.exports = {
   createAssetsRepaired,
   updateAssetsRepaired,
   getAllAssetsRepairedRecords,
+  softDeleteRepaired,
+  undoDeleteRepaired,
+  softArchiveRepaired,
+  undoArchiveRepaired,
 };
