@@ -5,6 +5,7 @@ const AssetsDisposal = require("../models/AssetsDisposalModel");
 const AssetsRepairModel = require("../models/AssetsRepairModel");
 const AssetsLostStolenModel = require("../models/AssetsLostStolenModel");
 const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
+const AssetsRepairedModel = require("../models/AssetsRepairedModel");
 
 const EmployeeModel = require("../models/employeeModel");
 
@@ -53,6 +54,7 @@ const deleteLinkIdHistory = async () => {
       returnId: AssetsReturnModel,
       disposalId: AssetsDisposal,
       repairId: AssetsRepairModel,
+      repairedId: AssetsRepairedModel,
       lostStolenId: AssetsLostStolenModel,
     };
 
@@ -82,7 +84,7 @@ const deleteLinkIdHistory = async () => {
             "inventory._id": historyDoc.inventoryId,
           },
           {
-            $set: { "inventory.$.status": "Available" },
+            $set: { "inventory.$.status": "New-Available" },
           }
         );
       }
@@ -92,96 +94,35 @@ const deleteLinkIdHistory = async () => {
   }
 };
 
-/*
-const deleteLinkIdHistory = async () => {
-  try {
-    const validCheckers = {
-      issuanceId: AssetsIssuanceModel,
-      returnId: AssetsReturnModel,
-      disposalId: AssetsDisposal,
-      repairId: AssetsRepairModel,
-      lostStolenId: AssetsLostStolenModel,
-    };
-
-    const allAssets = await AssetsModel.find({});
-
-    for (const asset of allAssets) {
-      let modified = false;
-
-      for (const inventory of asset.inventory) {
-        if (!Array.isArray(inventory.history)) continue;
-
-        const filteredHistory = [];
-        let originalLength = inventory.history.length;
-
-        for (const historyItem of inventory.history) {
-          let isValid = false;
-
-          for (const [key, model] of Object.entries(validCheckers)) {
-            if (historyItem[key]) {
-              const exists = await model.exists({ _id: historyItem[key] });
-              if (exists) {
-                isValid = true;
-                break;
-              }
-            }
-          }
-
-          if (isValid) {
-            filteredHistory.push(historyItem);
-          }
-        }
-
-        if (filteredHistory.length !== originalLength) {
-          inventory.history = filteredHistory;
-          inventory.status = "Available";
-          modified = true;
-        }
-      }
-
-      if (modified) {
-        await asset.save();
-      }
-    }
-  } catch (err) {
-    console.error("Error in deleteLinkIdHistory:", err);
-  }
-};
-
-
 const populateIssuanceHistory = () => ({
   path: "issuanceId",
   model: "AssetsIssuance",
 });
-
-// Helper to populate return history and related employee
 const populateReturnHistory = () => ({
   path: "returnId",
   model: "AssetsReturn",
 });
-
 const populateDisposalHistory = () => ({
   path: "disposalId",
   model: "AssetsDisposal",
 });
-
 const populateRepairHistory = () => ({
   path: "repairId",
   model: "AssetsRepair",
 });
-
+const populateRepairedHistory = () => ({
+  path: "repairedId",
+  model: "AssetsRepaired",
+});
 const populateLostStolenHistory = () => ({
   path: "lostStolenId",
   model: "AssetsLostStolen",
 });
-
-// Helper to populate employee without image
 const populateEmployee = () => ({
   path: "employeeId",
   model: "Employee",
   select: "-employeeImage",
 });
-
 
 const getAllAssetsRecords = async (req, res) => {
   try {
@@ -225,105 +166,7 @@ const getAllAssetsRecords = async (req, res) => {
           populateReturnHistory(),
           populateDisposalHistory(),
           populateRepairHistory(),
-          populateLostStolenHistory(),
-          populateEmployee(),
-          {
-            path: "history",
-            populate: [
-              populateIssuanceHistory(),
-              populateReturnHistory(),
-              populateDisposalHistory(),
-              populateRepairHistory(),
-              populateLostStolenHistory(),
-
-              populateEmployee(),
-            ],
-          },
-        ],
-      });
-
-    res.json({
-      totalItems,
-      totalPages: Math.ceil(totalItems / limit),
-      currentPage: page,
-      assets,
-    });
-  } catch (error) {
-    console.error("Error getting all assets records", error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-};
-*/
-
-const populateIssuanceHistory = () => ({
-  path: "issuanceId",
-  model: "AssetsIssuance",
-});
-const populateReturnHistory = () => ({
-  path: "returnId",
-  model: "AssetsReturn",
-});
-const populateDisposalHistory = () => ({
-  path: "disposalId",
-  model: "AssetsDisposal",
-});
-const populateRepairHistory = () => ({
-  path: "repairId",
-  model: "AssetsRepair",
-});
-const populateLostStolenHistory = () => ({
-  path: "lostStolenId",
-  model: "AssetsLostStolen",
-});
-const populateEmployee = () => ({
-  path: "employeeId",
-  model: "Employee",
-  select: "-employeeImage",
-});
-
-
-const getAllAssetsRecords = async (req, res) => {
-  try {
-    await deleteLinkIdHistory();
-
-    const page = parseInt(req.query.page, 10) || 1;
-    const limit = parseInt(req.query.limit, 10) || 10;
-    const keyword = req.query.keyword || "";
-    const sortBy = req.query.sortBy || "createdAt";
-    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
-    const status = req.query.status;
-
-    const query = {
-      ...(keyword && {
-        $or: [
-          { propNo: { $regex: keyword, $options: "i" } },
-          { propName: { $regex: keyword, $options: "i" } },
-          { propDescription: { $regex: keyword, $options: "i" } },
-        ],
-      }),
-      ...(status === "isDeleted" && { "Status.isDeleted": true }),
-      ...(status === "isArchived" && { "Status.isArchived": true }),
-    };
-
-    const sortCriteria = {
-      "Status.isDeleted": 1,
-      "Status.isArchived": 1,
-      [sortBy]: sortOrder,
-    };
-
-    const totalItems = await AssetsModel.countDocuments(query);
-
-    const assets = await AssetsModel.find(query)
-      .sort(sortCriteria)
-      .skip((page - 1) * limit)
-      .limit(limit)
-      .populate({
-        path: "inventory",
-        populate: [
-          populateIssuanceHistory(),
-          populateReturnHistory(),
-          populateDisposalHistory(),
-          populateRepairHistory(),
+          populateRepairedHistory(),
           populateLostStolenHistory(),
           populateEmployee(),
         ],
@@ -347,6 +190,7 @@ const getAllAssetsRecords = async (req, res) => {
             populateReturnHistory(),
             populateDisposalHistory(),
             populateRepairHistory(),
+            populateRepairedHistory(),
             populateLostStolenHistory(),
             populateEmployee(),
           ])
@@ -401,6 +245,37 @@ const getAllAssetRecordsList = async (req, res) => {
     });
   } catch (error) {
     console.error("Error getting all Asset records", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+const getAllAssetRecordsListUnderRepair = async (req, res) => {
+  try {
+    const query = {
+      ...(req.query.isDeleted === "true" && { "Status.isDeleted": true }),
+      ...(req.query.isArchived === "true" && { "Status.isArchived": true }),
+    };
+
+    const assets = await AssetsModel.find(query);
+
+    const filteredAssets = assets
+      .map((asset) => {
+        // Filter inventory to only include items with "Under-Repair" status
+        asset.inventory = asset.inventory.filter((item) => {
+          return item.status === "Under-Repair";
+        });
+        return asset;
+      })
+      .filter((asset) => {
+        // Remove assets that have no inventory items after filtering
+        return asset.inventory.length > 0;
+      });
+
+    res.json({
+      assets: filteredAssets,
+    });
+  } catch (error) {
+    console.error("Error getting Under-Repair Asset records", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -611,5 +486,6 @@ module.exports = {
   undoDeleteAssetRecord,
   undoArchiveAssetRecord,
   getAllAssetRecordsList,
+  getAllAssetRecordsListUnderRepair,
   getEmployeeAssetsRecords,
 };

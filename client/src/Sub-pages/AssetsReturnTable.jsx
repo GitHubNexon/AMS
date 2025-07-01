@@ -27,6 +27,7 @@ import assetsReturnApi from "../api/assetReturnApi";
 import AssetsReturnLogic from "../hooks/AssetsReturnLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsReturnModal from "../Pop-Up-Pages/AssetsReturnModal";
+import PARReturn from "../Components/AssetsForm/PARReturn";
 
 const AssetsReturnTable = () => {
   const [page, setPage] = useState(1);
@@ -357,13 +358,13 @@ const AssetsReturnTable = () => {
           />
         )}
 
-        {/* {isPARModalOpen && (
-          <PARModal
+        {isPARModalOpen && (
+          <PARReturn
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetIssuance}
+            employeeAssetsData={selectedAssetsReturn}
           />
-        )} */}
+        )}
       </div>
     </>
   );

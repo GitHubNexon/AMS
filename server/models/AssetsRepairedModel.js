@@ -17,28 +17,24 @@ const AssetsRecordSchema = new mongoose.Schema({
   unit: { type: String, required: false },
   description: { type: String, required: false },
   itemNo: { type: String, required: false },
-  location: { type: String, required: false },
   amount: { type: Number, required: false, default: 0 },
 });
 
-const AssetsRepairSchema = new mongoose.Schema(
+const AssetsRepairedSchema = new mongoose.Schema(
   {
     docType: { type: String, required: false },
     parNo: { type: String, required: false },
     fundCluster: { type: String, required: false },
     entityName: { type: String, required: false },
-    // employeeName: { type: String, required: false },
-    // employeePosition: { type: String, required: false },
-    // employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },
     assetRecords: [AssetsRecordSchema],
     Status: { type: StatusSchema, required: false },
-    description: {
+    purpose: {
       type: String,
       required: false,
     },
-    dateRepairStart: {
+    dateRepaired: {
       type: Date,
-      required: false,
+      required: true,
     },
     CreatedBy: { type: SignatoriesSchema, required: false },
     ReviewedBy: { type: SignatoriesSchema, required: false },
@@ -49,9 +45,9 @@ const AssetsRepairSchema = new mongoose.Schema(
   }
 );
 
-
-const AssetsRepairModel = mongoose.model(
-  "AssetsRepair",
-  AssetsRepairSchema
+const AssetsRepairedModel = mongoose.model(
+  "AssetsRepaired",
+  AssetsRepairedSchema
 );
-module.exports = AssetsRepairModel;
+
+module.exports = AssetsRepairedModel;

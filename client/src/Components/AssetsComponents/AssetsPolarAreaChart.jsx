@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PolarArea } from "react-chartjs-2";
 import assetReportApi from "../../api/assetReportApi";
-
 // Import Chart.js components needed for PolarArea chart
 import {
   Chart as ChartJS,
@@ -14,11 +13,21 @@ import {
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 const statusColors = {
-  Available: "rgba(0, 128, 0, 0.6)", // Green
-  Dispose: "rgba(255, 0, 0, 0.6)", // Red
-  "Under-Repair": "rgba(255, 255, 0, 0.6)", // Yellow
-  "Lost/Stolen": "rgba(128, 128, 128, 0.6)", // Gray
-  Issued: "rgba(255, 165, 0, 0.6)", // Orange
+  "New-Available": "rgba(0, 128, 0, 0.6)",              // Green
+  "Used-Available": "rgba(34, 139, 34, 0.6)",           // Forest Green
+  "Repaired-Available": "rgba(60, 179, 113, 0.6)",      // Medium Sea Green
+  Dispose: "rgba(220, 20, 60, 0.6)",                    // Crimson
+  "Under-Repair": "rgba(255, 215, 0, 0.6)",             // Gold
+  "Lost/Stolen": "rgba(105, 105, 105, 0.6)",            // Dim Gray
+  Issued: "rgba(255, 140, 0, 0.6)",                     // Dark Orange
+
+  // Reserved statuses
+  "Reserved for Issuance": "rgba(70, 130, 180, 0.6)",   // Steel Blue
+  "Reserved for Disposal": "rgba(178, 34, 34, 0.6)",    // Firebrick
+  "Reserved for Return": "rgba(138, 43, 226, 0.6)",     // Blue Violet
+  "Reserved for Repair": "rgba(218, 165, 32, 0.6)",     // Goldenrod
+  "Reserved for Re-Assign Repaired Assets": "rgba(46, 139, 87, 0.6)", // Sea Green
+  "Reserved for Lost/Stolen": "rgba(169, 169, 169, 0.6)", // Dark Gray
 };
 
 const AssetsPolarAreaChart = () => {
@@ -30,7 +39,6 @@ const AssetsPolarAreaChart = () => {
     const fetchInventoryStatus = async () => {
       try {
         const data = await assetReportApi.getInventoryStatus();
-
         const backgroundColors = data.labels.map(
           (label) => statusColors[label] || "rgba(0, 0, 0, 0.3)"
         );
@@ -46,7 +54,6 @@ const AssetsPolarAreaChart = () => {
             },
           ],
         });
-
         setLoading(false);
       } catch (err) {
         setError("Failed to fetch inventory status");

@@ -18,7 +18,9 @@ const InventoryItemSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: [
-      "Available",
+      "New-Available",
+      "Issued-Available",
+      "Repaired-Available",
       "Issued",
       "Returned",
       "Defective",
@@ -26,7 +28,7 @@ const InventoryItemSchema = new mongoose.Schema({
       "Disposed",
       "Reserved",
     ],
-    default: "Available",
+    default: "New-Available",
   },
   history: { type: mongoose.Schema.Types.Mixed },
 });

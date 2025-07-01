@@ -11,6 +11,7 @@ const AssetsInventoryHistorySchema = new mongoose.Schema(
     returnId: { type: mongoose.Schema.Types.Mixed },
     disposalId: { type: mongoose.Schema.Types.Mixed },
     repairId: { type: mongoose.Schema.Types.Mixed },
+    repairedId: { type: mongoose.Schema.Types.Mixed },
     lostStolenId: { type: mongoose.Schema.Types.Mixed },
     employeeId: { type: mongoose.Schema.Types.Mixed },
     dateAcquired: { type: mongoose.Schema.Types.Mixed },

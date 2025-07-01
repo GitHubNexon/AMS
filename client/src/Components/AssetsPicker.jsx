@@ -7,16 +7,38 @@ const AssetsPicker = ({
   onSelectInventory,
   value,
   isInventoryEnabled = true, // default to true for backward compatibility
+  isForRepair = false, // new prop to determine which API to call
 }) => {
   const [assets, setAssets] = useState([]);
   const [inventory, setInventory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  // useEffect(() => {
+  //   const fetchAssets = async () => {
+  //     setIsLoading(true);
+  //     try {
+  //       const response = await assetsApi.getAllAssetRecordsList();
+  //       setAssets(response.assets);
+  //     } catch (error) {
+  //       console.error("Error fetching assets:", error);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+
+  //   fetchAssets();
+  // }, []);
+
   useEffect(() => {
     const fetchAssets = async () => {
       setIsLoading(true);
       try {
-        const response = await assetsApi.getAllAssetRecordsList();
+        let response;
+        if (isForRepair) {
+          response = await assetsApi.getAllAssetRecordsListUnderRepair();
+        } else {
+          response = await assetsApi.getAllAssetRecordsList();
+        }
         setAssets(response.assets);
       } catch (error) {
         console.error("Error fetching assets:", error);
@@ -24,10 +46,9 @@ const AssetsPicker = ({
         setIsLoading(false);
       }
     };
-
     fetchAssets();
-  }, []);
-
+  }, [isForRepair]); // Add isForRepair to dependency array
+  
   useEffect(() => {
     // Load inventory when asset changes (from parent)
     if (value?.asset) {
@@ -57,7 +78,7 @@ const AssetsPicker = ({
   }));
 
   const inventoryOptions = inventory.map((inv) => ({
-    label: `${inv.invNo} - ${inv.invName}`,
+    label: `${inv.invNo} - ${inv.invName} - ${inv.status}`,
     value: inv._id,
     ...inv,
   }));

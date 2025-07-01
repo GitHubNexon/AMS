@@ -27,7 +27,7 @@ import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assesLostStolenApi from "../api/assetLostStolenApi.js";
 import AssetsLostStolenLogic from "../hooks/AssetsLostStolenLogic";
 import AssetsLostStolenModal from "../Pop-Up-Pages/AssetsLostStolenModal";
-
+import PARLostStolenDamage from "../Components/AssetsForm/PARLostStolenDamage.jsx";
 
 const AssetsLostStolenTable = () => {
   const [page, setPage] = useState(1);
@@ -362,13 +362,13 @@ const AssetsLostStolenTable = () => {
           />
         )}
 
-        {/* {isPARModalOpen && (
-              <PARModal
-                isOpen={isPARModalOpen}
-                onClose={handlePARModalClose}
-                employeeAssetsData={selectedAssetIssuance}
-              />
-            )} */}
+        {isPARModalOpen && (
+          <PARLostStolenDamage
+            isOpen={isPARModalOpen}
+            onClose={handlePARModalClose}
+            employeeAssetsData={selectedAssetsLostStolen}
+          />
+        )}
       </div>
     </>
   );

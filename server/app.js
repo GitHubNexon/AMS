@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const path = require("path");
 const statementOfAccount = require("./controller/StatementOfAccountController");
+const errorHandler = require("./middleware/errorMiddleware");
 
 // Import the custom Helmet middleware setup
 const setupHelmet = require("./middleware/helmetMiddleware");
@@ -87,6 +88,7 @@ const assetsRepairRouters = require("./routes/assetsRepairRoutes");
 const assetsReportsRoutes = require("./routes/assetsReportsRoutes");
 const assetsLostStolenRoutes = require("./routes/assetsLostStolenRoutes");
 const assetExportRoutes = require("./routes/assetExportRoutes");
+const assetsRepairedRoutes = require("./routes/assetsRepairedRoutes");
 
 const cron = require("node-cron");
 
@@ -161,13 +163,17 @@ app.use("/ams/api/assets-disposal", assetsDisposalRoutes);
 app.use("/ams/api/assets-repair", assetsRepairRouters);
 app.use("/ams/api/assets-reports", assetsReportsRoutes);
 app.use("/ams/api/assets-lost-stolen", assetsLostStolenRoutes);
-app.use("/ams/api/asset-export/", assetExportRoutes);
+app.use("/ams/api/asset-export", assetExportRoutes);
+app.use("/ams/api/assets-repaired", assetsRepairedRoutes);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's(frontend) index.html file.
 // app.get("/AMS/*", (req, res) => {
 //   res.sendFile(path.join(__dirname + "./../dist/index.html"));
 // });
+
+//for error handling
+app.use(errorHandler);
 
 cron.schedule("0 * * * *", async () => {
   console.log("cron job fired");

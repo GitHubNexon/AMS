@@ -24,18 +24,17 @@ import { FaBookSkull } from "react-icons/fa6";
 import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assetsReturnApi from "../api/assetReturnApi";
-import assetDisposalApi from "../api/assetDisposalApi";
-import AssetsDisposalLogic from "../hooks/AssetsDisposalLogic";
-import AssetsDisposalModal from "../Pop-Up-Pages/AssetsDisposalModal";
-import PARDisposal from "../Components/AssetsForm/PARDisposal";
+import assetRepairedLogic from "../hooks/AssetsRepairedLogic";
+import AssetsRepairedModal from "../Pop-Up-Pages/AssetsRepairedModal";
+import assetsRepairedApi from "../api/assetsRepairedApi";
+import PARRepaired from "../Components/AssetsForm/PARRepaired";
 
-const AssetsDisposalTable = () => {
+const AssetsRepairTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetsDisposal, setSelectedAssetsDisposal] = useState([]);
-  const [isAssetsDisposalModalOpen, setIsAssetsDisposalModalOpen] =
+  const [selectedAssetsRepaired, setSelectedAssetsRepaired] = useState([]);
+  const [isAssetsRepairedModalOpen, setIsAssetsRepairedModalOpen] =
     useState(false);
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
@@ -45,9 +44,9 @@ const AssetsDisposalTable = () => {
   };
 
   const {
-    fetchDisposalRecords,
-    setDisposalRecords,
-    disposalRecords,
+    fetchRepairedRecords,
+    setRepairedRecords,
+    repairedRecords,
     totalItems,
     totalPages,
     loading,
@@ -60,15 +59,15 @@ const AssetsDisposalTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = AssetsDisposalLogic(page, limit, status);
+  } = assetRepairedLogic(page, limit, status);
 
   function refreshTable() {
-    fetchDisposalRecords();
+    fetchRepairedRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchDisposalRecords();
+    fetchRepairedRecords();
   };
 
   useEffect(() => {
@@ -80,22 +79,22 @@ const AssetsDisposalTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsDisposalModalOpen(true);
+    setIsAssetsRepairedModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsDisposalModalOpen(false);
-    setSelectedAssetsDisposal(null);
+    setIsAssetsRepairedModalOpen(false);
+    setSelectedAssetsRepaired(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetsDisposal(row);
+    setSelectedAssetsRepaired(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetsDisposal(null);
+    setSelectedAssetsRepaired(null);
   };
 
   const handleActionButtons = async ({
@@ -113,7 +112,7 @@ const AssetsDisposalTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchDisposalRecords?.();
+        fetchRepairedRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -127,7 +126,7 @@ const AssetsDisposalTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetDisposalApi.deleteAssetsDisposalRecord,
+      apiMethod: assetsRepairedApi.deleteAssetsRepairedRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -137,7 +136,7 @@ const AssetsDisposalTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetDisposalApi.undoDeleteAssetsDisposalRecord,
+      apiMethod: assetsRepairedApi.undoDeleteAssetsRepairedRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -146,7 +145,7 @@ const AssetsDisposalTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetDisposalApi.archiveAssetsDisposalRecord,
+      apiMethod: assetsRepairedApi.archiveAssetsRepairedRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -156,18 +155,18 @@ const AssetsDisposalTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetDisposalApi.undoArchiveAssetsDisposalRecord,
+      apiMethod: assetsRepairedApi.undoArchiveAssetsRepairedRecord,
     });
 
   const handleFetchLatest = async () => {
-    fetchDisposalRecords();
+    fetchRepairRecords();
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (disposalRecords) => {
+  const handleModalOpenForEdit = (repairedRecords) => {
     setModalMode("edit");
-    setSelectedAssetsDisposal(disposalRecords);
-    setIsAssetsDisposalModalOpen(true);
+    setSelectedAssetsRepaired(repairedRecords);
+    setIsAssetsRepairedModalOpen(true);
   };
 
   const columns = [
@@ -189,9 +188,9 @@ const AssetsDisposalTable = () => {
       width: "120px",
     },
     {
-      name: "Date Disposed",
+      name: "Date Repaired",
       selector: (row) =>
-        row.dateDisposed ? formatReadableDate(row.dateDisposed) : "No Date Yet",
+        row.dateRepaired ? formatReadableDate(row.dateRepaired) : "No Date Yet",
     },
     // {
     //   name: "Employee Name",
@@ -264,30 +263,30 @@ const AssetsDisposalTable = () => {
           ) : null}
 
           {/* {row.Status?.isArchived ? (
-                <div className="group relative">
-                  <button
-                    onClick={() => handleUndoArchiveEntry(row._id)}
-                    className="text-white bg-yellow-600 p-2 rounded-md"
-                  >
-                    <FaUndo size={16} />
-                  </button>
-                  <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                    Undo Archive
-                  </span>
-                </div>
-              ) : !row.Status?.isDeleted ? (
-                <div className="group relative">
-                  <button
-                    onClick={() => handleArchiveEntry(row._id)}
-                    className="text-white bg-orange-600 p-2 rounded-md"
-                  >
-                    <FaArchive size={16} />
-                  </button>
-                  <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                    Archive
-                  </span>
-                </div>
-              ) : null} */}
+                  <div className="group relative">
+                    <button
+                      onClick={() => handleUndoArchiveEntry(row._id)}
+                      className="text-white bg-yellow-600 p-2 rounded-md"
+                    >
+                      <FaUndo size={16} />
+                    </button>
+                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                      Undo Archive
+                    </span>
+                  </div>
+                ) : !row.Status?.isDeleted ? (
+                  <div className="group relative">
+                    <button
+                      onClick={() => handleArchiveEntry(row._id)}
+                      className="text-white bg-orange-600 p-2 rounded-md"
+                    >
+                      <FaArchive size={16} />
+                    </button>
+                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                      Archive
+                    </span>
+                  </div>
+                ) : null} */}
         </div>
       ),
     },
@@ -297,7 +296,7 @@ const AssetsDisposalTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Disposal Records </h1>
+          <h1 className="font-bold">Assets Repaired Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -335,7 +334,7 @@ const AssetsDisposalTable = () => {
 
         <DataTable
           columns={columns}
-          data={disposalRecords}
+          data={repairedRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -350,22 +349,22 @@ const AssetsDisposalTable = () => {
           sortDirection={sortOrder}
         />
 
-        {isAssetsDisposalModalOpen && (
-          <AssetsDisposalModal
+        {isAssetsRepairedModalOpen && (
+          <AssetsRepairedModal
             mode={modalMode}
-            isOpen={isAssetsDisposalModalOpen}
+            isOpen={isAssetsRepairedModalOpen}
             onClose={handleModalClose}
-            onSaveAssetDisposal={fetchDisposalRecords}
-            assetsDisposalData={selectedAssetsDisposal}
+            onSaveAssetRepaired={fetchRepairedRecords}
+            assetsRepairData={selectedAssetsRepaired}
             refreshTable={refreshTable}
           />
         )}
 
         {isPARModalOpen && (
-          <PARDisposal
+          <PARRepaired
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetsDisposal}
+            employeeAssetsData={selectedAssetsRepaired}
           />
         )}
       </div>
@@ -373,4 +372,4 @@ const AssetsDisposalTable = () => {
   );
 };
 
-export default AssetsDisposalTable;
+export default AssetsRepairTable;

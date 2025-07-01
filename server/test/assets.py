@@ -53,7 +53,7 @@ for category, items in categories.items():
                 "invName": name,
                 "description": desc,
                 "code": f"{code_counter:04d}",
-                "status": "Available"
+                "status": "New-Available"
             })
             code_counter += 1
 
