@@ -20,7 +20,7 @@ const generateAllMonthlyAssetsDepreciation = async (params = {}) => {
       limit = 10,
       keyword = "",
       sortBy = "createdAt",
-      sortOrder = "desc",
+      sortOrder = "asc",
     } = params;
 
     const queryParams = new URLSearchParams({
