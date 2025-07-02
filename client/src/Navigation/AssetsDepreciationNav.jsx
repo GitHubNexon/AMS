@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import AssetsMonthlyDepreciation from "../Sub-pages/DepreciationTables/assetsMonthlyDepreciation";
-
+import AssetsNetBookValue from "../Sub-pages/DepreciationTables/AssetsNetBookValue";
 const TABS = [
   "Monthly Depreciation",
-  "Net Book Value",
-  "Accumulated Depreciation",
+  "Net Book Value and Accumulated Depreciation",
 ];
 
 const AssetsDepreciationNav = () => {
@@ -32,7 +31,11 @@ const AssetsDepreciationNav = () => {
             <AssetsMonthlyDepreciation />
           </div>
         )}
-        {activeTab === "Net Book Value" && <div>Net Book Value</div>}
+        {activeTab === "Net Book Value and Accumulated Depreciation" && (
+          <div>
+            <AssetsNetBookValue />
+          </div>
+        )}
         {activeTab === "Accumulated Depreciation" && (
           <div>Accumulated Depreciation</div>
         )}
