@@ -28,6 +28,7 @@ import assetsApi from "../api/assetsApi";
 import AssetsLogic from "../hooks/AssetsLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import AssetsModal from "../Pop-Up-Pages/AssetsModal";
+import ResizableContainer from "../Components/resize/ResizableContainer";
 
 const ExpandedRowComponent = ({ data }) => {
   const [openHistoryIndex, setOpenHistoryIndex] = useState(null);
@@ -92,164 +93,172 @@ const ExpandedRowComponent = ({ data }) => {
   );
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-lg max-w-full mx-auto my-4 border border-gray-200 transition-all hover:shadow-xl">
-      <div className="flex justify-between items-center mb-4">
-        {data.assetImage && (
-          <div className="mt-6 pt-4 border-gray-200">
-            <img
-              src={data.assetImage}
-              alt="Asset Image"
-              className="w-32 h-auto object-contain"
-            />
-          </div>
-        )}
-        <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-          {data.propName || "Unnamed Asset"}
-        </h3>
-        <div className="flex gap-2">
-          {data.Status.isArchived ? (
-            <span className="text-yellow-600 flex items-center gap-1 text-sm">
-              <FaArchive /> Archived
-            </span>
-          ) : data.Status.isDeleted ? (
-            <span className="text-red-600 flex items-center gap-1 text-sm">
-              <FaTrash /> Deleted
-            </span>
-          ) : (
-            <span className="text-green-600 text-sm">Active</span>
-          )}
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Left Column */}
-        <div className="space-y-3">
-          <p className="flex items-center gap-2 text-gray-600">
-            <span className="font-semibold">Property No:</span> {data.propNo}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <span className="font-semibold">Description:</span>{" "}
-            {data.propDescription || "N/A"}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <span className="font-semibold">Unit Cost:</span>{" "}
-            {numberToCurrencyString(data.unitCost)}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <span className="font-semibold">Acquisition Date:</span>{" "}
-            {formatReadableDate(data.acquisitionDate)}
-          </p>
-        </div>
-
-        {/* Right Column */}
-        <div className="space-y-3">
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaBox className="text-gray-400" />
-            <span className="font-semibold">Quantity:</span> {data.quantity}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaFolder className="text-gray-400" />
-            <span className="font-semibold">Category:</span>{" "}
-            {data.category || "N/A"}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaFileAlt className="text-gray-400" />
-            <span className="font-semibold">Reference:</span>{" "}
-            {data.reference || "N/A"}
-          </p>
-          <p className="flex items-center gap-2 text-gray-600">
-            <FaCalendarAlt className="text-gray-400" />
-            <span className="font-semibold">Useful Life:</span>{" "}
-            {data.useFullLife} months
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-4 pt-4 border-t border-gray-200">
-        <p className="flex items-center gap-2 text-gray-600">
-          <FaFileAlt className="text-gray-400" />
-          <span className="font-semibold">Accumulated Account:</span>{" "}
-          {data.accumulatedAccount || "N/A"}
-        </p>
-        <p className="flex items-center gap-2 text-gray-600 mt-2">
-          <FaFileAlt className="text-gray-400" />
-          <span className="font-semibold">Depreciation Account:</span>{" "}
-          {data.depreciationAccount || "N/A"}
-        </p>
-        <p className="flex items-center gap-2 text-gray-600 mt-2">
-          <FaFileAlt className="text-gray-400" />
-          <span className="font-semibold">Attachments:</span>{" "}
-          {data.attachments.length > 0
-            ? `${data.attachments.length} files`
-            : "None"}
-        </p>
-      </div>
-
-      <div className="mt-6 pt-4 border-t border-gray-200">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {data.inventory && data.inventory.length > 0 && (
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <FaBox className="text-blue-500" /> Inventory Details
-              </h4>
-              <div className="overflow-auto">
-                <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
-                  <thead className="bg-gray-100">
-                    <tr>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Inventory No
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Name
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Inventory Code
-                      </th>
-                      <th className="px-3 py-2 border-b border-gray-300">
-                        Status
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.inventory.map((inv, index) => (
-                      <tr key={inv._id} className="hover:bg-gray-50">
-                        <td className="px-3 py-2 border-b">
-                          {inv.invNo || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.invName || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b">
-                          {inv.code || "N/A"}
-                        </td>
-                        <td className="px-3 py-2 border-b flex items-center gap-2">
-                          {inv.status || "N/A"}
-                          {inv.history && inv.history.length > 0 && (
-                            <button
-                              onClick={() => toggleHistory(index)}
-                              className="text-blue-600 hover:text-blue-800 ml-2"
-                              title="View History"
-                            >
-                              <FaHistory />
-                            </button>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+    <ResizableContainer
+      title="Detailed view"
+      headerDescription=""
+      footerDescription=""
+      width="100%"
+      initialHeight={300}
+    >
+      <div className="p-6 bg-white rounded-lg shadow-lg max-w-full mx-auto my-4 border border-gray-200 transition-all hover:shadow-xl">
+        <div className="flex justify-between items-center mb-4">
+          {data.assetImage && (
+            <div className="mt-6 pt-4 border-gray-200">
+              <img
+                src={data.assetImage}
+                alt="Asset Image"
+                className="w-32 h-auto object-contain"
+              />
             </div>
           )}
-          {openHistoryIndex !== null &&
-            data.inventory[openHistoryIndex]?.history && (
+          <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+            {data.propName || "Unnamed Asset"}
+          </h3>
+          <div className="flex gap-2">
+            {data.Status.isArchived ? (
+              <span className="text-yellow-600 flex items-center gap-1 text-sm">
+                <FaArchive /> Archived
+              </span>
+            ) : data.Status.isDeleted ? (
+              <span className="text-red-600 flex items-center gap-1 text-sm">
+                <FaTrash /> Deleted
+              </span>
+            ) : (
+              <span className="text-green-600 text-sm">Active</span>
+            )}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Left Column */}
+          <div className="space-y-3">
+            <p className="flex items-center gap-2 text-gray-600">
+              <span className="font-semibold">Property No:</span> {data.propNo}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <span className="font-semibold">Description:</span>{" "}
+              {data.propDescription || "N/A"}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <span className="font-semibold">Unit Cost:</span>{" "}
+              {numberToCurrencyString(data.unitCost)}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <span className="font-semibold">Acquisition Date:</span>{" "}
+              {formatReadableDate(data.acquisitionDate)}
+            </p>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-3">
+            <p className="flex items-center gap-2 text-gray-600">
+              <FaBox className="text-gray-400" />
+              <span className="font-semibold">Quantity:</span> {data.quantity}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <FaFolder className="text-gray-400" />
+              <span className="font-semibold">Category:</span>{" "}
+              {data.category || "N/A"}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <FaFileAlt className="text-gray-400" />
+              <span className="font-semibold">Reference:</span>{" "}
+              {data.reference || "N/A"}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <FaCalendarAlt className="text-gray-400" />
+              <span className="font-semibold">Useful Life:</span>{" "}
+              {data.useFullLife} months
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 pt-4 border-t border-gray-200">
+          <p className="flex items-center gap-2 text-gray-600">
+            <FaFileAlt className="text-gray-400" />
+            <span className="font-semibold">Accumulated Account:</span>{" "}
+            {data.accumulatedAccount || "N/A"}
+          </p>
+          <p className="flex items-center gap-2 text-gray-600 mt-2">
+            <FaFileAlt className="text-gray-400" />
+            <span className="font-semibold">Depreciation Account:</span>{" "}
+            {data.depreciationAccount || "N/A"}
+          </p>
+          <p className="flex items-center gap-2 text-gray-600 mt-2">
+            <FaFileAlt className="text-gray-400" />
+            <span className="font-semibold">Attachments:</span>{" "}
+            {data.attachments.length > 0
+              ? `${data.attachments.length} files`
+              : "None"}
+          </p>
+        </div>
+
+        <div className="mt-6 pt-4 border-t border-gray-200">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {data.inventory && data.inventory.length > 0 && (
               <div>
-                {renderHistoryTable(data.inventory[openHistoryIndex].history)}
+                <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                  <FaBox className="text-blue-500" /> Inventory Details
+                </h4>
+                <div className="overflow-auto">
+                  <table className="min-w-full border border-gray-300 text-sm text-left text-gray-700">
+                    <thead className="bg-gray-100">
+                      <tr>
+                        <th className="px-3 py-2 border-b border-gray-300">
+                          Inventory No
+                        </th>
+                        <th className="px-3 py-2 border-b border-gray-300">
+                          Name
+                        </th>
+                        <th className="px-3 py-2 border-b border-gray-300">
+                          Inventory Code
+                        </th>
+                        <th className="px-3 py-2 border-b border-gray-300">
+                          Status
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.inventory.map((inv, index) => (
+                        <tr key={inv._id} className="hover:bg-gray-50">
+                          <td className="px-3 py-2 border-b">
+                            {inv.invNo || "N/A"}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {inv.invName || "N/A"}
+                          </td>
+                          <td className="px-3 py-2 border-b">
+                            {inv.code || "N/A"}
+                          </td>
+                          <td className="px-3 py-2 border-b flex items-center gap-2">
+                            {inv.status || "N/A"}
+                            {inv.history && inv.history.length > 0 && (
+                              <button
+                                onClick={() => toggleHistory(index)}
+                                className="text-blue-600 hover:text-blue-800 ml-2"
+                                title="View History"
+                              >
+                                <FaHistory />
+                              </button>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
+            {openHistoryIndex !== null &&
+              data.inventory[openHistoryIndex]?.history && (
+                <div>
+                  {renderHistoryTable(data.inventory[openHistoryIndex].history)}
+                </div>
+              )}
+          </div>
         </div>
       </div>
-    </div>
+    </ResizableContainer>
   );
 };
 
