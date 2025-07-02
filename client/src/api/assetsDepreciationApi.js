@@ -5,7 +5,7 @@ axios.defaults.withCredentials = true;
 
 const generateMonthlyDepreciation = async (assetId) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/get-monthly/${assetId}`);
+    const response = await axios.get(`${API_BASE_URL}/assets-depreciation/get-monthly/${assetId}`);
     return response.data;
   } catch (error) {
     console.error("Error generating monthly depreciation:", error);
@@ -32,7 +32,7 @@ const generateAllMonthlyAssetsDepreciation = async (params = {}) => {
     });
 
     const response = await axios.get(
-      `${API_BASE_URL}/get-all-monthly?${queryParams}`
+      `${API_BASE_URL}/assets-depreciation/get-all-monthly?${queryParams}`
     );
     return response.data;
   } catch (error) {

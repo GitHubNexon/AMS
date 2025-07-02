@@ -12,9 +12,12 @@ import assetsDepreciationApi from "../../api/assetsDepreciationApi";
 import moment from "moment";
 import { showToast } from "../../utils/toastNotifications";
 import { numberToCurrencyString } from "../../helper/helper";
+import AssetsMonthlySchedule from "./AssetsMonthlySchedule";
 
 const AssetsMonthlyDepreciation = () => {
   const [data, setData] = useState([]);
+  const [showScheduleModal, setShowScheduleModal] = useState(false);
+  const [selectedAsset, setSelectedAsset] = useState(null);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [pagination, setPagination] = useState({
@@ -104,7 +107,7 @@ const AssetsMonthlyDepreciation = () => {
 
   // Handle export (placeholder)
   const handleExport = () => {
-    showToast("info", "Export functionality will be implemented later");
+    showToast("Export functionality will be implemented later", "info");
   };
 
   // Render table header
@@ -205,9 +208,13 @@ const AssetsMonthlyDepreciation = () => {
 
   // Handle view schedule
   const handleViewSchedule = (item) => {
-    // This could open a modal or navigate to detailed view
-    showToast("info", `Viewing schedule for ${item.propName}`);
-    console.log("Schedule data:", item.schedule);
+    setSelectedAsset(item);
+    setShowScheduleModal(true);
+  };
+
+  const handleCloseScheduleModal = () => {
+    setShowScheduleModal(false);
+    setSelectedAsset(null);
   };
 
   // Render pagination
@@ -306,82 +313,91 @@ const AssetsMonthlyDepreciation = () => {
   );
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            Assets Monthly Depreciation
-          </h1>
-          <p className="text-gray-600">
-            Manage and view monthly depreciation schedules for all assets
-          </p>
-        </div>
+    <>
+      <div className="p-6 bg-gray-50 min-h-screen">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+              Assets Monthly Depreciation
+            </h1>
+            <p className="text-gray-600">
+              Manage and view monthly depreciation schedules for all assets
+            </p>
+          </div>
 
-        {/* Search and Export Container */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
-          <div className="p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            {/* Search Input */}
-            <div className="relative flex-1 max-w-md">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="h-5 w-5 text-gray-400" />
+          {/* Search and Export Container */}
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+            <div className="p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              {/* Search Input */}
+              <div className="relative flex-1 max-w-md">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiSearch className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search by property number or name..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                />
               </div>
-              <input
-                type="text"
-                placeholder="Search by property number or name..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-              />
+
+              {/* Export Button */}
+              <button
+                onClick={handleExport}
+                className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                <FiDownload className="h-4 w-4 mr-2" />
+                Export
+              </button>
+            </div>
+          </div>
+
+          {/* Table Container */}
+          <div className="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                {renderTableHeader()}
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {loading ? (
+                    <tr>
+                      <td colSpan="8" className="px-6 py-12 text-center">
+                        <div className="flex items-center justify-center">
+                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                          <span className="ml-2 text-gray-500">Loading...</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ) : data.length === 0 ? (
+                    <tr>
+                      <td
+                        colSpan="8"
+                        className="px-6 py-12 text-center text-gray-500"
+                      >
+                        No depreciation data found
+                      </td>
+                    </tr>
+                  ) : (
+                    data.map((item, index) => renderTableRow(item, index))
+                  )}
+                </tbody>
+              </table>
             </div>
 
-            {/* Export Button */}
-            <button
-              onClick={handleExport}
-              className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              <FiDownload className="h-4 w-4 mr-2" />
-              Export
-            </button>
+            {/* Pagination */}
+            {!loading && data.length > 0 && renderPagination()}
           </div>
-        </div>
-
-        {/* Table Container */}
-        <div className="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              {renderTableHeader()}
-              <tbody className="bg-white divide-y divide-gray-200">
-                {loading ? (
-                  <tr>
-                    <td colSpan="8" className="px-6 py-12 text-center">
-                      <div className="flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                        <span className="ml-2 text-gray-500">Loading...</span>
-                      </div>
-                    </td>
-                  </tr>
-                ) : data.length === 0 ? (
-                  <tr>
-                    <td
-                      colSpan="8"
-                      className="px-6 py-12 text-center text-gray-500"
-                    >
-                      No depreciation data found
-                    </td>
-                  </tr>
-                ) : (
-                  data.map((item, index) => renderTableRow(item, index))
-                )}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Pagination */}
-          {!loading && data.length > 0 && renderPagination()}
         </div>
       </div>
-    </div>
+
+      {/* Schedule Modal */}
+      <AssetsMonthlySchedule
+        isOpen={showScheduleModal}
+        onClose={handleCloseScheduleModal}
+        assetData={selectedAsset}
+      />
+    </>
   );
 };
 
