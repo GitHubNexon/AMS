@@ -2,14 +2,14 @@ import React, { useMemo } from "react";
 import {
   FiX,
   FiCalendar,
-  FiDollarSign,
   FiFile,
   FiTrendingUp,
   FiTrendingDown,
 } from "react-icons/fi";
+import { FaPesoSign } from "react-icons/fa6";
 import moment from "moment";
 import { numberToCurrencyString } from "../../helper/helper";
-import Depreciation from './../../Pages/Depreciation';
+import Depreciation from "./../../Pages/Depreciation";
 
 const AssetsNetBookValueSchedule = ({ isOpen, onClose, assetData }) => {
   if (!isOpen) return null;
@@ -123,7 +123,7 @@ const AssetsNetBookValueSchedule = ({ isOpen, onClose, assetData }) => {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <div className="flex items-center space-x-2">
-                  <FiDollarSign className="h-4 w-4 text-blue-600" />
+                  <FaPesoSign className="h-4 w-4 text-blue-600" />
                   <span className="text-sm font-medium text-gray-600">
                     Original Cost
                   </span>

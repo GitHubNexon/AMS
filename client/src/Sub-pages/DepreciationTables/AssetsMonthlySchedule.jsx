@@ -2,10 +2,10 @@ import React, { useMemo } from "react";
 import {
   FiX,
   FiCalendar,
-  FiDollarSign,
   FiFile,
   FiTrendingDown,
 } from "react-icons/fi";
+import { FaPesoSign } from "react-icons/fa6";
 import moment from "moment";
 import { numberToCurrencyString } from "../../helper/helper";
 
@@ -84,7 +84,7 @@ const AssetsMonthlySchedule = ({ isOpen, onClose, assetData }) => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <div className="flex items-center space-x-2">
-                  <FiDollarSign className="h-4 w-4 text-green-600" />
+                  <FaPesoSign className="h-4 w-4 text-green-600" />
                   <span className="text-sm font-medium text-gray-600">
                     Unit Cost
                   </span>

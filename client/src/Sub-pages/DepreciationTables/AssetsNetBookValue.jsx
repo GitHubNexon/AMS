@@ -5,10 +5,10 @@ import {
   FiChevronLeft,
   FiChevronRight,
   FiCalendar,
-  FiDollarSign,
   FiFile,
   FiTrendingUp,
 } from "react-icons/fi";
+import { FaPesoSign } from "react-icons/fa6";
 import assetsDepreciationApi from "../../api/assetsDepreciationApi";
 import moment from "moment";
 import { showToast } from "../../utils/toastNotifications";
@@ -157,7 +157,7 @@ const AssetsNetBookValue = () => {
         </th>
         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
           <div className="flex items-center space-x-1">
-            <FiDollarSign className="h-4 w-4" />
+            <FaPesoSign className="h-4 w-4" />
             <span>Original Cost</span>
           </div>
         </th>
