@@ -6,6 +6,8 @@ const AssetsRepairModel = require("../models/AssetsRepairModel");
 const AssetsLostStolenModel = require("../models/AssetsLostStolenModel");
 const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 const AssetsRepairedModel = require("../models/AssetsRepairedModel");
+const moment = require("moment");
+const { v4: uuidv4 } = require("uuid");
 
 const EmployeeModel = require("../models/employeeModel");
 
@@ -477,6 +479,81 @@ const getEmployeeAssetsRecords = async (req, res) => {
   }
 };
 
+const generateAutoPARNo = async (req, res, next) => {
+  try {
+    const { type } = req.params;
+
+    // Map type to corresponding model
+    const modelMap = {
+      issuance: AssetsIssuanceModel,
+      return: AssetsReturnModel,
+      disposal: AssetsDisposal,
+      "under-repair": AssetsRepairModel,
+      "lost-stolen-damage": AssetsLostStolenModel,
+      "re-assign": AssetsRepairedModel,
+    };
+
+    // Validate type parameter
+    if (!modelMap[type]) {
+      return res.status(400).json({
+        success: false,
+        message:
+          "Invalid type parameter. Must be one of: issuance, return, disposal, under-repair, lost-stolen-damage, re-assign",
+      });
+    }
+
+    const Model = modelMap[type];
+
+    // Get current year and month
+    const currentYear = moment().format("YY"); // 2-digit year
+    const currentMonth = moment().format("MM"); // 2-digit month
+
+    // Create the year-month prefix
+    const prefix = `${currentYear}-${currentMonth}`;
+
+    // Find all existing PAR numbers for the current year-month
+    const existingPARs = await Model.find({
+      parNo: { $regex: `^${prefix}-` },
+    }).select("parNo");
+
+    // Extract serial numbers and sort them
+    const existingSerials = existingPARs
+      .map((record) => {
+        const parts = record.parNo.split("-");
+        return parseInt(parts[2]) || 0;
+      })
+      .sort((a, b) => a - b);
+
+    // Find the next available serial number
+    let nextSerial = 1;
+    for (let i = 0; i < existingSerials.length; i++) {
+      if (existingSerials[i] === nextSerial) {
+        nextSerial++;
+      } else {
+        break; // Found a gap, use the current nextSerial
+      }
+    }
+
+    // Format serial number with leading zeros (3 digits)
+    const serialNumber = nextSerial.toString().padStart(3, "0");
+
+    // Create final PAR number: YY-MM-SSS
+    const parNumber = `${prefix}-${serialNumber}`;
+
+    // Return the generated PAR number
+    res.status(200).json({
+      success: true,
+      data: {
+        parNumber: parNumber,
+        type: type,
+        generatedAt: moment().toISOString(),
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createAssetsRecord,
   updateAssetsRecord,
@@ -488,4 +565,5 @@ module.exports = {
   getAllAssetRecordsList,
   getAllAssetRecordsListUnderRepair,
   getEmployeeAssetsRecords,
+  generateAutoPARNo,
 };
