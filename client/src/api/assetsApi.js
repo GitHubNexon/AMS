@@ -47,7 +47,7 @@ const assetsApi = {
       console.error("Error fetching asset records:", error);
     }
   },
-  
+
   getAllAssetRecordsListUnderRepair: async () => {
     try {
       const response = await axios.get(
@@ -111,6 +111,18 @@ const assetsApi = {
       return response.data;
     } catch (error) {
       console.error("Error fetching employee asset records:", error.message);
+      throw error;
+    }
+  },
+
+  generateAutoPARNo: async (type) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/assets/generate-parNo/${type}` 
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error generate ParNO", error.message);
       throw error;
     }
   },
