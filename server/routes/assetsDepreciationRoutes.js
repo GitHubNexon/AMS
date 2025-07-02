@@ -15,4 +15,9 @@ router.get(
   assetsDepreciationController.generateAllMonthlyAssetsDepreciation
 );
 
+router.get(
+  "/get-all-netbook-value",
+  assetsDepreciationController.generateAllAssetsNetBookValue
+);
+
 module.exports = router;
