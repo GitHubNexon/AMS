@@ -12,4 +12,9 @@ router.get("/inventory-status", AssetsReportsController.getAssetsConditions);
 router.post("/get-ics-report", AssetsReportsController.getICSReport);
 router.post("/get-wmr-report", AssetsReportsController.getWMRReport);
 
+router.get(
+  "/get-inventories-history",
+  AssetsReportsController.getAssetsInventoriesReports
+);
+
 module.exports = router;
