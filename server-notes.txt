@@ -2,3 +2,8 @@
 root
 cpgarciadito
 @eo:/>CI1|S,2e)
+
+Demo Account
+
+email = demo@mail.com
+password = @Demo321
