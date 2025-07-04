@@ -9,6 +9,7 @@ import AssetsLostStolenTable from "../Sub-pages/AssetsLostStolenTable";
 import AssetOverView from "../Sub-pages/AssetOverView";
 import AssetsAllHistory from "../Sub-pages/AssetsAllHistory";
 import AssetsRepairedTable from "../Sub-pages/AssetsRepairedTable";
+import AssetsReport from "../Sub-pages/AssetsReport";
 
 const TABS = [
   "Overview",
@@ -94,7 +95,11 @@ const AssetsNav = () => {
             <AssetsAllHistory />
           </div>
         )}
-        {activeTab === "Reports" && <div>Reports Content</div>}
+        {activeTab === "Reports" && (
+          <div>
+            <AssetsReport />
+          </div>
+        )}
       </div>
     </div>
   );

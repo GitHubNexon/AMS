@@ -41,7 +41,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
         description: "",
         code: "",
         invName: "",
-        status: "Available",
+        status: "New-Available",
       },
     ],
   });
@@ -111,7 +111,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
           description: prevData.propDescription,
           code: "",
           invName: prevData.propName,
-          status: "Available",
+          status: "New-Available",
         },
       ],
     }));
@@ -171,7 +171,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                 invName: "",
                 description: "",
                 code: "",
-                status: "Available",
+                status: "New-Available",
               },
             ];
 

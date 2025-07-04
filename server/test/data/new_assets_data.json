@@ -1,0 +1,2482 @@
+[
+  {
+    "propNo": "SERVER-001",
+    "propName": "Dell PowerEdge",
+    "propDescription": "Enterprise Server R740",
+    "unitCost": 450000,
+    "acquisitionDate": "2024-08-01T11:36:58.810Z",
+    "inventory": [
+      {
+        "invNo": "SERVER-001-A",
+        "invName": "Dell PowerEdge",
+        "description": "Enterprise Server R740",
+        "code": "1001",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SERVER-001-B",
+        "invName": "Dell PowerEdge",
+        "description": "Enterprise Server R740",
+        "code": "1002",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SERVER-001-C",
+        "invName": "Dell PowerEdge",
+        "description": "Enterprise Server R740",
+        "code": "1003",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SERVER-001-D",
+        "invName": "Dell PowerEdge",
+        "description": "Enterprise Server R740",
+        "code": "1004",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SERVER-001-E",
+        "invName": "Dell PowerEdge",
+        "description": "Enterprise Server R740",
+        "code": "1005",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 2250000,
+    "reference": "REF-1402",
+    "category": "IT Hardware",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "WORKSTATION-002",
+    "propName": "HP Z6",
+    "propDescription": "High Performance Workstation",
+    "unitCost": 180000,
+    "acquisitionDate": "2024-07-21T22:53:23.749Z",
+    "inventory": [
+      {
+        "invNo": "WORKSTATION-002-A",
+        "invName": "HP Z6",
+        "description": "High Performance Workstation",
+        "code": "1006",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WORKSTATION-002-B",
+        "invName": "HP Z6",
+        "description": "High Performance Workstation",
+        "code": "1007",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WORKSTATION-002-C",
+        "invName": "HP Z6",
+        "description": "High Performance Workstation",
+        "code": "1008",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WORKSTATION-002-D",
+        "invName": "HP Z6",
+        "description": "High Performance Workstation",
+        "code": "1009",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WORKSTATION-002-E",
+        "invName": "HP Z6",
+        "description": "High Performance Workstation",
+        "code": "1010",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 48,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 900000,
+    "reference": "REF-8550",
+    "category": "IT Hardware",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "TABLET-003",
+    "propName": "iPad Pro",
+    "propDescription": "11-inch Tablet Device",
+    "unitCost": 65000,
+    "acquisitionDate": "2024-12-20T23:58:22.411Z",
+    "inventory": [
+      {
+        "invNo": "TABLET-003-A",
+        "invName": "iPad Pro",
+        "description": "11-inch Tablet Device",
+        "code": "1011",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "TABLET-003-B",
+        "invName": "iPad Pro",
+        "description": "11-inch Tablet Device",
+        "code": "1012",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "TABLET-003-C",
+        "invName": "iPad Pro",
+        "description": "11-inch Tablet Device",
+        "code": "1013",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "TABLET-003-D",
+        "invName": "iPad Pro",
+        "description": "11-inch Tablet Device",
+        "code": "1014",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "TABLET-003-E",
+        "invName": "iPad Pro",
+        "description": "11-inch Tablet Device",
+        "code": "1015",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 325000,
+    "reference": "REF-5170",
+    "category": "IT Hardware",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "SWITCH-004",
+    "propName": "Cisco Catalyst",
+    "propDescription": "24-Port Network Switch",
+    "unitCost": 85000,
+    "acquisitionDate": "2024-05-23T15:19:17.325Z",
+    "inventory": [
+      {
+        "invNo": "SWITCH-004-A",
+        "invName": "Cisco Catalyst",
+        "description": "24-Port Network Switch",
+        "code": "1016",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SWITCH-004-B",
+        "invName": "Cisco Catalyst",
+        "description": "24-Port Network Switch",
+        "code": "1017",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SWITCH-004-C",
+        "invName": "Cisco Catalyst",
+        "description": "24-Port Network Switch",
+        "code": "1018",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SWITCH-004-D",
+        "invName": "Cisco Catalyst",
+        "description": "24-Port Network Switch",
+        "code": "1019",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SWITCH-004-E",
+        "invName": "Cisco Catalyst",
+        "description": "24-Port Network Switch",
+        "code": "1020",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 425000,
+    "reference": "REF-7063",
+    "category": "IT Hardware",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "UPS-005",
+    "propName": "APC Smart",
+    "propDescription": "1500VA UPS System",
+    "unitCost": 35000,
+    "acquisitionDate": "2024-12-25T11:03:35.988Z",
+    "inventory": [
+      {
+        "invNo": "UPS-005-A",
+        "invName": "APC Smart",
+        "description": "1500VA UPS System",
+        "code": "1021",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "UPS-005-B",
+        "invName": "APC Smart",
+        "description": "1500VA UPS System",
+        "code": "1022",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "UPS-005-C",
+        "invName": "APC Smart",
+        "description": "1500VA UPS System",
+        "code": "1023",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "UPS-005-D",
+        "invName": "APC Smart",
+        "description": "1500VA UPS System",
+        "code": "1024",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "UPS-005-E",
+        "invName": "APC Smart",
+        "description": "1500VA UPS System",
+        "code": "1025",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 175000,
+    "reference": "REF-3195",
+    "category": "IT Hardware",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "ULTRASOUND-006",
+    "propName": "GE Voluson",
+    "propDescription": "Ultrasound Machine",
+    "unitCost": 2500000,
+    "acquisitionDate": "2024-01-22T18:31:17.088Z",
+    "inventory": [
+      {
+        "invNo": "ULTRASOUND-006-A",
+        "invName": "GE Voluson",
+        "description": "Ultrasound Machine",
+        "code": "1026",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ULTRASOUND-006-B",
+        "invName": "GE Voluson",
+        "description": "Ultrasound Machine",
+        "code": "1027",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ULTRASOUND-006-C",
+        "invName": "GE Voluson",
+        "description": "Ultrasound Machine",
+        "code": "1028",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ULTRASOUND-006-D",
+        "invName": "GE Voluson",
+        "description": "Ultrasound Machine",
+        "code": "1029",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ULTRASOUND-006-E",
+        "invName": "GE Voluson",
+        "description": "Ultrasound Machine",
+        "code": "1030",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 36,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 12500000,
+    "reference": "REF-5250",
+    "category": "Medical Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "XRAY-007",
+    "propName": "Philips DigitalDiagnost",
+    "propDescription": "Digital X-Ray System",
+    "unitCost": 3200000,
+    "acquisitionDate": "2024-01-16T15:08:07.155Z",
+    "inventory": [
+      {
+        "invNo": "XRAY-007-A",
+        "invName": "Philips DigitalDiagnost",
+        "description": "Digital X-Ray System",
+        "code": "1031",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "XRAY-007-B",
+        "invName": "Philips DigitalDiagnost",
+        "description": "Digital X-Ray System",
+        "code": "1032",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "XRAY-007-C",
+        "invName": "Philips DigitalDiagnost",
+        "description": "Digital X-Ray System",
+        "code": "1033",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "XRAY-007-D",
+        "invName": "Philips DigitalDiagnost",
+        "description": "Digital X-Ray System",
+        "code": "1034",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "XRAY-007-E",
+        "invName": "Philips DigitalDiagnost",
+        "description": "Digital X-Ray System",
+        "code": "1035",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 16000000,
+    "reference": "REF-2446",
+    "category": "Medical Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "MONITOR-008",
+    "propName": "Mindray uMEC",
+    "propDescription": "Patient Monitor",
+    "unitCost": 180000,
+    "acquisitionDate": "2024-01-02T21:02:17.405Z",
+    "inventory": [
+      {
+        "invNo": "MONITOR-008-A",
+        "invName": "Mindray uMEC",
+        "description": "Patient Monitor",
+        "code": "1036",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MONITOR-008-B",
+        "invName": "Mindray uMEC",
+        "description": "Patient Monitor",
+        "code": "1037",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MONITOR-008-C",
+        "invName": "Mindray uMEC",
+        "description": "Patient Monitor",
+        "code": "1038",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MONITOR-008-D",
+        "invName": "Mindray uMEC",
+        "description": "Patient Monitor",
+        "code": "1039",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MONITOR-008-E",
+        "invName": "Mindray uMEC",
+        "description": "Patient Monitor",
+        "code": "1040",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 900000,
+    "reference": "REF-5080",
+    "category": "Medical Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "DEFIBRILLATOR-009",
+    "propName": "Zoll R Series",
+    "propDescription": "Automated Defibrillator",
+    "unitCost": 320000,
+    "acquisitionDate": "2024-05-27T09:14:54.361Z",
+    "inventory": [
+      {
+        "invNo": "DEFIBRILLATOR-009-A",
+        "invName": "Zoll R Series",
+        "description": "Automated Defibrillator",
+        "code": "1041",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DEFIBRILLATOR-009-B",
+        "invName": "Zoll R Series",
+        "description": "Automated Defibrillator",
+        "code": "1042",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DEFIBRILLATOR-009-C",
+        "invName": "Zoll R Series",
+        "description": "Automated Defibrillator",
+        "code": "1043",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DEFIBRILLATOR-009-D",
+        "invName": "Zoll R Series",
+        "description": "Automated Defibrillator",
+        "code": "1044",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DEFIBRILLATOR-009-E",
+        "invName": "Zoll R Series",
+        "description": "Automated Defibrillator",
+        "code": "1045",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 1600000,
+    "reference": "REF-9600",
+    "category": "Medical Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "WHEELCHAIR-010",
+    "propName": "Invacare Tracer",
+    "propDescription": "Manual Wheelchair",
+    "unitCost": 15000,
+    "acquisitionDate": "2024-08-23T11:53:41.021Z",
+    "inventory": [
+      {
+        "invNo": "WHEELCHAIR-010-A",
+        "invName": "Invacare Tracer",
+        "description": "Manual Wheelchair",
+        "code": "1046",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WHEELCHAIR-010-B",
+        "invName": "Invacare Tracer",
+        "description": "Manual Wheelchair",
+        "code": "1047",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WHEELCHAIR-010-C",
+        "invName": "Invacare Tracer",
+        "description": "Manual Wheelchair",
+        "code": "1048",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WHEELCHAIR-010-D",
+        "invName": "Invacare Tracer",
+        "description": "Manual Wheelchair",
+        "code": "1049",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "WHEELCHAIR-010-E",
+        "invName": "Invacare Tracer",
+        "description": "Manual Wheelchair",
+        "code": "1050",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 75000,
+    "reference": "REF-4874",
+    "category": "Medical Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "MICROSCOPE-011",
+    "propName": "Olympus CX23",
+    "propDescription": "Binocular Microscope",
+    "unitCost": 95000,
+    "acquisitionDate": "2024-08-19T17:21:48.357Z",
+    "inventory": [
+      {
+        "invNo": "MICROSCOPE-011-A",
+        "invName": "Olympus CX23",
+        "description": "Binocular Microscope",
+        "code": "1051",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROSCOPE-011-B",
+        "invName": "Olympus CX23",
+        "description": "Binocular Microscope",
+        "code": "1052",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROSCOPE-011-C",
+        "invName": "Olympus CX23",
+        "description": "Binocular Microscope",
+        "code": "1053",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROSCOPE-011-D",
+        "invName": "Olympus CX23",
+        "description": "Binocular Microscope",
+        "code": "1054",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROSCOPE-011-E",
+        "invName": "Olympus CX23",
+        "description": "Binocular Microscope",
+        "code": "1055",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 36,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 475000,
+    "reference": "REF-4655",
+    "category": "Laboratory Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "CENTRIFUGE-012",
+    "propName": "Thermo Scientific",
+    "propDescription": "High-Speed Centrifuge",
+    "unitCost": 125000,
+    "acquisitionDate": "2024-06-17T08:54:11.063Z",
+    "inventory": [
+      {
+        "invNo": "CENTRIFUGE-012-A",
+        "invName": "Thermo Scientific",
+        "description": "High-Speed Centrifuge",
+        "code": "1056",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CENTRIFUGE-012-B",
+        "invName": "Thermo Scientific",
+        "description": "High-Speed Centrifuge",
+        "code": "1057",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CENTRIFUGE-012-C",
+        "invName": "Thermo Scientific",
+        "description": "High-Speed Centrifuge",
+        "code": "1058",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CENTRIFUGE-012-D",
+        "invName": "Thermo Scientific",
+        "description": "High-Speed Centrifuge",
+        "code": "1059",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CENTRIFUGE-012-E",
+        "invName": "Thermo Scientific",
+        "description": "High-Speed Centrifuge",
+        "code": "1060",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 48,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 625000,
+    "reference": "REF-3519",
+    "category": "Laboratory Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "INCUBATOR-013",
+    "propName": "Memmert INC",
+    "propDescription": "CO2 Incubator",
+    "unitCost": 220000,
+    "acquisitionDate": "2024-03-10T07:04:27.406Z",
+    "inventory": [
+      {
+        "invNo": "INCUBATOR-013-A",
+        "invName": "Memmert INC",
+        "description": "CO2 Incubator",
+        "code": "1061",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "INCUBATOR-013-B",
+        "invName": "Memmert INC",
+        "description": "CO2 Incubator",
+        "code": "1062",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "INCUBATOR-013-C",
+        "invName": "Memmert INC",
+        "description": "CO2 Incubator",
+        "code": "1063",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "INCUBATOR-013-D",
+        "invName": "Memmert INC",
+        "description": "CO2 Incubator",
+        "code": "1064",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "INCUBATOR-013-E",
+        "invName": "Memmert INC",
+        "description": "CO2 Incubator",
+        "code": "1065",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 1100000,
+    "reference": "REF-6733",
+    "category": "Laboratory Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "AUTOCLAVE-014",
+    "propName": "Tuttnauer 3870",
+    "propDescription": "Steam Sterilizer",
+    "unitCost": 165000,
+    "acquisitionDate": "2024-04-10T03:57:11.420Z",
+    "inventory": [
+      {
+        "invNo": "AUTOCLAVE-014-A",
+        "invName": "Tuttnauer 3870",
+        "description": "Steam Sterilizer",
+        "code": "1066",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AUTOCLAVE-014-B",
+        "invName": "Tuttnauer 3870",
+        "description": "Steam Sterilizer",
+        "code": "1067",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AUTOCLAVE-014-C",
+        "invName": "Tuttnauer 3870",
+        "description": "Steam Sterilizer",
+        "code": "1068",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AUTOCLAVE-014-D",
+        "invName": "Tuttnauer 3870",
+        "description": "Steam Sterilizer",
+        "code": "1069",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AUTOCLAVE-014-E",
+        "invName": "Tuttnauer 3870",
+        "description": "Steam Sterilizer",
+        "code": "1070",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 825000,
+    "reference": "REF-8856",
+    "category": "Laboratory Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "BALANCE-015",
+    "propName": "Sartorius Entris",
+    "propDescription": "Analytical Balance",
+    "unitCost": 85000,
+    "acquisitionDate": "2024-02-08T08:03:15.126Z",
+    "inventory": [
+      {
+        "invNo": "BALANCE-015-A",
+        "invName": "Sartorius Entris",
+        "description": "Analytical Balance",
+        "code": "1071",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BALANCE-015-B",
+        "invName": "Sartorius Entris",
+        "description": "Analytical Balance",
+        "code": "1072",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BALANCE-015-C",
+        "invName": "Sartorius Entris",
+        "description": "Analytical Balance",
+        "code": "1073",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BALANCE-015-D",
+        "invName": "Sartorius Entris",
+        "description": "Analytical Balance",
+        "code": "1074",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BALANCE-015-E",
+        "invName": "Sartorius Entris",
+        "description": "Analytical Balance",
+        "code": "1075",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 96,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 425000,
+    "reference": "REF-4980",
+    "category": "Laboratory Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "CAMERA-016",
+    "propName": "Hikvision DS",
+    "propDescription": "IP Security Camera",
+    "unitCost": 12000,
+    "acquisitionDate": "2024-12-23T18:17:08.262Z",
+    "inventory": [
+      {
+        "invNo": "CAMERA-016-A",
+        "invName": "Hikvision DS",
+        "description": "IP Security Camera",
+        "code": "1076",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CAMERA-016-B",
+        "invName": "Hikvision DS",
+        "description": "IP Security Camera",
+        "code": "1077",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CAMERA-016-C",
+        "invName": "Hikvision DS",
+        "description": "IP Security Camera",
+        "code": "1078",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CAMERA-016-D",
+        "invName": "Hikvision DS",
+        "description": "IP Security Camera",
+        "code": "1079",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CAMERA-016-E",
+        "invName": "Hikvision DS",
+        "description": "IP Security Camera",
+        "code": "1080",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 96,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 60000,
+    "reference": "REF-2164",
+    "category": "Security Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "DVR-017",
+    "propName": "Dahua XVR",
+    "propDescription": "Digital Video Recorder",
+    "unitCost": 45000,
+    "acquisitionDate": "2024-12-13T18:20:27.476Z",
+    "inventory": [
+      {
+        "invNo": "DVR-017-A",
+        "invName": "Dahua XVR",
+        "description": "Digital Video Recorder",
+        "code": "1081",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DVR-017-B",
+        "invName": "Dahua XVR",
+        "description": "Digital Video Recorder",
+        "code": "1082",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DVR-017-C",
+        "invName": "Dahua XVR",
+        "description": "Digital Video Recorder",
+        "code": "1083",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DVR-017-D",
+        "invName": "Dahua XVR",
+        "description": "Digital Video Recorder",
+        "code": "1084",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DVR-017-E",
+        "invName": "Dahua XVR",
+        "description": "Digital Video Recorder",
+        "code": "1085",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 225000,
+    "reference": "REF-9893",
+    "category": "Security Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "SCANNER-018",
+    "propName": "ZKTeco MT100",
+    "propDescription": "Fingerprint Scanner",
+    "unitCost": 8500,
+    "acquisitionDate": "2024-04-16T20:15:22.714Z",
+    "inventory": [
+      {
+        "invNo": "SCANNER-018-A",
+        "invName": "ZKTeco MT100",
+        "description": "Fingerprint Scanner",
+        "code": "1086",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCANNER-018-B",
+        "invName": "ZKTeco MT100",
+        "description": "Fingerprint Scanner",
+        "code": "1087",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCANNER-018-C",
+        "invName": "ZKTeco MT100",
+        "description": "Fingerprint Scanner",
+        "code": "1088",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCANNER-018-D",
+        "invName": "ZKTeco MT100",
+        "description": "Fingerprint Scanner",
+        "code": "1089",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCANNER-018-E",
+        "invName": "ZKTeco MT100",
+        "description": "Fingerprint Scanner",
+        "code": "1090",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 42500,
+    "reference": "REF-8142",
+    "category": "Security Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "DETECTOR-019",
+    "propName": "First Alert",
+    "propDescription": "Smoke Detector",
+    "unitCost": 3500,
+    "acquisitionDate": "2024-09-28T04:18:07.617Z",
+    "inventory": [
+      {
+        "invNo": "DETECTOR-019-A",
+        "invName": "First Alert",
+        "description": "Smoke Detector",
+        "code": "1091",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DETECTOR-019-B",
+        "invName": "First Alert",
+        "description": "Smoke Detector",
+        "code": "1092",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DETECTOR-019-C",
+        "invName": "First Alert",
+        "description": "Smoke Detector",
+        "code": "1093",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DETECTOR-019-D",
+        "invName": "First Alert",
+        "description": "Smoke Detector",
+        "code": "1094",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DETECTOR-019-E",
+        "invName": "First Alert",
+        "description": "Smoke Detector",
+        "code": "1095",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 17500,
+    "reference": "REF-2222",
+    "category": "Security Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "ALARM-020",
+    "propName": "Honeywell Vista",
+    "propDescription": "Security Alarm Panel",
+    "unitCost": 25000,
+    "acquisitionDate": "2024-11-24T02:51:09.468Z",
+    "inventory": [
+      {
+        "invNo": "ALARM-020-A",
+        "invName": "Honeywell Vista",
+        "description": "Security Alarm Panel",
+        "code": "1096",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ALARM-020-B",
+        "invName": "Honeywell Vista",
+        "description": "Security Alarm Panel",
+        "code": "1097",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ALARM-020-C",
+        "invName": "Honeywell Vista",
+        "description": "Security Alarm Panel",
+        "code": "1098",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ALARM-020-D",
+        "invName": "Honeywell Vista",
+        "description": "Security Alarm Panel",
+        "code": "1099",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "ALARM-020-E",
+        "invName": "Honeywell Vista",
+        "description": "Security Alarm Panel",
+        "code": "1100",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 125000,
+    "reference": "REF-6075",
+    "category": "Security Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "REFRIGERATOR-021",
+    "propName": "Samsung RF23",
+    "propDescription": "Commercial Refrigerator",
+    "unitCost": 85000,
+    "acquisitionDate": "2024-01-31T21:14:52.713Z",
+    "inventory": [
+      {
+        "invNo": "REFRIGERATOR-021-A",
+        "invName": "Samsung RF23",
+        "description": "Commercial Refrigerator",
+        "code": "1101",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "REFRIGERATOR-021-B",
+        "invName": "Samsung RF23",
+        "description": "Commercial Refrigerator",
+        "code": "1102",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "REFRIGERATOR-021-C",
+        "invName": "Samsung RF23",
+        "description": "Commercial Refrigerator",
+        "code": "1103",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "REFRIGERATOR-021-D",
+        "invName": "Samsung RF23",
+        "description": "Commercial Refrigerator",
+        "code": "1104",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "REFRIGERATOR-021-E",
+        "invName": "Samsung RF23",
+        "description": "Commercial Refrigerator",
+        "code": "1105",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 36,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 425000,
+    "reference": "REF-5612",
+    "category": "Kitchen Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "OVEN-022",
+    "propName": "Rational SelfCooking",
+    "propDescription": "Combi Steam Oven",
+    "unitCost": 450000,
+    "acquisitionDate": "2024-11-01T23:17:12.707Z",
+    "inventory": [
+      {
+        "invNo": "OVEN-022-A",
+        "invName": "Rational SelfCooking",
+        "description": "Combi Steam Oven",
+        "code": "1106",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "OVEN-022-B",
+        "invName": "Rational SelfCooking",
+        "description": "Combi Steam Oven",
+        "code": "1107",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "OVEN-022-C",
+        "invName": "Rational SelfCooking",
+        "description": "Combi Steam Oven",
+        "code": "1108",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "OVEN-022-D",
+        "invName": "Rational SelfCooking",
+        "description": "Combi Steam Oven",
+        "code": "1109",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "OVEN-022-E",
+        "invName": "Rational SelfCooking",
+        "description": "Combi Steam Oven",
+        "code": "1110",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 96,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 2250000,
+    "reference": "REF-8012",
+    "category": "Kitchen Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "DISHWASHER-023",
+    "propName": "Hobart LXER",
+    "propDescription": "Commercial Dishwasher",
+    "unitCost": 320000,
+    "acquisitionDate": "2024-12-09T22:41:10.126Z",
+    "inventory": [
+      {
+        "invNo": "DISHWASHER-023-A",
+        "invName": "Hobart LXER",
+        "description": "Commercial Dishwasher",
+        "code": "1111",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DISHWASHER-023-B",
+        "invName": "Hobart LXER",
+        "description": "Commercial Dishwasher",
+        "code": "1112",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DISHWASHER-023-C",
+        "invName": "Hobart LXER",
+        "description": "Commercial Dishwasher",
+        "code": "1113",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DISHWASHER-023-D",
+        "invName": "Hobart LXER",
+        "description": "Commercial Dishwasher",
+        "code": "1114",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "DISHWASHER-023-E",
+        "invName": "Hobart LXER",
+        "description": "Commercial Dishwasher",
+        "code": "1115",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 1600000,
+    "reference": "REF-6634",
+    "category": "Kitchen Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "FREEZER-024",
+    "propName": "True T-49F",
+    "propDescription": "Reach-in Freezer",
+    "unitCost": 125000,
+    "acquisitionDate": "2024-12-02T12:27:04.083Z",
+    "inventory": [
+      {
+        "invNo": "FREEZER-024-A",
+        "invName": "True T-49F",
+        "description": "Reach-in Freezer",
+        "code": "1116",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FREEZER-024-B",
+        "invName": "True T-49F",
+        "description": "Reach-in Freezer",
+        "code": "1117",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FREEZER-024-C",
+        "invName": "True T-49F",
+        "description": "Reach-in Freezer",
+        "code": "1118",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FREEZER-024-D",
+        "invName": "True T-49F",
+        "description": "Reach-in Freezer",
+        "code": "1119",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FREEZER-024-E",
+        "invName": "True T-49F",
+        "description": "Reach-in Freezer",
+        "code": "1120",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 625000,
+    "reference": "REF-7089",
+    "category": "Kitchen Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "MIXER-025",
+    "propName": "KitchenAid KSM",
+    "propDescription": "Stand Mixer",
+    "unitCost": 35000,
+    "acquisitionDate": "2024-06-05T07:08:11.018Z",
+    "inventory": [
+      {
+        "invNo": "MIXER-025-A",
+        "invName": "KitchenAid KSM",
+        "description": "Stand Mixer",
+        "code": "1121",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MIXER-025-B",
+        "invName": "KitchenAid KSM",
+        "description": "Stand Mixer",
+        "code": "1122",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MIXER-025-C",
+        "invName": "KitchenAid KSM",
+        "description": "Stand Mixer",
+        "code": "1123",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MIXER-025-D",
+        "invName": "KitchenAid KSM",
+        "description": "Stand Mixer",
+        "code": "1124",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MIXER-025-E",
+        "invName": "KitchenAid KSM",
+        "description": "Stand Mixer",
+        "code": "1125",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 175000,
+    "reference": "REF-6141",
+    "category": "Kitchen Equipment",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "SMARTBOARD-026",
+    "propName": "SMART Board",
+    "propDescription": "Interactive Whiteboard",
+    "unitCost": 185000,
+    "acquisitionDate": "2024-06-01T14:44:16.405Z",
+    "inventory": [
+      {
+        "invNo": "SMARTBOARD-026-A",
+        "invName": "SMART Board",
+        "description": "Interactive Whiteboard",
+        "code": "1126",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SMARTBOARD-026-B",
+        "invName": "SMART Board",
+        "description": "Interactive Whiteboard",
+        "code": "1127",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SMARTBOARD-026-C",
+        "invName": "SMART Board",
+        "description": "Interactive Whiteboard",
+        "code": "1128",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SMARTBOARD-026-D",
+        "invName": "SMART Board",
+        "description": "Interactive Whiteboard",
+        "code": "1129",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SMARTBOARD-026-E",
+        "invName": "SMART Board",
+        "description": "Interactive Whiteboard",
+        "code": "1130",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 96,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 925000,
+    "reference": "REF-2288",
+    "category": "Audio Visual",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "SOUNDSYSTEM-027",
+    "propName": "Bose Professional",
+    "propDescription": "Conference Room Audio",
+    "unitCost": 95000,
+    "acquisitionDate": "2024-06-24T13:19:22.675Z",
+    "inventory": [
+      {
+        "invNo": "SOUNDSYSTEM-027-A",
+        "invName": "Bose Professional",
+        "description": "Conference Room Audio",
+        "code": "1131",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SOUNDSYSTEM-027-B",
+        "invName": "Bose Professional",
+        "description": "Conference Room Audio",
+        "code": "1132",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SOUNDSYSTEM-027-C",
+        "invName": "Bose Professional",
+        "description": "Conference Room Audio",
+        "code": "1133",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SOUNDSYSTEM-027-D",
+        "invName": "Bose Professional",
+        "description": "Conference Room Audio",
+        "code": "1134",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SOUNDSYSTEM-027-E",
+        "invName": "Bose Professional",
+        "description": "Conference Room Audio",
+        "code": "1135",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 36,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 475000,
+    "reference": "REF-3814",
+    "category": "Audio Visual",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "MICROPHONE-028",
+    "propName": "Shure SM58",
+    "propDescription": "Dynamic Microphone",
+    "unitCost": 8500,
+    "acquisitionDate": "2024-04-30T19:24:49.799Z",
+    "inventory": [
+      {
+        "invNo": "MICROPHONE-028-A",
+        "invName": "Shure SM58",
+        "description": "Dynamic Microphone",
+        "code": "1136",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROPHONE-028-B",
+        "invName": "Shure SM58",
+        "description": "Dynamic Microphone",
+        "code": "1137",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROPHONE-028-C",
+        "invName": "Shure SM58",
+        "description": "Dynamic Microphone",
+        "code": "1138",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROPHONE-028-D",
+        "invName": "Shure SM58",
+        "description": "Dynamic Microphone",
+        "code": "1139",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MICROPHONE-028-E",
+        "invName": "Shure SM58",
+        "description": "Dynamic Microphone",
+        "code": "1140",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 36,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 42500,
+    "reference": "REF-6643",
+    "category": "Audio Visual",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "AMPLIFIER-029",
+    "propName": "Yamaha MG12XU",
+    "propDescription": "Mixing Console",
+    "unitCost": 25000,
+    "acquisitionDate": "2024-07-30T08:45:09.797Z",
+    "inventory": [
+      {
+        "invNo": "AMPLIFIER-029-A",
+        "invName": "Yamaha MG12XU",
+        "description": "Mixing Console",
+        "code": "1141",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AMPLIFIER-029-B",
+        "invName": "Yamaha MG12XU",
+        "description": "Mixing Console",
+        "code": "1142",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AMPLIFIER-029-C",
+        "invName": "Yamaha MG12XU",
+        "description": "Mixing Console",
+        "code": "1143",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AMPLIFIER-029-D",
+        "invName": "Yamaha MG12XU",
+        "description": "Mixing Console",
+        "code": "1144",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AMPLIFIER-029-E",
+        "invName": "Yamaha MG12XU",
+        "description": "Mixing Console",
+        "code": "1145",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 60,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 125000,
+    "reference": "REF-4944",
+    "category": "Audio Visual",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "SCREEN-030",
+    "propName": "Elite Screens",
+    "propDescription": "Electric Projection Screen",
+    "unitCost": 45000,
+    "acquisitionDate": "2024-03-09T07:54:48.453Z",
+    "inventory": [
+      {
+        "invNo": "SCREEN-030-A",
+        "invName": "Elite Screens",
+        "description": "Electric Projection Screen",
+        "code": "1146",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCREEN-030-B",
+        "invName": "Elite Screens",
+        "description": "Electric Projection Screen",
+        "code": "1147",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCREEN-030-C",
+        "invName": "Elite Screens",
+        "description": "Electric Projection Screen",
+        "code": "1148",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCREEN-030-D",
+        "invName": "Elite Screens",
+        "description": "Electric Projection Screen",
+        "code": "1149",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "SCREEN-030-E",
+        "invName": "Elite Screens",
+        "description": "Electric Projection Screen",
+        "code": "1150",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 225000,
+    "reference": "REF-9708",
+    "category": "Audio Visual",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "LATHE-031",
+    "propName": "Haas TL-1",
+    "propDescription": "CNC Turning Center",
+    "unitCost": 850000,
+    "acquisitionDate": "2024-03-19T06:50:44.219Z",
+    "inventory": [
+      {
+        "invNo": "LATHE-031-A",
+        "invName": "Haas TL-1",
+        "description": "CNC Turning Center",
+        "code": "1151",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "LATHE-031-B",
+        "invName": "Haas TL-1",
+        "description": "CNC Turning Center",
+        "code": "1152",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "LATHE-031-C",
+        "invName": "Haas TL-1",
+        "description": "CNC Turning Center",
+        "code": "1153",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "LATHE-031-D",
+        "invName": "Haas TL-1",
+        "description": "CNC Turning Center",
+        "code": "1154",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "LATHE-031-E",
+        "invName": "Haas TL-1",
+        "description": "CNC Turning Center",
+        "code": "1155",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 4250000,
+    "reference": "REF-2857",
+    "category": "Manufacturing Tools",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "PRESS-032",
+    "propName": "Amada RG",
+    "propDescription": "Hydraulic Press Brake",
+    "unitCost": 1200000,
+    "acquisitionDate": "2024-06-08T00:35:40.204Z",
+    "inventory": [
+      {
+        "invNo": "PRESS-032-A",
+        "invName": "Amada RG",
+        "description": "Hydraulic Press Brake",
+        "code": "1156",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "PRESS-032-B",
+        "invName": "Amada RG",
+        "description": "Hydraulic Press Brake",
+        "code": "1157",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "PRESS-032-C",
+        "invName": "Amada RG",
+        "description": "Hydraulic Press Brake",
+        "code": "1158",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "PRESS-032-D",
+        "invName": "Amada RG",
+        "description": "Hydraulic Press Brake",
+        "code": "1159",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "PRESS-032-E",
+        "invName": "Amada RG",
+        "description": "Hydraulic Press Brake",
+        "code": "1160",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 96,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 6000000,
+    "reference": "REF-2972",
+    "category": "Manufacturing Tools",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "GRINDER-033",
+    "propName": "Makita 9557PB",
+    "propDescription": "Angle Grinder",
+    "unitCost": 4500,
+    "acquisitionDate": "2024-03-26T14:34:43.450Z",
+    "inventory": [
+      {
+        "invNo": "GRINDER-033-A",
+        "invName": "Makita 9557PB",
+        "description": "Angle Grinder",
+        "code": "1161",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "GRINDER-033-B",
+        "invName": "Makita 9557PB",
+        "description": "Angle Grinder",
+        "code": "1162",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "GRINDER-033-C",
+        "invName": "Makita 9557PB",
+        "description": "Angle Grinder",
+        "code": "1163",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "GRINDER-033-D",
+        "invName": "Makita 9557PB",
+        "description": "Angle Grinder",
+        "code": "1164",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "GRINDER-033-E",
+        "invName": "Makita 9557PB",
+        "description": "Angle Grinder",
+        "code": "1165",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 96,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 22500,
+    "reference": "REF-6622",
+    "category": "Manufacturing Tools",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "BANDSAW-034",
+    "propName": "JET HVBS-710",
+    "propDescription": "Horizontal Band Saw",
+    "unitCost": 185000,
+    "acquisitionDate": "2024-12-23T03:45:55.427Z",
+    "inventory": [
+      {
+        "invNo": "BANDSAW-034-A",
+        "invName": "JET HVBS-710",
+        "description": "Horizontal Band Saw",
+        "code": "1166",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BANDSAW-034-B",
+        "invName": "JET HVBS-710",
+        "description": "Horizontal Band Saw",
+        "code": "1167",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BANDSAW-034-C",
+        "invName": "JET HVBS-710",
+        "description": "Horizontal Band Saw",
+        "code": "1168",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BANDSAW-034-D",
+        "invName": "JET HVBS-710",
+        "description": "Horizontal Band Saw",
+        "code": "1169",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "BANDSAW-034-E",
+        "invName": "JET HVBS-710",
+        "description": "Horizontal Band Saw",
+        "code": "1170",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 925000,
+    "reference": "REF-8972",
+    "category": "Manufacturing Tools",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "MILL-035",
+    "propName": "Bridgeport Series",
+    "propDescription": "Vertical Milling Machine",
+    "unitCost": 650000,
+    "acquisitionDate": "2024-10-28T23:54:06.134Z",
+    "inventory": [
+      {
+        "invNo": "MILL-035-A",
+        "invName": "Bridgeport Series",
+        "description": "Vertical Milling Machine",
+        "code": "1171",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MILL-035-B",
+        "invName": "Bridgeport Series",
+        "description": "Vertical Milling Machine",
+        "code": "1172",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MILL-035-C",
+        "invName": "Bridgeport Series",
+        "description": "Vertical Milling Machine",
+        "code": "1173",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MILL-035-D",
+        "invName": "Bridgeport Series",
+        "description": "Vertical Milling Machine",
+        "code": "1174",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "MILL-035-E",
+        "invName": "Bridgeport Series",
+        "description": "Vertical Milling Machine",
+        "code": "1175",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 84,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 3250000,
+    "reference": "REF-1562",
+    "category": "Manufacturing Tools",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "AIRCON-036",
+    "propName": "Daikin VRV",
+    "propDescription": "Variable Refrigerant Volume",
+    "unitCost": 320000,
+    "acquisitionDate": "2024-06-02T19:19:45.637Z",
+    "inventory": [
+      {
+        "invNo": "AIRCON-036-A",
+        "invName": "Daikin VRV",
+        "description": "Variable Refrigerant Volume",
+        "code": "1176",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AIRCON-036-B",
+        "invName": "Daikin VRV",
+        "description": "Variable Refrigerant Volume",
+        "code": "1177",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AIRCON-036-C",
+        "invName": "Daikin VRV",
+        "description": "Variable Refrigerant Volume",
+        "code": "1178",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AIRCON-036-D",
+        "invName": "Daikin VRV",
+        "description": "Variable Refrigerant Volume",
+        "code": "1179",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "AIRCON-036-E",
+        "invName": "Daikin VRV",
+        "description": "Variable Refrigerant Volume",
+        "code": "1180",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 36,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 1600000,
+    "reference": "REF-7125",
+    "category": "HVAC Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "CHILLER-037",
+    "propName": "Carrier 30XA",
+    "propDescription": "Air-Cooled Chiller",
+    "unitCost": 1800000,
+    "acquisitionDate": "2024-05-03T15:33:21.904Z",
+    "inventory": [
+      {
+        "invNo": "CHILLER-037-A",
+        "invName": "Carrier 30XA",
+        "description": "Air-Cooled Chiller",
+        "code": "1181",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CHILLER-037-B",
+        "invName": "Carrier 30XA",
+        "description": "Air-Cooled Chiller",
+        "code": "1182",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CHILLER-037-C",
+        "invName": "Carrier 30XA",
+        "description": "Air-Cooled Chiller",
+        "code": "1183",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CHILLER-037-D",
+        "invName": "Carrier 30XA",
+        "description": "Air-Cooled Chiller",
+        "code": "1184",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "CHILLER-037-E",
+        "invName": "Carrier 30XA",
+        "description": "Air-Cooled Chiller",
+        "code": "1185",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 9000000,
+    "reference": "REF-2946",
+    "category": "HVAC Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "FAN-038",
+    "propName": "Panasonic WhisperCeiling",
+    "propDescription": "Exhaust Fan",
+    "unitCost": 8500,
+    "acquisitionDate": "2024-10-13T16:28:46.988Z",
+    "inventory": [
+      {
+        "invNo": "FAN-038-A",
+        "invName": "Panasonic WhisperCeiling",
+        "description": "Exhaust Fan",
+        "code": "1186",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FAN-038-B",
+        "invName": "Panasonic WhisperCeiling",
+        "description": "Exhaust Fan",
+        "code": "1187",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FAN-038-C",
+        "invName": "Panasonic WhisperCeiling",
+        "description": "Exhaust Fan",
+        "code": "1188",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FAN-038-D",
+        "invName": "Panasonic WhisperCeiling",
+        "description": "Exhaust Fan",
+        "code": "1189",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "FAN-038-E",
+        "invName": "Panasonic WhisperCeiling",
+        "description": "Exhaust Fan",
+        "code": "1190",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 42500,
+    "reference": "REF-8989",
+    "category": "HVAC Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "HEATER-039",
+    "propName": "Rheem RTGH",
+    "propDescription": "Tankless Water Heater",
+    "unitCost": 45000,
+    "acquisitionDate": "2024-12-29T06:00:34.252Z",
+    "inventory": [
+      {
+        "invNo": "HEATER-039-A",
+        "invName": "Rheem RTGH",
+        "description": "Tankless Water Heater",
+        "code": "1191",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "HEATER-039-B",
+        "invName": "Rheem RTGH",
+        "description": "Tankless Water Heater",
+        "code": "1192",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "HEATER-039-C",
+        "invName": "Rheem RTGH",
+        "description": "Tankless Water Heater",
+        "code": "1193",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "HEATER-039-D",
+        "invName": "Rheem RTGH",
+        "description": "Tankless Water Heater",
+        "code": "1194",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "HEATER-039-E",
+        "invName": "Rheem RTGH",
+        "description": "Tankless Water Heater",
+        "code": "1195",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 225000,
+    "reference": "REF-7305",
+    "category": "HVAC Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  },
+  {
+    "propNo": "THERMOSTAT-040",
+    "propName": "Honeywell T6 Pro",
+    "propDescription": "Programmable Thermostat",
+    "unitCost": 6500,
+    "acquisitionDate": "2024-09-07T13:28:15.545Z",
+    "inventory": [
+      {
+        "invNo": "THERMOSTAT-040-A",
+        "invName": "Honeywell T6 Pro",
+        "description": "Programmable Thermostat",
+        "code": "1196",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "THERMOSTAT-040-B",
+        "invName": "Honeywell T6 Pro",
+        "description": "Programmable Thermostat",
+        "code": "1197",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "THERMOSTAT-040-C",
+        "invName": "Honeywell T6 Pro",
+        "description": "Programmable Thermostat",
+        "code": "1198",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "THERMOSTAT-040-D",
+        "invName": "Honeywell T6 Pro",
+        "description": "Programmable Thermostat",
+        "code": "1199",
+        "status": "New-Available"
+      },
+      {
+        "invNo": "THERMOSTAT-040-E",
+        "invName": "Honeywell T6 Pro",
+        "description": "Programmable Thermostat",
+        "code": "1200",
+        "status": "New-Available"
+      }
+    ],
+    "useFullLife": 72,
+    "assetImage": "",
+    "quantity": 5,
+    "acquisitionCost": 32500,
+    "reference": "REF-6918",
+    "category": "HVAC Systems",
+    "accumulatedAccount": "accumulated_depreciation",
+    "depreciationAccount": "depreciation_expense",
+    "attachments": [],
+    "Status": {
+      "isDeleted": false,
+      "isArchived": false
+    },
+    "CreatedBy": {
+      "name": "Administrator",
+      "position": "Administrator",
+      "_id": "66fc98f526728f8c6c24a1aa"
+    }
+  }
+]

@@ -386,9 +386,67 @@ const getWMRReport = async (req, res) => {
   }
 };
 
+const getAssetsInventoriesReports = async (req, res, next) => {
+  try {
+    // Extract query parameters
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 10;
+    const keyword = req.query.keyword || "";
+    const sortBy = req.query.sortBy || "createdAt";
+    const sortOrder = req.query.sortOrder === "asc" ? -1 : 1;
+
+    // Build query object
+    const query = {
+      ...(keyword && {
+        $or: [
+          { entityName: { $regex: keyword, $options: "i" } },
+          { fundCluster: { $regex: keyword, $options: "i" } },
+        ],
+      }),
+    };
+
+    // Build sort criteria
+    const sortCriteria = {
+      [sortBy]: sortOrder,
+    };
+
+    // Get total count for pagination
+    const totalItems = await AssetInventoryHistoryModel.countDocuments(query);
+
+    // Fetch paginated data
+    const assets = await AssetInventoryHistoryModel.find(query)
+      .sort(sortCriteria)
+      .skip((page - 1) * limit)
+      .limit(limit)
+      // .populate("employeeId")
+      // .populate("issuanceId")
+      // .populate("returnId")
+      // .populate("disposalId")
+      // .populate("repairId")
+      // .populate("repairedId")
+      // .populate("lostStolenId")
+      .lean();
+
+    const totalPages = Math.ceil(totalItems / limit);
+
+    res.status(200).json({
+      success: true,
+      message: `Success Getting Asset Inventory History Reports`,
+      totalItems,
+      totalPages,
+      currentPage: page,
+      limit,
+      data: assets,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getAssetsHistory,
   getAssetsConditions,
   getICSReport,
   getWMRReport,
+  getAssetsInventoriesReports,
 };
