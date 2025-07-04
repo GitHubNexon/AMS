@@ -1,10 +1,9 @@
 import React from "react";
-import AssetsInventoriesHistory from "./AssetsInventoriesHistory";
-
+import AssetsReportsNav from "../Navigation/AssetsReportsNav";
 const AssetsReport = () => {
   return (
     <>
-      <AssetsInventoriesHistory />
+      <AssetsReportsNav />
     </>
   );
 };

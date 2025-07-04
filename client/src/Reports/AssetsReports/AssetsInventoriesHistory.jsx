@@ -10,11 +10,11 @@ import {
   FiMapPin,
 } from "react-icons/fi";
 import { FaPesoSign } from "react-icons/fa6";
-import assetReportApi from "../api/assetReportApi";
+import assetReportApi from "../../api/assetReportApi";
 import moment from "moment";
-import { showToast } from "../utils/toastNotifications";
-import { numberToCurrencyString } from "../helper/helper";
-import AssetsInventoryAssetRecords from "./AssetsInventoryAssetRecords";
+import { showToast } from "../../utils/toastNotifications";
+import { numberToCurrencyString } from "../../helper/helper";
+import AssetsInventoryAssetRecords from "../../Sub-pages/AssetsInventoryAssetRecords";
 
 const AssetsInventoriesHistory = () => {
   const [data, setData] = useState([]);
