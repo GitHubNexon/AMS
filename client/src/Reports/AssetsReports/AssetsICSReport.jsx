@@ -178,12 +178,6 @@ const AssetsICSReport = () => {
         </th>
         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
           <div className="flex items-center space-x-1">
-            <FiFile className="h-4 w-4" />
-            <span>Assets Count</span>
-          </div>
-        </th>
-        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          <div className="flex items-center space-x-1">
             <FaPesoSign className="h-4 w-4" />
             <span>Total Asset Value</span>
           </div>
@@ -230,18 +224,6 @@ const AssetsICSReport = () => {
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
         {employee.contactNo}
-      </td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-        <span
-          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-            getAssetCount(employee) > 0
-              ? "bg-green-100 text-green-800"
-              : "bg-gray-100 text-gray-800"
-          }`}
-        >
-          {getAssetCount(employee)}{" "}
-          {getAssetCount(employee) === 1 ? "Asset" : "Assets"}
-        </span>
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
         <span className="font-medium">
