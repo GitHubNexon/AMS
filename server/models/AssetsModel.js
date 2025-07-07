@@ -11,10 +11,14 @@ const StatusSchema = new mongoose.Schema({
 });
 
 const InventoryItemSchema = new mongoose.Schema({
-  invNo: String,
-  invName: String,
-  description: String,
-  code: String,
+  invNo: { type: String },
+  invName: { type: String },
+  description: { type: String },
+  qrCode: { type: String, default: "" },
+  location: { type: String },
+  barCode: { type: String, default: "" },
+  expirationDate: Date,
+  rfidTag: { type: String, default: "" },
   status: {
     type: String,
     enum: [

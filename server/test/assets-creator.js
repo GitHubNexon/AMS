@@ -6,6 +6,10 @@ const AssetsModel = require("../models/AssetsModel");
 
 const MONGODB_URI = "mongodb://0.0.0.0:27017/ams";
 
+// Load categories from external JSON file
+const categoriesPath = path.join(__dirname, "../json/assetCategories.json");
+const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf8"));
+
 // Utility to get a random date in 2024
 function getRandomDate() {
   const start = moment("2024-01-01").valueOf();
@@ -14,83 +18,95 @@ function getRandomDate() {
   return moment(randomTimestamp).toISOString();
 }
 
-const categories = {
-  "IT Hardware": [
-    ["SERVER-001", "Dell PowerEdge", "Enterprise Server R740", 450000],
-    ["WORKSTATION-002", "HP Z6", "High Performance Workstation", 180000],
-    ["TABLET-003", "iPad Pro", "11-inch Tablet Device", 65000],
-    ["SWITCH-004", "Cisco Catalyst", "24-Port Network Switch", 85000],
-    ["UPS-005", "APC Smart", "1500VA UPS System", 35000],
-  ],
-  "Medical Equipment": [
-    ["ULTRASOUND-006", "GE Voluson", "Ultrasound Machine", 2500000],
-    ["XRAY-007", "Philips DigitalDiagnost", "Digital X-Ray System", 3200000],
-    ["MONITOR-008", "Mindray uMEC", "Patient Monitor", 180000],
-    ["DEFIBRILLATOR-009", "Zoll R Series", "Automated Defibrillator", 320000],
-    ["WHEELCHAIR-010", "Invacare Tracer", "Manual Wheelchair", 15000],
-  ],
-  "Laboratory Equipment": [
-    ["MICROSCOPE-011", "Olympus CX23", "Binocular Microscope", 95000],
-    ["CENTRIFUGE-012", "Thermo Scientific", "High-Speed Centrifuge", 125000],
-    ["INCUBATOR-013", "Memmert INC", "CO2 Incubator", 220000],
-    ["AUTOCLAVE-014", "Tuttnauer 3870", "Steam Sterilizer", 165000],
-    ["BALANCE-015", "Sartorius Entris", "Analytical Balance", 85000],
-  ],
-  "Security Systems": [
-    ["CAMERA-016", "Hikvision DS", "IP Security Camera", 12000],
-    ["DVR-017", "Dahua XVR", "Digital Video Recorder", 45000],
-    ["SCANNER-018", "ZKTeco MT100", "Fingerprint Scanner", 8500],
-    ["DETECTOR-019", "First Alert", "Smoke Detector", 3500],
-    ["ALARM-020", "Honeywell Vista", "Security Alarm Panel", 25000],
-  ],
-  "Kitchen Equipment": [
-    ["REFRIGERATOR-021", "Samsung RF23", "Commercial Refrigerator", 85000],
-    ["OVEN-022", "Rational SelfCooking", "Combi Steam Oven", 450000],
-    ["DISHWASHER-023", "Hobart LXER", "Commercial Dishwasher", 320000],
-    ["FREEZER-024", "True T-49F", "Reach-in Freezer", 125000],
-    ["MIXER-025", "KitchenAid KSM", "Stand Mixer", 35000],
-  ],
-  "Audio Visual": [
-    ["SMARTBOARD-026", "SMART Board", "Interactive Whiteboard", 185000],
-    ["SOUNDSYSTEM-027", "Bose Professional", "Conference Room Audio", 95000],
-    ["MICROPHONE-028", "Shure SM58", "Dynamic Microphone", 8500],
-    ["AMPLIFIER-029", "Yamaha MG12XU", "Mixing Console", 25000],
-    ["SCREEN-030", "Elite Screens", "Electric Projection Screen", 45000],
-  ],
-  "Manufacturing Tools": [
-    ["LATHE-031", "Haas TL-1", "CNC Turning Center", 850000],
-    ["PRESS-032", "Amada RG", "Hydraulic Press Brake", 1200000],
-    ["GRINDER-033", "Makita 9557PB", "Angle Grinder", 4500],
-    ["BANDSAW-034", "JET HVBS-710", "Horizontal Band Saw", 185000],
-    ["MILL-035", "Bridgeport Series", "Vertical Milling Machine", 650000],
-  ],
-  "HVAC Systems": [
-    ["AIRCON-036", "Daikin VRV", "Variable Refrigerant Volume", 320000],
-    ["CHILLER-037", "Carrier 30XA", "Air-Cooled Chiller", 1800000],
-    ["FAN-038", "Panasonic WhisperCeiling", "Exhaust Fan", 8500],
-    ["HEATER-039", "Rheem RTGH", "Tankless Water Heater", 45000],
-    ["THERMOSTAT-040", "Honeywell T6 Pro", "Programmable Thermostat", 6500],
-  ],
-};
+// Utility to get random expiration date for consumables/perishables
+function getRandomExpirationDate() {
+  const start = moment().add(1, "months").valueOf();
+  const end = moment().add(24, "months").valueOf();
+  const randomTimestamp = Math.floor(Math.random() * (end - start)) + start;
+  return moment(randomTimestamp).toISOString();
+}
+
+// Utility to get random warranty date
+function getRandomWarrantyDate() {
+  const start = moment().add(6, "months").valueOf();
+  const end = moment().add(60, "months").valueOf();
+  const randomTimestamp = Math.floor(Math.random() * (end - start)) + start;
+  return moment(randomTimestamp).toISOString();
+}
+
+// Utility to get random location
+function getRandomLocation() {
+  const locations = [
+    "Building A - Floor 1",
+    "Building A - Floor 2",
+    "Building A - Floor 3",
+    "Building B - Floor 1",
+    "Building B - Floor 2",
+    "Building C - Ground Floor",
+    "Building C - Basement",
+    "Main Office",
+    "Conference Room A",
+    "Conference Room B",
+    "Laboratory",
+    "Kitchen",
+    "Storage Room",
+    "IT Department",
+    "HR Department",
+    "Finance Department",
+    "Operations Center",
+    "Maintenance Shop",
+    "Parking Area",
+    "Reception Area",
+    "Cafeteria",
+    "Medical Bay",
+    "Security Office",
+    "Warehouse",
+  ];
+  return locations[Math.floor(Math.random() * locations.length)];
+}
 
 async function createAssets() {
-  let codeCounter = 1001; // Starting from 1001 for new numbering
   const assets = [];
 
   for (const [category, items] of Object.entries(categories)) {
-    for (const [propNo, name, desc, unitCost] of items) {
-      const quantity = 5;
+    for (const [
+      propNo,
+      name,
+      desc,
+      unitCost,
+      manufacturer,
+      model,
+      hasWarranty,
+    ] of items) {
+      // Dynamic quantity based on asset type
+      let quantity;
+      if (category === "Consumables" || category === "Perishables") {
+        quantity = Math.floor(Math.random() * 100) + 50; // 50-150 for consumables
+      } else if (unitCost < 10000) {
+        quantity = Math.floor(Math.random() * 10) + 5; // 5-15 for small items
+      } else if (unitCost < 100000) {
+        quantity = Math.floor(Math.random() * 5) + 2; // 2-7 for medium items
+      } else {
+        quantity = Math.floor(Math.random() * 3) + 1; // 1-3 for expensive items
+      }
+
       const inventory = [];
 
       for (let j = 0; j < quantity; j++) {
-        inventory.push({
+        const inventoryItem = {
           invNo: `${propNo}-${String.fromCharCode(65 + j)}`,
           invName: name,
           description: desc,
-          code: codeCounter.toString().padStart(4, "0"),
           status: "New-Available",
-        });
-        codeCounter++;
+          location: getRandomLocation(),
+        };
+
+        // Add expiration date for consumables and perishables
+        if (category === "Consumables" || category === "Perishables") {
+          inventoryItem.expirationDate = getRandomExpirationDate();
+        }
+
+        inventory.push(inventoryItem);
       }
 
       const useFullLifeOptions = [36, 48, 60, 72, 84, 96]; // Different useful life periods
@@ -110,7 +126,7 @@ async function createAssets() {
         assetImage: "",
         quantity,
         acquisitionCost: unitCost * quantity,
-        reference: `REF-${Math.floor(Math.random() * 9000) + 1000}`, // Random reference number
+        reference: `REF-${Math.floor(Math.random() * 9000) + 1000}`,
         category,
         accumulatedAccount: "accumulated_depreciation",
         depreciationAccount: "depreciation_expense",
@@ -126,47 +142,133 @@ async function createAssets() {
         },
       };
 
+      // Add manufacturer, model, and warranty date for applicable assets
+      if (manufacturer) {
+        asset.manufacturer = manufacturer;
+      }
+
+      if (model) {
+        asset.model = model;
+      }
+
+      if (hasWarranty) {
+        asset.warrantyDate = getRandomWarrantyDate();
+      }
+
       assets.push(asset);
     }
   }
 
-  // Save to local JSON
-  const outputDir = path.join(__dirname, "data");
+  // Save to JSON file
+  const outputDir = path.join(__dirname, "../json");
   if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir);
+    fs.mkdirSync(outputDir, { recursive: true });
   }
-  const outputPath = path.join(outputDir, "new_assets_data.json");
+
+  const outputPath = path.join(outputDir, "assetsDefault.json");
   fs.writeFileSync(outputPath, JSON.stringify(assets, null, 2));
-  console.log(`Saved new assets JSON to ${outputPath}`);
-  console.log(`Total assets created: ${assets.length}`);
+  console.log(`✅ Saved assets data to ${outputPath}`);
+  console.log(`📊 Total assets created: ${assets.length}`);
   console.log(
-    `Total inventory items: ${assets.reduce(
+    `📦 Total inventory items: ${assets.reduce(
       (sum, asset) => sum + asset.quantity,
       0
     )}`
   );
 
+  // Display summary by category
+  console.log("\n=== ASSET SUMMARY BY CATEGORY ===");
+  for (const [category, items] of Object.entries(categories)) {
+    const categoryAssets = assets.filter(
+      (asset) => asset.category === category
+    );
+    const totalQuantity = categoryAssets.reduce(
+      (sum, asset) => sum + asset.quantity,
+      0
+    );
+    const totalValue = categoryAssets.reduce(
+      (sum, asset) => sum + asset.acquisitionCost,
+      0
+    );
+
+    console.log(`${category}:`);
+    console.log(`  - Asset types: ${items.length}`);
+    console.log(`  - Total quantity: ${totalQuantity}`);
+    console.log(`  - Total value: ₱${totalValue.toLocaleString()}`);
+    console.log("");
+  }
+
   // Insert into MongoDB
   try {
     await mongoose.connect(MONGODB_URI);
-    console.log("Connected to MongoDB");
+    console.log("🔗 Connected to MongoDB");
 
     // Clear existing assets if needed (uncomment the line below)
     // await AssetsModel.deleteMany({});
 
     await AssetsModel.insertMany(assets);
-    console.log("New assets successfully inserted into MongoDB");
+    console.log("✅ Assets successfully inserted into MongoDB");
 
-    // Display summary by category
-    console.log("\n=== ASSET SUMMARY BY CATEGORY ===");
-    for (const [category, items] of Object.entries(categories)) {
-      console.log(`${category}: ${items.length} asset types`);
-    }
+    // Generate statistics
+    const stats = {
+      totalAssets: assets.length,
+      totalInventoryItems: assets.reduce(
+        (sum, asset) => sum + asset.quantity,
+        0
+      ),
+      totalValue: assets.reduce((sum, asset) => sum + asset.acquisitionCost, 0),
+      categoryCounts: {},
+      locationCounts: {},
+      statusCounts: {},
+      withExpiration: 0,
+      withWarranty: 0,
+    };
+
+    assets.forEach((asset) => {
+      // Category counts
+      stats.categoryCounts[asset.category] =
+        (stats.categoryCounts[asset.category] || 0) + 1;
+
+      // Warranty count
+      if (asset.warrantyDate) {
+        stats.withWarranty++;
+      }
+
+      // Location and expiration counts from inventory
+      asset.inventory.forEach((item) => {
+        stats.locationCounts[item.location] =
+          (stats.locationCounts[item.location] || 0) + 1;
+        stats.statusCounts[item.status] =
+          (stats.statusCounts[item.status] || 0) + 1;
+
+        if (item.expirationDate) {
+          stats.withExpiration++;
+        }
+      });
+    });
+
+    console.log("\n=== DETAILED STATISTICS ===");
+    console.log(`📊 Total Assets: ${stats.totalAssets}`);
+    console.log(`📦 Total Inventory Items: ${stats.totalInventoryItems}`);
+    console.log(`💰 Total Value: ₱${stats.totalValue.toLocaleString()}`);
+    console.log(`📅 Items with Expiration: ${stats.withExpiration}`);
+    console.log(`🛡️ Assets with Warranty: ${stats.withWarranty}`);
+
+    console.log("\n=== TOP LOCATIONS ===");
+    const topLocations = Object.entries(stats.locationCounts)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 10);
+
+    topLocations.forEach(([location, count]) => {
+      console.log(`${location}: ${count} items`);
+    });
   } catch (err) {
-    console.error("Error inserting assets:", err);
+    console.error("❌ Error inserting assets:", err);
   } finally {
     mongoose.disconnect();
+    console.log("🔌 Disconnected from MongoDB");
   }
 }
 
-createAssets();
+// Run the script
+createAssets().catch(console.error);

@@ -1,0 +1,1258 @@
+{
+  "IT Hardware": [
+    [
+      "SERVER-001",
+      "Dell PowerEdge R740",
+      "Enterprise Server",
+      450000,
+      "Dell",
+      "R740",
+      true
+    ],
+    [
+      "WORKSTATION-002",
+      "HP Z6 G4",
+      "High Performance Workstation",
+      180000,
+      "HP",
+      "Z6 G4",
+      true
+    ],
+    [
+      "TABLET-003",
+      "iPad Pro 11",
+      "11-inch Tablet Device",
+      65000,
+      "Apple",
+      "iPad Pro",
+      true
+    ],
+    [
+      "SWITCH-004",
+      "Cisco Catalyst 2960",
+      "24-Port Network Switch",
+      85000,
+      "Cisco",
+      "2960",
+      true
+    ],
+    [
+      "UPS-005",
+      "APC Smart-UPS 1500",
+      "1500VA UPS System",
+      35000,
+      "APC",
+      "Smart-UPS",
+      true
+    ],
+    [
+      "LAPTOP-006",
+      "ThinkPad X1 Carbon",
+      "Business Laptop",
+      95000,
+      "Lenovo",
+      "X1 Carbon",
+      true
+    ],
+    [
+      "DESKTOP-007",
+      "OptiPlex 7090",
+      "Desktop Computer",
+      55000,
+      "Dell",
+      "OptiPlex 7090",
+      true
+    ],
+    [
+      "MONITOR-008",
+      "UltraSharp U2720Q",
+      "27-inch 4K Monitor",
+      25000,
+      "Dell",
+      "U2720Q",
+      true
+    ],
+    [
+      "ROUTER-009",
+      "ISR 4331",
+      "Integrated Services Router",
+      120000,
+      "Cisco",
+      "ISR 4331",
+      true
+    ],
+    [
+      "FIREWALL-010",
+      "FortiGate 60F",
+      "Next-Gen Firewall",
+      75000,
+      "Fortinet",
+      "60F",
+      true
+    ],
+    [
+      "PRINTER-011",
+      "LaserJet Pro M404",
+      "Monochrome Laser Printer",
+      18000,
+      "HP",
+      "M404",
+      true
+    ],
+    [
+      "SCANNER-012",
+      "ScanSnap iX1600",
+      "Document Scanner",
+      32000,
+      "Fujitsu",
+      "iX1600",
+      true
+    ],
+    [
+      "KEYBOARD-013",
+      "MX Keys",
+      "Wireless Keyboard",
+      6500,
+      "Logitech",
+      "MX Keys",
+      true
+    ],
+    [
+      "MOUSE-014",
+      "MX Master 3",
+      "Wireless Mouse",
+      4500,
+      "Logitech",
+      "MX Master 3",
+      true
+    ],
+    [
+      "HEADSET-015",
+      "Jabra Evolve2 65",
+      "Wireless Headset",
+      12000,
+      "Jabra",
+      "Evolve2 65",
+      true
+    ]
+  ],
+  "Medical Equipment": [
+    [
+      "ULTRASOUND-016",
+      "GE Voluson E10",
+      "Ultrasound Machine",
+      2500000,
+      "GE Healthcare",
+      "Voluson E10",
+      true
+    ],
+    [
+      "XRAY-017",
+      "Philips DigitalDiagnost",
+      "Digital X-Ray System",
+      3200000,
+      "Philips",
+      "DigitalDiagnost",
+      true
+    ],
+    [
+      "MONITOR-018",
+      "Mindray uMEC 12",
+      "Patient Monitor",
+      180000,
+      "Mindray",
+      "uMEC 12",
+      true
+    ],
+    [
+      "DEFIBRILLATOR-019",
+      "Zoll R Series Plus",
+      "Automated Defibrillator",
+      320000,
+      "Zoll",
+      "R Series Plus",
+      true
+    ],
+    [
+      "WHEELCHAIR-020",
+      "Invacare Tracer EX2",
+      "Manual Wheelchair",
+      15000,
+      "Invacare",
+      "Tracer EX2",
+      true
+    ],
+    [
+      "STRETCHER-021",
+      "Stryker Prime X",
+      "Transport Stretcher",
+      85000,
+      "Stryker",
+      "Prime X",
+      true
+    ],
+    [
+      "VENTILATOR-022",
+      "Philips Respironics",
+      "Mechanical Ventilator",
+      1200000,
+      "Philips",
+      "V680",
+      true
+    ],
+    [
+      "STERILIZER-023",
+      "Tuttnauer 3870EA",
+      "Steam Sterilizer",
+      165000,
+      "Tuttnauer",
+      "3870EA",
+      true
+    ],
+    [
+      "INFUSION-024",
+      "Baxter Sigma Spectrum",
+      "Infusion Pump",
+      95000,
+      "Baxter",
+      "Sigma Spectrum",
+      true
+    ],
+    [
+      "THERMOMETER-025",
+      "Braun ThermoScan 7",
+      "Ear Thermometer",
+      3500,
+      "Braun",
+      "ThermoScan 7",
+      true
+    ]
+  ],
+  "Laboratory Equipment": [
+    [
+      "MICROSCOPE-026",
+      "Olympus CX23",
+      "Binocular Microscope",
+      95000,
+      "Olympus",
+      "CX23",
+      true
+    ],
+    [
+      "CENTRIFUGE-027",
+      "Thermo Scientific Heraeus",
+      "High-Speed Centrifuge",
+      125000,
+      "Thermo Scientific",
+      "Heraeus",
+      true
+    ],
+    [
+      "INCUBATOR-028",
+      "Memmert INC108",
+      "CO2 Incubator",
+      220000,
+      "Memmert",
+      "INC108",
+      true
+    ],
+    [
+      "AUTOCLAVE-029",
+      "Tuttnauer 3870",
+      "Steam Sterilizer",
+      165000,
+      "Tuttnauer",
+      "3870",
+      true
+    ],
+    [
+      "BALANCE-030",
+      "Sartorius Entris",
+      "Analytical Balance",
+      85000,
+      "Sartorius",
+      "Entris",
+      true
+    ],
+    [
+      "SPECTROPHOTOMETER-031",
+      "Agilent Cary 60",
+      "UV-Vis Spectrophotometer",
+      450000,
+      "Agilent",
+      "Cary 60",
+      true
+    ],
+    [
+      "CHROMATOGRAPH-032",
+      "Waters HPLC",
+      "High Performance Liquid Chromatograph",
+      850000,
+      "Waters",
+      "HPLC",
+      true
+    ],
+    [
+      "PIPETTE-033",
+      "Eppendorf Research plus",
+      "Variable Volume Pipette",
+      8500,
+      "Eppendorf",
+      "Research plus",
+      true
+    ],
+    [
+      "SHAKER-034",
+      "IKA Vortex 3",
+      "Vortex Mixer",
+      12000,
+      "IKA",
+      "Vortex 3",
+      true
+    ],
+    [
+      "HOOD-035",
+      "Thermo Scientific 1300",
+      "Fume Hood",
+      285000,
+      "Thermo Scientific",
+      "1300",
+      true
+    ]
+  ],
+  "Security Systems": [
+    [
+      "CAMERA-036",
+      "Hikvision DS-2CD2085",
+      "IP Security Camera",
+      12000,
+      "Hikvision",
+      "DS-2CD2085",
+      true
+    ],
+    [
+      "DVR-037",
+      "Dahua XVR5104",
+      "Digital Video Recorder",
+      45000,
+      "Dahua",
+      "XVR5104",
+      true
+    ],
+    [
+      "SCANNER-038",
+      "ZKTeco MT100",
+      "Fingerprint Scanner",
+      8500,
+      "ZKTeco",
+      "MT100",
+      true
+    ],
+    [
+      "DETECTOR-039",
+      "First Alert SA320",
+      "Smoke Detector",
+      3500,
+      "First Alert",
+      "SA320",
+      true
+    ],
+    [
+      "ALARM-040",
+      "Honeywell Vista 20P",
+      "Security Alarm Panel",
+      25000,
+      "Honeywell",
+      "Vista 20P",
+      true
+    ],
+    [
+      "DOORLOCK-041",
+      "Yale Conexis L1",
+      "Smart Door Lock",
+      15000,
+      "Yale",
+      "Conexis L1",
+      true
+    ],
+    [
+      "INTERCOM-042",
+      "Aiphone GT-1C",
+      "Video Intercom",
+      35000,
+      "Aiphone",
+      "GT-1C",
+      true
+    ],
+    [
+      "SENSOR-043",
+      "Bosch ISC-BPR2",
+      "Motion Detector",
+      6500,
+      "Bosch",
+      "ISC-BPR2",
+      true
+    ],
+    ["KEYPAD-044", "DSC PK5501", "Alarm Keypad", 4500, "DSC", "PK5501", true],
+    [
+      "SIREN-045",
+      "Honeywell 747",
+      "Indoor Siren",
+      8500,
+      "Honeywell",
+      "747",
+      true
+    ]
+  ],
+  "Kitchen Equipment": [
+    [
+      "REFRIGERATOR-046",
+      "Samsung RF23M8070",
+      "Commercial Refrigerator",
+      85000,
+      "Samsung",
+      "RF23M8070",
+      true
+    ],
+    [
+      "OVEN-047",
+      "Rational SelfCookingCenter",
+      "Combi Steam Oven",
+      450000,
+      "Rational",
+      "SelfCookingCenter",
+      true
+    ],
+    [
+      "DISHWASHER-048",
+      "Hobart LXER-2",
+      "Commercial Dishwasher",
+      320000,
+      "Hobart",
+      "LXER-2",
+      true
+    ],
+    [
+      "FREEZER-049",
+      "True T-49F",
+      "Reach-in Freezer",
+      125000,
+      "True",
+      "T-49F",
+      true
+    ],
+    [
+      "MIXER-050",
+      "KitchenAid KSM150",
+      "Stand Mixer",
+      35000,
+      "KitchenAid",
+      "KSM150",
+      true
+    ],
+    [
+      "STOVE-051",
+      "Viking Professional",
+      "Gas Range",
+      185000,
+      "Viking",
+      "Professional",
+      true
+    ],
+    [
+      "MICROWAVE-052",
+      "Panasonic NN-ST696",
+      "Commercial Microwave",
+      25000,
+      "Panasonic",
+      "NN-ST696",
+      true
+    ],
+    [
+      "BLENDER-053",
+      "Vitamix 5200",
+      "High-Speed Blender",
+      28000,
+      "Vitamix",
+      "5200",
+      true
+    ],
+    [
+      "FRYER-054",
+      "Frymaster MJ35",
+      "Deep Fryer",
+      95000,
+      "Frymaster",
+      "MJ35",
+      true
+    ],
+    [
+      "GRIDDLE-055",
+      "Blackstone 36",
+      "Flat Top Griddle",
+      65000,
+      "Blackstone",
+      "36",
+      true
+    ]
+  ],
+  "Audio Visual": [
+    [
+      "SMARTBOARD-056",
+      "SMART Board 6065",
+      "Interactive Whiteboard",
+      185000,
+      "SMART",
+      "Board 6065",
+      true
+    ],
+    [
+      "SOUNDSYSTEM-057",
+      "Bose Professional",
+      "Conference Room Audio",
+      95000,
+      "Bose",
+      "Professional",
+      true
+    ],
+    [
+      "MICROPHONE-058",
+      "Shure SM58",
+      "Dynamic Microphone",
+      8500,
+      "Shure",
+      "SM58",
+      true
+    ],
+    [
+      "AMPLIFIER-059",
+      "Yamaha MG12XU",
+      "Mixing Console",
+      25000,
+      "Yamaha",
+      "MG12XU",
+      true
+    ],
+    [
+      "SCREEN-060",
+      "Elite Screens CineTension2",
+      "Electric Projection Screen",
+      45000,
+      "Elite Screens",
+      "CineTension2",
+      true
+    ],
+    [
+      "PROJECTOR-061",
+      "Epson PowerLite Pro",
+      "Laser Projector",
+      120000,
+      "Epson",
+      "PowerLite Pro",
+      true
+    ],
+    [
+      "CAMERA-062",
+      "Canon EOS R5",
+      "Professional Camera",
+      185000,
+      "Canon",
+      "EOS R5",
+      true
+    ],
+    [
+      "SPEAKER-063",
+      "JBL Professional",
+      "Ceiling Speaker",
+      12000,
+      "JBL",
+      "Professional",
+      true
+    ],
+    [
+      "MIXER-064",
+      "Behringer X32",
+      "Digital Mixer",
+      85000,
+      "Behringer",
+      "X32",
+      true
+    ],
+    ["RECORDER-065", "Zoom H6", "Handy Recorder", 18000, "Zoom", "H6", true]
+  ],
+  "Manufacturing Tools": [
+    [
+      "LATHE-066",
+      "Haas TL-1",
+      "CNC Turning Center",
+      850000,
+      "Haas",
+      "TL-1",
+      true
+    ],
+    [
+      "PRESS-067",
+      "Amada RG-80",
+      "Hydraulic Press Brake",
+      1200000,
+      "Amada",
+      "RG-80",
+      true
+    ],
+    [
+      "GRINDER-068",
+      "Makita 9557PBX1",
+      "Angle Grinder",
+      4500,
+      "Makita",
+      "9557PBX1",
+      true
+    ],
+    [
+      "BANDSAW-069",
+      "JET HVBS-710",
+      "Horizontal Band Saw",
+      185000,
+      "JET",
+      "HVBS-710",
+      true
+    ],
+    [
+      "MILL-070",
+      "Bridgeport Series I",
+      "Vertical Milling Machine",
+      650000,
+      "Bridgeport",
+      "Series I",
+      true
+    ],
+    [
+      "DRILL-071",
+      "Milwaukee 2804-20",
+      "Hammer Drill",
+      8500,
+      "Milwaukee",
+      "2804-20",
+      true
+    ],
+    [
+      "WELDER-072",
+      "Lincoln Electric",
+      "MIG Welder",
+      95000,
+      "Lincoln Electric",
+      "Power MIG",
+      true
+    ],
+    [
+      "SAW-073",
+      "DeWalt DWS780",
+      "Compound Miter Saw",
+      35000,
+      "DeWalt",
+      "DWS780",
+      true
+    ],
+    [
+      "ROUTER-074",
+      "Festool OF 1400",
+      "Plunge Router",
+      28000,
+      "Festool",
+      "OF 1400",
+      true
+    ],
+    [
+      "COMPRESSOR-075",
+      "Ingersoll Rand",
+      "Air Compressor",
+      125000,
+      "Ingersoll Rand",
+      "SS3J3",
+      true
+    ]
+  ],
+  "HVAC Systems": [
+    [
+      "AIRCON-076",
+      "Daikin VRV IV",
+      "Variable Refrigerant Volume",
+      320000,
+      "Daikin",
+      "VRV IV",
+      true
+    ],
+    [
+      "CHILLER-077",
+      "Carrier 30XA",
+      "Air-Cooled Chiller",
+      1800000,
+      "Carrier",
+      "30XA",
+      true
+    ],
+    [
+      "FAN-078",
+      "Panasonic WhisperCeiling",
+      "Exhaust Fan",
+      8500,
+      "Panasonic",
+      "WhisperCeiling",
+      true
+    ],
+    [
+      "HEATER-079",
+      "Rheem RTGH-95",
+      "Tankless Water Heater",
+      45000,
+      "Rheem",
+      "RTGH-95",
+      true
+    ],
+    [
+      "THERMOSTAT-080",
+      "Honeywell T6 Pro",
+      "Programmable Thermostat",
+      6500,
+      "Honeywell",
+      "T6 Pro",
+      true
+    ],
+    [
+      "BOILER-081",
+      "Weil-McLain CGa",
+      "Gas Boiler",
+      285000,
+      "Weil-McLain",
+      "CGa",
+      true
+    ],
+    [
+      "PUMP-082",
+      "Grundfos UPS",
+      "Circulator Pump",
+      25000,
+      "Grundfos",
+      "UPS",
+      true
+    ],
+    [
+      "FILTER-083",
+      "Honeywell F300",
+      "Electronic Air Cleaner",
+      18000,
+      "Honeywell",
+      "F300",
+      true
+    ],
+    ["DUCT-084", "Spiral Duct", "Galvanized Ductwork", 12000, "", "", false],
+    [
+      "DAMPER-085",
+      "Ruskin FSD60",
+      "Fire Smoke Damper",
+      35000,
+      "Ruskin",
+      "FSD60",
+      true
+    ]
+  ],
+  "Office Equipment": [
+    [
+      "DESK-086",
+      "Herman Miller Aeron",
+      "Ergonomic Office Desk",
+      45000,
+      "Herman Miller",
+      "Aeron",
+      true
+    ],
+    [
+      "CHAIR-087",
+      "Steelcase Leap V2",
+      "Office Chair",
+      28000,
+      "Steelcase",
+      "Leap V2",
+      true
+    ],
+    [
+      "CABINET-088",
+      "HON Brigade",
+      "Filing Cabinet",
+      15000,
+      "HON",
+      "Brigade",
+      true
+    ],
+    [
+      "SHREDDER-089",
+      "Fellowes Powershred",
+      "Paper Shredder",
+      8500,
+      "Fellowes",
+      "Powershred",
+      true
+    ],
+    [
+      "PHONE-090",
+      "Cisco IP Phone",
+      "VoIP Phone",
+      12000,
+      "Cisco",
+      "IP Phone",
+      true
+    ],
+    [
+      "WHITEBOARD-091",
+      "Quartet Prestige",
+      "Magnetic Whiteboard",
+      6500,
+      "Quartet",
+      "Prestige",
+      true
+    ],
+    ["BOOKSHELF-092", "IKEA Billy", "Bookshelf", 3500, "IKEA", "Billy", true],
+    [
+      "SAFE-093",
+      "SentrySafe SFW123",
+      "Fire Safe",
+      25000,
+      "SentrySafe",
+      "SFW123",
+      true
+    ],
+    ["LAMP-094", "Philips LED", "Desk Lamp", 4500, "Philips", "LED", true],
+    ["CLOCK-095", "Seiko QXA520", "Wall Clock", 2500, "Seiko", "QXA520", true]
+  ],
+  "Automotive": [
+    [
+      "VEHICLE-096",
+      "Toyota Hiace",
+      "Commercial Van",
+      1200000,
+      "Toyota",
+      "Hiace",
+      true
+    ],
+    [
+      "FORKLIFT-097",
+      "Hyster H50FT",
+      "Forklift",
+      850000,
+      "Hyster",
+      "H50FT",
+      true
+    ],
+    [
+      "GENERATOR-098",
+      "Caterpillar DE88",
+      "Diesel Generator",
+      650000,
+      "Caterpillar",
+      "DE88",
+      true
+    ],
+    ["TRAILER-099", "Utility Trailer", "Cargo Trailer", 185000, "", "", false],
+    [
+      "COMPRESSOR-100",
+      "Sullair 185",
+      "Portable Air Compressor",
+      125000,
+      "Sullair",
+      "185",
+      true
+    ],
+    [
+      "CRANE-101",
+      "Tadano GR-300",
+      "Mobile Crane",
+      2500000,
+      "Tadano",
+      "GR-300",
+      true
+    ],
+    [
+      "EXCAVATOR-102",
+      "Caterpillar 320",
+      "Hydraulic Excavator",
+      3500000,
+      "Caterpillar",
+      "320",
+      true
+    ],
+    [
+      "BULLDOZER-103",
+      "Komatsu D65",
+      "Crawler Bulldozer",
+      2800000,
+      "Komatsu",
+      "D65",
+      true
+    ],
+    [
+      "LOADER-104",
+      "John Deere 544",
+      "Wheel Loader",
+      1800000,
+      "John Deere",
+      "544",
+      true
+    ],
+    [
+      "TRUCK-105",
+      "Isuzu NQR",
+      "Medium Duty Truck",
+      1500000,
+      "Isuzu",
+      "NQR",
+      true
+    ]
+  ],
+  "Consumables": [
+    ["PAPER-106", "Copy Paper A4", "Office Paper", 350, "", "", false],
+    ["INK-107", "HP Ink Cartridge", "Printer Ink", 2500, "HP", "564XL", false],
+    [
+      "TONER-108",
+      "Canon Toner",
+      "Laser Toner",
+      4500,
+      "Canon",
+      "CRG-045",
+      false
+    ],
+    [
+      "BATTERY-109",
+      "Duracell AA",
+      "Alkaline Battery",
+      150,
+      "Duracell",
+      "AA",
+      false
+    ],
+    ["CLEANING-110", "Disinfectant", "Surface Cleaner", 285, "", "", false],
+    [
+      "COFFEE-111",
+      "Nescafe Classic",
+      "Instant Coffee",
+      425,
+      "Nescafe",
+      "Classic",
+      false
+    ],
+    ["WATER-112", "Distilled Water", "Drinking Water", 85, "", "", false],
+    [
+      "TISSUE-113",
+      "Kleenex Tissue",
+      "Facial Tissue",
+      125,
+      "Kleenex",
+      "",
+      false
+    ],
+    [
+      "SOAP-114",
+      "Safeguard Soap",
+      "Antibacterial Soap",
+      65,
+      "Safeguard",
+      "",
+      false
+    ],
+    ["SANITIZER-115", "Alcohol Sanitizer", "Hand Sanitizer", 185, "", "", false]
+  ],
+  "Perishables": [
+    ["MEDICINE-116", "Paracetamol", "Pain Reliever", 25, "", "", false],
+    ["BANDAGE-117", "Adhesive Bandage", "First Aid Bandage", 15, "", "", false],
+    [
+      "ANTISEPTIC-118",
+      "Betadine",
+      "Antiseptic Solution",
+      85,
+      "Betadine",
+      "",
+      false
+    ],
+    ["VITAMIN-119", "Vitamin C", "Dietary Supplement", 185, "", "", false],
+    ["GAUZE-120", "Sterile Gauze", "Medical Gauze", 35, "", "", false],
+    ["SYRINGE-121", "Disposable Syringe", "Medical Syringe", 12, "", "", false],
+    ["GLOVES-122", "Nitrile Gloves", "Disposable Gloves", 450, "", "", false],
+    ["MASK-123", "Surgical Mask", "Disposable Mask", 8, "", "", false],
+    [
+      "THERMOMETER-124",
+      "Digital Thermometer",
+      "Body Thermometer",
+      285,
+      "",
+      "",
+      false
+    ],
+    ["ALCOHOL-125", "Isopropyl Alcohol", "Rubbing Alcohol", 65, "", "", false]
+  ],
+  "Furniture": [
+    ["TABLE-126", "Conference Table", "Meeting Table", 85000, "", "", false],
+    ["SOFA-127", "Executive Sofa", "Office Sofa", 65000, "", "", false],
+    [
+      "PARTITION-128",
+      "Office Partition",
+      "Cubicle Partition",
+      25000,
+      "",
+      "",
+      false
+    ],
+    ["LOCKER-129", "Steel Locker", "Employee Locker", 15000, "", "", false],
+    ["RACK-130", "Server Rack", "19-inch Rack", 45000, "", "", false],
+    ["CABINET-131", "Storage Cabinet", "Office Cabinet", 18000, "", "", false],
+    [
+      "COUNTER-132",
+      "Reception Counter",
+      "Front Desk Counter",
+      95000,
+      "",
+      "",
+      false
+    ],
+    ["STOOL-133", "Bar Stool", "High Stool", 8500, "", "", false],
+    ["BENCH-134", "Waiting Bench", "Lobby Bench", 25000, "", "", false],
+    ["SHELF-135", "Display Shelf", "Exhibition Shelf", 12000, "", "", false]
+  ],
+  "Cleaning Equipment": [
+    ["VACUUM-136", "Dyson V15", "Cordless Vacuum", 35000, "Dyson", "V15", true],
+    [
+      "MOPBUCKET-137",
+      "Rubbermaid WaveBrake",
+      "Mop Bucket",
+      8500,
+      "Rubbermaid",
+      "WaveBrake",
+      true
+    ],
+    [
+      "POLISHER-138",
+      "Kärcher BDP 43",
+      "Floor Polisher",
+      125000,
+      "Kärcher",
+      "BDP 43",
+      true
+    ],
+    [
+      "SWEEPER-139",
+      "Bissell CrossWave",
+      "Wet Dry Vacuum",
+      18000,
+      "Bissell",
+      "CrossWave",
+      true
+    ],
+    [
+      "SCRUBBER-140",
+      "Tennant T300",
+      "Walk-Behind Scrubber",
+      285000,
+      "Tennant",
+      "T300",
+      true
+    ],
+    ["CART-141", "Janitorial Cart", "Cleaning Cart", 12000, "", "", false],
+    [
+      "SQUEEGEE-142",
+      "Window Squeegee",
+      "Glass Cleaning Tool",
+      850,
+      "",
+      "",
+      false
+    ],
+    ["BROOM-143", "Push Broom", "Floor Broom", 1200, "", "", false],
+    ["DUSTPAN-144", "Lobby Dustpan", "Dust Collection Pan", 850, "", "", false],
+    ["SPRAYER-145", "Pressure Sprayer", "Chemical Sprayer", 6500, "", "", false]
+  ],
+  "Sports Equipment": [
+    [
+      "TREADMILL-146",
+      "NordicTrack Commercial",
+      "Commercial Treadmill",
+      185000,
+      "NordicTrack",
+      "Commercial",
+      true
+    ],
+    [
+      "BIKE-147",
+      "Schwinn IC4",
+      "Indoor Cycling Bike",
+      65000,
+      "Schwinn",
+      "IC4",
+      true
+    ],
+    [
+      "WEIGHTS-148",
+      "Bowflex SelectTech",
+      "Adjustable Dumbbells",
+      35000,
+      "Bowflex",
+      "SelectTech",
+      true
+    ],
+    [
+      "BENCH-149",
+      "Rogue Fitness",
+      "Weight Bench",
+      28000,
+      "Rogue",
+      "Fitness",
+      true
+    ],
+    [
+      "RACK-150",
+      "Power Systems",
+      "Squat Rack",
+      85000,
+      "Power Systems",
+      "",
+      true
+    ],
+    [
+      "BALL-151",
+      "Spalding Basketball",
+      "Official Basketball",
+      2500,
+      "Spalding",
+      "",
+      true
+    ],
+    ["NET-152", "Volleyball Net", "Professional Net", 8500, "", "", false],
+    ["MAT-153", "Yoga Mat", "Exercise Mat", 1850, "", "", false],
+    ["ROPE-154", "Jump Rope", "Fitness Rope", 850, "", "", false],
+    ["TIMER-155", "Stopwatch", "Digital Timer", 2500, "", "", false]
+  ],
+  "Electrical Equipment": [
+    [
+      "PANEL-156",
+      "Electrical Panel",
+      "Main Distribution Panel",
+      85000,
+      "",
+      "",
+      false
+    ],
+    ["BREAKER-157", "Circuit Breaker", "Safety Breaker", 2500, "", "", false],
+    ["OUTLET-158", "Power Outlet", "Wall Outlet", 450, "", "", false],
+    ["SWITCH-159", "Light Switch", "Wall Switch", 285, "", "", false],
+    ["WIRE-160", "Electrical Wire", "Copper Wire", 185, "", "", false],
+    ["CONDUIT-161", "Electrical Conduit", "PVC Conduit", 125, "", "", false],
+    [
+      "METER-162",
+      "Digital Multimeter",
+      "Electrical Meter",
+      8500,
+      "",
+      "",
+      false
+    ],
+    ["TESTER-163", "Voltage Tester", "Electrical Tester", 3500, "", "", false],
+    ["CABLE-164", "Extension Cable", "Power Cable", 850, "", "", false],
+    ["ADAPTER-165", "Power Adapter", "AC Adapter", 1250, "", "", false]
+  ],
+  "Plumbing Equipment": [
+    ["PIPE-166", "PVC Pipe", "Water Pipe", 285, "", "", false],
+    ["VALVE-167", "Ball Valve", "Shut-off Valve", 850, "", "", false],
+    ["FAUCET-168", "Kitchen Faucet", "Water Faucet", 8500, "", "", false],
+    ["TOILET-169", "Toilet Bowl", "Ceramic Toilet", 15000, "", "", false],
+    ["SINK-170", "Stainless Steel Sink", "Kitchen Sink", 12000, "", "", false],
+    ["PUMP-171", "Water Pump", "Submersible Pump", 25000, "", "", false],
+    ["TANK-172", "Water Tank", "Storage Tank", 18000, "", "", false],
+    [
+      "HEATER-173",
+      "Electric Water Heater",
+      "Instant Water Heater",
+      8500,
+      "",
+      "",
+      false
+    ],
+    ["WRENCH-174", "Pipe Wrench", "Plumbing Tool", 2500, "", "", false],
+    ["PLUNGER-175", "Toilet Plunger", "Drain Plunger", 850, "", "", false]
+  ],
+  "Gardening Equipment": [
+    ["MOWER-176", "Honda HRX217", "Lawn Mower", 35000, "Honda", "HRX217", true],
+    [
+      "TRIMMER-177",
+      "STIHL FS 56",
+      "String Trimmer",
+      18000,
+      "STIHL",
+      "FS 56",
+      true
+    ],
+    [
+      "BLOWER-178",
+      "Echo PB-580T",
+      "Leaf Blower",
+      25000,
+      "Echo",
+      "PB-580T",
+      true
+    ],
+    [
+      "SPRINKLER-179",
+      "Rain Bird 5000",
+      "Sprinkler System",
+      8500,
+      "Rain Bird",
+      "5000",
+      true
+    ],
+    ["HOSE-180", "Garden Hose", "Water Hose", 2500, "", "", false],
+    ["SHOVEL-181", "Spade Shovel", "Garden Shovel", 1850, "", "", false],
+    ["RAKE-182", "Leaf Rake", "Garden Rake", 1250, "", "", false],
+    ["SHEARS-183", "Pruning Shears", "Garden Shears", 2850, "", "", false],
+    [
+      "WHEELBARROW-184",
+      "Garden Wheelbarrow",
+      "Utility Cart",
+      8500,
+      "",
+      "",
+      false
+    ],
+    ["FERTILIZER-185", "Lawn Fertilizer", "Plant Food", 450, "", "", false]
+  ],
+  "Fire Safety Equipment": [
+    [
+      "EXTINGUISHER-186",
+      "Fire Extinguisher",
+      "ABC Fire Extinguisher",
+      2500,
+      "",
+      "",
+      false
+    ],
+    ["ALARM-187", "Fire Alarm", "Smoke Alarm", 3500, "", "", false],
+    ["HOSE-188", "Fire Hose", "Emergency Hose", 8500, "", "", false],
+    ["CABINET-189", "Fire Cabinet", "Emergency Cabinet", 15000, "", "", false],
+    ["BLANKET-190", "Fire Blanket", "Emergency Blanket", 1850, "", "", false],
+    ["AXLE-191", "Fire Axe", "Emergency Axe", 3500, "", "", false],
+    ["LIGHT-192", "Emergency Light", "Exit Light", 2500, "", "", false],
+    [
+      "SPRINKLER-193",
+      "Fire Sprinkler",
+      "Ceiling Sprinkler",
+      5500,
+      "",
+      "",
+      false
+    ],
+    ["DETECTOR-194", "Heat Detector", "Fire Detector", 4500, "", "", false],
+    ["PANEL-195", "Fire Panel", "Control Panel", 85000, "", "", false]
+  ],
+  "Event Equipment": [
+    ["TENT-196", "Event Tent", "Outdoor Tent", 25000, "", "", false],
+    ["CHAIR-197", "Folding Chair", "Event Chair", 1850, "", "", false],
+    ["TABLE-198", "Banquet Table", "Event Table", 8500, "", "", false],
+    ["STAGE-199", "Portable Stage", "Event Stage", 85000, "", "", false],
+    ["LIGHTING-200", "Stage Light", "Event Lighting", 12000, "", "", false]
+  ]
+}
