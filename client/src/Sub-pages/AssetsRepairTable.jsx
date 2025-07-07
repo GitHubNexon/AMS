@@ -25,7 +25,7 @@ import { showToast } from "../utils/toastNotifications";
 import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assetRepairLogic from "../hooks/AssetsRepairLogic";
-import AssetsRepairModal from "../Pop-Up-Pages/AssetsRepairModal";
+import AssetsRepairModal from "../Pop-Up-Pages/AssetsModals/AssetsRepairModal";
 import assetsRepairApi from "../api/assetRepairApi";
 import PARUnderRepair from "../Components/AssetsForm/PARUnderRepair";
 const AssetsRepairTable = () => {

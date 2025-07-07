@@ -27,7 +27,7 @@ import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assetsReturnApi from "../api/assetReturnApi";
 import assetDisposalApi from "../api/assetDisposalApi";
 import AssetsDisposalLogic from "../hooks/AssetsDisposalLogic";
-import AssetsDisposalModal from "../Pop-Up-Pages/AssetsDisposalModal";
+import AssetsDisposalModal from "../Pop-Up-Pages/AssetsModals/AssetsDisposalModal";
 import PARDisposal from "../Components/AssetsForm/PARDisposal";
 
 const AssetsDisposalTable = () => {

@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { FaTimes, FaPlus, FaTrash } from "react-icons/fa";
-import showDialog from "../utils/showDialog";
-import { showToast } from "../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import { showToast } from "../../utils/toastNotifications";
 import moment from "moment";
-import assetIssuanceApi from "../api/assetIssuanceApi";
-import SignatoriesPicker from "../Components/SignatoriesPicker";
-import { useAuth } from "../context/AuthContext";
-import EmployeePicker from "../Components/EmployeePicker";
-import AssetsPicker from "../Components/AssetsPicker";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assetsApi from "../api/assetsApi";
-import assetDisposalApi from "./../api/assetDisposalApi";
-import AssetsLogic from "./../hooks/AssetsLogic";
-import assetRepairApi from "./../api/assetRepairApi";
-import assetLostStolenApi from "../api/assetLostStolenApi";
+import assetIssuanceApi from "../../api/assetIssuanceApi";
+import SignatoriesPicker from "../../Components/SignatoriesPicker";
+import { useAuth } from "../../context/AuthContext";
+import EmployeePicker from "../../Components/EmployeePicker";
+import AssetsPicker from "../../Components/AssetsPicker";
+import {
+  numberToCurrencyString,
+  formatReadableDate,
+} from "../../helper/helper";
+import assetsApi from "../../api/assetsApi";
+import assetDisposalApi from "../../api/assetDisposalApi";
+import AssetsLogic from "../../hooks/AssetsLogic";
+import assetLostStolenApi from "../../api/assetLostStolenApi";
+import AssetsInventoryLostStolenDamageTab from "./AssetsInventoryLostStolenDamageTab";
 
 const AssetsLostStolenModal = ({
   isOpen,
@@ -342,43 +345,6 @@ const AssetsLostStolenModal = ({
                 />
               </div>
 
-              {/* <div className="flex flex-col">
-                <label htmlFor="dateReleased" className="text-gray-700">
-                  Date Released
-                </label>
-                <input
-                  type="date"
-                  id="dateReleased"
-                  name="dateReleased"
-                  value={formData.dateReleased}
-                  onChange={handleChange}
-                  required
-                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                />
-              </div> */}
-              {/* <div className="flex flex-col">
-                <EmployeePicker
-                  value={
-                    formData.employeeId &&
-                    formData.employeeName &&
-                    formData.employeePosition
-                      ? {
-                          _id: formData.employeeId,
-                          employeeName: formData.employeeName,
-                          employeePosition: formData.employeePosition,
-                        }
-                      : null
-                  }
-                  onSelect={(employee) => {
-                    setFormData((prev) => ({
-                      ...prev,
-                      employeeId: employee._id,
-                      employeeName: employee.employeeName,
-                      employeePosition: employee.employeePosition,
-                    }));
-                  }}
-                />
-              </div> */}
               <div className="flex flex-col">
                 <label htmlFor="ReviewedBy" className="text-gray-700">
                   Reviewed By
@@ -425,80 +391,14 @@ const AssetsLostStolenModal = ({
           )}
 
           {activeTab === "inventory" && (
-            <div className="space-y-4">
-              <AssetsPicker
-                value={{ asset: selectedAsset, inventory: selectedInventory }}
-                onSelectAsset={setSelectedAsset}
-                onSelectInventory={setSelectedInventory}
-              />
-
-              <button
-                type="button"
-                className="flex items-center gap-2 text-sm bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
-                onClick={handleAddRecord}
-              >
-                <FaPlus /> Add Record
-              </button>
-
-              <table className="w-full text-xs mt-4 border">
-                <thead>
-                  <tr>
-                    <th>Unit</th>
-                    <th>Description</th>
-                    <th>Location</th>
-                    <th>Item No</th>
-                    <th>Amount</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {formData.assetRecords.map((record, index) => (
-                    <tr
-                      key={index}
-                      className="cursor-pointer hover:bg-gray-100"
-                      onClick={() => handleRowClick(record)}
-                      title=""
-                    >
-                      <td>{record.unit}</td>
-                      <td>{record.description}</td>
-                      <td>
-                        <input
-                          type="text"
-                          value={record.location || ""}
-                          onChange={(e) => {
-                            const updatedRecords = [...formData.assetRecords];
-                            updatedRecords[index].location = e.target.value;
-                            setFormData((prev) => ({
-                              ...prev,
-                              assetRecords: updatedRecords,
-                            }));
-                          }}
-                          className="border border-gray-300 rounded p-1 text-xs w-full"
-                          placeholder="Enter location"
-                        />
-                      </td>
-                      <td>{record.itemNo}</td>
-                      <td>{numberToCurrencyString(record.amount)}</td>
-                      <td>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setFormData((prev) => ({
-                              ...prev,
-                              assetRecords: prev.assetRecords.filter(
-                                (_, i) => i !== index
-                              ),
-                            }));
-                          }}
-                        >
-                          <FaTrash className="text-red-500" />
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <AssetsInventoryLostStolenDamageTab
+              selectedAsset={selectedAsset}
+              selectedInventory={selectedInventory}
+              setSelectedAsset={setSelectedAsset}
+              setSelectedInventory={setSelectedInventory}
+              formData={formData}
+              setFormData={setFormData}
+            />
           )}
         </form>
         <div className="flex justify-end gap-2 mt-4">

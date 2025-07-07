@@ -27,7 +27,7 @@ import showDialog from "../utils/showDialog";
 import assetsApi from "../api/assetsApi";
 import AssetsLogic from "../hooks/AssetsLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import AssetsModal from "../Pop-Up-Pages/AssetsModal";
+import AssetsModal from "../Pop-Up-Pages/AssetsModals/AssetsModal";
 import ResizableContainer from "../Components/resize/ResizableContainer";
 
 const ExpandedRowComponent = ({ data }) => {

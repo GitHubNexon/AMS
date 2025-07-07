@@ -1,29 +1,31 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { FaTimes, FaPlus, FaTrash } from "react-icons/fa";
-import showDialog from "../utils/showDialog";
-import { showToast } from "../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import { showToast } from "../../utils/toastNotifications";
 import moment from "moment";
-import assetIssuanceApi from "../api/assetIssuanceApi";
-import SignatoriesPicker from "../Components/SignatoriesPicker";
-import { useAuth } from "../context/AuthContext";
-import EmployeePicker from "../Components/EmployeePicker";
-import AssetsPicker from "../Components/AssetsPicker";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assetsApi from "../api/assetsApi";
-import assetDisposalApi from "./../api/assetDisposalApi";
-import AssetsLogic from "./../hooks/AssetsLogic";
-import assetRepairApi from "./../api/assetRepairApi";
-import assetsRepairedApi from "./../api/assetsRepairedApi";
+import assetIssuanceApi from "../../api/assetIssuanceApi";
+import SignatoriesPicker from "../../Components/SignatoriesPicker";
+import { useAuth } from "../../context/AuthContext";
+import EmployeePicker from "../../Components/EmployeePicker";
+import AssetsPicker from "../../Components/AssetsPicker";
+import {
+  numberToCurrencyString,
+  formatReadableDate,
+} from "../../helper/helper";
+import assetsApi from "../../api/assetsApi";
+import assetDisposalApi from "../../api/assetDisposalApi";
+import AssetsLogic from "../../hooks/AssetsLogic";
+import AssetsInventoryDisposalTab from "./AssetsInventoryDisposalTab";
 
-const AssetsRepairedModal = ({
+const AssetsDisposalModal = ({
   isOpen,
   onClose,
-  onSaveAssetRepaired,
-  assetsRepairData,
+  onSaveAssetDisposal,
+  assetsDisposalData,
   mode,
 }) => {
   const { user } = useAuth();
-  const [activeTab, setActiveTab] = useState("repair-info");
+  const [activeTab, setActiveTab] = useState("disposal-info");
   const [selectedAsset, setSelectedAsset] = useState(null);
   const [selectedInventory, setSelectedInventory] = useState(null);
   const [invalidAssetIds, setInvalidAssetIds] = useState([]);
@@ -44,7 +46,7 @@ const AssetsRepairedModal = ({
     // employeePosition: "",
     // employeeId: "",
     description: "",
-    dateRepaired: moment().format("YYYY-MM-DD"),
+    dateDisposed: moment().format("YYYY-MM-DD"),
     assetRecords: [],
     Status: {
       isDeleted: false,
@@ -71,14 +73,14 @@ const AssetsRepairedModal = ({
   };
 
   useEffect(() => {
-    if (mode === "edit" && assetsRepairData) {
+    if (mode === "edit" && assetsDisposalData) {
       const {
-        dateRepaired,
+        dateDisposed,
         assetRecords = [],
         // employeeId = "",
         // employeeName = "",
         ...rest
-      } = assetsRepairData;
+      } = assetsDisposalData;
 
       setFormData((prev) => ({
         ...prev,
@@ -86,15 +88,15 @@ const AssetsRepairedModal = ({
         assetRecords,
         // employeeId,
         // employeeName,
-        dateRepaired: dateRepaired
-          ? new Date(dateRepaired).toISOString().split("T")[0]
+        dateDisposed: dateDisposed
+          ? new Date(dateDisposed).toISOString().split("T")[0]
           : moment().format("YYYY-MM-DD"),
         // dateReleased: dateReleased
         //   ? new Date(dateReleased).toISOString().split("T")[0]
         //   : moment().format("YYYY-MM-DD"),
       }));
     }
-  }, [mode, assetsRepairData]);
+  }, [mode, assetsDisposalData]);
 
   const handleAddRecord = () => {
     if (!selectedAsset || !selectedInventory) {
@@ -187,7 +189,7 @@ const AssetsRepairedModal = ({
 
       if (mode === "edit") {
         const changedData = Object.keys(dataToSubmit).reduce((acc, key) => {
-          if (dataToSubmit[key] !== assetsRepairData[key]) {
+          if (dataToSubmit[key] !== assetsDisposalData[key]) {
             acc[key] = dataToSubmit[key];
           }
           return acc;
@@ -198,19 +200,19 @@ const AssetsRepairedModal = ({
           return;
         }
 
-        await assetsRepairedApi.updateAssetsRepairedRecord(
-          assetsRepairData._id,
+        await assetDisposalApi.updateAssetsDisposalRecord(
+          assetsDisposalData._id,
           changedData
         );
-        console.log("Assets Repair Data to Update:", changedData);
+        console.log("Assets Disposal Data to Update:", changedData);
         showToast("Assets updated successfully!", "success");
       } else {
-        await assetsRepairedApi.createAssetsRepairedRecord(dataToSubmit);
-        console.log("Assets Repair Data to Submit:", dataToSubmit);
+        await assetDisposalApi.createAssetsDisposalRecord(dataToSubmit);
+        console.log("Assets Disposal Data to Submit:", dataToSubmit);
         showToast("Assets recorded successfully!", "success");
       }
 
-      onSaveAssetRepaired(dataToSubmit);
+      onSaveAssetDisposal(dataToSubmit);
       onClose();
     } catch (error) {
       console.error("Error submitting Assets:", error);
@@ -226,8 +228,8 @@ const AssetsRepairedModal = ({
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
             {mode === "edit"
-              ? "Update Repaired Record "
-              : "Create Repaired Record"}
+              ? "Update Disposal Record "
+              : "Create Disposal Record"}
           </h2>
           <button
             onClick={async () => {
@@ -246,13 +248,13 @@ const AssetsRepairedModal = ({
         <div className="flex border-b border-gray-300 mb-4">
           <button
             className={`px-4 py-2 font-semibold ${
-              activeTab === "repair-info"
+              activeTab === "disposal-info"
                 ? "border-b-2 border-blue-500 text-blue-500"
                 : "text-gray-500"
             }`}
-            onClick={() => setActiveTab("repair-info")}
+            onClick={() => setActiveTab("disposal-info")}
           >
-            Assets Repaired Information
+            Assets Disposal Information
           </button>
           <button
             className={`px-4 py-2 font-semibold ${
@@ -271,7 +273,7 @@ const AssetsRepairedModal = ({
           }}
           className={"space-y-4 overflow-scroll  p-5"}
         >
-          {activeTab === "repair-info" && (
+          {activeTab === "disposal-info" && (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 text-[0.7em]">
               <div className="flex flex-col">
                 <label htmlFor="parNo" className="text-gray-700">
@@ -327,19 +329,56 @@ const AssetsRepairedModal = ({
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="dateRepaired" className="text-gray-700">
-                  Date Repaired
+                <label htmlFor="dateDisposed" className="text-gray-700">
+                  Date Disposed
                 </label>
                 <input
                   type="date"
-                  id="dateRepaired"
-                  name="dateRepaired"
-                  value={formData.dateRepaired}
+                  id="dateDisposed"
+                  name="dateDisposed"
+                  value={formData.dateDisposed}
                   onChange={handleChange}
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
+              {/* <div className="flex flex-col">
+                <label htmlFor="dateReleased" className="text-gray-700">
+                  Date Released
+                </label>
+                <input
+                  type="date"
+                  id="dateReleased"
+                  name="dateReleased"
+                  value={formData.dateReleased}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div> */}
+              {/* <div className="flex flex-col">
+                <EmployeePicker
+                  value={
+                    formData.employeeId &&
+                    formData.employeeName &&
+                    formData.employeePosition
+                      ? {
+                          _id: formData.employeeId,
+                          employeeName: formData.employeeName,
+                          employeePosition: formData.employeePosition,
+                        }
+                      : null
+                  }
+                  onSelect={(employee) => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      employeeId: employee._id,
+                      employeeName: employee.employeeName,
+                      employeePosition: employee.employeePosition,
+                    }));
+                  }}
+                />
+              </div> */}
               <div className="flex flex-col">
                 <label htmlFor="ReviewedBy" className="text-gray-700">
                   Reviewed By
@@ -366,83 +405,15 @@ const AssetsRepairedModal = ({
               </div>
             </div>
           )}
-
           {activeTab === "inventory" && (
-            <div className="space-y-4">
-              <AssetsPicker
-                value={{ asset: selectedAsset, inventory: selectedInventory }}
-                onSelectAsset={setSelectedAsset}
-                onSelectInventory={setSelectedInventory}
-                isForRepair={true}
-              />
-
-              <button
-                type="button"
-                className="flex items-center gap-2 text-sm bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
-                onClick={handleAddRecord}
-              >
-                <FaPlus /> Add Record
-              </button>
-
-              <table className="w-full text-xs mt-4 border">
-                <thead>
-                  <tr>
-                    <th>Unit</th>
-                    <th>Description</th>
-                    <th>Location</th>
-                    <th>Item No</th>
-                    <th>Amount</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {formData.assetRecords.map((record, index) => (
-                    <tr
-                      key={index}
-                      className="cursor-pointer hover:bg-gray-100"
-                      onClick={() => handleRowClick(record)}
-                      title=""
-                    >
-                      <td>{record.unit}</td>
-                      <td>{record.description}</td>
-                      <td>
-                        <input
-                          type="text"
-                          value={record.location || ""}
-                          onChange={(e) => {
-                            const updatedRecords = [...formData.assetRecords];
-                            updatedRecords[index].location = e.target.value;
-                            setFormData((prev) => ({
-                              ...prev,
-                              assetRecords: updatedRecords,
-                            }));
-                          }}
-                          className="border border-gray-300 rounded p-1 text-xs w-full"
-                          placeholder="Enter location"
-                        />
-                      </td>
-                      <td>{record.itemNo}</td>
-                      <td>{numberToCurrencyString(record.amount)}</td>
-                      <td>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setFormData((prev) => ({
-                              ...prev,
-                              assetRecords: prev.assetRecords.filter(
-                                (_, i) => i !== index
-                              ),
-                            }));
-                          }}
-                        >
-                          <FaTrash className="text-red-500" />
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <AssetsInventoryDisposalTab
+              selectedAsset={selectedAsset}
+              selectedInventory={selectedInventory}
+              setSelectedAsset={setSelectedAsset}
+              setSelectedInventory={setSelectedInventory}
+              formData={formData}
+              setFormData={setFormData}
+            />
           )}
         </form>
         <div className="flex justify-end gap-2 mt-4">
@@ -467,4 +438,4 @@ const AssetsRepairedModal = ({
   );
 };
 
-export default AssetsRepairedModal;
+export default AssetsDisposalModal;

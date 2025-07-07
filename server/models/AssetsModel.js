@@ -17,7 +17,6 @@ const InventoryItemSchema = new mongoose.Schema({
   qrCode: { type: String, default: "" },
   location: { type: String },
   barCode: { type: String, default: "" },
-  expirationDate: Date,
   rfidTag: { type: String, default: "" },
   status: {
     type: String,

@@ -10,18 +10,10 @@ const MONGODB_URI = "mongodb://0.0.0.0:27017/ams";
 const categoriesPath = path.join(__dirname, "../json/assetCategories.json");
 const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf8"));
 
-// Utility to get a random date in 2024
+// Utility to get a random date since 2020
 function getRandomDate() {
   const start = moment("2024-01-01").valueOf();
-  const end = moment("2024-12-31").valueOf();
-  const randomTimestamp = Math.floor(Math.random() * (end - start)) + start;
-  return moment(randomTimestamp).toISOString();
-}
-
-// Utility to get random expiration date for consumables/perishables
-function getRandomExpirationDate() {
-  const start = moment().add(1, "months").valueOf();
-  const end = moment().add(24, "months").valueOf();
+  const end = moment().valueOf(); // Current date
   const randomTimestamp = Math.floor(Math.random() * (end - start)) + start;
   return moment(randomTimestamp).toISOString();
 }
@@ -32,6 +24,29 @@ function getRandomWarrantyDate() {
   const end = moment().add(60, "months").valueOf();
   const randomTimestamp = Math.floor(Math.random() * (end - start)) + start;
   return moment(randomTimestamp).toISOString();
+}
+
+// Utility to get random quantity based on asset category
+function getRandomQuantity(category) {
+  const quantityRanges = {
+    'Office Equipment': [1, 5],
+    'IT Equipment': [1, 10],
+    'Furniture': [1, 3],
+    'Vehicles': [1, 2],
+    'Electronics': [1, 8],
+    'Medical Equipment': [1, 3],
+    'Kitchen Equipment': [1, 4],
+    'Security Equipment': [1, 6],
+    'Maintenance Equipment': [1, 3],
+    'Laboratory Equipment': [1, 4],
+    'default': [1, 5]
+  };
+  
+  const range = quantityRanges[category] || quantityRanges['default'];
+  const min = range[0];
+  const max = range[1];
+  
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Utility to get random location
@@ -78,18 +93,11 @@ async function createAssets() {
       model,
       hasWarranty,
     ] of items) {
-      // Dynamic quantity based on asset type
-      let quantity;
-      if (category === "Consumables" || category === "Perishables") {
-        quantity = Math.floor(Math.random() * 100) + 50; // 50-150 for consumables
-      } else if (unitCost < 10000) {
-        quantity = Math.floor(Math.random() * 10) + 5; // 5-15 for small items
-      } else if (unitCost < 100000) {
-        quantity = Math.floor(Math.random() * 5) + 2; // 2-7 for medium items
-      } else {
-        quantity = Math.floor(Math.random() * 3) + 1; // 1-3 for expensive items
-      }
+      // Validate unitCost
+      const validUnitCost = isNaN(unitCost) || unitCost <= 0 ? 1000 : unitCost;
 
+      // Dynamic quantity based on asset type - MOVED THIS UP
+      const quantity = getRandomQuantity(category);
       const inventory = [];
 
       for (let j = 0; j < quantity; j++) {
@@ -100,11 +108,6 @@ async function createAssets() {
           status: "New-Available",
           location: getRandomLocation(),
         };
-
-        // Add expiration date for consumables and perishables
-        if (category === "Consumables" || category === "Perishables") {
-          inventoryItem.expirationDate = getRandomExpirationDate();
-        }
 
         inventory.push(inventoryItem);
       }
@@ -220,7 +223,6 @@ async function createAssets() {
       categoryCounts: {},
       locationCounts: {},
       statusCounts: {},
-      withExpiration: 0,
       withWarranty: 0,
     };
 
@@ -234,16 +236,12 @@ async function createAssets() {
         stats.withWarranty++;
       }
 
-      // Location and expiration counts from inventory
+      // Location and status counts from inventory
       asset.inventory.forEach((item) => {
         stats.locationCounts[item.location] =
           (stats.locationCounts[item.location] || 0) + 1;
         stats.statusCounts[item.status] =
           (stats.statusCounts[item.status] || 0) + 1;
-
-        if (item.expirationDate) {
-          stats.withExpiration++;
-        }
       });
     });
 
@@ -251,7 +249,6 @@ async function createAssets() {
     console.log(`📊 Total Assets: ${stats.totalAssets}`);
     console.log(`📦 Total Inventory Items: ${stats.totalInventoryItems}`);
     console.log(`💰 Total Value: ₱${stats.totalValue.toLocaleString()}`);
-    console.log(`📅 Items with Expiration: ${stats.withExpiration}`);
     console.log(`🛡️ Assets with Warranty: ${stats.withWarranty}`);
 
     console.log("\n=== TOP LOCATIONS ===");

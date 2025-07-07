@@ -27,7 +27,7 @@ import assetIssuanceApi from "../api/assetIssuanceApi";
 import AssetsLogic from "../hooks/AssetsLogic";
 import AssetIssuanceLogic from "../hooks/AssetIssuanceLogic";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsIssuanceModal";
+import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsModals/AssetsIssuanceModal";
 // import PARModal from "../Pop-Up-Pages/PARModal";
 import PARIssuance from "../Components/AssetsForm/PARIssuance";
 

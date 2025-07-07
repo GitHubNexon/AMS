@@ -26,7 +26,7 @@ import showDialog from "../utils/showDialog";
 import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
 import assesLostStolenApi from "../api/assetLostStolenApi.js";
 import AssetsLostStolenLogic from "../hooks/AssetsLostStolenLogic";
-import AssetsLostStolenModal from "../Pop-Up-Pages/AssetsLostStolenModal";
+import AssetsLostStolenModal from "../Pop-Up-Pages/AssetsModals/AssetsLostStolenModal";
 import PARLostStolenDamage from "../Components/AssetsForm/PARLostStolenDamage.jsx";
 
 const AssetsLostStolenTable = () => {

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { FaTimes, FaPlus, FaTrash } from "react-icons/fa";
-import showDialog from "../utils/showDialog";
-import { showToast } from "../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import { showToast } from "../../utils/toastNotifications";
 import moment from "moment";
-import assetsApi from "../api/assetsApi";
-import SignatoriesPicker from "../Components/SignatoriesPicker";
-import { useAuth } from "../context/AuthContext";
+import assetsApi from "../../api/assetsApi";
+import SignatoriesPicker from "../../Components/SignatoriesPicker";
+import { useAuth } from "../../context/AuthContext";
+import AssetsInventoryTab from "./AssetsInventoryTab";
 
 const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
   const { user } = useAuth();
@@ -95,13 +96,6 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
   };
 
   const addInventoryRecord = () => {
-    if (formData.inventory.length >= formData.quantity) {
-      showToast(
-        `Cannot add more inventory items. Maximum quantity is ${formData.quantity}.`,
-        "warning"
-      );
-      return;
-    }
     setFormData((prevData) => ({
       ...prevData,
       inventory: [
@@ -297,18 +291,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
             Inventory Record
           </button>
         </div>
-        {activeTab === "inventory" && (
-          <div className="sticky top-0 z-50 bg-white p-2 flex justify-end border-b">
-            <button
-              type="button"
-              onClick={addInventoryRecord}
-              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition duration-200 text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
-            >
-              <FaPlus className="text-white" />
-              Add Inventory Item
-            </button>
-          </div>
-        )}
+
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -521,105 +504,15 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
           )}
 
           {activeTab === "inventory" && (
-            <div className="space-y-6">
-              {/* <div className="flex justify-end sticky top-0 bg-white z-10 py-2">
-                <button
-                  type="button"
-                  onClick={addInventoryRecord}
-                  className="bg-green-500 text-white py-1 px-3 rounded-md hover:bg-green-600 flex items-center text-sm"
-                >
-                  <FaPlus className="mr-1" /> Add Inventory Item
-                </button>
-              </div> */}
-
-              {formData.inventory.map((item, index) => (
-                <div
-                  key={index}
-                  className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 border p-3 rounded-md relative text-[0.7em]"
-                >
-                  <div className="flex flex-col">
-                    <label htmlFor={`invNo-${index}`} className="text-gray-700">
-                      Inventory Number
-                    </label>
-                    <input
-                      type="text"
-                      id={`invNo-${index}`}
-                      value={item.invNo}
-                      onChange={(e) =>
-                        handleInventoryChange(index, "invNo", e.target.value)
-                      }
-                      className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label htmlFor={`code-${index}`} className="text-gray-700">
-                      Code
-                    </label>
-                    <input
-                      type="text"
-                      id={`code-${index}`}
-                      value={item.code}
-                      onChange={(e) =>
-                        handleInventoryChange(index, "code", e.target.value)
-                      }
-                      className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label
-                      htmlFor={`invName-${index}`}
-                      className="text-gray-700"
-                    >
-                      Inventory Name
-                    </label>
-                    <input
-                      type="text"
-                      id={`invName-${index}`}
-                      value={item.invName}
-                      onChange={(e) =>
-                        handleInventoryChange(index, "invName", e.target.value)
-                      }
-                      className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                    />
-                  </div>
-
-                  <div className="flex flex-col">
-                    <label
-                      htmlFor={`description-${index}`}
-                      className="text-gray-700"
-                    >
-                      Description
-                    </label>
-                    <input
-                      type="text"
-                      id={`description-${index}`}
-                      value={item.description}
-                      onChange={(e) =>
-                        handleInventoryChange(
-                          index,
-                          "description",
-                          e.target.value
-                        )
-                      }
-                      className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                    />
-                  </div>
-
-                  {formData.inventory.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => removeInventoryRecord(index)}
-                      className="absolute top-2 right-2 text-red-500 hover:text-red-700"
-                      title="Remove Item"
-                    >
-                      <FaTrash />
-                    </button>
-                  )}
-                </div>
-              ))}
-            </div>
+            <AssetsInventoryTab
+              formData={formData}
+              handleInventoryChange={handleInventoryChange}
+              addInventoryRecord={addInventoryRecord}
+              removeInventoryRecord={removeInventoryRecord}
+            />
           )}
         </form>
+
         <div className="flex justify-between">
           <button
             type="button"

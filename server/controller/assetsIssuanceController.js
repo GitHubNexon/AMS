@@ -91,7 +91,7 @@ const CleanAssetsIssuanceRecord = async () => {
       const isArchived = issuance.Status?.isArchived;
 
       const newStatus =
-        isDeleted || isArchived ? "Available" : "Reserved for Issuance";
+        isDeleted || isArchived ? "New-Available" : "Reserved for Issuance";
 
       for (let record of issuance.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
