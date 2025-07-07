@@ -72,7 +72,7 @@ const getAllPurchaseRequest = async (req, res, next) => {
     };
 
     const totalItems = await AssetsPurchaseRequestModel.countDocuments(query);
-    const prData = await AssetsPurchaseRequestModel.find(query)
+    const prRecords = await AssetsPurchaseRequestModel.find(query)
       .sort(sortCriteria)
       .skip((page - 1) * limit)
       .limit(limit);
@@ -82,7 +82,7 @@ const getAllPurchaseRequest = async (req, res, next) => {
       totalItems,
       totalPages: Math.ceil(totalItems / limit),
       currentPage: page,
-      prData,
+      prRecords,
     });
   } catch (error) {
     next(error);

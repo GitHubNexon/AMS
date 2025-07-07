@@ -1,11 +1,10 @@
 import React from "react";
-import AssetsPolarAreaChart from "../../Components/AssetsComponents/AssetsPolarAreaChart";
+import AssetsProcurementNav from "./../../Navigation/AssetsProcurementNav";
 
 const AssetOverView = () => {
   return (
     <div>
-      <h2>Asset Overview</h2>
-      <AssetsPolarAreaChart />
+      <AssetsProcurementNav />
     </div>
   );
 };
