@@ -3,7 +3,6 @@ const AssetsModel = require("../models/AssetsModel");
 const EmployeeModel = require("../models/employeeModel");
 const AssetInventoryHistoryModel = require("../models/AssetsInventoryHistoryModel");
 
-
 const handleLostStolenApproval = async (lostStolenDoc) => {
   for (let record of lostStolenDoc.assetRecords) {
     const asset = await AssetsModel.findOne({ _id: record.assetId });
@@ -66,7 +65,7 @@ const CleanAssetsLostStolenRecord = async () => {
       const isArchived = lostStolenDoc.Status?.isArchived;
 
       const newStatus =
-        isDeleted || isArchived ? "Available" : "Reserved for Lost/Stolen";
+        isDeleted || isArchived ? "New-Available" : "Reserved for Lost/Stolen";
 
       for (let record of lostStolenDoc.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
