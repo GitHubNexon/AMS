@@ -37,7 +37,7 @@ const AssetsInventoryTab = ({
       {formData.inventory.map((item, index) => (
         <div
           key={index}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 border p-3 rounded-md relative text-[0.7em]"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 border p-3 rounded-md relative text-[0.7em]"
         >
           <div className="flex flex-col">
             <label htmlFor={`invNo-${index}`} className="text-gray-700">
@@ -53,22 +53,67 @@ const AssetsInventoryTab = ({
               className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
             />
           </div>
-          
+
           <div className="flex flex-col">
-            <label htmlFor={`code-${index}`} className="text-gray-700">
-              Code
+            <label htmlFor={`qrCode-${index}`} className="text-gray-700">
+              QR Code
             </label>
             <input
               type="text"
-              id={`code-${index}`}
-              value={item.code}
+              id={`qrCode-${index}`}
+              value={item.qrCode}
               onChange={(e) =>
-                handleInventoryChange(index, "code", e.target.value)
+                handleInventoryChange(index, "qrCode", e.target.value)
               }
               className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
             />
           </div>
-          
+
+          <div className="flex flex-col">
+            <label htmlFor={`barCode-${index}`} className="text-gray-700">
+              Bar Code
+            </label>
+            <input
+              type="text"
+              id={`barCode-${index}`}
+              value={item.barCode}
+              onChange={(e) =>
+                handleInventoryChange(index, "barCode", e.target.value)
+              }
+              className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor={`rfidTag-${index}`} className="text-gray-700">
+              RFID Tag Id
+            </label>
+            <input
+              type="text"
+              id={`rfidTag-${index}`}
+              value={item.rfidTag}
+              onChange={(e) =>
+                handleInventoryChange(index, "rfidTag", e.target.value)
+              }
+              className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor={`location-${index}`} className="text-gray-700">
+              Location
+            </label>
+            <input
+              type="text"
+              id={`location-${index}`}
+              value={item.location}
+              onChange={(e) =>
+                handleInventoryChange(index, "location", e.target.value)
+              }
+              className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+            />
+          </div>
+
           <div className="flex flex-col">
             <label htmlFor={`invName-${index}`} className="text-gray-700">
               Inventory Name

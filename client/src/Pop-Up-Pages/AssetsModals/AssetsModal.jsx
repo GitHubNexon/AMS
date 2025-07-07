@@ -7,6 +7,7 @@ import assetsApi from "../../api/assetsApi";
 import SignatoriesPicker from "../../Components/SignatoriesPicker";
 import { useAuth } from "../../context/AuthContext";
 import AssetsInventoryTab from "./AssetsInventoryTab";
+import AssetsCategoryPicker from "../../Components/AssetsComponents/AssetsCategoryPicker";
 
 const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
   const { user } = useAuth();
@@ -40,7 +41,10 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
       {
         invNo: "",
         description: "",
-        code: "",
+        qrCode: "",
+        barCode: "",
+        rfidTag: "",
+        location: "",
         invName: "",
         status: "New-Available",
       },
@@ -48,6 +52,17 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
   });
 
   if (!isOpen) return null;
+
+  const formatDate = (date) => {
+    return date ? moment(date).format("YYYY-MM-DD") : "";
+  };
+
+  const handleCategoryChange = (categoryValue) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      category: categoryValue,
+    }));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -103,7 +118,10 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
         {
           invNo: "",
           description: prevData.propDescription,
-          code: "",
+          qrCode: "",
+          barCode: "",
+          rfidTag: "",
+          location: "",
           invName: prevData.propName,
           status: "New-Available",
         },
@@ -123,7 +141,10 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
               {
                 invNo: "",
                 description: "",
-                code: "",
+                qrCode: "",
+                barCode: "",
+                rfidTag: "",
+                location: "",
                 invName: "",
                 status: "Available",
               },
@@ -145,9 +166,8 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
 
   useEffect(() => {
     if (mode === "edit" && assetsData) {
-      const formattedDate = assetsData.acquisitionDate
-        ? new Date(assetsData.acquisitionDate).toISOString().split("T")[0]
-        : moment().format("YYYY-MM-DD");
+      const formattedAcquisitionDate = formatDate(assetsData.acquisitionDate);
+      const formattedWarrantyDate = formatDate(assetsData.warrantyDate);
 
       const inventoryData =
         Array.isArray(assetsData.inventory) && assetsData.inventory.length > 0
@@ -155,7 +175,10 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
               invNo: item.invNo || "",
               invName: item.invName || "",
               description: item.description || "",
-              code: item.code || "",
+              qrCode: item.qrCode,
+              barCode: item.barCode,
+              rfidTag: item.rfidTag,
+              location: item.location,
               status: item.status || "Available",
               _id: item._id || undefined,
             }))
@@ -163,15 +186,19 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
               {
                 invNo: "",
                 invName: "",
+                qrCode: "",
+                barCode: "",
+                rfidTag: "",
+                location: "",
                 description: "",
-                code: "",
                 status: "New-Available",
               },
             ];
 
       setFormData({
         ...assetsData,
-        acquisitionDate: formattedDate,
+        acquisitionDate: formattedAcquisitionDate,
+        warrantyDate: formattedWarrantyDate,
         inventory: inventoryData,
         assetImage: assetsData.assetImage || "",
       });
@@ -329,6 +356,34 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                 />
               </div>
               <div className="flex flex-col">
+                <label htmlFor="manufacturer" className="text-gray-700">
+                  Manufacturer
+                </label>
+                <input
+                  type="text"
+                  id="manufacturer"
+                  name="manufacturer"
+                  value={formData.manufacturer}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="model" className="text-gray-700">
+                  Model
+                </label>
+                <input
+                  type="text"
+                  id="model"
+                  name="model"
+                  value={formData.model}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
                 <label htmlFor="propDescription" className="text-gray-700">
                   Equipment / Property Description.
                 </label>
@@ -365,6 +420,20 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   id="acquisitionDate"
                   name="acquisitionDate"
                   value={formData.acquisitionDate}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="warrantyDate" className="text-gray-700">
+                  Warranty Date
+                </label>
+                <input
+                  type="date"
+                  id="warrantyDate"
+                  name="warrantyDate"
+                  value={formData.warrantyDate}
                   onChange={handleChange}
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
@@ -424,7 +493,7 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label htmlFor="category" className="text-gray-700">
                   Category
                 </label>
@@ -436,7 +505,12 @@ const AssetsModal = ({ isOpen, onClose, onSaveAssets, assetsData, mode }) => {
                   onChange={handleChange}
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
-              </div>
+              </div> */}
+              <AssetsCategoryPicker
+                value={formData.category}
+                onChange={handleCategoryChange}
+                required={true}
+              />
               <div className="flex flex-col">
                 <label htmlFor="accumulatedAccount" className="text-gray-700">
                   Accumulated Account

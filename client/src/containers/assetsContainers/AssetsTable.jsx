@@ -117,6 +117,7 @@ const ExpandedRowComponent = ({ data }) => {
           <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
             {data.propName || "Unnamed Asset"}
           </h3>
+
           <div className="flex gap-2">
             {data.Status.isArchived ? (
               <span className="text-yellow-600 flex items-center gap-1 text-sm">
@@ -139,6 +140,13 @@ const ExpandedRowComponent = ({ data }) => {
               <span className="font-semibold">Property No:</span> {data.propNo}
             </p>
             <p className="flex items-center gap-2 text-gray-600">
+              <span className="font-semibold">Manufacturer:</span>{" "}
+              {data.manufacturer}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <span className="font-semibold">Model:</span> {data.model}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
               <span className="font-semibold">Description:</span>{" "}
               {data.propDescription || "N/A"}
             </p>
@@ -149,6 +157,12 @@ const ExpandedRowComponent = ({ data }) => {
             <p className="flex items-center gap-2 text-gray-600">
               <span className="font-semibold">Acquisition Date:</span>{" "}
               {formatReadableDate(data.acquisitionDate)}
+            </p>
+            <p className="flex items-center gap-2 text-gray-600">
+              <span className="font-semibold">Warranty Date:</span>{" "}
+              {data?.warrantyDate
+                ? formatReadableDate(data.warrantyDate)
+                : "N/A"}
             </p>
           </div>
 
@@ -214,7 +228,7 @@ const ExpandedRowComponent = ({ data }) => {
                           Name
                         </th>
                         <th className="px-3 py-2 border-b border-gray-300">
-                          Inventory Code
+                          Location
                         </th>
                         <th className="px-3 py-2 border-b border-gray-300">
                           Status
@@ -231,7 +245,7 @@ const ExpandedRowComponent = ({ data }) => {
                             {inv.invName || "N/A"}
                           </td>
                           <td className="px-3 py-2 border-b">
-                            {inv.code || "N/A"}
+                            {inv.location || "N/A"}
                           </td>
                           <td className="px-3 py-2 border-b flex items-center gap-2">
                             {inv.status || "N/A"}
