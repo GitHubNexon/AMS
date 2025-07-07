@@ -25,7 +25,7 @@ const AssetsReturnModal = ({
     purpose: "",
     parNo: "",
     fundCluster: "",
-    entityName: "",
+    entityName: "Government",
     employeeName: "",
     employeePosition: "",
     employeeId: "",

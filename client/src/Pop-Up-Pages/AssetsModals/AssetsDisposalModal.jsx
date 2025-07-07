@@ -41,7 +41,7 @@ const AssetsDisposalModal = ({
     docType: "",
     parNo: "",
     fundCluster: "",
-    entityName: "",
+    entityName: "Government",
     // employeeName: "",
     // employeePosition: "",
     // employeeId: "",

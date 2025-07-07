@@ -27,7 +27,7 @@ const AssetsIssuanceSchema = new mongoose.Schema(
     docType: { type: String, required: false },
     parNo: { type: String, required: false },
     fundCluster: { type: String, required: false },
-    entityName: { type: String, required: false },
+    entityName: { type: String, required: false, default: "Government" },
     employeeName: { type: String, required: false },
     employeePosition: { type: String, required: false },
     employeeId: { type: mongoose.Schema.Types.ObjectId, ref: "employees" },

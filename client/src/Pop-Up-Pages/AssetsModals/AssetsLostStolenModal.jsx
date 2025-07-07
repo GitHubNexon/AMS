@@ -42,7 +42,7 @@ const AssetsLostStolenModal = ({
     docType: "",
     parNo: "",
     fundCluster: "",
-    entityName: "",
+    entityName: "Government",
     // employeeName: "",
     // employeePosition: "",
     // employeeId: "",

@@ -42,7 +42,7 @@ const AssetsRepairedModal = ({
     docType: "",
     parNo: "",
     fundCluster: "",
-    entityName: "",
+    entityName: "Government",
     // employeeName: "",
     // employeePosition: "",
     // employeeId: "",
