@@ -1,5 +1,5 @@
 import React from "react";
-import AssetsPolarAreaChart from "../Components/AssetsComponents/AssetsPolarAreaChart";
+import AssetsPolarAreaChart from "../../Components/AssetsComponents/AssetsPolarAreaChart";
 
 const AssetOverView = () => {
   return (

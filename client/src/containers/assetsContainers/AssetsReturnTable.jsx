@@ -21,21 +21,23 @@ import {
   FaHistory,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
-import { showToast } from "../utils/toastNotifications";
-import showDialog from "../utils/showDialog";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assesLostStolenApi from "../api/assetLostStolenApi.js";
-import AssetsLostStolenLogic from "../hooks/AssetsLostStolenLogic";
-import AssetsLostStolenModal from "../Pop-Up-Pages/AssetsModals/AssetsLostStolenModal";
-import PARLostStolenDamage from "../Components/AssetsForm/PARLostStolenDamage.jsx";
+import { showToast } from "../../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import assetsReturnApi from "../../api/assetReturnApi";
+import AssetsReturnLogic from "../../hooks/AssetsReturnLogic";
+import {
+  numberToCurrencyString,
+  formatReadableDate,
+} from "../../helper/helper";
+import AssetsReturnModal from "../../Pop-Up-Pages/AssetsModals/AssetsReturnModal";
+import PARReturn from "../../Components/AssetsForm/PARReturn";
 
-const AssetsLostStolenTable = () => {
+const AssetsReturnTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetsLostStolen, setSelectedAssetsLostStolen] = useState([]);
-  const [isAssetsLostStolenModalOpen, setIsAssetsLostStolenModalOpen] =
-    useState(false);
+  const [selectedAssetsReturn, setSelectedAssetsReturn] = useState([]);
+  const [isAssetsReturnModalOpen, setIsAssetsReturnModalOpen] = useState(false);
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
   const [query, setQuery] = useState("");
@@ -44,9 +46,9 @@ const AssetsLostStolenTable = () => {
   };
 
   const {
-    fetchLostStolenRecords,
-    setLostStolenRecords,
-    lostStolenRecords,
+    fetchReturnRecords,
+    setReturnRecords,
+    returnRecords,
     totalItems,
     totalPages,
     loading,
@@ -59,15 +61,15 @@ const AssetsLostStolenTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = AssetsLostStolenLogic(page, limit, status);
+  } = AssetsReturnLogic(page, limit, status);
 
   function refreshTable() {
-    fetchLostStolenRecords();
+    fetchReturnRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchLostStolenRecords();
+    fetchReturnRecords();
   };
 
   useEffect(() => {
@@ -79,22 +81,22 @@ const AssetsLostStolenTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsLostStolenModalOpen(true);
+    setIsAssetsReturnModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsLostStolenModalOpen(false);
-    setSelectedAssetsLostStolen(null);
+    setIsAssetsReturnModalOpen(false);
+    setSelectedAssetsReturn(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetsLostStolen(row);
+    setSelectedAssetsReturn(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetsLostStolen(null);
+    setSelectedAssetsReturn(null);
   };
 
   const handleActionButtons = async ({
@@ -112,7 +114,7 @@ const AssetsLostStolenTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchLostStolenRecords?.();
+        fetchReturnRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -126,7 +128,7 @@ const AssetsLostStolenTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetsLostStolenApi.deleteAssetsLostStolenRecord,
+      apiMethod: assetsReturnApi.deleteAssetsReturnRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -136,7 +138,7 @@ const AssetsLostStolenTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetsLostStolenApi.undoDeleteAssetsLostStolenRecord,
+      apiMethod: assetsReturnApi.undoDeleteAssetsReturnRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -145,7 +147,7 @@ const AssetsLostStolenTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetsLostStolenApi.archiveAssetsLostStolenRecord,
+      apiMethod: assetsReturnApi.archiveAssetsReturnRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -155,18 +157,18 @@ const AssetsLostStolenTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetsLostStolenApi.undoArchiveAssetsLostStolenRecord,
+      apiMethod: assetsReturnApi.undoArchiveAssetsReturnRecord,
     });
 
   const handleFetchLatest = async () => {
-    fetchLostStolenRecords();
+    fetchReturnRecords();
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (lostStolenRecords) => {
+  const handleModalOpenForEdit = (returnRecords) => {
     setModalMode("edit");
-    setSelectedAssetsLostStolen(lostStolenRecords);
-    setIsAssetsLostStolenModalOpen(true);
+    setSelectedAssetsReturn(returnRecords);
+    setIsAssetsReturnModalOpen(true);
   };
 
   const columns = [
@@ -188,17 +190,15 @@ const AssetsLostStolenTable = () => {
       width: "120px",
     },
     {
-      name: "Date Lost/Stolen/Damaged",
+      name: "Date Returned",
       selector: (row) =>
-        row.dateLostStolen
-          ? formatReadableDate(row.dateLostStolen)
-          : "No Date Yet",
+        row.dateReturned ? formatReadableDate(row.dateReturned) : "No Date Yet",
     },
-    // {
-    //   name: "Employee Name",
-    //   width: "200px",
-    //   selector: (row) => row.employeeName || "",
-    // },
+    {
+      name: "Employee Name",
+      width: "200px",
+      selector: (row) => row.employeeName || "",
+    },
     {
       name: "Document Status",
       width: "200px",
@@ -265,30 +265,30 @@ const AssetsLostStolenTable = () => {
           ) : null}
 
           {/* {row.Status?.isArchived ? (
-                  <div className="group relative">
-                    <button
-                      onClick={() => handleUndoArchiveEntry(row._id)}
-                      className="text-white bg-yellow-600 p-2 rounded-md"
-                    >
-                      <FaUndo size={16} />
-                    </button>
-                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                      Undo Archive
-                    </span>
-                  </div>
-                ) : !row.Status?.isDeleted ? (
-                  <div className="group relative">
-                    <button
-                      onClick={() => handleArchiveEntry(row._id)}
-                      className="text-white bg-orange-600 p-2 rounded-md"
-                    >
-                      <FaArchive size={16} />
-                    </button>
-                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                      Archive
-                    </span>
-                  </div>
-                ) : null} */}
+              <div className="group relative">
+                <button
+                  onClick={() => handleUndoArchiveEntry(row._id)}
+                  className="text-white bg-yellow-600 p-2 rounded-md"
+                >
+                  <FaUndo size={16} />
+                </button>
+                <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                  Undo Archive
+                </span>
+              </div>
+            ) : !row.Status?.isDeleted ? (
+              <div className="group relative">
+                <button
+                  onClick={() => handleArchiveEntry(row._id)}
+                  className="text-white bg-orange-600 p-2 rounded-md"
+                >
+                  <FaArchive size={16} />
+                </button>
+                <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                  Archive
+                </span>
+              </div>
+            ) : null} */}
         </div>
       ),
     },
@@ -298,7 +298,7 @@ const AssetsLostStolenTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Lost/Stolen/Damage Records </h1>
+          <h1 className="font-bold">Assets Return Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -336,7 +336,7 @@ const AssetsLostStolenTable = () => {
 
         <DataTable
           columns={columns}
-          data={lostStolenRecords}
+          data={returnRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -350,23 +350,22 @@ const AssetsLostStolenTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-
-        {isAssetsLostStolenModalOpen && (
-          <AssetsLostStolenModal
+        {isAssetsReturnModalOpen && (
+          <AssetsReturnModal
             mode={modalMode}
-            isOpen={isAssetsLostStolenModalOpen}
+            isOpen={isAssetsReturnModalOpen}
             onClose={handleModalClose}
-            onSaveAssetsLostStolen={fetchLostStolenRecords}
-            assetsLostStolenData={selectedAssetsLostStolen}
+            onSaveAssetReturn={fetchReturnRecords}
+            assetsReturnData={selectedAssetsReturn}
             refreshTable={refreshTable}
           />
         )}
 
         {isPARModalOpen && (
-          <PARLostStolenDamage
+          <PARReturn
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetsLostStolen}
+            employeeAssetsData={selectedAssetsReturn}
           />
         )}
       </div>
@@ -374,4 +373,4 @@ const AssetsLostStolenTable = () => {
   );
 };
 
-export default AssetsLostStolenTable;
+export default AssetsReturnTable;

@@ -21,21 +21,22 @@ import {
   FaHistory,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
-import { showToast } from "../utils/toastNotifications";
-import showDialog from "../utils/showDialog";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assetRepairedLogic from "../hooks/AssetsRepairedLogic";
-import AssetsRepairedModal from "../Pop-Up-Pages/AssetsModals/AssetsRepairedModal";
-import assetsRepairedApi from "../api/assetsRepairedApi";
-import PARRepaired from "../Components/AssetsForm/PARRepaired";
-
+import { showToast } from "../../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import {
+  numberToCurrencyString,
+  formatReadableDate,
+} from "../../helper/helper";
+import assetRepairLogic from "../../hooks/AssetsRepairLogic";
+import AssetsRepairModal from "../../Pop-Up-Pages/AssetsModals/AssetsRepairModal";
+import assetsRepairApi from "../../api/assetRepairApi";
+import PARUnderRepair from "../../Components/AssetsForm/PARUnderRepair";
 const AssetsRepairTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetsRepaired, setSelectedAssetsRepaired] = useState([]);
-  const [isAssetsRepairedModalOpen, setIsAssetsRepairedModalOpen] =
-    useState(false);
+  const [selectedAssetsRepair, setSelectedAssetsRepair] = useState([]);
+  const [isAssetsRepairModalOpen, setIsAssetsRepairModalOpen] = useState(false);
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
   const [query, setQuery] = useState("");
@@ -44,9 +45,9 @@ const AssetsRepairTable = () => {
   };
 
   const {
-    fetchRepairedRecords,
-    setRepairedRecords,
-    repairedRecords,
+    fetchRepairRecords,
+    setRepairRecords,
+    repairRecords,
     totalItems,
     totalPages,
     loading,
@@ -59,15 +60,15 @@ const AssetsRepairTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = assetRepairedLogic(page, limit, status);
+  } = assetRepairLogic(page, limit, status);
 
   function refreshTable() {
-    fetchRepairedRecords();
+    fetchRepairRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchRepairedRecords();
+    fetchRepairRecords();
   };
 
   useEffect(() => {
@@ -79,22 +80,22 @@ const AssetsRepairTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsRepairedModalOpen(true);
+    setIsAssetsRepairModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsRepairedModalOpen(false);
-    setSelectedAssetsRepaired(null);
+    setIsAssetsRepairModalOpen(false);
+    setSelectedAssetsRepair(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetsRepaired(row);
+    setSelectedAssetsRepair(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetsRepaired(null);
+    setSelectedAssetsRepair(null);
   };
 
   const handleActionButtons = async ({
@@ -112,7 +113,7 @@ const AssetsRepairTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchRepairedRecords?.();
+        fetchRepairRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -126,7 +127,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetsRepairedApi.deleteAssetsRepairedRecord,
+      apiMethod: assetsRepairApi.deleteAssetsRepairRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -136,7 +137,7 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetsRepairedApi.undoDeleteAssetsRepairedRecord,
+      apiMethod: assetsRepairApi.undoDeleteAssetsRepairRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -145,7 +146,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetsRepairedApi.archiveAssetsRepairedRecord,
+      apiMethod: assetsRepairApi.archiveAssetsRepairRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -155,7 +156,7 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetsRepairedApi.undoArchiveAssetsRepairedRecord,
+      apiMethod: assetsRepairApi.undoArchiveAssetsRepairRecord,
     });
 
   const handleFetchLatest = async () => {
@@ -163,10 +164,10 @@ const AssetsRepairTable = () => {
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (repairedRecords) => {
+  const handleModalOpenForEdit = (repairRecords) => {
     setModalMode("edit");
-    setSelectedAssetsRepaired(repairedRecords);
-    setIsAssetsRepairedModalOpen(true);
+    setSelectedAssetsRepair(repairRecords);
+    setIsAssetsRepairModalOpen(true);
   };
 
   const columns = [
@@ -188,7 +189,7 @@ const AssetsRepairTable = () => {
       width: "120px",
     },
     {
-      name: "Date Repaired",
+      name: "Date Started",
       selector: (row) =>
         row.dateRepaired ? formatReadableDate(row.dateRepaired) : "No Date Yet",
     },
@@ -296,7 +297,7 @@ const AssetsRepairTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Repaired Records </h1>
+          <h1 className="font-bold">Assets Under Repair Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -334,7 +335,7 @@ const AssetsRepairTable = () => {
 
         <DataTable
           columns={columns}
-          data={repairedRecords}
+          data={repairRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -349,22 +350,24 @@ const AssetsRepairTable = () => {
           sortDirection={sortOrder}
         />
 
-        {isAssetsRepairedModalOpen && (
-          <AssetsRepairedModal
+        {isAssetsRepairModalOpen && (
+          <AssetsRepairModal
             mode={modalMode}
-            isOpen={isAssetsRepairedModalOpen}
+            isOpen={isAssetsRepairModalOpen}
             onClose={handleModalClose}
-            onSaveAssetRepaired={fetchRepairedRecords}
-            assetsRepairData={selectedAssetsRepaired}
+            onSaveAssetRepair={fetchRepairRecords}
+            assetsRepairData={selectedAssetsRepair}
             refreshTable={refreshTable}
           />
         )}
 
+        {/* <AssetsRepairTable /> */}
+
         {isPARModalOpen && (
-          <PARRepaired
+          <PARUnderRepair
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetsRepaired}
+            employeeAssetsData={selectedAssetsRepair}
           />
         )}
       </div>

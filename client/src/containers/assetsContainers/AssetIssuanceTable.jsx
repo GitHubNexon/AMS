@@ -21,30 +21,34 @@ import {
   FaHistory,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
-import { showToast } from "../utils/toastNotifications";
-import showDialog from "../utils/showDialog";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import assetRepairLogic from "../hooks/AssetsRepairLogic";
-import AssetsRepairModal from "../Pop-Up-Pages/AssetsModals/AssetsRepairModal";
-import assetsRepairApi from "../api/assetRepairApi";
-import PARUnderRepair from "../Components/AssetsForm/PARUnderRepair";
-const AssetsRepairTable = () => {
+import { showToast } from "../../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import assetIssuanceApi from "../../api/assetIssuanceApi";
+import AssetsLogic from "../../hooks/AssetsLogic";
+import AssetIssuanceLogic from "../../hooks/AssetIssuanceLogic";
+import { numberToCurrencyString, formatReadableDate } from "../../helper/helper";
+import AssetsIssuanceModal from "../../Pop-Up-Pages/AssetsModals/AssetsIssuanceModal";
+// import PARModal from "../Pop-Up-Pages/PARModal";
+import PARIssuance from "../../Components/AssetsForm/PARIssuance";
+
+const AssetIssuanceTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetsRepair, setSelectedAssetsRepair] = useState([]);
-  const [isAssetsRepairModalOpen, setIsAssetsRepairModalOpen] = useState(false);
-  const [isPARModalOpen, setIsPARModalOpen] = useState(false);
+  const [selectedAssetIssuance, setSelectedAssetIssuance] = useState([]);
+  const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] =
+    useState(false);
   const [modalMode, setModalMode] = useState("add");
+  const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
   };
 
   const {
-    fetchRepairRecords,
-    setRepairRecords,
-    repairRecords,
+    fetchIssuanceRecords,
+    setIssuanceRecords,
+    issuanceRecords,
     totalItems,
     totalPages,
     loading,
@@ -57,15 +61,15 @@ const AssetsRepairTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = assetRepairLogic(page, limit, status);
+  } = AssetIssuanceLogic(page, limit, status);
 
   function refreshTable() {
-    fetchRepairRecords();
+    fetchIssuanceRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchRepairRecords();
+    fetchIssuanceRecords();
   };
 
   useEffect(() => {
@@ -77,22 +81,22 @@ const AssetsRepairTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsRepairModalOpen(true);
+    setIsAssetsIssuanceModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsRepairModalOpen(false);
-    setSelectedAssetsRepair(null);
+    setIsAssetsIssuanceModalOpen(false);
+    setSelectedAssetIssuance(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetsRepair(row);
+    setSelectedAssetIssuance(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetsRepair(null);
+    setSelectedAssetIssuance(null);
   };
 
   const handleActionButtons = async ({
@@ -110,7 +114,7 @@ const AssetsRepairTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchRepairRecords?.();
+        fetchIssuanceRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -124,7 +128,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetsRepairApi.deleteAssetsRepairRecord,
+      apiMethod: assetIssuanceApi.deleteAssetsIssuanceRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -134,7 +138,7 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetsRepairApi.undoDeleteAssetsRepairRecord,
+      apiMethod: assetIssuanceApi.undoDeleteAssetsIssuanceRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -143,7 +147,7 @@ const AssetsRepairTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetsRepairApi.archiveAssetsRepairRecord,
+      apiMethod: assetIssuanceApi.archiveAssetsIssuanceRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -153,18 +157,18 @@ const AssetsRepairTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetsRepairApi.undoArchiveAssetsRepairRecord,
+      apiMethod: assetIssuanceApi.undoArchiveAssetsIssuanceRecord,
     });
 
   const handleFetchLatest = async () => {
-    fetchRepairRecords();
+    fetchIssuanceRecords();
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (repairRecords) => {
+  const handleModalOpenForEdit = (issuanceRecords) => {
     setModalMode("edit");
-    setSelectedAssetsRepair(repairRecords);
-    setIsAssetsRepairModalOpen(true);
+    setSelectedAssetIssuance(issuanceRecords);
+    setIsAssetsIssuanceModalOpen(true);
   };
 
   const columns = [
@@ -186,15 +190,20 @@ const AssetsRepairTable = () => {
       width: "120px",
     },
     {
-      name: "Date Started",
+      name: "Date Acquired",
       selector: (row) =>
-        row.dateRepaired ? formatReadableDate(row.dateRepaired) : "No Date Yet",
+        row.dateAcquired ? formatReadableDate(row.dateAcquired) : "No Date Yet",
     },
-    // {
-    //   name: "Employee Name",
-    //   width: "200px",
-    //   selector: (row) => row.employeeName || "",
-    // },
+    {
+      name: "Date Released",
+      selector: (row) =>
+        row.dateReleased ? formatReadableDate(row.dateReleased) : "No Date Yet",
+    },
+    {
+      name: "Employee Name",
+      width: "200px",
+      selector: (row) => row.employeeName || "",
+    },
     {
       name: "Document Status",
       width: "200px",
@@ -216,7 +225,7 @@ const AssetsRepairTable = () => {
               <FaEye size={16} />
             </button>
             <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-              View
+              View PAR FORM
             </span>
           </div>
           {!row.Status?.isDeleted &&
@@ -261,30 +270,30 @@ const AssetsRepairTable = () => {
           ) : null}
 
           {/* {row.Status?.isArchived ? (
-                  <div className="group relative">
-                    <button
-                      onClick={() => handleUndoArchiveEntry(row._id)}
-                      className="text-white bg-yellow-600 p-2 rounded-md"
-                    >
-                      <FaUndo size={16} />
-                    </button>
-                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                      Undo Archive
-                    </span>
-                  </div>
-                ) : !row.Status?.isDeleted ? (
-                  <div className="group relative">
-                    <button
-                      onClick={() => handleArchiveEntry(row._id)}
-                      className="text-white bg-orange-600 p-2 rounded-md"
-                    >
-                      <FaArchive size={16} />
-                    </button>
-                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                      Archive
-                    </span>
-                  </div>
-                ) : null} */}
+            <div className="group relative">
+              <button
+                onClick={() => handleUndoArchiveEntry(row._id)}
+                className="text-white bg-yellow-600 p-2 rounded-md"
+              >
+                <FaUndo size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                Undo Archive
+              </span>
+            </div>
+          ) : !row.Status?.isDeleted ? (
+            <div className="group relative">
+              <button
+                onClick={() => handleArchiveEntry(row._id)}
+                className="text-white bg-orange-600 p-2 rounded-md"
+              >
+                <FaArchive size={16} />
+              </button>
+              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                Archive
+              </span>
+            </div>
+          ) : null} */}
         </div>
       ),
     },
@@ -294,7 +303,7 @@ const AssetsRepairTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Under Repair Records </h1>
+          <h1 className="font-bold">Assets Issuance Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -332,7 +341,7 @@ const AssetsRepairTable = () => {
 
         <DataTable
           columns={columns}
-          data={repairRecords}
+          data={issuanceRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -346,25 +355,22 @@ const AssetsRepairTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-
-        {isAssetsRepairModalOpen && (
-          <AssetsRepairModal
+        {isAssetsIssuanceModalOpen && (
+          <AssetsIssuanceModal
             mode={modalMode}
-            isOpen={isAssetsRepairModalOpen}
+            isOpen={isAssetsIssuanceModalOpen}
             onClose={handleModalClose}
-            onSaveAssetRepair={fetchRepairRecords}
-            assetsRepairData={selectedAssetsRepair}
+            onSaveAssetIssuance={fetchIssuanceRecords}
+            assetsIssuanceData={selectedAssetIssuance}
             refreshTable={refreshTable}
           />
         )}
 
-        {/* <AssetsRepairTable /> */}
-
         {isPARModalOpen && (
-          <PARUnderRepair
+          <PARIssuance
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetsRepair}
+            employeeAssetsData={selectedAssetIssuance}
           />
         )}
       </div>
@@ -372,4 +378,4 @@ const AssetsRepairTable = () => {
   );
 };
 
-export default AssetsRepairTable;
+export default AssetIssuanceTable;

@@ -27,13 +27,16 @@ import {
   FaMoneyBill,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
-import { showToast } from "../utils/toastNotifications";
-import showDialog from "../utils/showDialog";
-import employeeApi from "../api/employeeApi";
-import EmployeeLogic from "../hooks/employeeLogic";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import EmployeeModal from "../Pop-Up-Pages/EmployeeModal";
-import Placeholder from "../assets/images/placeholder.png";
+import { showToast } from "../../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import employeeApi from "../../api/employeeApi";
+import EmployeeLogic from "../../hooks/employeeLogic";
+import {
+  numberToCurrencyString,
+  formatReadableDate,
+} from "../../helper/helper";
+import EmployeeModal from "../../Pop-Up-Pages/EmployeeModal";
+import Placeholder from "../../assets/images/placeholder.png";
 
 const InfoRow = ({ icon: Icon, label, value }) => (
   <div className="flex items-center gap-2 text-sm text-gray-700">

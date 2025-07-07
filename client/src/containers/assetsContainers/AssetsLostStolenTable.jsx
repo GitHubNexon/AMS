@@ -21,34 +21,35 @@ import {
   FaHistory,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
-import { showToast } from "../utils/toastNotifications";
-import showDialog from "../utils/showDialog";
-import assetIssuanceApi from "../api/assetIssuanceApi";
-import AssetsLogic from "../hooks/AssetsLogic";
-import AssetIssuanceLogic from "../hooks/AssetIssuanceLogic";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import AssetsIssuanceModal from "../Pop-Up-Pages/AssetsModals/AssetsIssuanceModal";
-// import PARModal from "../Pop-Up-Pages/PARModal";
-import PARIssuance from "../Components/AssetsForm/PARIssuance";
+import { showToast } from "../../utils/toastNotifications.jsx";
+import showDialog from "../../utils/showDialog.jsx";
+import {
+  numberToCurrencyString,
+  formatReadableDate,
+} from "../../helper/helper.js";
+import assesLostStolenApi from "../../api/assetLostStolenApi.js";
+import AssetsLostStolenLogic from "../../hooks/AssetsLostStolenLogic.jsx";
+import AssetsLostStolenModal from "../../Pop-Up-Pages/AssetsModals/AssetsLostStolenModal.jsx";
+import PARLostStolenDamage from "../../Components/AssetsForm/PARLostStolenDamage.jsx";
 
-const AssetIssuanceTable = () => {
+const AssetsLostStolenTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
-  const [selectedAssetIssuance, setSelectedAssetIssuance] = useState([]);
-  const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] =
+  const [selectedAssetsLostStolen, setSelectedAssetsLostStolen] = useState([]);
+  const [isAssetsLostStolenModalOpen, setIsAssetsLostStolenModalOpen] =
     useState(false);
-  const [modalMode, setModalMode] = useState("add");
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
+  const [modalMode, setModalMode] = useState("add");
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
   };
 
   const {
-    fetchIssuanceRecords,
-    setIssuanceRecords,
-    issuanceRecords,
+    fetchLostStolenRecords,
+    setLostStolenRecords,
+    lostStolenRecords,
     totalItems,
     totalPages,
     loading,
@@ -61,15 +62,15 @@ const AssetIssuanceTable = () => {
     setSortBy,
     sortOrder,
     setSortOrder,
-  } = AssetIssuanceLogic(page, limit, status);
+  } = AssetsLostStolenLogic(page, limit, status);
 
   function refreshTable() {
-    fetchIssuanceRecords();
+    fetchLostStolenRecords();
   }
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
-    fetchIssuanceRecords();
+    fetchLostStolenRecords();
   };
 
   useEffect(() => {
@@ -81,22 +82,22 @@ const AssetIssuanceTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsIssuanceModalOpen(true);
+    setIsAssetsLostStolenModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsIssuanceModalOpen(false);
-    setSelectedAssetIssuance(null);
+    setIsAssetsLostStolenModalOpen(false);
+    setSelectedAssetsLostStolen(null);
   };
 
   const handlePARModalOpen = (row) => {
-    setSelectedAssetIssuance(row);
+    setSelectedAssetsLostStolen(row);
     setIsPARModalOpen(true);
   };
 
   const handlePARModalClose = () => {
     setIsPARModalOpen(false);
-    setSelectedAssetIssuance(null);
+    setSelectedAssetsLostStolen(null);
   };
 
   const handleActionButtons = async ({
@@ -114,7 +115,7 @@ const AssetIssuanceTable = () => {
 
       if (result) {
         showDialog.showMessage(successMessage, "success");
-        fetchIssuanceRecords?.();
+        fetchLostStolenRecords?.();
       }
     } catch (error) {
       console.error(`${errorMessage}:`, error);
@@ -128,7 +129,7 @@ const AssetIssuanceTable = () => {
       confirmMessage: "Are you sure you want to delete this Record?",
       successMessage: "Record deleted successfully",
       errorMessage: "Failed to delete assets",
-      apiMethod: assetIssuanceApi.deleteAssetsIssuanceRecord,
+      apiMethod: assetsLostStolenApi.deleteAssetsLostStolenRecord,
     });
 
   const handleUndoDeleteEntry = (id) =>
@@ -138,7 +139,7 @@ const AssetIssuanceTable = () => {
         "Are you sure you want to undo the deletion of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo deletion",
-      apiMethod: assetIssuanceApi.undoDeleteAssetsIssuanceRecord,
+      apiMethod: assetsLostStolenApi.undoDeleteAssetsLostStolenRecord,
     });
 
   const handleArchiveEntry = (id) =>
@@ -147,7 +148,7 @@ const AssetIssuanceTable = () => {
       confirmMessage: "Are you sure you want to archive this Record?",
       successMessage: "Record archive successful",
       errorMessage: "Failed to archive assets",
-      apiMethod: assetIssuanceApi.archiveAssetsIssuanceRecord,
+      apiMethod: assetsLostStolenApi.archiveAssetsLostStolenRecord,
     });
 
   const handleUndoArchiveEntry = (id) =>
@@ -157,18 +158,18 @@ const AssetIssuanceTable = () => {
         "Are you sure you want to undo the archive of this Record?",
       successMessage: "Record restoration successful",
       errorMessage: "Failed to undo archive",
-      apiMethod: assetIssuanceApi.undoArchiveAssetsIssuanceRecord,
+      apiMethod: assetsLostStolenApi.undoArchiveAssetsLostStolenRecord,
     });
 
   const handleFetchLatest = async () => {
-    fetchIssuanceRecords();
+    fetchLostStolenRecords();
     showToast("Updated data fetched successfully", "success");
   };
 
-  const handleModalOpenForEdit = (issuanceRecords) => {
+  const handleModalOpenForEdit = (lostStolenRecords) => {
     setModalMode("edit");
-    setSelectedAssetIssuance(issuanceRecords);
-    setIsAssetsIssuanceModalOpen(true);
+    setSelectedAssetsLostStolen(lostStolenRecords);
+    setIsAssetsLostStolenModalOpen(true);
   };
 
   const columns = [
@@ -190,20 +191,17 @@ const AssetIssuanceTable = () => {
       width: "120px",
     },
     {
-      name: "Date Acquired",
+      name: "Date Lost/Stolen/Damaged",
       selector: (row) =>
-        row.dateAcquired ? formatReadableDate(row.dateAcquired) : "No Date Yet",
+        row.dateLostStolen
+          ? formatReadableDate(row.dateLostStolen)
+          : "No Date Yet",
     },
-    {
-      name: "Date Released",
-      selector: (row) =>
-        row.dateReleased ? formatReadableDate(row.dateReleased) : "No Date Yet",
-    },
-    {
-      name: "Employee Name",
-      width: "200px",
-      selector: (row) => row.employeeName || "",
-    },
+    // {
+    //   name: "Employee Name",
+    //   width: "200px",
+    //   selector: (row) => row.employeeName || "",
+    // },
     {
       name: "Document Status",
       width: "200px",
@@ -225,7 +223,7 @@ const AssetIssuanceTable = () => {
               <FaEye size={16} />
             </button>
             <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-              View PAR FORM
+              View
             </span>
           </div>
           {!row.Status?.isDeleted &&
@@ -270,30 +268,30 @@ const AssetIssuanceTable = () => {
           ) : null}
 
           {/* {row.Status?.isArchived ? (
-            <div className="group relative">
-              <button
-                onClick={() => handleUndoArchiveEntry(row._id)}
-                className="text-white bg-yellow-600 p-2 rounded-md"
-              >
-                <FaUndo size={16} />
-              </button>
-              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                Undo Archive
-              </span>
-            </div>
-          ) : !row.Status?.isDeleted ? (
-            <div className="group relative">
-              <button
-                onClick={() => handleArchiveEntry(row._id)}
-                className="text-white bg-orange-600 p-2 rounded-md"
-              >
-                <FaArchive size={16} />
-              </button>
-              <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                Archive
-              </span>
-            </div>
-          ) : null} */}
+                  <div className="group relative">
+                    <button
+                      onClick={() => handleUndoArchiveEntry(row._id)}
+                      className="text-white bg-yellow-600 p-2 rounded-md"
+                    >
+                      <FaUndo size={16} />
+                    </button>
+                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                      Undo Archive
+                    </span>
+                  </div>
+                ) : !row.Status?.isDeleted ? (
+                  <div className="group relative">
+                    <button
+                      onClick={() => handleArchiveEntry(row._id)}
+                      className="text-white bg-orange-600 p-2 rounded-md"
+                    >
+                      <FaArchive size={16} />
+                    </button>
+                    <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
+                      Archive
+                    </span>
+                  </div>
+                ) : null} */}
         </div>
       ),
     },
@@ -303,7 +301,7 @@ const AssetIssuanceTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Assets Issuance Records </h1>
+          <h1 className="font-bold">Assets Lost/Stolen/Damage Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -341,7 +339,7 @@ const AssetIssuanceTable = () => {
 
         <DataTable
           columns={columns}
-          data={issuanceRecords}
+          data={lostStolenRecords}
           pagination
           paginationServer
           paginationTotalRows={totalItems}
@@ -355,22 +353,23 @@ const AssetIssuanceTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-        {isAssetsIssuanceModalOpen && (
-          <AssetsIssuanceModal
+
+        {isAssetsLostStolenModalOpen && (
+          <AssetsLostStolenModal
             mode={modalMode}
-            isOpen={isAssetsIssuanceModalOpen}
+            isOpen={isAssetsLostStolenModalOpen}
             onClose={handleModalClose}
-            onSaveAssetIssuance={fetchIssuanceRecords}
-            assetsIssuanceData={selectedAssetIssuance}
+            onSaveAssetsLostStolen={fetchLostStolenRecords}
+            assetsLostStolenData={selectedAssetsLostStolen}
             refreshTable={refreshTable}
           />
         )}
 
         {isPARModalOpen && (
-          <PARIssuance
+          <PARLostStolenDamage
             isOpen={isPARModalOpen}
             onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetIssuance}
+            employeeAssetsData={selectedAssetsLostStolen}
           />
         )}
       </div>
@@ -378,4 +377,4 @@ const AssetIssuanceTable = () => {
   );
 };
 
-export default AssetIssuanceTable;
+export default AssetsLostStolenTable;

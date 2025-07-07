@@ -1,5 +1,5 @@
 import React from "react";
-import AssetsReportsNav from "../Navigation/AssetsReportsNav";
+import AssetsReportsNav from "../../Navigation/AssetsReportsNav";
 const AssetsReport = () => {
   return (
     <>

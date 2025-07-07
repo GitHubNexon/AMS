@@ -22,13 +22,16 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { FaBookSkull } from "react-icons/fa6";
-import { showToast } from "../utils/toastNotifications";
-import showDialog from "../utils/showDialog";
-import assetsApi from "../api/assetsApi";
-import AssetsLogic from "../hooks/AssetsLogic";
-import { numberToCurrencyString, formatReadableDate } from "../helper/helper";
-import AssetsModal from "../Pop-Up-Pages/AssetsModals/AssetsModal";
-import ResizableContainer from "../Components/resize/ResizableContainer";
+import { showToast } from "../../utils/toastNotifications";
+import showDialog from "../../utils/showDialog";
+import assetsApi from "../../api/assetsApi";
+import AssetsLogic from "../../hooks/AssetsLogic";
+import {
+  numberToCurrencyString,
+  formatReadableDate,
+} from "../../helper/helper";
+import AssetsModal from "../../Pop-Up-Pages/AssetsModals/AssetsModal";
+import ResizableContainer from "../../Components/resize/ResizableContainer";
 
 const ExpandedRowComponent = ({ data }) => {
   const [openHistoryIndex, setOpenHistoryIndex] = useState(null);

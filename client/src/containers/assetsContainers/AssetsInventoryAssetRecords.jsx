@@ -10,7 +10,7 @@ import {
 } from "react-icons/fi";
 import { FaPesoSign } from "react-icons/fa6";
 import moment from "moment";
-import { numberToCurrencyString } from "../helper/helper";
+import { numberToCurrencyString } from "../../helper/helper";
 
 const AssetsInventoryAssetRecords = ({ isOpen, onClose, historyData }) => {
   if (!isOpen || !historyData) return null;

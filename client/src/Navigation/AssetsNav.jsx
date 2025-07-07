@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import AssetsTable from "../Sub-pages/AssetsTable";
-import EmployeesTable from "../Sub-pages/EmployeesTable";
-import AssetIssuanceTable from "../Sub-pages/AssetIssuanceTable";
-import AssetsReturnTable from "../Sub-pages/AssetsReturnTable";
-import AssetsDisposalTable from "../Sub-pages/AssetsDisposalTable";
-import AssetsRepairTable from "../Sub-pages/AssetsRepairTable";
-import AssetsLostStolenTable from "../Sub-pages/AssetsLostStolenTable";
-import AssetOverView from "../Sub-pages/AssetOverView";
-import AssetsAllHistory from "../Sub-pages/AssetsAllHistory";
-import AssetsRepairedTable from "../Sub-pages/AssetsRepairedTable";
-import AssetsReport from "../Sub-pages/AssetsReport";
+import AssetsTable from "../containers/assetsContainers/AssetsTable";
+import EmployeesTable from "../containers/assetsContainers/EmployeesTable";
+import AssetIssuanceTable from "../containers/assetsContainers/AssetIssuanceTable";
+import AssetsReturnTable from "../containers/assetsContainers/AssetsReturnTable";
+import AssetsDisposalTable from "../containers/assetsContainers/AssetsDisposalTable";
+import AssetsRepairTable from "../containers/assetsContainers/AssetsRepairTable";
+import AssetsLostStolenTable from "../containers/assetsContainers/AssetsLostStolenTable";
+import AssetOverView from "../containers/assetsContainers/AssetOverView";
+import AssetsAllHistory from "../containers/assetsContainers/AssetsAllHistory";
+import AssetsRepairedTable from "../containers/assetsContainers/AssetsRepairedTable";
+import AssetsReport from "../containers/assetsContainers/AssetsReport";
 
 const TABS = [
   "Overview",

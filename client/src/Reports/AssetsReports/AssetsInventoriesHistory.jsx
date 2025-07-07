@@ -14,7 +14,7 @@ import assetReportApi from "../../api/assetReportApi";
 import moment from "moment";
 import { showToast } from "../../utils/toastNotifications";
 import { numberToCurrencyString } from "../../helper/helper";
-import AssetsInventoryAssetRecords from "../../Sub-pages/AssetsInventoryAssetRecords";
+import AssetsInventoryAssetRecords from "../../containers/assetsContainers/AssetsInventoryAssetRecords";
 
 const AssetsInventoriesHistory = () => {
   const [data, setData] = useState([]);
