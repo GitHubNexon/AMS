@@ -32,14 +32,14 @@ import {
 // import AssetsIssuanceModal from "../../Pop-Up-Pages/AssetsModals/AssetsIssuanceModal";
 // import PARModal from "../Pop-Up-Pages/PARModal";
 // import PARIssuance from "../../Components/AssetsForm/PARIssuance";
+import AssetsPRModal from "../../Pop-Up-Pages/AssetsModals/AssetsPRModal";
 
 const AssetsPurchaseRequestTable = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [status, setStatus] = useState("");
   const [selectedAssetsPR, setSelectedAssetPR] = useState([]);
-  const [isAssetsIssuanceModalOpen, setIsAssetsIssuanceModalOpen] =
-    useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
   const [isPARModalOpen, setIsPARModalOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -83,11 +83,11 @@ const AssetsPurchaseRequestTable = () => {
 
   const handleModalOpen = () => {
     setModalMode("add");
-    setIsAssetsIssuanceModalOpen(true);
+    setIsModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsAssetsIssuanceModalOpen(false);
+    setIsModalOpen(false);
     setSelectedAssetPR(null);
   };
 
@@ -170,7 +170,7 @@ const AssetsPurchaseRequestTable = () => {
   const handleModalOpenForEdit = (PRRecords) => {
     setModalMode("edit");
     setSelectedAssetPR(PRRecords);
-    setIsAssetsIssuanceModalOpen(true);
+    setIsModalOpen(true);
   };
 
   const columns = [
@@ -187,7 +187,14 @@ const AssetsPurchaseRequestTable = () => {
             <span className="text-orange-500 flex items-center">Archived</span>
           );
         }
-        return <span className="text-green-500 flex items-center">Active</span>;
+        if (row?.isApproved) {
+          return (
+            <span className="text-green-500 flex items-center">Approved</span>
+          );
+        }
+        return (
+          <span className="text-gray-500 flex items-center">For Approval</span>
+        );
       },
       width: "120px",
     },
@@ -214,6 +221,7 @@ const AssetsPurchaseRequestTable = () => {
       name: "Actions",
       cell: (row) => (
         <div className="flex space-x-2">
+          {/* View Button */}
           <div className="group relative">
             <button
               onClick={() => handlePARModalOpen(row)}
@@ -225,9 +233,11 @@ const AssetsPurchaseRequestTable = () => {
               View PAR FORM
             </span>
           </div>
+
+          {/* Edit Button */}
           {!row.status?.isDeleted &&
             !row.status?.isArchived &&
-            row.docType !== "Approved" && (
+            !row.isApproved && (
               <div className="group relative">
                 <button
                   onClick={() => handleModalOpenForEdit(row)}
@@ -240,6 +250,8 @@ const AssetsPurchaseRequestTable = () => {
                 </span>
               </div>
             )}
+
+          {/* Delete Button */}
           {row.status?.isDeleted ? (
             <div className="group relative">
               <button
@@ -252,7 +264,7 @@ const AssetsPurchaseRequestTable = () => {
                 Undo Delete / Cancelled
               </span>
             </div>
-          ) : !row.status?.isArchived && row.docType !== "Approved" ? (
+          ) : !row.status?.isArchived && !row.isApproved ? (
             <div className="group relative">
               <button
                 onClick={() => handleDeleteEntry(row._id)}
@@ -265,32 +277,6 @@ const AssetsPurchaseRequestTable = () => {
               </span>
             </div>
           ) : null}
-
-          {/* {row.Status?.isArchived ? (
-              <div className="group relative">
-                <button
-                  onClick={() => handleUndoArchiveEntry(row._id)}
-                  className="text-white bg-yellow-600 p-2 rounded-md"
-                >
-                  <FaUndo size={16} />
-                </button>
-                <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                  Undo Archive
-                </span>
-              </div>
-            ) : !row.Status?.isDeleted ? (
-              <div className="group relative">
-                <button
-                  onClick={() => handleArchiveEntry(row._id)}
-                  className="text-white bg-orange-600 p-2 rounded-md"
-                >
-                  <FaArchive size={16} />
-                </button>
-                <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-                  Archive
-                </span>
-              </div>
-            ) : null} */}
         </div>
       ),
     },
@@ -351,16 +337,16 @@ const AssetsPurchaseRequestTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-        {/* {isAssetsIssuanceModalOpen && (
-          <AssetsIssuanceModal
+        {isModalOpen && (
+          <AssetsPRModal
             mode={modalMode}
-            isOpen={isAssetsIssuanceModalOpen}
+            isOpen={isModalOpen}
             onClose={handleModalClose}
-            onSaveAssetIssuance={fetchIssuanceRecords}
-            assetsIssuanceData={selectedAssetIssuance}
+            onSave={fetchPRRecords}
+            initialData={selectedAssetsPR}
             refreshTable={refreshTable}
           />
-        )} */}
+        )}
         {/* 
         {isPARModalOpen && (
           <PARIssuance
