@@ -33,6 +33,7 @@ import {
 // import PARModal from "../Pop-Up-Pages/PARModal";
 // import PARIssuance from "../../Components/AssetsForm/PARIssuance";
 import AssetsPRModal from "../../Pop-Up-Pages/AssetsModals/AssetsPRModal";
+import AssetsPRForm from "../../Components/AssetsForm/AssetsPRForm";
 
 const AssetsPurchaseRequestTable = () => {
   const [page, setPage] = useState(1);
@@ -41,7 +42,7 @@ const AssetsPurchaseRequestTable = () => {
   const [selectedAssetsPR, setSelectedAssetPR] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
-  const [isPARModalOpen, setIsPARModalOpen] = useState(false);
+  const [isFormModalOpen, setIsFormModelOpen] = useState(false);
   const [query, setQuery] = useState("");
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
@@ -91,13 +92,13 @@ const AssetsPurchaseRequestTable = () => {
     setSelectedAssetPR(null);
   };
 
-  const handlePARModalOpen = (row) => {
+  const handleFormModalOpen = (row) => {
     setSelectedAssetPR(row);
-    setIsPARModalOpen(true);
+    setIsFormModelOpen(true);
   };
 
-  const handlePARModalClose = () => {
-    setIsPARModalOpen(false);
+  const handleFormModalClose = () => {
+    setIsFormModelOpen(false);
     setSelectedAssetPR(null);
   };
 
@@ -224,13 +225,13 @@ const AssetsPurchaseRequestTable = () => {
           {/* View Button */}
           <div className="group relative">
             <button
-              onClick={() => handlePARModalOpen(row)}
+              onClick={() => handleFormModalOpen(row)}
               className="text-white bg-green-600 p-2 rounded-md"
             >
               <FaEye size={16} />
             </button>
             <span className="tooltip-text absolute hidden bg-gray-700 text-white text-nowrap text-[0.8em] p-2 rounded-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-500">
-              View PAR FORM
+              View FORM
             </span>
           </div>
 
@@ -347,14 +348,14 @@ const AssetsPurchaseRequestTable = () => {
             refreshTable={refreshTable}
           />
         )}
-        {/* 
-        {isPARModalOpen && (
-          <PARIssuance
-            isOpen={isPARModalOpen}
-            onClose={handlePARModalClose}
-            employeeAssetsData={selectedAssetIssuance}
+
+        {isFormModalOpen && (
+          <AssetsPRForm
+            isOpen={isFormModalOpen}
+            onClose={handleFormModalClose}
+            data={selectedAssetsPR}
           />
-        )} */}
+        )}
       </div>
     </>
   );
