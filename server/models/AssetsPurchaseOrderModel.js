@@ -18,6 +18,8 @@ const RecordsSchema = new mongoose.Schema({
 const AssetPurchaseOrderSchema = new mongoose.Schema(
   {
     isApproved: { type: Boolean, required: false, default: false },
+    entityName: { type: String, default: "Government" },
+    fundCluster: { type: String, required: false },
     supplier: { type: String, required: false },
     address: { type: String, required: false },
     tin: { type: String, required: false },
