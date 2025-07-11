@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_BASE_URL } from "./config.js";
+axios.defaults.withCredentials = true;
 
 const assetsApi = {
   createAssetsRecord: async (data) => {
@@ -118,7 +119,7 @@ const assetsApi = {
   generateAutoPARNo: async (type) => {
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/assets/generate-parNo/${type}` 
+        `${API_BASE_URL}/assets/generate-parNo/${type}`
       );
       return response.data;
     } catch (error) {

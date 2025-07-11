@@ -65,7 +65,7 @@ const CleanAssetsRepairRecord = async () => {
       const isArchived = repairDoc.Status?.isArchived;
 
       const newStatus =
-        isDeleted || isArchived ? "Available" : "Reserved for Repair";
+        isDeleted || isArchived ? "New-Available" : "Reserved for Repair";
 
       for (let record of repairDoc.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });

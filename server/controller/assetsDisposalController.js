@@ -102,7 +102,7 @@ const CleanAssetsDisposalRecord = async () => {
       const isArchived = disposalDoc.Status?.isArchived;
 
       const newStatus =
-        isDeleted || isArchived ? "Available" : "Reserved for Disposal";
+        isDeleted || isArchived ? "New-Available" : "Reserved for Disposal";
 
       for (let record of disposalDoc.assetRecords) {
         const asset = await AssetsModel.findOne({ _id: record.assetId });
