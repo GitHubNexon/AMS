@@ -29,7 +29,7 @@ import {
   numberToCurrencyString,
   formatReadableDate,
 } from "../../helper/helper";
-import AssetsPRModal from "../../Pop-Up-Pages/AssetsModals/AssetsPRModal";
+import AssetsPOModal from "../../Pop-Up-Pages/AssetsModals/AssetsPOModal";
 import AssetsPRForm from "../../Components/AssetsForm/AssetsPRForm";
 
 const AssetsPurchaseOrderTable = () => {
@@ -285,7 +285,7 @@ const AssetsPurchaseOrderTable = () => {
     <>
       <div className="mx-auto p-8">
         <div className="flex flex-col overflow-auto">
-          <h1 className="font-bold">Purchase Request Records </h1>
+          <h1 className="font-bold">Purchase Order Records </h1>
           <div className="flex flex-wrap space-y-3 md:space-y-0 md:space-x-2 overflow-x-auto p-3 items-center justify-end space-x-2">
             <button
               onClick={handleFetchLatest}
@@ -320,7 +320,6 @@ const AssetsPurchaseOrderTable = () => {
             </button>
           </div>
         </div>
-
         <DataTable
           columns={columns}
           data={poRecords}
@@ -337,8 +336,8 @@ const AssetsPurchaseOrderTable = () => {
           sortColumn={sortBy}
           sortDirection={sortOrder}
         />
-        {/* {isModalOpen && (
-          <AssetsPRModal
+        {isModalOpen && (
+          <AssetsPOModal
             mode={modalMode}
             isOpen={isModalOpen}
             onClose={handleModalClose}
@@ -347,8 +346,7 @@ const AssetsPurchaseOrderTable = () => {
             refreshTable={refreshTable}
           />
         )}
-
-        {isFormModalOpen && (
+        {/* {isFormModalOpen && (
           <AssetsPRForm
             isOpen={isFormModalOpen}
             onClose={handleFormModalClose}

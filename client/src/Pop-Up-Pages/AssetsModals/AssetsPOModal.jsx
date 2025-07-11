@@ -3,12 +3,12 @@ import { FaTimes, FaPlus, FaTrash } from "react-icons/fa";
 import showDialog from "../../utils/showDialog";
 import { showToast } from "../../utils/toastNotifications";
 import moment from "moment";
-import assetsPRApi from "../../api/assetsPRApi";
+import assetsPOApi from "../../api/assetsPOApi";
 import SignatoriesPicker from "../../Components/SignatoriesPicker";
 import { useAuth } from "../../context/AuthContext";
-import AssetsPRItemsTab from "./AssetsPRItemsTab";
+import AssetsPOItemsTab from "./AssetsPOItemsTab";
 
-const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
+const AssetsPOModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
   const { user } = useAuth();
   const formatDate = (date) => {
     return date ? moment(date).format("YYYY-MM-DD") : "";
@@ -16,13 +16,18 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
   const [activeTab, setActiveTab] = useState("info");
   const [formData, setFormData] = useState({
     isApproved: false,
-    prNo: "",
     entityName: "Government",
     fundCluster: "",
-    officeSection: "",
-    ResponsibilityCenterCode: "",
-    prDate: moment().format("YYYY-MM-DD"),
-    purpose: "",
+    supplier: "", //done
+    address: "", //done
+    tin: "", //done
+    poNo: "", //done
+    modeOfProcurement: "", //done
+    poDate: moment().format("YYYY-MM-DD"), //done
+    placeOfDelivery: "", //done
+    dateOfDelivery: moment().format("YYYY-MM-DD"), //done
+    deliveryTerm: "",
+    paymentTerm: "",
     CreatedBy: { name: user.name, position: user.userType, _id: user._id },
     ReviewedBy: { name: "", position: "", _id: "" },
     ApprovedBy1: { name: "", position: "", _id: "" },
@@ -63,36 +68,34 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
   useEffect(() => {
     if (mode === "edit" && initialData) {
       const { items = [], ...rest } = initialData;
-      const formattedPRDate = formatDate(initialData.prDate);
+      const formattedPODate = formatDate(initialData.poDate);
+      const formattedDDDate = formatDate(initialData.dateOfDelivery);
       setFormData((prev) => ({
         ...prev,
         ...rest,
         items,
-        prDate: formattedPRDate,
+        poDate: formattedPODate,
+        dateOfDelivery: formattedDDDate,
       }));
     }
   }, [mode, initialData]);
 
   const requiredFields = [
-    { key: "prNo", message: "PR No is required." },
-    { key: "fundCluster", message: "fund Cluster is required." },
+    { key: "poNo", message: "PO No is required" },
+    { key: "fundCluster", message: "fund cluster is required." },
   ];
 
-  // Additional validation for approved submissions
   const approvalRequiredFields = [
+    { key: "supplier", message: "Supplier is required for approval" },
     {
-      key: "officeSection",
-      message: "Office Section is required for approval.",
+      key: "placeOfDelivery",
+      message: "Place of Delivery is required is required for approval",
     },
-    { key: "purpose", message: "Purpose is required for approval." },
-    {
-      key: "ResponsibilityCenterCode",
-      message: "Responsibility Center Code is required for approval.",
-    },
+    { key: "deliveryTerm", message: "Delivery Term is required for approval" },
   ];
 
   const validateForm = (isApprovalSubmission = false) => {
-    // Check basic required fields
+    //check basic required fields
     for (let { key, message } of requiredFields) {
       if (!formData[key]) {
         showToast(message, "warning");
@@ -100,41 +103,39 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
       }
     }
 
-    // Check additional fields for approval submission
-    if (isApprovalSubmission) {
+    //check additional fields for approval submission
+    if (!isApprovalSubmission) {
       for (let { key, message } of approvalRequiredFields) {
         if (!formData[key]) {
           showToast(message, "warning");
           return false;
         }
       }
+    }
 
-      // Check if signatories are selected for approval
-      if (!formData.ReviewedBy || !formData.ReviewedBy._id) {
-        showToast("Reviewed By is required for approval.", "warning");
-        return false;
-      }
-      if (!formData.ApprovedBy1 || !formData.ApprovedBy1._id) {
-        showToast("Approved By is required for approval.", "warning");
-        return false;
-      }
+    // Check if signatories are selected for approval
+    if (!formData.ReviewedBy || !formData.ReviewedBy._id) {
+      showToast("Reviewed By is required for approval.", "warning");
+      return false;
+    }
+    if (!formData.ApprovedBy1 || !formData.ApprovedBy1._id) {
+      showToast("Approved By is required for approval.", "warning");
+      return false;
+    }
 
-      // Check if items are properly filled
-      if (!formData.items || formData.items.length === 0) {
-        showToast("At least one item is required for approval.", "warning");
-        return false;
-      }
-
-      const hasValidItems = formData.items.some(
-        (item) => item.description && item.quantity > 0 && item.unitCost > 0
+    // Check if items are properly filled
+    if (!formData.items || formData.items.length === 0) {
+      showToast("At least one item is required for approval.", "warning");
+      return false;
+    }
+    const hasValidItems = formData.items.some(
+      (item) => item.description && item.quantity > 0 && item.unitCost > 0
+    );
+    if (!hasValidItems) {
+      showToast(
+        "At least one complete item (with description, quantity, and unit cost is required for approval"
       );
-      if (!hasValidItems) {
-        showToast(
-          "At least one complete item (with description, quantity, and unit cost) is required for approval.",
-          "warning"
-        );
-        return false;
-      }
+      return false;
     }
 
     return true;
@@ -160,21 +161,22 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
         items: filteredItems,
         isApproved: isApprovalSubmission,
       };
+
       if (mode === "edit" && initialData) {
-        await assetsPRApi.updatePurchaseRequest(initialData._id, submitData);
+        await assetsPOApi.updatePurchaseOrder(initialData._id, submitData);
         console.log("FORM DATA UPDATED", submitData);
         showToast(
           isApprovalSubmission
-            ? "Purchase request approved and updated successfully!"
+            ? "Purchase order approved and updated successfully!"
             : "Draft updated successfully!",
           "success"
         );
       } else {
-        await assetsPRApi.createPurchaseRequest(submitData);
+        await assetsPOApi.createPurchaseOrder(submitData);
         console.log("FORM DATA CREATED", submitData);
         showToast(
           isApprovalSubmission
-            ? "Purchase request approved and recorded successfully!"
+            ? "Purchase order approved and recorded successfully!"
             : "Draft saved successfully!",
           "success"
         );
@@ -190,11 +192,11 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50 ">
+    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
       <div className="bg-white p-5 rounded-lg w-full m-10 max-h-[40rem]">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
-            {mode === "edit" ? "Update" : "Create"} Purchase Request
+            {mode === "edit" ? "Update" : "Create"} Purchase Order
           </h2>
           <button
             onClick={async () => {
@@ -219,7 +221,7 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
             }`}
             onClick={() => setActiveTab("info")}
           >
-            Purchase Request Information
+            Purchase Order Information
           </button>
           <button
             className={`px-4 py-2 font-semibold ${
@@ -232,100 +234,39 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
             Items
           </button>
         </div>
-
         <form
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className={"space-y-4 overflow-scroll max-h-[25rem] p-5"}
+          className={"space-y-4 overflow-scroll"}
         >
           {activeTab === "info" && (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 text-[0.7em]">
               <div className="flex flex-col">
-                <label htmlFor="prNo" className="text-gray-700">
-                  PR No. <span className="text-red-500">*</span>
+                <label htmlFor="poNo" className="text-gray-700">
+                  PO No. <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  id="prNo"
-                  name="prNo"
-                  value={formData.prNo}
+                  id="poNo"
+                  name="poNo"
+                  value={formData.poNo}
                   onChange={handleChange}
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="prDate" className="text-gray-700">
-                  PR Date
+                <label htmlFor="poDate" className="text-gray-700">
+                  PO Date
                 </label>
                 <input
                   type="date"
-                  id="prDate"
-                  name="prDate"
-                  value={formData.prDate}
+                  id="poDate"
+                  name="poDate"
+                  value={formData.poDate}
                   onChange={handleChange}
                   required
-                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label htmlFor="officeSection" className="text-gray-700">
-                  Office Section <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="officeSection"
-                  name="officeSection"
-                  value={formData.officeSection}
-                  onChange={handleChange}
-                  required
-                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label htmlFor="purpose" className="text-gray-700">
-                  Purpose <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="purpose"
-                  name="purpose"
-                  value={formData.purpose}
-                  onChange={handleChange}
-                  required
-                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label
-                  htmlFor="ResponsibilityCenterCode"
-                  className="text-gray-700"
-                >
-                  Responsibility Center Code{" "}
-                  <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="ResponsibilityCenterCode"
-                  name="ResponsibilityCenterCode"
-                  value={formData.ResponsibilityCenterCode}
-                  onChange={handleChange}
-                  required
-                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
-                />
-              </div>
-
-              <div className="flex flex-col">
-                <label htmlFor="entityName" className="text-gray-700">
-                  Entity Name
-                </label>
-                <input
-                  type="text"
-                  id="entityName"
-                  name="entityName"
-                  value={formData.entityName}
-                  onChange={handleChange}
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
                 />
               </div>
@@ -338,6 +279,117 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
                   id="fundCluster"
                   name="fundCluster"
                   value={formData.fundCluster}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="supplier" className="text-gray-700">
+                  Supplier <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="supplier"
+                  name="supplier"
+                  value={formData.supplier}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="address" className="text-gray-700">
+                  Address <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="tin" className="text-gray-700">
+                  Tin
+                </label>
+                <input
+                  type="text"
+                  id="tin"
+                  name="tin"
+                  value={formData.tin}
+                  onChange={handleChange}
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="modeOfProcurement" className="text-gray-700">
+                  Mode of Procurement <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="modeOfProcurement"
+                  name="modeOfProcurement"
+                  value={formData.modeOfProcurement}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="placeOfDelivery" className="text-gray-700">
+                  Place of Delivery <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="placeOfDelivery"
+                  name="placeOfDelivery"
+                  value={formData.placeOfDelivery}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="deliveryTerm" className="text-gray-700">
+                  Delivery Term <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="deliveryTerm"
+                  name="deliveryTerm"
+                  value={formData.deliveryTerm}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="dateOfDelivery" className="text-gray-700">
+                  Date of Delivery
+                </label>
+                <input
+                  type="date"
+                  id="dateOfDelivery"
+                  name="dateOfDelivery"
+                  value={formData.dateOfDelivery}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="paymentTerm" className="text-gray-700">
+                  Payment Term <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="paymentTerm"
+                  name="paymentTerm"
+                  value={formData.paymentTerm}
                   onChange={handleChange}
                   required
                   className="border border-gray-300 p-2 rounded-md bg-gray-100 text-gray-500"
@@ -369,15 +421,13 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
               </div>
             </div>
           )}
-
           {activeTab === "items" && (
-            <AssetsPRItemsTab
+            <AssetsPOItemsTab
               items={formData.items}
               onItemsChange={handleItemsChange}
             />
           )}
         </form>
-
         <div className="flex justify-between mt-4">
           <div className="flex space-x-3">
             <button
@@ -401,4 +451,4 @@ const AssetsPRModal = ({ isOpen, onClose, onSave, initialData, mode }) => {
   );
 };
 
-export default AssetsPRModal;
+export default AssetsPOModal;
